@@ -1,6 +1,6 @@
 package HotelManagement;
 
-public class Customer {
+public class User {
     private String Name;
     private String PhoneNum;
     private String Email;
@@ -11,9 +11,10 @@ public class Customer {
     private int tier;
     private String dob;
 
-    public Customer(String name, String phoneNum, String email,
-                    int accountBalance, int tier, String username, String password,
-                    int roomNum, String dob) {
+
+    public User(String name, String phoneNum, String email,
+                int accountBalance, int tier, String username, String password,
+                int roomNum, String dob) {
         Name = name;
         PhoneNum = phoneNum;
         Email = email;
@@ -26,7 +27,7 @@ public class Customer {
         Tier t = new Tier(tier);
     }
 
-    public Customer (){
+    public User(){
         Name = null;
         PhoneNum = null;
         Email = null;
