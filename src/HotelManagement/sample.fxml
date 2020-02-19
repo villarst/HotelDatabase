@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Button fx:id="btn_msg" mnemonicParsing="false" onAction="#pressButton" prefHeight="26.0" prefWidth="123.0" text="Press for Message" textFill="RED" GridPane.rowIndex="1" />
+      <Button fx:id="exit_btn" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="123.0" text="Exit" GridPane.rowIndex="3" />
+   </children>
+</GridPane>
