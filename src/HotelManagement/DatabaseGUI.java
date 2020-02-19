@@ -1,6 +1,8 @@
 package HotelManagement;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -15,14 +17,11 @@ public class DatabaseGUI extends Application {
     }
 
     @Override public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("DatabaseGUI.fxml"));
+
+        Scene scene = new Scene(root, 300, 275);
+
         primaryStage.setTitle("Hotel Management System");
-        button = new Button();
-        button.setText("Test Button");
-
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-
-        Scene scene = new Scene(layout, 300, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
