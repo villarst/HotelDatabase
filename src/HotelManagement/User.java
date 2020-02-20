@@ -25,6 +25,7 @@ public class User {
         this.tier = tier;
         this.dob = dob;
         Tier t = new Tier(tier);
+        t.displayPermissions();
     }
 
     public User(){
@@ -37,6 +38,7 @@ public class User {
         this.roomNum = 0;
         this.tier = 0;
         this.dob = null;
+        Tier t = new Tier(0);
     }
 
     public String resetAll(){
@@ -124,6 +126,7 @@ public class User {
     public void setDob(String dob) {
         this.dob = dob;
     }
+
 
     public String toString(){
         System.out.println("Name: " + getName());
