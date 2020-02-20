@@ -11,4 +11,9 @@ public class Controller {
     public void exitButton(ActionEvent event){
         System.exit(0);
     }
+
+    public void createDB(ActionEvent event){
+        Database d = new Database();
+    }
+
 }
