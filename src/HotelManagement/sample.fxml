@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.Controller">
    <children>
-      <Button fx:id="btn_msg" mnemonicParsing="false" onAction="#pressButton" prefHeight="26.0" prefWidth="123.0" text="Press for Message" textFill="RED" GridPane.rowIndex="1" />
-      <Button fx:id="exit_btn" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="123.0" text="Exit" GridPane.rowIndex="3" />
+      <Button id="exitButton" fx:id="exitButton" layoutX="57.0" layoutY="367.0" mnemonicParsing="false" onAction="#exitButton" text="Exit" />
+      <Button id="pressButton" fx:id="pressButton" layoutX="48.0" layoutY="325.0" mnemonicParsing="false" onAction="#pressButton" text="Press" textFill="RED" />
+      <MenuBar id="menuBar" fx:id="menuBar" layoutY="-1.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="btnExit" mnemonicParsing="false" onAction="#exitButton" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem id="menuNewCustomer" mnemonicParsing="false" text="New Customer" />
+                  <MenuItem id="menuCustomerLookup" mnemonicParsing="false" text="Customer Lookup" />
+                  <MenuItem id="menuEditPermissions" mnemonicParsing="false" text="Edit Permissions" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ListView fx:id="lstCustomerList" layoutX="43.0" layoutY="77.0" prefHeight="191.0" prefWidth="285.0" />
+      <Button fx:id="btnSelectCustomer" layoutX="343.0" layoutY="80.0" mnemonicParsing="false" text="Enter" />
    </children>
-</GridPane>
+</AnchorPane>
