@@ -37,6 +37,7 @@ public class User {
         this.roomNum = 0;
         this.tier = 0;
         this.dob = null;
+        Tier t = new Tier(0);
     }
 
     public String resetAll(){
@@ -125,10 +126,10 @@ public class User {
         this.dob = dob;
     }
 
-    public String toString(){
-        System.out.println("Name: " + getName());
-        System.out.println("Email: " + getEmail());
-        System.out.println("Tier: " + getTier());
-        return null;
+
+    public void BasicInfo(){
+        System.out.println("Name: " + Name);
+        System.out.println("Username: " + username);
+        System.out.println("Tier Level: " + tier);
     }
 }
