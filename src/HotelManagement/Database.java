@@ -16,12 +16,17 @@ public class Database{
 
     }
 
+    public void addUser(User u){
+        MainDb.add(u);
+        u.BasicInfo();
+    }
+
     public void populateList(){
         User user1 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
         600, 5, "villarst", "1iEC5yTT", 215, "03/27/2000");
 
         MainDb.add(user1);
-        user1.toString();
+        user1.BasicInfo();
 
     }
 

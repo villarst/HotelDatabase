@@ -25,7 +25,6 @@ public class User {
         this.tier = tier;
         this.dob = dob;
         Tier t = new Tier(tier);
-        t.displayPermissions();
     }
 
     public User(){
@@ -128,10 +127,9 @@ public class User {
     }
 
 
-    public String toString(){
-        System.out.println("Name: " + getName());
-        System.out.println("Email: " + getEmail());
-        System.out.println("Tier: " + getTier());
-        return null;
+    public void BasicInfo(){
+        System.out.println("Name: " + Name);
+        System.out.println("Username: " + username);
+        System.out.println("Tier Level: " + tier);
     }
 }
