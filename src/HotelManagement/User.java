@@ -1,5 +1,11 @@
 package HotelManagement;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
+import java.util.*;
+
+
+
 public class User {
     private String Name;
     private String PhoneNum;
@@ -12,9 +18,11 @@ public class User {
     private String dob;
 
 
+
     public User(String name, String phoneNum, String email,
                 int accountBalance, int tier, String username, String password,
                 int roomNum, String dob) {
+
         Name = name;
         PhoneNum = phoneNum;
         Email = email;
@@ -25,6 +33,8 @@ public class User {
         this.tier = tier;
         this.dob = dob;
         Tier t = new Tier(tier);
+        this.password = generatePassWApache();
+//        generatePassword();
     }
 
     public User(){
@@ -126,10 +136,31 @@ public class User {
         this.dob = dob;
     }
 
+//    public String generatePassword() {
+//        int leftLimit = 48; // numeral '0'
+//        int rightLimit = 122; // letter 'z'
+//        int targetStringLength = 10;
+//        Random random = new Random();
+//
+//        String generatedString = random.ints(leftLimit, rightLimit + 1)
+//                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+//                .limit(targetStringLength)
+//                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+//                .toString();
+//
+//        System.out.println(generatedString);
+//        return generatedString;
+//    }
+
+    public String generatePassWApache() {
+        String generatedString = RandomStringUtils.randomAlphanumeric(10);
+        return generatedString;
+    }
 
     public void BasicInfo(){
         System.out.println("Name: " + Name);
         System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
         System.out.println("Tier Level: " + tier);
     }
 }
