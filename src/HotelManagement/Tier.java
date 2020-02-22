@@ -69,7 +69,6 @@ public class Tier {
                 casinoAccess = true;
                 buffetAccess = true;
                 arcadeAccess = true;
-                displayPermissions();
                 break;
             case 6: // Admin Access
                 poolAccess = true;

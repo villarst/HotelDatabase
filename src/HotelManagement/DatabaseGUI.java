@@ -10,7 +10,7 @@ public class DatabaseGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("This will change");
+        primaryStage.setTitle("Hotel Database v1");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
