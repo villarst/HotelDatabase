@@ -20,8 +20,7 @@ public class User {
 
 
     public User(String name, String phoneNum, String email,
-                int accountBalance, int tier, String username, String password,
-                int roomNum, String dob) {
+                int accountBalance, int tier, String username, String password, String dob) {
 
         Name = name;
         PhoneNum = phoneNum;
@@ -29,12 +28,10 @@ public class User {
         this.accountBalance = accountBalance;
         this.username = username;
         this.password = password;
-        this.roomNum = roomNum;
         this.tier = tier;
         this.dob = dob;
         Tier t = new Tier(tier);
         this.password = generatePassWApache();
-//        generatePassword();
     }
 
     public User(){
@@ -162,5 +159,7 @@ public class User {
         System.out.println("Username: " + username);
         System.out.println("Password: " + password);
         System.out.println("Tier Level: " + tier);
+        System.out.println("Room Number: " + roomNum);
     }
+
 }
