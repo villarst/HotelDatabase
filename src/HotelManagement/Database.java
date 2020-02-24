@@ -24,6 +24,7 @@ public class Database{
         assignRoom(u);
     }
 
+
     public void assignRoom(User u) {
         // The tier level is 1.
         if(u.getTier() == 1){
@@ -141,7 +142,6 @@ public class Database{
                 }
             }
         }
-
     }
 
     public void populateList(){
