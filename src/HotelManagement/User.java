@@ -1,5 +1,11 @@
 package HotelManagement;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
+import java.util.*;
+
+
+
 public class User {
     private String Name;
     private String PhoneNum;
@@ -12,20 +18,20 @@ public class User {
     private String dob;
 
 
+
     public User(String name, String phoneNum, String email,
-                int accountBalance, int tier, String username, String password,
-                int roomNum, String dob) {
+                int accountBalance, int tier, String username, String password, String dob) {
+
         Name = name;
         PhoneNum = phoneNum;
         Email = email;
         this.accountBalance = accountBalance;
         this.username = username;
         this.password = password;
-        this.roomNum = roomNum;
         this.tier = tier;
         this.dob = dob;
         Tier t = new Tier(tier);
-        t.displayPermissions();
+        this.password = generatePassWApache();
     }
 
     public User(){
@@ -127,11 +133,17 @@ public class User {
         this.dob = dob;
     }
 
-
-    public String toString(){
-        System.out.println("Name: " + getName());
-        System.out.println("Email: " + getEmail());
-        System.out.println("Tier: " + getTier());
-        return null;
+    public String generatePassWApache() {
+        String generatedString = RandomStringUtils.randomAlphanumeric(10);
+        return generatedString;
     }
+
+    public void BasicInfo(){
+        System.out.println("Name: " + Name);
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
+        System.out.println("Tier Level: " + tier);
+        System.out.println("Room Number: " + roomNum);
+    }
+
 }
