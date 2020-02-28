@@ -1,13 +1,12 @@
 package HotelManagement;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 
 public class Database{
 
     private ArrayList <User> MainDb;
-    private ArrayList <User> SecondaryDb;
+//    private ArrayList <User> SecondaryDb;
 
     private ArrayList <Integer> tier1Rooms;
     private ArrayList <Integer> tier2Rooms;
@@ -19,7 +18,7 @@ public class Database{
 
     public Database(){
         MainDb = new ArrayList<User>();
-        SecondaryDb = new ArrayList<User>();
+//        SecondaryDb = new ArrayList<User>();
         tier1Rooms = new ArrayList<Integer>();
         tier2Rooms = new ArrayList<Integer>();
         tier3Rooms = new ArrayList<Integer>();
