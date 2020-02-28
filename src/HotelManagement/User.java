@@ -2,6 +2,8 @@ package HotelManagement;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -19,9 +21,7 @@ public class User {
     private String dob;
 
 
-    public User(String name, String phoneNum, String email,
-                int accountBalance, int tier, String username, String password, String dob) {
-
+    public User(String name, String phoneNum, String email, int accountBalance, int tier, String username, String password, String dob) throws IllegalArgumentException{
         Name = name;
         PhoneNum = phoneNum;
         Email = email;
@@ -29,7 +29,8 @@ public class User {
         this.username = username;
         this.password = password;
         this.tier = tier;
-        this.dob = dob;
+        if(verifyDate(dob))
+            this.dob = dob;
         Tier t = new Tier(tier);
         this.password = generatePassWApache();
     }
@@ -145,8 +146,9 @@ public class User {
         return dob;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setDob(String dob) throws IllegalArgumentException{
+        if(verifyDate(dob))
+            this.dob = dob;
     }
 
     public String generatePassWApache() {
@@ -162,4 +164,23 @@ public class User {
         System.out.println("Room Number: " + roomNum);
     }
 
+    public static boolean verifyDate(String date)
+    {
+        if (date.trim().equals("")) {
+            return true;
+        }
+        else {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+            simpleDateFormat.setLenient(false);
+            try {
+                Date javaDate = simpleDateFormat.parse(date);
+                System.out.println("Verified: " + date);
+            }
+            catch (ParseException e) {
+                System.out.println(date + " is not a valid date. DOB not updated.");
+                return false;
+            }
+            return true;
+        }
+    }
 }
