@@ -30,6 +30,8 @@ public class Database{
 
     public void addUser(User u){
         MainDb.add(u);
+        // Adds the user to the database. But if rooms are full, then
+        // don't add user to the database.
         assignRoom(u);
     }
 
@@ -153,31 +155,35 @@ public class Database{
         }
     }
 
+    public void removeUser(User u){
+
+    }
+
     public void populateList(){
         User user1 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user2 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user3 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user4 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user5 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user6 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user7 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user8 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user9 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user10 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user11 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
         User user12 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 5, "villarst", "edI3n5u0", "03/27/2000");
+                600, 1, "villarst", "edI3n5u0", "03/27/2000");
 
 
 
