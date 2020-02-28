@@ -6,7 +6,7 @@ Need Done By 1st Release
 	 (checks if Room number is in database already) DONE
 
 	• Make sure Phone # is numbers and if it is 10 - 11 characters. (also Ignore special Characters) 614 - 324 -5586
-	---> 6143245586
+	---> 6143245586 DONE
 
 	• Check for correct DOB (has to be numbers, correct format i.e. ##/##/#### or ##-##-####, and make sure
 	date exists and is not above current date.)
