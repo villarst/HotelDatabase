@@ -9,7 +9,6 @@ import java.util.*;
 
 
 public class User {
-    private static final String emailRegex = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
     private String Name;
     private String PhoneNum;
     private String Email;
@@ -23,8 +22,10 @@ public class User {
 
     public User(String name, String phoneNum, String email, int accountBalance, int tier, String username, String password, String dob) throws IllegalArgumentException{
         Name = name;
-        PhoneNum = phoneNum;
-        Email = email;
+        if(verifyPhoneNumber(phoneNum))
+            PhoneNum = phoneNum;
+        if(verifyEmail(email))
+            Email = email;
         this.accountBalance = accountBalance;
         this.username = username;
         this.password = password;
@@ -74,32 +75,18 @@ public class User {
         return PhoneNum;
     }
 
-    public void setPhoneNum(String phoneNum) throws IllegalArgumentException {
-        try {
-            if(phoneNum.length() != 10 && phoneNum.length() != 11)
-                throw new IllegalArgumentException();
-            else
-                PhoneNum = phoneNum.replaceAll("[\\s\\-()]", "");
-        }
-        catch (IllegalArgumentException e){
-            System.out.println("Invalid phone number. Phone number not updated.");
-        }
+    public void setPhoneNum(String phoneNum){
+        if(verifyPhoneNumber(phoneNum))
+            PhoneNum = phoneNum;
     }
 
     public String getEmail() {
         return Email;
     }
 
-    public void setEmail(String email) throws IllegalArgumentException{
-        try{
-            if(email.matches(emailRegex))
-                Email = email;
-            else
-                throw new IllegalArgumentException();
-        }
-        catch(IllegalArgumentException e){
-            System.out.println("Invalid e-mail address. E-mail address not updated.");
-        }
+    public void setEmail(String email){
+        if(verifyEmail(email))
+            Email = email;
     }
 
     public int getAccountBalance() {
@@ -146,7 +133,7 @@ public class User {
         return dob;
     }
 
-    public void setDob(String dob) throws IllegalArgumentException{
+    public void setDob(String dob){
         if(verifyDate(dob))
             this.dob = dob;
     }
@@ -164,8 +151,7 @@ public class User {
         System.out.println("Room Number: " + roomNum);
     }
 
-    public static boolean verifyDate(String date)
-    {
+    public static boolean verifyDate(String date) {
         if (date.trim().equals("")) {
             return true;
         }
@@ -181,6 +167,29 @@ public class User {
                 return false;
             }
             return true;
+        }
+    }
+
+    public static boolean verifyPhoneNumber(String newNumber){
+        newNumber = newNumber.replaceAll("[\\s\\-()]", "");
+        if (newNumber.matches("\\d{10}")) {
+            System.out.println("Verified: " + newNumber);
+            return true;
+        }
+        else{
+            System.out.println(newNumber + " is invalid. Phone number not updated.");
+            return false;
+        }
+    }
+
+    public static boolean verifyEmail(String email){
+        if(email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
+            System.out.println("Verified: " + email);
+            return true;
+        }
+        else {
+            System.out.println(email + " is invalid. E-Mail address not updated.");
+            return false;
         }
     }
 }
