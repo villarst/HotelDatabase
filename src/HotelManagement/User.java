@@ -153,15 +153,23 @@ public class User {
             return true;
         }
         else {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-            simpleDateFormat.setLenient(false);
+            SimpleDateFormat simpleDateFormatLong = new SimpleDateFormat("MM/dd/yyyy");
+            simpleDateFormatLong.setLenient(false);
+            SimpleDateFormat simpleDateFormatShort = new SimpleDateFormat("MM/dd/yy");
+            simpleDateFormatShort.setLenient(false);
             try {
-                Date javaDate = simpleDateFormat.parse(date);
+                Date javaDate = simpleDateFormatLong.parse(date);
                 System.out.println("Verified: " + date);
             }
             catch (ParseException e) {
-                System.out.println(date + " is not a valid date. DOB not updated.");
-                return false;
+                try{
+                    Date javaDate = simpleDateFormatShort.parse(date);
+                    System.out.println("Verified: " + date);
+                }
+                catch (ParseException e1){
+                    System.out.println(date + " is not a valid date. DOB not updated.");
+                    return false;
+                }
             }
             return true;
         }
