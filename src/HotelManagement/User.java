@@ -18,7 +18,6 @@ public class User {
     private String dob;
 
 
-
     public User(String name, String phoneNum, String email,
                 int accountBalance, int tier, String username, String password, String dob) {
 
@@ -73,8 +72,16 @@ public class User {
         return PhoneNum;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        PhoneNum = phoneNum;
+    public void setPhoneNum(String phoneNum) throws IllegalArgumentException {
+        try {
+            if(phoneNum.length() != 10 && phoneNum.length() != 11)
+                throw new IllegalArgumentException();
+            else
+                PhoneNum = phoneNum.replaceAll("[\\s\\-()]", "");
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("Invalid phone number. Phone number not updated.");
+        }
     }
 
     public String getEmail() {
