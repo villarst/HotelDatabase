@@ -41,7 +41,7 @@ public class User {
         this.accountBalance = 0;
         this.username = null;
         this.password = null;
-        this.roomNum = 0;
+        this.roomNum = -1;
         this.tier = 0;
         this.dob = null;
         Tier t = new Tier(0);
@@ -54,7 +54,7 @@ public class User {
         accountBalance = 0;
         username = null;
         password = null;
-        roomNum = 0;
+        roomNum = -1;
         tier = 0;
         dob = null;
         return "Name: null, Phone Number: 0, Email: null, Account Balance: 0, Username: null" +
