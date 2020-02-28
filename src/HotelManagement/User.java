@@ -7,6 +7,7 @@ import java.util.*;
 
 
 public class User {
+    private static final String emailRegex = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
     private String Name;
     private String PhoneNum;
     private String Email;
@@ -88,8 +89,16 @@ public class User {
         return Email;
     }
 
-    public void setEmail(String email) {
-        Email = email;
+    public void setEmail(String email) throws IllegalArgumentException{
+        try{
+            if(email.matches(emailRegex))
+                Email = email;
+            else
+                throw new IllegalArgumentException();
+        }
+        catch(IllegalArgumentException e){
+            System.out.println("Invalid e-mail address. E-mail address not updated.");
+        }
     }
 
     public int getAccountBalance() {
