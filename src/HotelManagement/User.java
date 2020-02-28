@@ -22,16 +22,13 @@ public class User {
 
     public User(String name, String phoneNum, String email, int accountBalance, int tier, String username, String password, String dob) throws IllegalArgumentException{
         Name = name;
-        if(verifyPhoneNumber(phoneNum))
-            PhoneNum = phoneNum;
-        if(verifyEmail(email))
-            Email = email;
+        verifyPhoneNumber(phoneNum);
+        verifyEmail(email);
+        verifyDate(dob);
         this.accountBalance = accountBalance;
         this.username = username;
         this.password = password;
         this.tier = tier;
-        if(verifyDate(dob))
-            this.dob = dob;
         Tier t = new Tier(tier);
         this.password = generatePassWApache();
     }
