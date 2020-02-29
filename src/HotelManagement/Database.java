@@ -31,7 +31,7 @@ public class Database{
     public void assignRoom(User u){
         int room = (u.getTier() - 1) * 100;
         if(!checkTierFull(u.getTier() - 1)) {
-            for (int i = 0; i <= 9; i++) { // was 99
+            for (int i = 0; i <= 99; i++) { // was 99
                 if (!rooms[room + i]) {
                     rooms[room + i] = true;
                     u.setRoomNum(room + i);
@@ -47,7 +47,7 @@ public class Database{
 
     public boolean checkTierFull(int t){
         int tier = t * 100;
-        for(int i = tier; i <= tier + 9; i++){  // was 99
+        for(int i = tier; i <= tier + 99; i++){  // was 99
             // This checks if any room is empty. If yes then returns false.
             // Otherwise returns true.
             if(!rooms[i])
