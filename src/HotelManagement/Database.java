@@ -40,9 +40,6 @@ public class Database{
                 }
             }
         }
-//        else{
-//            removeUser(u);
-//        }
     }
 
     public boolean checkTierFull(int t){
@@ -103,21 +100,6 @@ public class Database{
         addUser(user10);
         addUser(user11);
         addUser(user12);
-//        removeUser(user1);
-//        user1.BasicInfo();
-////        user2.BasicInfo();
-////        user3.BasicInfo();
-////        user4.BasicInfo();
-////        user5.BasicInfo();
-////        user6.BasicInfo();
-////        user7.BasicInfo();
-////        user8.BasicInfo();
-////        user9.BasicInfo();
-////        user10.BasicInfo();
-////        user11.BasicInfo();
-////        user12.BasicInfo();
-        int x = 1;
-
 
     }
 

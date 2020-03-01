@@ -2,6 +2,8 @@ package HotelManagement;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -18,18 +20,15 @@ public class User {
     private String dob;
 
 
-
-    public User(String name, String phoneNum, String email,
-                int accountBalance, int tier, String username, String password, String dob) {
-
+    public User(String name, String phoneNum, String email, int accountBalance, int tier, String username, String password, String dob) throws IllegalArgumentException{
         Name = name;
-        PhoneNum = phoneNum;
-        Email = email;
+        verifyPhoneNumber(phoneNum);
+        verifyEmail(email);
+        verifyDate(dob);
         this.accountBalance = accountBalance;
         this.username = username;
         this.password = password;
         this.tier = tier;
-        this.dob = dob;
         Tier t = new Tier(tier);
         this.password = generatePassWApache();
     }
@@ -41,7 +40,7 @@ public class User {
         this.accountBalance = 0;
         this.username = null;
         this.password = null;
-        this.roomNum = -1;
+        this.roomNum = 0;
         this.tier = 0;
         this.dob = null;
         Tier t = new Tier(0);
@@ -54,7 +53,7 @@ public class User {
         accountBalance = 0;
         username = null;
         password = null;
-        roomNum = -1;
+        roomNum = 0;
         tier = 0;
         dob = null;
         return "Name: null, Phone Number: 0, Email: null, Account Balance: 0, Username: null" +
@@ -73,16 +72,18 @@ public class User {
         return PhoneNum;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        PhoneNum = phoneNum;
+    public void setPhoneNum(String phoneNum){
+        if(verifyPhoneNumber(phoneNum))
+            PhoneNum = phoneNum;
     }
 
     public String getEmail() {
         return Email;
     }
 
-    public void setEmail(String email) {
-        Email = email;
+    public void setEmail(String email){
+        if(verifyEmail(email))
+            Email = email;
     }
 
     public int getAccountBalance() {
@@ -129,8 +130,9 @@ public class User {
         return dob;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setDob(String dob){
+        if(verifyDate(dob))
+            this.dob = dob;
     }
 
     public String generatePassWApache() {
@@ -146,4 +148,53 @@ public class User {
         System.out.println("Room Number: " + roomNum);
     }
 
+    public static boolean verifyDate(String date) {
+        if (date.trim().equals("")) {
+            return true;
+        }
+        else {
+            SimpleDateFormat simpleDateFormatLong = new SimpleDateFormat("MM/dd/yyyy");
+            simpleDateFormatLong.setLenient(false);
+            SimpleDateFormat simpleDateFormatShort = new SimpleDateFormat("MM/dd/yy");
+            simpleDateFormatShort.setLenient(false);
+            try {
+                Date javaDate = simpleDateFormatLong.parse(date);
+                System.out.println("Verified: " + date);
+            }
+            catch (ParseException e) {
+                try{
+                    Date javaDate = simpleDateFormatShort.parse(date);
+                    System.out.println("Verified: " + date);
+                }
+                catch (ParseException e1){
+                    System.out.println(date + " is not a valid date. DOB not updated.");
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    public static boolean verifyPhoneNumber(String newNumber){
+        newNumber = newNumber.replaceAll("[\\s\\-()]", "");
+        if (newNumber.matches("\\d{10}")) {
+            System.out.println("Verified: " + newNumber);
+            return true;
+        }
+        else{
+            System.out.println(newNumber + " is invalid. Phone number not updated.");
+            return false;
+        }
+    }
+
+    public static boolean verifyEmail(String email){
+        if(email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
+            System.out.println("Verified: " + email);
+            return true;
+        }
+        else {
+            System.out.println(email + " is invalid. E-Mail address not updated.");
+            return false;
+        }
+    }
 }
