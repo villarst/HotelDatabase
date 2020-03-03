@@ -9,9 +9,9 @@ Need Done By 1st Release
 	---> 6143245586 DONE
 
 	• Check for correct DOB (has to be numbers, correct format i.e. ##/##/#### or ##-##-####, and make sure
-	date exists and is not above current date.)
+	date exists and is not above current date.) DONE
 
-	• Check for if email is valid. (look up if email cant have special characters.)
+	• Check for if email is valid. (look up if email cant have special characters.)  DONE
 
 	• Create add method "public void add(User u)" in Database class.
 

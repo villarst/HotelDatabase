@@ -149,6 +149,9 @@ public class User {
     }
 
     public static boolean verifyDate(String date) {
+        // Needs to check if date is valid as in its the correct date,
+        // and it is greater than or equal to 18, cant be 12 and get a
+        // hotel room. (compares to today's date)
         if (date.trim().equals("")) {
             return true;
         }
@@ -182,6 +185,7 @@ public class User {
             return true;
         }
         else{
+            // Need to have the User type in a different or valid phone number.
             System.out.println(newNumber + " is invalid. Phone number not updated.");
             return false;
         }
@@ -193,6 +197,7 @@ public class User {
             return true;
         }
         else {
+            // Need to have the User type in a different or valid email.
             System.out.println(email + " is invalid. E-Mail address not updated.");
             return false;
         }
