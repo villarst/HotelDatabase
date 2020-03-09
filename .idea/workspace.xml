@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77c5fe60-03ef-4b42-be4f-86f5ba1c59a3" name="Default Changelist" comment="" />
+    <list default="true" id="f92735a9-6907-4a11-928c-fe37a365df83" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/CIS 350 Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +36,7 @@
   <component name="RunManager">
     <configuration name="DatabaseGUI" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
-      <module name="CIS350-HotelManagement" />
+      <module name="CIS 350 Project" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\steve\Documents\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,9 +156,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="959" y="275" key="#DatabaseGUI/0.0.2560.1400@0.0.2560.1400" timestamp="1583787045079" />
-    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583787507053">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="11" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583789172120">
+      <screen x="0" y="0" width="1097" height="577" />
     </state>
+    <state x="11" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577@0.0.1097.577" timestamp="1583789172120" />
     <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1583787507053" />
     <state width="2505" height="389" key="GridCell.Tab.0.bottom" timestamp="1583788201528">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -175,9 +185,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="911" y="476" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1583788173428" />
-    <state x="1008" y="340" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583788196443">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="432" y="10" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583789189525">
+      <screen x="0" y="0" width="1097" height="577" />
     </state>
+    <state x="432" y="10" key="git4idea.branch.GitSmartOperationDialog/0.0.1097.577@0.0.1097.577" timestamp="1583789189525" />
     <state x="1008" y="340" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1583788196443" />
   </component>
 </project>
