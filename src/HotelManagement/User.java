@@ -1,11 +1,9 @@
 package HotelManagement;
 
 import org.apache.commons.lang3.RandomStringUtils;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
 
 
 public class User {
