@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Tier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Tier.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,31 +20,28 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Y5eCNXYNA7WLLLe96O40svb2lb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/commons-lang3-3.9-bin/commons-lang3-3.9" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="HotelManagement" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="DatabaseGUI" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
-      <module name="HotelManagement" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Bill Rice\Documents\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <module name="CIS 350 Project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\steve\Documents\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583722691519</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="workspace.xml file needed to be added?">
+      <created>1583785417029</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583785417029</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,32 +148,65 @@
     <MESSAGE value="Added all of the comments to every .java file." />
     <MESSAGE value="changed .gitignore file" />
     <MESSAGE value="Added all correct files for version one." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all correct files for version one." />
+    <MESSAGE value="workspace.xml file needed to be added?" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml file needed to be added?" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="260" y="0" width="592" height="577" key="#DatabaseGUI" timestamp="1583785992710">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="260" y="0" width="592" height="577" key="#DatabaseGUI/0.0.1097.577@0.0.1097.577" timestamp="1583785992710" />
+    <state x="5" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583786032809">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="5" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577@0.0.1097.577" timestamp="1583786032809" />
+    <state x="287" y="70" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1583785660513">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="287" y="70" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785660513" />
+    <state x="287" y="79" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583785922788">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="287" y="79" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785922788" />
     <state x="298" y="39" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583762445032">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="298" y="39" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1097.577@0.0.1097.577" timestamp="1583762445032" />
-    <state x="325" y="48" key="FileChooserDialogImpl" timestamp="1583762424324">
+    <state x="325" y="48" key="FileChooserDialogImpl" timestamp="1583785868066">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="325" y="48" key="FileChooserDialogImpl/0.0.1097.577@0.0.1097.577" timestamp="1583762424324" />
+    <state x="325" y="48" key="FileChooserDialogImpl/0.0.1097.577@0.0.1097.577" timestamp="1583785868066" />
+    <state width="1054" height="129" key="GridCell.Tab.0.bottom" timestamp="1583786047232">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="129" key="GridCell.Tab.0.bottom/0.0.1097.577@0.0.1097.577" timestamp="1583786047232" />
+    <state width="1054" height="129" key="GridCell.Tab.0.center" timestamp="1583786047230">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="129" key="GridCell.Tab.0.center/0.0.1097.577@0.0.1097.577" timestamp="1583786047230" />
+    <state width="1054" height="129" key="GridCell.Tab.0.left" timestamp="1583786047230">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="129" key="GridCell.Tab.0.left/0.0.1097.577@0.0.1097.577" timestamp="1583786047230" />
+    <state width="1054" height="129" key="GridCell.Tab.0.right" timestamp="1583786047232">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="129" key="GridCell.Tab.0.right/0.0.1097.577@0.0.1097.577" timestamp="1583786047232" />
     <state x="260" y="6" key="MultipleFileMergeDialog" timestamp="1583785379410">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="260" y="6" key="MultipleFileMergeDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785379410" />
-    <state x="30" y="0" key="SettingsEditor" timestamp="1583762345682">
+    <state x="30" y="0" key="SettingsEditor" timestamp="1583785873277">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="30" y="0" key="SettingsEditor/0.0.1097.577@0.0.1097.577" timestamp="1583762345682" />
+    <state x="30" y="0" key="SettingsEditor/0.0.1097.577@0.0.1097.577" timestamp="1583785873277" />
     <state x="245" y="118" key="com.intellij.ide.util.TipDialog" timestamp="1583785335064">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="245" y="118" key="com.intellij.ide.util.TipDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785335064" />
-    <state x="305" y="5" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583785355580">
+    <state x="305" y="5" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583786045103">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="305" y="5" key="git4idea.branch.GitSmartOperationDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785355580" />
+    <state x="305" y="5" key="git4idea.branch.GitSmartOperationDialog/0.0.1097.577@0.0.1097.577" timestamp="1583786045103" />
   </component>
 </project>
