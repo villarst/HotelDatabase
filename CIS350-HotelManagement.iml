@@ -7,11 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-<<<<<<< HEAD
-    <orderEntry type="library" name="javafx-swt" level="project" />
-=======
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="commons-lang3-3" level="project" />
->>>>>>> develop
   </component>
 </module>
