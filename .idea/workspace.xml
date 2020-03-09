@@ -51,7 +51,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="74ca9748-cc7b-470f-956e-b86184a7c923" name="Default Changelist" comment="" />
+      <changelist id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
       <created>1582236753339</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -78,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583721048324</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added all correct files for version one.">
+      <created>1583722691519</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583722691519</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +139,7 @@
     <MESSAGE value="Got correct files" />
     <MESSAGE value="Added all of the comments to every .java file." />
     <MESSAGE value="changed .gitignore file" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed .gitignore file" />
+    <MESSAGE value="Added all correct files for version one." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all correct files for version one." />
   </component>
 </project>
