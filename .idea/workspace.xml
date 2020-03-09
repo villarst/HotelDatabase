@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Tier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Tier.class" afterDir="false" />
-    </list>
+    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="steve2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,7 +23,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/commons-lang3-3.9-bin/commons-lang3-3.9" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/HotelManagement" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -93,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583785417029</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="workspace.xml file needed to be added?">
+      <created>1583786063665</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583786063665</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,42 +159,46 @@
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="260" y="0" width="592" height="577" key="#DatabaseGUI/0.0.1097.577@0.0.1097.577" timestamp="1583785992710" />
-    <state x="5" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583786032809">
+    <state x="5" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583786302070">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="5" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577@0.0.1097.577" timestamp="1583786032809" />
+    <state x="5" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577@0.0.1097.577" timestamp="1583786302070" />
     <state x="287" y="70" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1583785660513">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="287" y="70" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785660513" />
-    <state x="287" y="79" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583785922788">
+    <state x="287" y="79" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583786136963">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="287" y="79" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785922788" />
+    <state x="287" y="79" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1097.577@0.0.1097.577" timestamp="1583786136963" />
     <state x="298" y="39" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583762445032">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="298" y="39" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1097.577@0.0.1097.577" timestamp="1583762445032" />
-    <state x="325" y="48" key="FileChooserDialogImpl" timestamp="1583785868066">
+    <state x="173" y="0" key="CommitChangelistDialog2" timestamp="1583786062036">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="325" y="48" key="FileChooserDialogImpl/0.0.1097.577@0.0.1097.577" timestamp="1583785868066" />
-    <state width="1054" height="129" key="GridCell.Tab.0.bottom" timestamp="1583786047232">
+    <state x="173" y="0" key="CommitChangelistDialog2/0.0.1097.577@0.0.1097.577" timestamp="1583786062036" />
+    <state x="325" y="48" key="FileChooserDialogImpl" timestamp="1583786119641">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="129" key="GridCell.Tab.0.bottom/0.0.1097.577@0.0.1097.577" timestamp="1583786047232" />
-    <state width="1054" height="129" key="GridCell.Tab.0.center" timestamp="1583786047230">
+    <state x="325" y="48" key="FileChooserDialogImpl/0.0.1097.577@0.0.1097.577" timestamp="1583786119641" />
+    <state width="1054" height="129" key="GridCell.Tab.0.bottom" timestamp="1583786487257">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="129" key="GridCell.Tab.0.center/0.0.1097.577@0.0.1097.577" timestamp="1583786047230" />
-    <state width="1054" height="129" key="GridCell.Tab.0.left" timestamp="1583786047230">
+    <state width="1054" height="129" key="GridCell.Tab.0.bottom/0.0.1097.577@0.0.1097.577" timestamp="1583786487257" />
+    <state width="1054" height="129" key="GridCell.Tab.0.center" timestamp="1583786487257">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="129" key="GridCell.Tab.0.left/0.0.1097.577@0.0.1097.577" timestamp="1583786047230" />
-    <state width="1054" height="129" key="GridCell.Tab.0.right" timestamp="1583786047232">
+    <state width="1054" height="129" key="GridCell.Tab.0.center/0.0.1097.577@0.0.1097.577" timestamp="1583786487257" />
+    <state width="1054" height="129" key="GridCell.Tab.0.left" timestamp="1583786487257">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state width="1054" height="129" key="GridCell.Tab.0.right/0.0.1097.577@0.0.1097.577" timestamp="1583786047232" />
+    <state width="1054" height="129" key="GridCell.Tab.0.left/0.0.1097.577@0.0.1097.577" timestamp="1583786487257" />
+    <state width="1054" height="129" key="GridCell.Tab.0.right" timestamp="1583786487257">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="129" key="GridCell.Tab.0.right/0.0.1097.577@0.0.1097.577" timestamp="1583786487257" />
     <state x="260" y="6" key="MultipleFileMergeDialog" timestamp="1583785379410">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
@@ -200,10 +207,14 @@
       <screen x="0" y="0" width="1097" height="577" />
     </state>
     <state x="30" y="0" key="SettingsEditor/0.0.1097.577@0.0.1097.577" timestamp="1583785873277" />
-    <state x="245" y="118" key="com.intellij.ide.util.TipDialog" timestamp="1583785335064">
+    <state x="142" y="26" key="Vcs.Push.Dialog.v2" timestamp="1583786073807">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
-    <state x="245" y="118" key="com.intellij.ide.util.TipDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785335064" />
+    <state x="142" y="26" key="Vcs.Push.Dialog.v2/0.0.1097.577@0.0.1097.577" timestamp="1583786073807" />
+    <state x="245" y="118" key="com.intellij.ide.util.TipDialog" timestamp="1583786685052">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="245" y="118" key="com.intellij.ide.util.TipDialog/0.0.1097.577@0.0.1097.577" timestamp="1583786685052" />
     <state x="305" y="5" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583786045103">
       <screen x="0" y="0" width="1097" height="577" />
     </state>
