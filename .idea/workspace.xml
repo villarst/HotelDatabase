@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="abc8a971-c1ce-48e6-bdae-ca5b10ec1e2d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CIS350-HotelManagement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Database.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/DatabaseGUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/sample.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/META-INF/CIS 350 Project.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Database.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/DatabaseGUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/MainView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/MainViewController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/TableView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/TableViewController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Tier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/sample.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/META-INF/CIS350-HotelManagement.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/DatabaseGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/DatabaseGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/Tier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/Tier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotelManagement/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotelManagement/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotelManagement/DatabaseGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/DatabaseGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotelManagement/Tier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/Tier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotelManagement/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,23 +52,11 @@
   </component>
   <component name="ProjectId" id="1Y5eCNXYNA7WLLLe96O40svb2lb" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="DatabaseGUI" type="Application" factoryName="Application">
