@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Y5eCNXYNA7WLLLe96O40svb2lb" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DatabaseGUI" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
+      <module name="HotelManagement" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Bill Rice\Documents\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
+      <created>1582236753339</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582236753339</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Got correct files">
+      <created>1582238814809</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582238814811</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added all of the comments to every .java file.">
+      <created>1583720876475</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583720876475</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changed .gitignore file">
+      <created>1583721048324</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583721048324</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added all correct files for version one.">
+      <created>1583722691519</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583722691519</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="HEAD..origin/develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="HEAD..origin/corey" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Got correct files" />
+    <MESSAGE value="Added all of the comments to every .java file." />
+    <MESSAGE value="changed .gitignore file" />
+    <MESSAGE value="Added all correct files for version one." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all correct files for version one." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="298" y="39" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583762445032">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="298" y="39" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1097.577@0.0.1097.577" timestamp="1583762445032" />
+    <state x="325" y="48" key="FileChooserDialogImpl" timestamp="1583762424324">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="325" y="48" key="FileChooserDialogImpl/0.0.1097.577@0.0.1097.577" timestamp="1583762424324" />
+    <state x="260" y="6" key="MultipleFileMergeDialog" timestamp="1583785379410">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="260" y="6" key="MultipleFileMergeDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785379410" />
+    <state x="30" y="0" key="SettingsEditor" timestamp="1583762345682">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="30" y="0" key="SettingsEditor/0.0.1097.577@0.0.1097.577" timestamp="1583762345682" />
+    <state x="245" y="118" key="com.intellij.ide.util.TipDialog" timestamp="1583785335064">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="245" y="118" key="com.intellij.ide.util.TipDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785335064" />
+    <state x="305" y="5" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583785355580">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="305" y="5" key="git4idea.branch.GitSmartOperationDialog/0.0.1097.577@0.0.1097.577" timestamp="1583785355580" />
+  </component>
+</project>
