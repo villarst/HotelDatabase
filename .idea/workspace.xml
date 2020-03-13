@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,24 +18,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Y5eCNXYNA7WLLLe96O40svb2lb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
+    <property name="last_opened_file_path" value="$PATH_TO_FX$" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="DatabaseGUI" type="Application" factoryName="Application">
@@ -45,6 +39,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -141,5 +147,35 @@
     <MESSAGE value="changed .gitignore file" />
     <MESSAGE value="Added all correct files for version one." />
     <option name="LAST_COMMIT_MESSAGE" value="Added all correct files for version one." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584120692913">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584120692913" />
+    <state x="865" y="217" key="CommitChangelistDialog2" timestamp="1584120788050">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="865" y="217" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1584120788050" />
+    <state x="944" y="375" key="FileChooserDialogImpl" timestamp="1584120646005">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="944" y="375" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1584120646005" />
+    <state x="632" y="165" key="SettingsEditor" timestamp="1584120708344">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="632" y="165" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1584120708344" />
+    <state x="772" y="363" key="Vcs.Push.Dialog.v2" timestamp="1584120795287">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="772" y="363" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1584120795287" />
+    <state x="911" y="476" key="com.intellij.ide.util.TipDialog" timestamp="1584120577461">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="911" y="476" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584120577461" />
+    <state x="1032" y="340" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584120809761">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1032" y="340" key="git4idea.branch.GitSmartOperationDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584120809761" />
   </component>
 </project>
