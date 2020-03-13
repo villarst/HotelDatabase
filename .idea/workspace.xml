@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77c5fe60-03ef-4b42-be4f-86f5ba1c59a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DatabaseGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
+      <module name="CIS350-HotelManagement" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml " />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HotelManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DatabaseGUI" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="trying to fix configurations.">
+      <created>1584116534987</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584116534987</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="trying to fix configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to fix configurations." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584116390221">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584116390221" />
+    <state x="865" y="217" key="CommitChangelistDialog2" timestamp="1584116534523">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="865" y="217" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1584116534523" />
+    <state x="1010" y="393" key="FileChooserDialogImpl" timestamp="1584116245807">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="393" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1584116245807" />
+    <state width="2505" height="389" key="GridCell.Tab.0.bottom" timestamp="1584116431877">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="389" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584116431877" />
+    <state width="2505" height="389" key="GridCell.Tab.0.center" timestamp="1584116431877">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="389" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584116431877" />
+    <state width="2505" height="389" key="GridCell.Tab.0.left" timestamp="1584116431877">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="389" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584116431877" />
+    <state width="2505" height="389" key="GridCell.Tab.0.right" timestamp="1584116431877">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="389" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584116431877" />
+    <state x="672" y="252" key="SettingsEditor" timestamp="1584116370760">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="672" y="252" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1584116370760" />
+    <state x="772" y="363" key="Vcs.Push.Dialog.v2" timestamp="1584116543173">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="772" y="363" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1584116543173" />
+    <state x="1058" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584116415189">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1058" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1584116415189" />
+  </component>
+</project>
