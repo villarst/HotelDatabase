@@ -24,7 +24,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PATH_TO_FX$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/commons-lang3-3.9" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -33,7 +33,7 @@
   <component name="RunManager">
     <configuration name="DatabaseGUI" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
-      <module name="HotelManagement" />
+      <module name="CIS350-HotelManagement" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Bill Rice\Documents\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,30 +149,50 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added all correct files for version one." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584120692913">
+    <state x="772" y="270" key="#Project_Structure" timestamp="1584123304690">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584120692913" />
+    <state x="772" y="270" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1584123304690" />
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584123362437">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584123362437" />
     <state x="865" y="217" key="CommitChangelistDialog2" timestamp="1584120788050">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="865" y="217" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1584120788050" />
-    <state x="944" y="375" key="FileChooserDialogImpl" timestamp="1584120646005">
+    <state x="944" y="375" key="FileChooserDialogImpl" timestamp="1584123301638">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="944" y="375" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1584120646005" />
-    <state x="632" y="165" key="SettingsEditor" timestamp="1584120708344">
+    <state x="944" y="375" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1584123301638" />
+    <state width="2505" height="389" key="GridCell.Tab.0.bottom" timestamp="1584123388018">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="632" y="165" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1584120708344" />
+    <state width="2505" height="389" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584123388018" />
+    <state width="2505" height="389" key="GridCell.Tab.0.center" timestamp="1584123388018">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="389" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584123388018" />
+    <state width="2505" height="389" key="GridCell.Tab.0.left" timestamp="1584123388017">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="389" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584123388017" />
+    <state width="2505" height="389" key="GridCell.Tab.0.right" timestamp="1584123388018">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2505" height="389" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584123388018" />
+    <state x="632" y="165" key="SettingsEditor" timestamp="1584123380281">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="632" y="165" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1584123380281" />
     <state x="772" y="363" key="Vcs.Push.Dialog.v2" timestamp="1584120795287">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="772" y="363" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1584120795287" />
-    <state x="911" y="476" key="com.intellij.ide.util.TipDialog" timestamp="1584120577461">
+    <state x="911" y="476" key="com.intellij.ide.util.TipDialog" timestamp="1584123187725">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="911" y="476" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584120577461" />
+    <state x="911" y="476" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584123187725" />
     <state x="1032" y="340" key="git4idea.branch.GitSmartOperationDialog" timestamp="1584120809761">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
