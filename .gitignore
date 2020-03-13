@@ -1,3 +1,5 @@
-.idea/
-/lib/
 /.vscode/
+/lib/
+/out/
+/.idea/
+!/.idea/
