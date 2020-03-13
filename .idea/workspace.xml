@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f92735a9-6907-4a11-928c-fe37a365df83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/CIS 350 Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="77c5fe60-03ef-4b42-be4f-86f5ba1c59a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +30,7 @@
   <component name="RunManager">
     <configuration name="DatabaseGUI" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
-      <module name="CIS 350 Project" />
+      <module name="CIS350-HotelManagement" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\steve\Documents\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,31 +146,31 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added all correct files for version one." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="959" y="275" key="#DatabaseGUI" timestamp="1583787045079">
+    <state x="959" y="275" key="#DatabaseGUI" timestamp="1584116768516">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="959" y="275" key="#DatabaseGUI/0.0.2560.1400@0.0.2560.1400" timestamp="1583787045079" />
-    <state x="11" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583789172120">
-      <screen x="0" y="0" width="1097" height="577" />
+    <state x="959" y="275" key="#DatabaseGUI/0.0.2560.1400@0.0.2560.1400" timestamp="1584116768516" />
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584116757513">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="11" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577@0.0.1097.577" timestamp="1583789172120" />
-    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1583787507053" />
-    <state width="2505" height="389" key="GridCell.Tab.0.bottom" timestamp="1583788201528">
+    <state x="734" y="343" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584116757513" />
+    <state width="2505" height="389" key="GridCell.Tab.0.bottom" timestamp="1584116775207">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2505" height="389" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1583788201528" />
-    <state width="2505" height="389" key="GridCell.Tab.0.center" timestamp="1583788201527">
+    <state width="2505" height="389" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584116775207" />
+    <state width="2505" height="389" key="GridCell.Tab.0.center" timestamp="1584116775207">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2505" height="389" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1583788201527" />
-    <state width="2505" height="389" key="GridCell.Tab.0.left" timestamp="1583788201527">
+    <state width="2505" height="389" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584116775207" />
+    <state width="2505" height="389" key="GridCell.Tab.0.left" timestamp="1584116775206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2505" height="389" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1583788201527" />
-    <state width="2505" height="389" key="GridCell.Tab.0.right" timestamp="1583788201528">
+    <state width="2505" height="389" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584116775206" />
+    <state width="2505" height="389" key="GridCell.Tab.0.right" timestamp="1584116775207">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2505" height="389" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1583788201528" />
+    <state width="2505" height="389" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584116775207" />
     <state x="632" y="165" key="SettingsEditor" timestamp="1583787440256">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
