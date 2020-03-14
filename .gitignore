@@ -2,4 +2,4 @@
 /lib/
 /out/
 /.idea/
-!/.idea/
+.idea/workspace.xml
