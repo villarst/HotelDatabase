@@ -1,4 +1,6 @@
-/out/
-/.idea/
 .idea/workspace.xml
-.idea/libraries/commons_lang3_3.xml
+.idea/usage.statistics.xml
+.idea/tasks.xml
+.idea/shelf
+
+/out/
