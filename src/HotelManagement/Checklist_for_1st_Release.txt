@@ -25,3 +25,4 @@ then import this in the very top under the package in the user class, like( impo
 import org.apache.commons.lang3.RandomStringUtils;
 
 I am trying to fix the unwanted adding of files in the .gitignore file.
+I think it mightve worked.
