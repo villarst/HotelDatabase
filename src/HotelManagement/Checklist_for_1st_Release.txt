@@ -24,5 +24,4 @@ then add the folder, make sure you stop on the commons-lang3-3.9 folder like lib
 then import this in the very top under the package in the user class, like( import java.util.*;)
 import org.apache.commons.lang3.RandomStringUtils;
 
-I am trying to fix the unwanted adding of files in the .gitignore file.
-I think it mightve worked.
+this might work.
