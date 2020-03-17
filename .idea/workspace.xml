@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="abc8a971-c1ce-48e6-bdae-ca5b10ec1e2d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CIS350-HotelManagement.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelManagement.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/DatabaseGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/DatabaseGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/DatabaseGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Tier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Checklist_for_1st_Release.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/SmartCard/LED.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/SmartCard/LED.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/SmartCard/RFID.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/SmartCard/RFID.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/SmartCard/SmartCard.ino" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +78,8 @@
       <updated>1582236753339</updated>
       <workItem from="1584388619439" duration="773000" />
       <workItem from="1584407596204" duration="1052000" />
+      <workItem from="1584412541283" duration="92000" />
+      <workItem from="1584412654562" duration="72000" />
     </task>
     <task id="LOCAL-00001" summary="Got correct files">
       <created>1582238814809</created>
@@ -163,46 +174,53 @@
       <screen x="0" y="30" width="1360" height="642" />
     </state>
     <state x="374" y="30" width="626" height="648" key="#DatabaseGUI/0.30.1360.642@0.30.1360.642" timestamp="1584388690943" />
-    <state x="137" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584408648404">
-      <screen x="0" y="30" width="1360" height="738" />
+    <state x="137" y="30" width="1086" height="648" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584412726061">
+      <screen x="0" y="30" width="1360" height="642" />
     </state>
+    <state x="137" y="30" width="1086" height="648" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1360.642@0.30.1360.642" timestamp="1584412726061" />
     <state x="137" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1360.738@0.30.1360.738" timestamp="1584408648404" />
+    <state x="527" y="240" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584412563827">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state x="527" y="240" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.30.1360.642@0.30.1360.642" timestamp="1584412563827" />
     <state x="449" y="115" key="DetectedRootsChooserDialog" timestamp="1584408440831">
       <screen x="0" y="30" width="1360" height="738" />
     </state>
     <state x="449" y="115" key="DetectedRootsChooserDialog/0.30.1360.738@0.30.1360.738" timestamp="1584408440831" />
-    <state x="462" y="154" key="FileChooserDialogImpl" timestamp="1584408565516">
-      <screen x="0" y="30" width="1360" height="738" />
-    </state>
-    <state x="462" y="154" key="FileChooserDialogImpl/0.30.1360.738@0.30.1360.738" timestamp="1584408565516" />
-    <state width="1314" height="191" key="GridCell.Tab.0.bottom" timestamp="1584408650040">
-      <screen x="0" y="30" width="1360" height="738" />
-    </state>
-    <state width="1314" height="160" key="GridCell.Tab.0.bottom/0.30.1360.642@0.30.1360.642" timestamp="1584397152034" />
-    <state width="1314" height="191" key="GridCell.Tab.0.bottom/0.30.1360.738@0.30.1360.738" timestamp="1584408650040" />
-    <state width="1314" height="191" key="GridCell.Tab.0.center" timestamp="1584408650039">
-      <screen x="0" y="30" width="1360" height="738" />
-    </state>
-    <state width="1314" height="160" key="GridCell.Tab.0.center/0.30.1360.642@0.30.1360.642" timestamp="1584397152033" />
-    <state width="1314" height="191" key="GridCell.Tab.0.center/0.30.1360.738@0.30.1360.738" timestamp="1584408650039" />
-    <state width="1314" height="191" key="GridCell.Tab.0.left" timestamp="1584408650039">
-      <screen x="0" y="30" width="1360" height="738" />
-    </state>
-    <state width="1314" height="160" key="GridCell.Tab.0.left/0.30.1360.642@0.30.1360.642" timestamp="1584397152032" />
-    <state width="1314" height="191" key="GridCell.Tab.0.left/0.30.1360.738@0.30.1360.738" timestamp="1584408650039" />
-    <state width="1314" height="191" key="GridCell.Tab.0.right" timestamp="1584408650040">
-      <screen x="0" y="30" width="1360" height="738" />
-    </state>
-    <state width="1314" height="160" key="GridCell.Tab.0.right/0.30.1360.642@0.30.1360.642" timestamp="1584397152033" />
-    <state width="1314" height="191" key="GridCell.Tab.0.right/0.30.1360.738@0.30.1360.738" timestamp="1584408650040" />
-    <state x="175" y="30" width="1036" height="738" key="SettingsEditor" timestamp="1584408568540">
-      <screen x="0" y="30" width="1360" height="738" />
-    </state>
-    <state x="175" y="30" width="1036" height="738" key="SettingsEditor/0.30.1360.738@0.30.1360.738" timestamp="1584408568540" />
-    <state x="359" y="178" key="com.intellij.ide.util.TipDialog" timestamp="1584411518095">
+    <state x="462" y="138" width="652" height="518" key="FileChooserDialogImpl" timestamp="1584412702058">
       <screen x="0" y="30" width="1360" height="642" />
     </state>
-    <state x="359" y="178" key="com.intellij.ide.util.TipDialog/0.30.1360.642@0.30.1360.642" timestamp="1584411518095" />
+    <state x="462" y="138" width="652" height="518" key="FileChooserDialogImpl/0.30.1360.642@0.30.1360.642" timestamp="1584412702058" />
+    <state x="462" y="154" key="FileChooserDialogImpl/0.30.1360.738@0.30.1360.738" timestamp="1584408565516" />
+    <state width="1314" height="159" key="GridCell.Tab.0.bottom" timestamp="1584412728520">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="159" key="GridCell.Tab.0.bottom/0.30.1360.642@0.30.1360.642" timestamp="1584412728520" />
+    <state width="1314" height="191" key="GridCell.Tab.0.bottom/0.30.1360.738@0.30.1360.738" timestamp="1584408650040" />
+    <state width="1314" height="159" key="GridCell.Tab.0.center" timestamp="1584412728519">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="159" key="GridCell.Tab.0.center/0.30.1360.642@0.30.1360.642" timestamp="1584412728519" />
+    <state width="1314" height="191" key="GridCell.Tab.0.center/0.30.1360.738@0.30.1360.738" timestamp="1584408650039" />
+    <state width="1314" height="159" key="GridCell.Tab.0.left" timestamp="1584412728519">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="159" key="GridCell.Tab.0.left/0.30.1360.642@0.30.1360.642" timestamp="1584412728519" />
+    <state width="1314" height="191" key="GridCell.Tab.0.left/0.30.1360.738@0.30.1360.738" timestamp="1584408650039" />
+    <state width="1314" height="159" key="GridCell.Tab.0.right" timestamp="1584412728520">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="159" key="GridCell.Tab.0.right/0.30.1360.642@0.30.1360.642" timestamp="1584412728520" />
+    <state width="1314" height="191" key="GridCell.Tab.0.right/0.30.1360.738@0.30.1360.738" timestamp="1584408650040" />
+    <state x="175" y="30" width="1036" height="738" key="SettingsEditor" timestamp="1584412704187">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state x="175" y="30" key="SettingsEditor/0.30.1360.642@0.30.1360.642" timestamp="1584412704187" />
+    <state x="175" y="30" width="1036" height="738" key="SettingsEditor/0.30.1360.738@0.30.1360.738" timestamp="1584408568540" />
+    <state x="359" y="178" key="com.intellij.ide.util.TipDialog" timestamp="1584412655923">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state x="359" y="178" key="com.intellij.ide.util.TipDialog/0.30.1360.642@0.30.1360.642" timestamp="1584412655923" />
     <state x="359" y="200" key="com.intellij.ide.util.TipDialog/0.30.1360.738@0.30.1360.738" timestamp="1584407594671" />
   </component>
 </project>
