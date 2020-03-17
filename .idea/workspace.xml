@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="abc8a971-c1ce-48e6-bdae-ca5b10ec1e2d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Checklist_for_1st_Release.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CIS350-HotelManagement.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelManagement.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/DatabaseGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/DatabaseGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Tier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Tier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,21 +30,32 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RunManager">
-    <configuration name="DatabaseGUI" type="Application" factoryName="Application">
+    <configuration name="DatabaseGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
       <module name="Project" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Bill Rice\Documents\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules=javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HotelManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DatabaseGUI" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -60,6 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582236753339</updated>
       <workItem from="1584388619439" duration="773000" />
+      <workItem from="1584407596204" duration="1052000" />
     </task>
     <task id="LOCAL-00001" summary="Got correct files">
       <created>1582238814809</created>
@@ -154,25 +163,46 @@
       <screen x="0" y="30" width="1360" height="642" />
     </state>
     <state x="374" y="30" width="626" height="648" key="#DatabaseGUI/0.30.1360.642@0.30.1360.642" timestamp="1584388690943" />
-    <state width="1314" height="160" key="GridCell.Tab.0.bottom" timestamp="1584397152034">
-      <screen x="0" y="30" width="1360" height="642" />
+    <state x="137" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584408648404">
+      <screen x="0" y="30" width="1360" height="738" />
+    </state>
+    <state x="137" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1360.738@0.30.1360.738" timestamp="1584408648404" />
+    <state x="449" y="115" key="DetectedRootsChooserDialog" timestamp="1584408440831">
+      <screen x="0" y="30" width="1360" height="738" />
+    </state>
+    <state x="449" y="115" key="DetectedRootsChooserDialog/0.30.1360.738@0.30.1360.738" timestamp="1584408440831" />
+    <state x="462" y="154" key="FileChooserDialogImpl" timestamp="1584408565516">
+      <screen x="0" y="30" width="1360" height="738" />
+    </state>
+    <state x="462" y="154" key="FileChooserDialogImpl/0.30.1360.738@0.30.1360.738" timestamp="1584408565516" />
+    <state width="1314" height="191" key="GridCell.Tab.0.bottom" timestamp="1584408650040">
+      <screen x="0" y="30" width="1360" height="738" />
     </state>
     <state width="1314" height="160" key="GridCell.Tab.0.bottom/0.30.1360.642@0.30.1360.642" timestamp="1584397152034" />
-    <state width="1314" height="160" key="GridCell.Tab.0.center" timestamp="1584397152033">
-      <screen x="0" y="30" width="1360" height="642" />
+    <state width="1314" height="191" key="GridCell.Tab.0.bottom/0.30.1360.738@0.30.1360.738" timestamp="1584408650040" />
+    <state width="1314" height="191" key="GridCell.Tab.0.center" timestamp="1584408650039">
+      <screen x="0" y="30" width="1360" height="738" />
     </state>
     <state width="1314" height="160" key="GridCell.Tab.0.center/0.30.1360.642@0.30.1360.642" timestamp="1584397152033" />
-    <state width="1314" height="160" key="GridCell.Tab.0.left" timestamp="1584397152032">
-      <screen x="0" y="30" width="1360" height="642" />
+    <state width="1314" height="191" key="GridCell.Tab.0.center/0.30.1360.738@0.30.1360.738" timestamp="1584408650039" />
+    <state width="1314" height="191" key="GridCell.Tab.0.left" timestamp="1584408650039">
+      <screen x="0" y="30" width="1360" height="738" />
     </state>
     <state width="1314" height="160" key="GridCell.Tab.0.left/0.30.1360.642@0.30.1360.642" timestamp="1584397152032" />
-    <state width="1314" height="160" key="GridCell.Tab.0.right" timestamp="1584397152033">
-      <screen x="0" y="30" width="1360" height="642" />
+    <state width="1314" height="191" key="GridCell.Tab.0.left/0.30.1360.738@0.30.1360.738" timestamp="1584408650039" />
+    <state width="1314" height="191" key="GridCell.Tab.0.right" timestamp="1584408650040">
+      <screen x="0" y="30" width="1360" height="738" />
     </state>
     <state width="1314" height="160" key="GridCell.Tab.0.right/0.30.1360.642@0.30.1360.642" timestamp="1584397152033" />
-    <state x="359" y="178" key="com.intellij.ide.util.TipDialog" timestamp="1584388620152">
+    <state width="1314" height="191" key="GridCell.Tab.0.right/0.30.1360.738@0.30.1360.738" timestamp="1584408650040" />
+    <state x="175" y="30" width="1036" height="738" key="SettingsEditor" timestamp="1584408568540">
+      <screen x="0" y="30" width="1360" height="738" />
+    </state>
+    <state x="175" y="30" width="1036" height="738" key="SettingsEditor/0.30.1360.738@0.30.1360.738" timestamp="1584408568540" />
+    <state x="359" y="178" key="com.intellij.ide.util.TipDialog" timestamp="1584411518095">
       <screen x="0" y="30" width="1360" height="642" />
     </state>
-    <state x="359" y="178" key="com.intellij.ide.util.TipDialog/0.30.1360.642@0.30.1360.642" timestamp="1584388620152" />
+    <state x="359" y="178" key="com.intellij.ide.util.TipDialog/0.30.1360.642@0.30.1360.642" timestamp="1584411518095" />
+    <state x="359" y="200" key="com.intellij.ide.util.TipDialog/0.30.1360.738@0.30.1360.738" timestamp="1584407594671" />
   </component>
 </project>
