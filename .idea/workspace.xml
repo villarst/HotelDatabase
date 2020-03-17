@@ -2,40 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abc8a971-c1ce-48e6-bdae-ca5b10ec1e2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CIS350-HotelManagement.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/Database.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/DatabaseGUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/HotelManagement/sample.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS 350 Project/META-INF/CIS 350 Project.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Database.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/DatabaseGUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/MainView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/MainViewController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/TableView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/TableViewController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/Tier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/HotelManagement/sample.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS350-HotelManagement/META-INF/CIS350-HotelManagement.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/DatabaseGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/DatabaseGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/Tier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HotelManagement/HotelManagement/Tier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Checklist_for_1st_Release.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Checklist_for_1st_Release.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/DatabaseGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/DatabaseGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/Tier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/Tier.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/HotelManagement/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HotelManagement/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HotelManagement/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HotelManagement/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HotelManagement/DatabaseGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/DatabaseGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HotelManagement/Tier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/Tier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HotelManagement/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelManagement/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +24,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Y5eCNXYNA7WLLLe96O40svb2lb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -61,7 +42,7 @@
   <component name="RunManager">
     <configuration name="DatabaseGUI" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="HotelManagement.DatabaseGUI" />
-      <module name="HotelManagement" />
+      <module name="Project" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Bill Rice\Documents\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -73,11 +54,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="502e3937-b5f1-4069-9bc7-17f7e180d326" name="Default Changelist" comment="" />
+      <changelist id="abc8a971-c1ce-48e6-bdae-ca5b10ec1e2d" name="Default Changelist" comment="" />
       <created>1582236753339</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582236753339</updated>
+      <workItem from="1584388619439" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="Got correct files">
       <created>1582238814809</created>
@@ -109,6 +91,9 @@
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -163,5 +148,31 @@
     <MESSAGE value="changed .gitignore file" />
     <MESSAGE value="Added all correct files for version one." />
     <option name="LAST_COMMIT_MESSAGE" value="Added all correct files for version one." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="374" y="30" width="626" height="648" key="#DatabaseGUI" timestamp="1584388690943">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state x="374" y="30" width="626" height="648" key="#DatabaseGUI/0.30.1360.642@0.30.1360.642" timestamp="1584388690943" />
+    <state width="1314" height="160" key="GridCell.Tab.0.bottom" timestamp="1584397152034">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="160" key="GridCell.Tab.0.bottom/0.30.1360.642@0.30.1360.642" timestamp="1584397152034" />
+    <state width="1314" height="160" key="GridCell.Tab.0.center" timestamp="1584397152033">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="160" key="GridCell.Tab.0.center/0.30.1360.642@0.30.1360.642" timestamp="1584397152033" />
+    <state width="1314" height="160" key="GridCell.Tab.0.left" timestamp="1584397152032">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="160" key="GridCell.Tab.0.left/0.30.1360.642@0.30.1360.642" timestamp="1584397152032" />
+    <state width="1314" height="160" key="GridCell.Tab.0.right" timestamp="1584397152033">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state width="1314" height="160" key="GridCell.Tab.0.right/0.30.1360.642@0.30.1360.642" timestamp="1584397152033" />
+    <state x="359" y="178" key="com.intellij.ide.util.TipDialog" timestamp="1584388620152">
+      <screen x="0" y="30" width="1360" height="642" />
+    </state>
+    <state x="359" y="178" key="com.intellij.ide.util.TipDialog/0.30.1360.642@0.30.1360.642" timestamp="1584388620152" />
   </component>
 </project>
