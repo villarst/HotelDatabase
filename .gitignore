@@ -3,5 +3,4 @@
 /out/*
 /.idea/*
 
-/HotelManagement.iml
-/CIS350-HotelManagement.iml
+*.iml
