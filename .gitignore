@@ -1,4 +1,6 @@
-/.vscode/
-/lib/
-/out/
-/.idea/
+/.vscode/*
+/lib/*
+/out/*
+/.idea/*
+
+*.iml
