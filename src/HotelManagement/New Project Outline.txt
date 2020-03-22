@@ -1,0 +1,30 @@
+THINGS TO DO:
+-Cut Back on Tiers and User Profiles
+-Finalize Database
+-GUI
+-PMD
+-Checkstyle
+-UML
+-Card Communication
+
+TIERS:
+-Tier 1: "Business" or "Economy" tier. Used for a frequent traveler that only needs room access.
+    Permissions: Hotel room
+-Tier 2: "Standard" tier. Used for guests that want basic amenities.
+    Permissions: Hotel room, Gym, Pool
+-Tier 3: "Worker" tier. Used for the workers in the hotel. Access to all rooms
+    Permissions: Hotel rooms, Gym, Pool, Work rooms 
+
+USER PROFILES:
+-Needed Info for Now:
+    -Name
+    -User ID
+    -Password
+    -Card ID
+    -Room #
+    -Tier
+-Info That Can be Added Later:
+    -Phone #
+    -Credit Card
+    -Email
+    -DOB
