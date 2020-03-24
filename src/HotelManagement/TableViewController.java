@@ -23,7 +23,6 @@ import java.util.ResourceBundle;
  * Need to fix the table so it doesnt reset data every time we change scenes,
  * Also need to somehow get database involved so the table can display the room numbers.
  */
-
 public class TableViewController implements Initializable {
     // Configure the table
     @FXML private TableView<User> tableView;
