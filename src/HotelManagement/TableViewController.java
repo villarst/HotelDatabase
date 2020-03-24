@@ -18,6 +18,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * Need to fix the table so it doesnt reset data every time we change scenes,
+ * Also need to somehow get database involved so the table can display the room numbers.
+ */
+
 public class TableViewController implements Initializable {
     // Configure the table
     @FXML private TableView<User> tableView;
@@ -44,7 +50,6 @@ public class TableViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Sets up the Columns in the table
-        // This messes up, phoneNum, email, and dateOfBirth don't appear.
         nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
         phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));

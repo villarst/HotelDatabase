@@ -36,12 +36,6 @@ public class User {
         if(verifyDate(dobirth)){
             this.dob = new SimpleStringProperty(dobirth);
         }
-//        Object d = dobirth;
-//        SimpleStringProperty var = new SimpleStringProperty((String) d);
-//        if(verifyDate(dobirth)){
-//            this.setDob(var);
-//            this.dob = var;
-//        }
     }
 
     public User(){

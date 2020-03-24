@@ -21,8 +21,8 @@ public class Database{
     public Database(){
         // initialize the Arraylist to hold the users and initialize the rooms Array.
         MainDb = new ArrayList<User>();
-        rooms = new boolean[500];
-        for(int i = 0; i < 500; i++){
+        rooms = new boolean[300];
+        for(int i = 0; i < 300; i++){
             rooms[i] = false;
         }
         // populates the MainDb Arraylist with random Guests.
@@ -108,7 +108,7 @@ public class Database{
         User user6 = new User("Steven Villarreal", "616-834-2729",
                 "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
         User user7 = new User("Steven Villarreal", "616-834-2729",
-                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+                "villarst@mail.gvsu.edu", 1, "villarst", "03/27/2000");
         User user8 = new User("Steven Villarreal", "616-834-2729",
                 "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
         User user9 = new User("Steven Villarreal", "616-834-2729",
@@ -118,7 +118,7 @@ public class Database{
         User user11 = new User("Steven Villarreal", "616-834-2729",
                 "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
         User user12 = new User("Steven Villarreal", "616-834-2729",
-                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+                "villarst@mail.gvsu.edu", 3, "villarst", "03/27/2000");
 
 
         // Adds the just created Users to the database.
