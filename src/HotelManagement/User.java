@@ -1,5 +1,7 @@
 package HotelManagement;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.text.ParseException;
@@ -9,35 +11,43 @@ import java.util.*;
 
 
 public class User {
-    private String Name;
-    private String PhoneNum;
-    private String Email;
-    private int accountBalance;
-    private String username;
-    private String password;
+    private SimpleStringProperty Name;
+    private SimpleStringProperty PhoneNum;
+    private SimpleStringProperty Email;
+    private SimpleStringProperty username;
+    private SimpleStringProperty password;
     private int roomNum;
     private int tier;
-    private String dob;
+    private SimpleStringProperty dob;
 
 
-    public User(String name, String phoneNum, String email, int accountBalance, int tier, String username, String password, String dob) throws IllegalArgumentException{
-        Name = name;
-        verifyPhoneNumber(phoneNum);
-        verifyEmail(email);
-        verifyDate(dob);
-        this.accountBalance = accountBalance;
-        this.username = username;
-        this.password = password;
+    public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
+        this.Name = new SimpleStringProperty(name);
+        this.username = new SimpleStringProperty(username);
         this.tier = tier;
         Tier t = new Tier(tier);
-        this.password = generatePassWApache();
+        this.password = new SimpleStringProperty(generatePassWApache());
+        if(verifyPhoneNumber(phoneNum)){
+            this.PhoneNum = new SimpleStringProperty(phoneNum);
+        }
+        if(verifyEmail(email)){
+            this.Email = new SimpleStringProperty(email);
+        }
+        if(verifyDate(dobirth)){
+            this.dob = new SimpleStringProperty(dobirth);
+        }
+//        Object d = dobirth;
+//        SimpleStringProperty var = new SimpleStringProperty((String) d);
+//        if(verifyDate(dobirth)){
+//            this.setDob(var);
+//            this.dob = var;
+//        }
     }
 
     public User(){
         Name = null;
         PhoneNum = null;
         Email = null;
-        this.accountBalance = 0;
         this.username = null;
         this.password = null;
         this.roomNum = 0;
@@ -50,7 +60,6 @@ public class User {
         Name = null;
         PhoneNum = null;
         Email = null;
-        accountBalance = 0;
         username = null;
         password = null;
         roomNum = 0;
@@ -61,52 +70,44 @@ public class User {
     }
 
     public String getName() {
-        return Name;
+        return Name.get();
     }
 
-    public void setName(String name) {
+    public void setName(SimpleStringProperty name) {
         Name = name;
     }
 
     public String getPhoneNum() {
-        return PhoneNum;
+        return PhoneNum.get();
     }
 
     public void setPhoneNum(String phoneNum){
         if(verifyPhoneNumber(phoneNum))
-            PhoneNum = phoneNum;
+            this.PhoneNum = new SimpleStringProperty(phoneNum);
     }
 
     public String getEmail() {
-        return Email;
+        return Email.get();
     }
 
     public void setEmail(String email){
         if(verifyEmail(email))
-            Email = email;
-    }
-
-    public int getAccountBalance() {
-        return accountBalance;
-    }
-
-    public void setAccountBalance(int accountBalance) {
-        this.accountBalance = accountBalance;
+            this.Email = new SimpleStringProperty(email);
     }
 
     public String getUsername() {
-        return username;
+        return username.get();
     }
 
-    public void setUsername(String username) {
+    public void setUsername(SimpleStringProperty username) {
         this.username = username;
     }
 
     public String getPassword() {
-        return password;
+        return password.get();
     }
 
-    public void setPassword(String password) {
+    public void setPassword(SimpleStringProperty password) {
         this.password = password;
     }
 
@@ -127,12 +128,12 @@ public class User {
     }
 
     public String getDob() {
-        return dob;
+        return dob.get();
     }
 
-    public void setDob(String dob){
-        if(verifyDate(dob))
-            this.dob = dob;
+    public void setDob(String dateOfBirth){
+        if(verifyDate(dateOfBirth))
+            this.dob = new SimpleStringProperty(dateOfBirth);
     }
 
     public String generatePassWApache() {

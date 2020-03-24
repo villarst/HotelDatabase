@@ -95,30 +95,30 @@ public class Database{
      Creates Users and adds them to the database MainDb.
      *****************************************************************/
     public void populateList(){
-        User user1 = new User("Bobby", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user1 = new User("Bobby", "616-834-2729", "villarst@mail.gvsu.edu", 2,
+                "villarst", "03/27/2000");
         User user2 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user3 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user4 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user5 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user6 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user7 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user8 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user9 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user10 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user11 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user12 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+                2, "villarst", "03/27/2000");
+        User user3 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user4 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user5 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user6 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user7 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user8 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user9 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user10 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user11 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+        User user12 = new User("Steven Villarreal", "616-834-2729",
+                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
 
 
         // Adds the just created Users to the database.
