@@ -21,12 +21,32 @@ public class User {
     private SimpleStringProperty dob;
 
 
+    // Used to add a user to the ObservableList<User> users array list for viewing in the table.
     public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
         Tier t = new Tier(tier);
         this.password = new SimpleStringProperty(generatePassWApache());
+        if(verifyPhoneNumber(phoneNum)){
+            this.PhoneNum = new SimpleStringProperty(phoneNum);
+        }
+        if(verifyEmail(email)){
+            this.Email = new SimpleStringProperty(email);
+        }
+        if(verifyDate(dobirth)){
+            this.dob = new SimpleStringProperty(dobirth);
+        }
+    }
+
+    // Used to add a user to the ObservableList<User> users array list with roomNum.
+    public User(String name, String phoneNum, String email, int tier, int room, String username, String pass, String dobirth) throws IllegalArgumentException{
+        this.Name = new SimpleStringProperty(name);
+        this.username = new SimpleStringProperty(username);
+        this.tier = tier;
+        this.roomNum = room;
+        Tier t = new Tier(tier);
+        this.password = new SimpleStringProperty(pass);
         if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
         }

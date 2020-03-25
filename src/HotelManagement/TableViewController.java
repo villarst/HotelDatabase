@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 
 /**
- * Need to fix the table so it doesnt reset data every time we change scenes,
+ * Need to fix the table so it doesn't reset data every time we change scenes,
  * Also need to somehow get database involved so the table can display the room numbers.
  */
 public class TableViewController implements Initializable {
@@ -33,6 +33,9 @@ public class TableViewController implements Initializable {
     @FXML private TableColumn<User, String> passwordColumn;
     @FXML private TableColumn<User, Integer> tierColumn;
     @FXML private TableColumn<User, String> dateofbirthColumn;
+    @FXML private TableColumn<User, Integer> roomNum;
+
+    Database d = new Database();
 
     // When this method is called, it will change the scene to a table
     // view.
@@ -56,23 +59,25 @@ public class TableViewController implements Initializable {
         passwordColumn.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
         tierColumn.setCellValueFactory(new PropertyValueFactory<User, Integer>("tier"));
         dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<User, String>("dob"));
-
+        roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
         // load dummy data
         tableView.setItems(getUsers());
     }
 
     // This method will return an Observable list of User objects.
+    // Need to somehow get the roomNum to display on the table but its in Database class.
     public ObservableList<User> getUsers(){
         ObservableList<User> users = FXCollections.observableArrayList();
+        d.addUser(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
+                "villarst", "03/27/00"));
         users.add(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
+                d.viewRoom(0), "villarst", d.getUser(0).getPassword(), "03/27/00"));
+
+////--------------------------------------------------------------------------------------------------------------------
+        d.addUser(new User("Corey R", "6168342729", "villarst@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
         users.add(new User("Corey R", "6165583079", "villarst@mail.gvsu.edu", 2,
-                "villarst", "03/27/00"));
-        users.add(new User("Corey S", "6162235734", "villarst@mail.gvsu.edu", 1,
-                "villarst", "03/27/00"));
-        users.add(new User("Jason", "6164607801", "villarst@mail.gvsu.edu", 3,
-                "villarst", "03/27/00"));
-
+                d.viewRoom(1), "villarst", d.getUser(1).getPassword(), "03/27/00"));
         return users;
     }
 }
