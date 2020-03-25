@@ -65,19 +65,37 @@ public class TableViewController implements Initializable {
     }
 
     // This method will return an Observable list of User objects.
-    // Need to somehow get the roomNum to display on the table but its in Database class.
     public ObservableList<User> getUsers(){
         ObservableList<User> users = FXCollections.observableArrayList();
         d.addUser(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
         users.add(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 d.viewRoom(0), "villarst", d.getUser(0).getPassword(), "03/27/00"));
-
 ////--------------------------------------------------------------------------------------------------------------------
         d.addUser(new User("Corey R", "6168342729", "villarst@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
         users.add(new User("Corey R", "6165583079", "villarst@mail.gvsu.edu", 2,
                 d.viewRoom(1), "villarst", d.getUser(1).getPassword(), "03/27/00"));
+////--------------------------------------------------------------------------------------------------------------------
+        d.addUser(new User("Corey S", "6168342729", "villarst@mail.gvsu.edu", 2,
+                "villarst", "03/27/00"));
+        users.add(new User("Corey S", "6165583079", "villarst@mail.gvsu.edu", 2,
+                d.viewRoom(2), "villarst", d.getUser(2).getPassword(), "03/27/00"));
+////--------------------------------------------------------------------------------------------------------------------
+        d.addUser(new User("Jason", "6168342729", "villarst@mail.gvsu.edu", 3,
+                "villarst", "03/27/00"));
+        users.add(new User("Jason", "6165583079", "villarst@mail.gvsu.edu", 3,
+                d.viewRoom(3), "villarst", d.getUser(3).getPassword(), "03/27/00"));
+////--------------------------------------------------------------------------------------------------------------------
+        d.addUser(new User("Bobby V", "6168342729", "villarst@mail.gvsu.edu", 1,
+                "villarst", "03/27/00"));
+        users.add(new User("Bobby V", "6165583079", "villarst@mail.gvsu.edu", 1,
+                d.viewRoom(4), "villarst", d.getUser(4).getPassword(), "03/27/00"));
+////--------------------------------------------------------------------------------------------------------------------
+        d.addUser(new User("Mike J", "6168342729", "villarst@mail.gvsu.edu", 3,
+                "villarst", "03/27/00"));
+        users.add(new User("Mike J", "6165583079", "villarst@mail.gvsu.edu", 3,
+                d.viewRoom(5), "villarst", d.getUser(5).getPassword(), "03/27/00"));
         return users;
     }
 }
