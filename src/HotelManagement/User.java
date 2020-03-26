@@ -87,42 +87,50 @@ public class User {
         return Name.get();
     }
 
-    public void setName(SimpleStringProperty name) {
-        Name = name;
+    public void setName(String name) {
+        Name = new SimpleStringProperty(name);
     }
 
     public String getPhoneNum() {
         return PhoneNum.get();
     }
 
-    public void setPhoneNum(String phoneNum){
-        if(verifyPhoneNumber(phoneNum))
+    // changed to boolean for tableViewController edit columns
+    public boolean setPhoneNum(String phoneNum){
+        if(verifyPhoneNumber(phoneNum)) {
             this.PhoneNum = new SimpleStringProperty(phoneNum);
+            return true;
+        }
+        return false;
     }
 
     public String getEmail() {
         return Email.get();
     }
 
-    public void setEmail(String email){
-        if(verifyEmail(email))
+    // changed to boolean for tableViewController edit columns
+    public boolean setEmail(String email){
+        if(verifyEmail(email)) {
             this.Email = new SimpleStringProperty(email);
+            return true;
+        }
+        return false;
     }
 
     public String getUsername() {
         return username.get();
     }
 
-    public void setUsername(SimpleStringProperty username) {
-        this.username = username;
+    public void setUsername(String username) {
+        this.username = new SimpleStringProperty(username);
     }
 
     public String getPassword() {
         return password.get();
     }
 
-    public void setPassword(SimpleStringProperty password) {
-        this.password = password;
+    public void setPassword(String password) {
+        this.password = new SimpleStringProperty(password);
     }
 
     public int getRoomNum() {

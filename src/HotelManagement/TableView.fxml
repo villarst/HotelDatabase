@@ -21,9 +21,9 @@
       </Button>
       <TableView fx:id="tableView" layoutX="14.0" layoutY="85.0" prefHeight="200.0" prefWidth="899.0">
         <columns>
-          <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Name" />
-          <TableColumn fx:id="phoneNumColumn" prefWidth="110.0" text="Phone #" />
-            <TableColumn fx:id="emailColumn" prefWidth="121.0" text="Email" />
+          <TableColumn fx:id="nameColumn" onEditCommit="#changeNameColumn" prefWidth="100.0" text="Name" />
+          <TableColumn fx:id="phoneNumColumn" onEditCommit="#changePhoneNumColumn" prefWidth="110.0" text="Phone #" />
+            <TableColumn fx:id="emailColumn" onEditCommit="#changeEmailColumn" prefWidth="121.0" text="Email" />
             <TableColumn fx:id="userNameColumn" prefWidth="123.0" text="Username" />
             <TableColumn fx:id="passwordColumn" prefWidth="125.0" text="Password" />
             <TableColumn fx:id="tierColumn" prefWidth="115.0" text="Tier" />

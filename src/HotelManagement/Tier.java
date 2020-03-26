@@ -18,6 +18,8 @@ public class Tier {
         checkPermissions();
     }
 
+    // Maybe add a Worker person so they can login and add people and can edit each
+    // of the Users permissions?
     public void checkPermissions(){
         switch (tier){
             case 1:

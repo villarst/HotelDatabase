@@ -69,6 +69,16 @@ public class Database{
         return MainDb.get(i);
     }
 
+    public User findUser(User u){
+        User found = null;
+        for(int i = 0; i < MainDb.size(); i++){
+            if(u.getRoomNum() == MainDb.get(i).getRoomNum()){
+                found = MainDb.get(i);
+            }
+        }
+        return found;
+    }
+
     /*****************************************************************
      Checks if the room is occupied if so returns a boolean of true
      or false.

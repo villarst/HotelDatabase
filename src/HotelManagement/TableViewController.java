@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,8 +38,36 @@ public class TableViewController implements Initializable {
 
     Database d = new Database();
 
-    // When this method is called, it will change the scene to a table
-    // view.
+    // Right Here
+    public void changeNameColumn(TableColumn.CellEditEvent editedCell){
+        User userSelected = tableView.getSelectionModel().getSelectedItem();
+        d.findUser(userSelected).setName(editedCell.getNewValue().toString());
+        userSelected.setName(editedCell.getNewValue().toString());
+    }
+
+    public void changeEmailColumn(TableColumn.CellEditEvent editedCell){
+        User userSelected = tableView.getSelectionModel().getSelectedItem();
+        if(d.findUser(userSelected).setEmail(editedCell.getNewValue().toString())){
+            userSelected.setEmail(editedCell.getNewValue().toString());
+        }
+        else{
+            // You have to click it or double click it then the email will be the original email in the gui.
+            userSelected.setEmail(d.findUser(userSelected).getEmail());
+        }
+    }
+
+    public void changePhoneNumColumn(TableColumn.CellEditEvent editedCell){
+        User userSelected = tableView.getSelectionModel().getSelectedItem();
+        if(d.findUser(userSelected).setPhoneNum(editedCell.getNewValue().toString())){
+            userSelected.setPhoneNum(editedCell.getNewValue().toString());
+        }
+        else{
+            // You have to click it or double click it then the phone # will be the original phone # in the gui.
+            userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum());
+        }
+    }
+
+    // When this method is called, it will change the scene to a table view.
     public void changeScreenBtnPushed(ActionEvent event) throws IOException {
         Parent tableView = FXMLLoader.load(getClass().getResource("MainView.fxml"));
         Scene tableViewScene =  new Scene(tableView);
@@ -62,6 +91,12 @@ public class TableViewController implements Initializable {
         roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
         // load dummy data
         tableView.setItems(getUsers());
+
+        // Update the table to allow for the Name, Email, and Phone # to be editable.
+        tableView.setEditable(true);
+        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
     // This method will return an Observable list of User objects.
@@ -72,29 +107,29 @@ public class TableViewController implements Initializable {
         users.add(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 d.viewRoom(0), "villarst", d.getUser(0).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new User("Corey R", "6168342729", "villarst@mail.gvsu.edu", 2,
+        d.addUser(new User("Corey R", "6168342729", "ricecore@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
-        users.add(new User("Corey R", "6165583079", "villarst@mail.gvsu.edu", 2,
+        users.add(new User("Corey R", "6165583079", "ricecore@mail.gvsu.edu", 2,
                 d.viewRoom(1), "villarst", d.getUser(1).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new User("Corey S", "6168342729", "villarst@mail.gvsu.edu", 2,
+        d.addUser(new User("Corey S", "6168342729", "sutterco@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
-        users.add(new User("Corey S", "6165583079", "villarst@mail.gvsu.edu", 2,
+        users.add(new User("Corey S", "6165583079", "cutterco@mail.gvsu.edu", 2,
                 d.viewRoom(2), "villarst", d.getUser(2).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new User("Jason", "6168342729", "villarst@mail.gvsu.edu", 3,
+        d.addUser(new User("Jason", "6168342729", "kaipjaso@mail.gvsu.edu", 3,
                 "villarst", "03/27/00"));
-        users.add(new User("Jason", "6165583079", "villarst@mail.gvsu.edu", 3,
+        users.add(new User("Jason", "6165583079", "kaipjaso@mail.gvsu.edu", 3,
                 d.viewRoom(3), "villarst", d.getUser(3).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new User("Bobby V", "6168342729", "villarst@mail.gvsu.edu", 1,
+        d.addUser(new User("Bobby V", "6168342729", "vuerbobb@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
-        users.add(new User("Bobby V", "6165583079", "villarst@mail.gvsu.edu", 1,
+        users.add(new User("Bobby V", "6165583079", "vuerbobb@mail.gvsu.edu", 1,
                 d.viewRoom(4), "villarst", d.getUser(4).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new User("Mike J", "6168342729", "villarst@mail.gvsu.edu", 3,
+        d.addUser(new User("Mike J", "6168342729", "johnmike@mail.gvsu.edu", 3,
                 "villarst", "03/27/00"));
-        users.add(new User("Mike J", "6165583079", "villarst@mail.gvsu.edu", 3,
+        users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
                 d.viewRoom(5), "villarst", d.getUser(5).getPassword(), "03/27/00"));
         return users;
     }
