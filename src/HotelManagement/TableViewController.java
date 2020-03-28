@@ -1,5 +1,6 @@
 package HotelManagement;
 
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,8 +10,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
@@ -36,9 +39,19 @@ public class TableViewController implements Initializable {
     @FXML private TableColumn<User, String> dateofbirthColumn;
     @FXML private TableColumn<User, Integer> roomNum;
 
+    // These variables are used to create new User Objects
+    @FXML private TextField nameTextField;
+    @FXML private TextField phoneNumTextField;
+    @FXML private TextField emailTextField;
+    @FXML private TextField userNameTextField;
+    @FXML private TextField dobTextField;
+
+
+//    // Combobox for choosing tier level.
+//    @FXML private ComboBox comboBox;
+
     Database d = new Database();
 
-    // Right Here
     public void changeNameColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
         d.findUser(userSelected).setName(editedCell.getNewValue().toString());
@@ -78,8 +91,28 @@ public class TableViewController implements Initializable {
         window.show();
     }
 
+    // This method will create new User and add it to the table and database.
+    public void newUserButtonPushed(){
+        User u = new User(nameTextField.getText(),
+                          phoneNumTextField.getText(),
+                          emailTextField.getText(),
+                          3, userNameTextField.getText(),
+                          dobTextField.getText());
+
+        // Verifies if email, phone #, and date of birth are valid, then adds the user to database then table.
+        if(u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(), dobTextField.getText())){
+            d.addUser(u);
+            tableView.getItems().add(u);
+        }
+        else{
+            System.out.println("User was not added, check email, phone #, or date of birth.");
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+//        ObservableList<Integer> tiersComboBox = FXCollections.observableArrayList(1, 2, 3);
+
         // Sets up the Columns in the table
         nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
         phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
@@ -89,6 +122,11 @@ public class TableViewController implements Initializable {
         tierColumn.setCellValueFactory(new PropertyValueFactory<User, Integer>("tier"));
         dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<User, String>("dob"));
         roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
+
+//        // Sets up the combo box
+//        comboBox.setValue(1);
+//        comboBox.setItems(tiersComboBox);
+
         // load dummy data
         tableView.setItems(getUsers());
 
