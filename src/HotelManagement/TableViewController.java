@@ -109,6 +109,22 @@ public class TableViewController implements Initializable {
         }
     }
 
+    public void deleteButtonPushed(){
+        ObservableList<User> selectedRows, allPeople;
+        allPeople = tableView.getItems();
+
+        // This gives us the row that was selected.
+        selectedRows = tableView.getSelectionModel().getSelectedItems();
+
+        // loop over the selected rows and remove the User Object from the table.
+        // also removes the User and frees up the room for the database 'd'
+        for(User u: selectedRows){
+            allPeople.remove(u);
+            d.searchUser(u);
+            System.out.println("Check");
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        ObservableList<Integer> tiersComboBox = FXCollections.observableArrayList(1, 2, 3);

@@ -107,6 +107,16 @@ public class Database{
         MainDb.remove(u);
     }
 
+    // this is used to delete a user from the delete button in tableView
+    public void searchUser(User u){
+        for(int i = 0; i < MainDb.size(); i++){
+            if(MainDb.get(i).getPassword() == u.getPassword()){
+                rooms[u.getRoomNum()] = false;
+                MainDb.remove(MainDb.get(i));
+            }
+        }
+    }
+
     /*****************************************************************
      Creates Users and adds them to the database MainDb.
      *****************************************************************/

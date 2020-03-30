@@ -1,0 +1,45 @@
+Remaining Activities and Due Dates:
+Task	                                                                    Due Date	By #
+
+Main Menu Look Nice	                                                         4/8/20	    11th
+
+Add an admin to edit and change people (with login)	                         3/30/20	1st
+- check if tier is the admin tier
+  do not assign a room!!!!
+  make all fields in tableview non editable
+  when admin logs in underneath add user,
+  the fields become editable for the admin.
+  the logout field, logs the admin out and makes user fields
+  non editable.
+
+Database email/phone number field error fix	                                 3/30/20	2nd
+- whenever you add someone that is incorrect, like the
+  email, or phone is messed up the table updates to show the
+  incorrect data but when you double click the field that is
+  incorrect, it shows it as not changing and updates correctly.
+
+Change visibility when switching pages	                                     4/1/20	    3rd
+- when we press change to table view or main view buttons, the
+  whole program seems to reset the database and all. maybe we
+  could load both scenes up and make one visible and the other
+  not visible and when we press the change scenes button it
+  changes the visibility of both to show the one that is supposed
+  to be pressed.
+
+File drop down menu	                                                         4/1/20	    5th
+
+Save and load button	                                                     4/2/20	    6th
+
+Testing	                                                                4/9/20 – 4/12/20	LAST
+
+Make tier selection integers not strings for combo box	                     4/2/20	    7th
+
+Tier description when clicked	                                             4/1/20	    4th
+
+Background music Optional	                                                 4/6/20	    9th
+
+User stock image of hotel as background	                                     4/6/20	    10th
+
+User sign in to view info	                                                 4/3/20	    8th
+
+

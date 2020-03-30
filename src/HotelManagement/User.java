@@ -1,7 +1,6 @@
 package HotelManagement;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.text.ParseException;

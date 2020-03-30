@@ -1,7 +1,7 @@
 package HotelManagement;
 
 public class Tier {
-    private boolean poolAccess;
+    private boolean poolAccess; //1
     private boolean gymAccess;
     private boolean pcAccess;
     private boolean buffetAccess;
@@ -10,7 +10,7 @@ public class Tier {
     private boolean casinoAccess;
     private boolean arcadeAccess;
     private boolean roomAccess;
-    private boolean janitorRoomAccess;
+    private boolean adminAccess;
     private int tier;
 
     public Tier(int tierLevel){
@@ -18,21 +18,9 @@ public class Tier {
         checkPermissions();
     }
 
-    // Maybe add a Worker person so they can login and add people and can edit each
-    // of the Users permissions?
     public void checkPermissions(){
         switch (tier){
-            case 1:
-                poolAccess = true;
-                pcAccess = true;
-                hotTubAccess = false;
-                gymAccess = false;
-                barAccess = false;
-                casinoAccess = false;
-                buffetAccess = false;
-                arcadeAccess = false;
-                break;
-            case 2:
+            case 1: // pool, pc, hot tub access
                 poolAccess = true;
                 pcAccess = true;
                 hotTubAccess = true;
@@ -42,27 +30,17 @@ public class Tier {
                 buffetAccess = false;
                 arcadeAccess = false;
                 break;
-            case 3:
+            case 2: // pool, pc, hot tub, gym, buffet access
                 poolAccess = true;
                 pcAccess = true;
                 hotTubAccess = true;
                 gymAccess = true;
                 barAccess = false;
                 casinoAccess = false;
-                buffetAccess = false;
+                buffetAccess = true;
                 arcadeAccess = false;
                 break;
-            case 4:
-                poolAccess = true;
-                pcAccess = true;
-                hotTubAccess = true;
-                gymAccess = true;
-                barAccess = true;
-                casinoAccess = true;
-                buffetAccess = false;
-                arcadeAccess = false;
-                break;
-            case 5:
+            case 3: // pool, pc, hot tub, gym, bar, casino, buffet, arcade access.
                 poolAccess = true;
                 pcAccess = true;
                 hotTubAccess = true;
@@ -72,7 +50,7 @@ public class Tier {
                 buffetAccess = true;
                 arcadeAccess = true;
                 break;
-            case 6: // Admin Access
+            case 4: // admin access.
                 poolAccess = true;
                 pcAccess = true;
                 hotTubAccess = true;
@@ -81,8 +59,9 @@ public class Tier {
                 casinoAccess = true;
                 buffetAccess = true;
                 arcadeAccess = true;
+                adminAccess = true;
                 roomAccess = true;
-                janitorRoomAccess = true;
+                break;
             default:
                 System.out.println("You have chosen no tier level..");
         }
@@ -160,12 +139,12 @@ public class Tier {
         this.roomAccess = roomAccess;
     }
 
-    public boolean isJanitorRoomAccess() {
-        return janitorRoomAccess;
+    public boolean isAdminAccess() {
+        return adminAccess;
     }
 
-    public void setJanitorRoomAccess(boolean janitorRoomAccess) {
-        this.janitorRoomAccess = janitorRoomAccess;
+    public void setAdminAccess(boolean adminAccess) {
+        this.adminAccess = adminAccess;
     }
 
     public void displayPermissions(){
@@ -177,7 +156,7 @@ public class Tier {
         System.out.println("Buffet Access: " + isBuffetAccess());
         System.out.println("Hot Tub Access: " + isHotTubAccess());
         System.out.println("Arcade Room Access: " + isArcadeAccess());
-        System.out.println("Janitors Room Access: " + isJanitorRoomAccess());
+        System.out.println("Admin Access: " + isAdminAccess());
         System.out.println("All Room Access: " + isRoomAccess());
     }
 }
