@@ -21,12 +21,10 @@ public class Database{
     public Database(){
         // initialize the Arraylist to hold the users and initialize the rooms Array.
         MainDb = new ArrayList<User>();
-        rooms = new boolean[500];
-        for(int i = 0; i < 500; i++){
+        rooms = new boolean[300];
+        for(int i = 0; i < 300; i++){
             rooms[i] = false;
         }
-        // populates the MainDb Arraylist with random Guests.
-        populateList();
     }
 
     /*****************************************************************
@@ -63,6 +61,24 @@ public class Database{
         }
     }
 
+    public int viewRoom(int i){
+        return MainDb.get(i).getRoomNum();
+    }
+
+    public User getUser(int i){
+        return MainDb.get(i);
+    }
+
+    public User findUser(User u){
+        User found = null;
+        for(int i = 0; i < MainDb.size(); i++){
+            if(u.getRoomNum() == MainDb.get(i).getRoomNum()){
+                found = MainDb.get(i);
+            }
+        }
+        return found;
+    }
+
     /*****************************************************************
      Checks if the room is occupied if so returns a boolean of true
      or false.
@@ -91,50 +107,60 @@ public class Database{
         MainDb.remove(u);
     }
 
+    // this is used to delete a user from the delete button in tableView
+    public void searchUser(User u){
+        for(int i = 0; i < MainDb.size(); i++){
+            if(MainDb.get(i).getPassword() == u.getPassword()){
+                rooms[u.getRoomNum()] = false;
+                MainDb.remove(MainDb.get(i));
+            }
+        }
+    }
+
     /*****************************************************************
      Creates Users and adds them to the database MainDb.
      *****************************************************************/
-    public void populateList(){
-        User user1 = new User("Bobby", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user2 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user3 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user4 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user5 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user6 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user7 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user8 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user9 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user10 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user11 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-        User user12 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-                600, 2, "villarst", "edI3n5u0", "03/27/2000");
-
-
-        // Adds the just created Users to the database.
-        addUser(user1);
-        addUser(user2);
-        addUser(user3);
-        addUser(user4);
-        addUser(user5);
-        addUser(user6);
-        addUser(user7);
-        addUser(user8);
-        addUser(user9);
-        addUser(user10);
-        addUser(user11);
-        addUser(user12);
-
-    }
+//    public void populateList(){
+//        User user1 = new User("Bobby", "616-834-2729", "villarst@mail.gvsu.edu", 2,
+//                "villarst", "03/27/2000");
+//        User user2 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+//                2, "villarst", "03/27/2000");
+//        User user3 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user4 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user5 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user6 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user7 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 1, "villarst", "03/27/2000");
+//        User user8 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user9 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user10 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user11 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
+//        User user12 = new User("Steven Villarreal", "616-834-2729",
+//                "villarst@mail.gvsu.edu", 3, "villarst", "03/27/2000");
+//
+//
+//        // Adds the just created Users to the database.
+//        addUser(user1);
+//        addUser(user2);
+//        addUser(user3);
+//        addUser(user4);
+//        addUser(user5);
+//        addUser(user6);
+//        addUser(user7);
+//        addUser(user8);
+//        addUser(user9);
+//        addUser(user10);
+//        addUser(user11);
+//        addUser(user12);
+//
+//    }
 
 }
