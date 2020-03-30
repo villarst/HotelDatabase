@@ -118,10 +118,15 @@ public class TableViewController implements Initializable {
 
         // loop over the selected rows and remove the User Object from the table.
         // also removes the User and frees up the room for the database 'd'
-        for(User u: selectedRows){
-            allPeople.remove(u);
-            d.searchUser(u);
-            System.out.println("Check");
+        if(tableView.getItems().get(0) != null) {
+            for (User u : selectedRows) {
+                allPeople.remove(u);
+                d.searchUser(u);
+                System.out.println("Check");
+            }
+        }
+        else{
+            System.out.println("Sorry list is empty.");
         }
     }
 
