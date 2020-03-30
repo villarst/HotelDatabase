@@ -2,22 +2,38 @@ package HotelManagement;
 
 import java.util.*;
 
-
+/*****************************************************************
+ This class consists of the database that will be used to store,
+ remove, and assign rooms to the users (Guests).
+ @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+ @version 1.0
+ *****************************************************************/
 public class Database{
-
+    /** Arraylist that stores the Users */
     private ArrayList <User> MainDb;
+    /** Boolean Array that stores values for the rooms. */
     boolean rooms [];
 
-
+    /*****************************************************************
+     Constructor that creates a Database to use to store Users and
+     assign rooms.
+     *****************************************************************/
     public Database(){
+        // initialize the Arraylist to hold the users and initialize the rooms Array.
         MainDb = new ArrayList<User>();
         rooms = new boolean[500];
         for(int i = 0; i < 500; i++){
             rooms[i] = false;
         }
+        // populates the MainDb Arraylist with random Guests.
         populateList();
     }
 
+    /*****************************************************************
+     Adds the user to the Arraylist.
+     @param u the User that is passed into
+     the method that will be added.
+     *****************************************************************/
     public void addUser(User u){
         if(!checkTierFull(u.getTier() - 1)){
             MainDb.add(u);
@@ -28,6 +44,11 @@ public class Database{
         }
     }
 
+    /*****************************************************************
+     Assigns the room to the user that was just added to the Arraylist.
+     @param u the User that is passed into
+     the method that was just added.
+     *****************************************************************/
     public void assignRoom(User u){
         int room = (u.getTier() - 1) * 100;
         if(!checkTierFull(u.getTier() - 1)) {
@@ -42,6 +63,12 @@ public class Database{
         }
     }
 
+    /*****************************************************************
+     Checks if the room is occupied if so returns a boolean of true
+     or false.
+     @param t the tier that of the User that was passed into the
+     the method.
+     *****************************************************************/
     public boolean checkTierFull(int t){
         int tier = t * 100;
         for(int i = tier; i <= tier + 99; i++){  // was 99
@@ -53,6 +80,10 @@ public class Database{
         return true;
     }
 
+    /*****************************************************************
+     Removes the User from the Arraylist MainDb.
+     @param u the User that is wanting to be removed.
+     *****************************************************************/
     public void removeUser(User u){
         if(u.getRoomNum() != -1) {
             rooms[u.getRoomNum()] = false;
@@ -60,6 +91,9 @@ public class Database{
         MainDb.remove(u);
     }
 
+    /*****************************************************************
+     Creates Users and adds them to the database MainDb.
+     *****************************************************************/
     public void populateList(){
         User user1 = new User("Bobby", "616-834-2729", "villarst@mail.gvsu.edu",
                 600, 2, "villarst", "edI3n5u0", "03/27/2000");
@@ -87,7 +121,7 @@ public class Database{
                 600, 2, "villarst", "edI3n5u0", "03/27/2000");
 
 
-
+        // Adds the just created Users to the database.
         addUser(user1);
         addUser(user2);
         addUser(user3);
