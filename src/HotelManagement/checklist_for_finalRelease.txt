@@ -24,7 +24,7 @@ Change visibility when switching pages	                                     4/1/
   could load both scenes up and make one visible and the other
   not visible and when we press the change scenes button it
   changes the visibility of both to show the one that is supposed
-  to be pressed.
+  to be pressed.  XXXXX
 
 File drop down menu	                                                         4/1/20	    5th
 
@@ -39,6 +39,8 @@ Tier description when clicked	                                             4/1/2
 Background music Optional	                                                 4/6/20	    9th
 
 User stock image of hotel as background	                                     4/6/20	    10th
+
+Fix delete User for TableView so it doesn't go out of bounds.                4/6/20     11th
 
 User sign in to view info	                                                 4/3/20	    8th
 
