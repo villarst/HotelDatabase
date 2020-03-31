@@ -14,6 +14,8 @@ public class Database{
     /** Boolean Array that stores values for the rooms. */
     boolean rooms [];
 
+    private ArrayList <User> SecondaryDb;
+
     /*****************************************************************
      Constructor that creates a Database to use to store Users and
      assign rooms.
@@ -21,6 +23,7 @@ public class Database{
     public Database(){
         // initialize the Arraylist to hold the users and initialize the rooms Array.
         MainDb = new ArrayList<User>();
+        SecondaryDb = new ArrayList<User>();
         rooms = new boolean[300];
         for(int i = 0; i < 300; i++){
             rooms[i] = false;
@@ -42,6 +45,12 @@ public class Database{
         }
     }
 
+    public void addAdmin(User u){
+        if(u.getTier() == 0){
+            SecondaryDb.add(u);
+        }
+    }
+
     /*****************************************************************
      Assigns the room to the user that was just added to the Arraylist.
      @param u the User that is passed into
@@ -49,13 +58,18 @@ public class Database{
      *****************************************************************/
     public void assignRoom(User u){
         int room = (u.getTier() - 1) * 100;
-        if(!checkTierFull(u.getTier() - 1)) {
-            for (int i = 0; i <= 99; i++) { // was 99
-                if (!rooms[room + i]) {
-                    rooms[room + i] = true;
-                    u.setRoomNum(room + i);
-                    System.out.println(u.getRoomNum());
-                    break;
+        if(u.getTier() == 4){
+            u.setRoomNum(-1);
+        }
+        else {
+            if (!checkTierFull(u.getTier() - 1)) {
+                for (int i = 0; i <= 99; i++) { // was 99
+                    if (!rooms[room + i]) {
+                        rooms[room + i] = true;
+                        u.setRoomNum(room + i);
+                        System.out.println(u.getRoomNum());
+                        break;
+                    }
                 }
             }
         }
@@ -115,6 +129,29 @@ public class Database{
                 MainDb.remove(MainDb.get(i));
             }
         }
+    }
+
+    // this is used to search for a user in SecondaryDb
+    public boolean searchSecondary(String pass){
+        boolean found = true;
+        for(int i = 0; i < SecondaryDb.size(); i++){
+            if(pass.equals(SecondaryDb.get(i).getPassword())){
+                found = true;
+            }
+            else{
+                found = false;
+            }
+        }
+        return found;
+    }
+
+    public User getUserSecondaryDb(int i){
+        return SecondaryDb.get(i);
+    }
+
+    // returns size of the SecondaryDb
+    public int secondaryDbSize(){
+        return SecondaryDb.size();
     }
 
     /*****************************************************************
