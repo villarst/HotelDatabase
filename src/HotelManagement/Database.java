@@ -14,6 +14,8 @@ public class Database{
     /** Boolean Array that stores values for the rooms. */
     boolean rooms [];
 
+    private ArrayList <User> SecondaryDb;
+
     /*****************************************************************
      Constructor that creates a Database to use to store Users and
      assign rooms.
@@ -21,6 +23,7 @@ public class Database{
     public Database(){
         // initialize the Arraylist to hold the users and initialize the rooms Array.
         MainDb = new ArrayList<User>();
+        SecondaryDb = new ArrayList<User>();
         rooms = new boolean[300];
         for(int i = 0; i < 300; i++){
             rooms[i] = false;
@@ -39,6 +42,12 @@ public class Database{
         }
         else{
             System.out.println("Sorry rooms are full.");
+        }
+    }
+
+    public void addAdmin(User u){
+        if(u.getTier() == 0){
+            SecondaryDb.add(u);
         }
     }
 
@@ -120,6 +129,29 @@ public class Database{
                 MainDb.remove(MainDb.get(i));
             }
         }
+    }
+
+    // this is used to search for a user in SecondaryDb
+    public boolean searchSecondary(String pass){
+        boolean found = true;
+        for(int i = 0; i < SecondaryDb.size(); i++){
+            if(pass.equals(SecondaryDb.get(i).getPassword())){
+                found = true;
+            }
+            else{
+                found = false;
+            }
+        }
+        return found;
+    }
+
+    public User getUserSecondaryDb(int i){
+        return SecondaryDb.get(i);
+    }
+
+    // returns size of the SecondaryDb
+    public int secondaryDbSize(){
+        return SecondaryDb.size();
     }
 
     /*****************************************************************

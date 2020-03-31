@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,15 +26,13 @@ import java.util.ResourceBundle;
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
 
-
-
 /**
  * Need to fix the table so it doesn't reset data every time we change scenes,
  * Also need to somehow get database involved so the table can display the room numbers.
  */
 public class TableViewController implements Initializable {
     // Configure the table
-    @FXML private TableView<User> tableView;
+    @FXML public TableView<User> tableView;
     @FXML private TableColumn<User, String> nameColumn;
     @FXML private TableColumn<User, String> phoneNumColumn;
     @FXML private TableColumn<User, String> emailColumn;
@@ -50,6 +49,9 @@ public class TableViewController implements Initializable {
     @FXML private TextField userNameTextField;
     @FXML private TextField dobTextField;
 
+    // These variables let an ADMIN login.
+    @FXML private TextField usernameTextField;
+    @FXML private TextField passwordTextField;
 
 //    // Combobox for choosing tier level.
 //    @FXML private ComboBox comboBox;
@@ -69,6 +71,7 @@ public class TableViewController implements Initializable {
         }
         else{
             // You have to click it or double click it then the email will be the original email in the gui.
+            tableView.refresh();
             userSelected.setEmail(d.findUser(userSelected).getEmail());
         }
     }
@@ -79,13 +82,14 @@ public class TableViewController implements Initializable {
             userSelected.setPhoneNum(editedCell.getNewValue().toString());
         }
         else{
-            // You have to click it or double click it then the phone # will be the original phone # in the gui.
+            tableView.refresh();
             userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum());
         }
     }
 
     // When this method is called, it will change the scene to a table view.
     public void changeScreenBtnPushed(ActionEvent event) throws IOException {
+        tableView.setEditable(false);
         table.hide();
         mainView.show();
     }
@@ -101,12 +105,31 @@ public class TableViewController implements Initializable {
         // Verifies if email, phone #, and date of birth are valid, then adds the user to database then table.
         if(u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(), dobTextField.getText())){
             d.addUser(u);
+            nameTextField.clear();
+            phoneNumTextField.clear();
+            emailTextField.clear();
+            userNameTextField.clear();
+            dobTextField.clear();
             tableView.getItems().add(u);
         }
         else{
             System.out.println("User was not added, check email, phone #, or date of birth.");
         }
     }
+
+
+    // this logins the Admin only. may modify to login a user maybe..
+    public void loginAdmin(){
+        for(int i = 0; i < d.secondaryDbSize(); i++){
+            if(d.searchSecondary(passwordTextField.getText())){
+                tableView.setEditable(true);
+                usernameTextField.clear();
+                passwordTextField.clear();
+                return;
+            }
+        }
+    }
+
 
     public void deleteButtonPushed(){
         ObservableList<User> selectedRows, allPeople;
@@ -190,7 +213,8 @@ public class TableViewController implements Initializable {
         users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
                 d.viewRoom(5), "villarst", d.getUser(5).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", 0, "04/23/29"));
+        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", 0, "04/23/29"));
+        users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29"));
         System.out.println("Admin Tier level: " + users.get(6).getTier());
         return users;
     }
