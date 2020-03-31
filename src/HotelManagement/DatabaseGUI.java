@@ -8,9 +8,14 @@ import javafx.stage.Stage;
 import java.util.*;
 
 public class DatabaseGUI extends Application {
+    public static Stage tableview = new Stage();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        Parent root2 = FXMLLoader.load(getClass().getResource("TableView.fxml"));
+        tableview.setTitle("Hotel Actual Database v2");
+        tableview.setScene(new Scene(root2, 1500, 800));
+        tableview.hide();
         Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
         primaryStage.setTitle("Hotel Database v1");
         primaryStage.setScene(new Scene(root, 800, 400));
