@@ -7,6 +7,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.util.*;
 
+/*****************************************************************
+ DatabaseGUI is the code that runs the Java FX file so the gui can
+ be displayed. Currently we have to Gui set up for quick and easy
+ testing. This will be more user friendly in the next release.
+ @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+ @version 1.0
+ *****************************************************************/
+
 public class DatabaseGUI extends Application {
 
     @Override
