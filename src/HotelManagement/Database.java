@@ -49,13 +49,18 @@ public class Database{
      *****************************************************************/
     public void assignRoom(User u){
         int room = (u.getTier() - 1) * 100;
-        if(!checkTierFull(u.getTier() - 1)) {
-            for (int i = 0; i <= 99; i++) { // was 99
-                if (!rooms[room + i]) {
-                    rooms[room + i] = true;
-                    u.setRoomNum(room + i);
-                    System.out.println(u.getRoomNum());
-                    break;
+        if(u.getTier() == 4){
+            u.setRoomNum(-1);
+        }
+        else {
+            if (!checkTierFull(u.getTier() - 1)) {
+                for (int i = 0; i <= 99; i++) { // was 99
+                    if (!rooms[room + i]) {
+                        rooms[room + i] = true;
+                        u.setRoomNum(room + i);
+                        System.out.println(u.getRoomNum());
+                        break;
+                    }
                 }
             }
         }

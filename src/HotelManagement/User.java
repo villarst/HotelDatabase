@@ -56,16 +56,24 @@ public class User {
         }
     }
 
-    public User(){
-        Name = null;
-        PhoneNum = null;
-        Email = null;
-        this.username = null;
-        this.password = null;
-        this.roomNum = 0;
-        this.tier = 0;
-        this.dob = null;
-        Tier t = new Tier(0);
+    public User(String n, String num, String email, String username, int tier, String dob){
+        this.Name = new SimpleStringProperty(n);
+        if(verifyPhoneNumber(num)){
+            this.PhoneNum = new SimpleStringProperty(num);
+        }
+        if(verifyEmail(email)){
+            this.Email = new SimpleStringProperty(email);
+        }
+        this.username = new SimpleStringProperty((username));
+        this.password = new SimpleStringProperty(generatePassWApache());
+        this.roomNum = -1;
+
+        if(tier == 4) {
+            Tier t = new Tier(4);
+        }
+        if(verifyDate(dob)){
+            this.dob = new SimpleStringProperty(dob);
+        }
     }
 
     public String resetAll(){

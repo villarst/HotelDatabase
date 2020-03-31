@@ -24,7 +24,7 @@ Change visibility when switching pages	                                     4/1/
   could load both scenes up and make one visible and the other
   not visible and when we press the change scenes button it
   changes the visibility of both to show the one that is supposed
-  to be pressed.
+  to be pressed.  XXXXX
 
 File drop down menu	                                                         4/1/20	    5th
 
