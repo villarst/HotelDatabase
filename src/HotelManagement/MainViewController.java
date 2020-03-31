@@ -9,18 +9,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static HotelManagement.DatabaseGUI.table;
+import static HotelManagement.DatabaseGUI.mainView;
+
+
 public class MainViewController {
 
     // When this method is called, it will change the scene to a table
     // view.
     public void changeScreenBtnPushed(ActionEvent event) throws IOException {
-        Parent tableView = FXMLLoader.load(getClass().getResource("TableView.fxml"));
-        Scene tableViewScene =  new Scene(tableView);
-
-        // This line gets the stage information.
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(tableViewScene);
-        window.show();
+        mainView.hide();
+        table.show();
     }
 
     public void pressButton(ActionEvent event){
