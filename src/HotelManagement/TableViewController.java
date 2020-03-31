@@ -189,6 +189,8 @@ public class TableViewController implements Initializable {
                 "villarst", "03/27/00"));
         users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
                 d.viewRoom(5), "villarst", d.getUser(5).getPassword(), "03/27/00"));
+        ////------------------------------------------------------------------------------------------------------------
+        users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", 4, "04/23/29"));
         return users;
     }
 }
