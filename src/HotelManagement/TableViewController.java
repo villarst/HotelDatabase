@@ -22,6 +22,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static HotelManagement.DatabaseGUI.table;
+import static HotelManagement.DatabaseGUI.mainView;
+
+
 
 /**
  * Need to fix the table so it doesn't reset data every time we change scenes,
@@ -82,13 +86,8 @@ public class TableViewController implements Initializable {
 
     // When this method is called, it will change the scene to a table view.
     public void changeScreenBtnPushed(ActionEvent event) throws IOException {
-        Parent tableView = FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        Scene tableViewScene =  new Scene(tableView);
-
-        // This line gets the stage information.
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(tableViewScene);
-        window.show();
+        table.hide();
+        mainView.show();
     }
 
     // This method will create new User and add it to the table and database.
@@ -152,7 +151,7 @@ public class TableViewController implements Initializable {
         tableView.setItems(getUsers());
 
         // Update the table to allow for the Name, Email, and Phone # to be editable.
-        tableView.setEditable(true);
+        tableView.setEditable(false);
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());

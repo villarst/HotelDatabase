@@ -40,6 +40,8 @@ Background music Optional	                                                 4/6/2
 
 User stock image of hotel as background	                                     4/6/20	    10th
 
+Fix delete User for TableView so it doesn't go out of bounds.                4/6/20     11th
+
 User sign in to view info	                                                 4/3/20	    8th
 
 

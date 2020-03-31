@@ -8,14 +8,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import static HotelManagement.DatabaseGUI.tableview;
+
+import static HotelManagement.DatabaseGUI.table;
+import static HotelManagement.DatabaseGUI.mainView;
+
 
 public class MainViewController {
 
     // When this method is called, it will change the scene to a table
     // view.
     public void changeScreenBtnPushed(ActionEvent event) throws IOException {
-        tableview.show();
+        mainView.hide();
+        table.show();
     }
 
     public void pressButton(ActionEvent event){
