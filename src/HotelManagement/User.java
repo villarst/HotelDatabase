@@ -69,8 +69,8 @@ public class User {
         this.password = new SimpleStringProperty(generatePassWApache());
         this.roomNum = -1;
 
-        if(tier == 4) {
-            Tier t = new Tier(4);
+        if(tier == 0) {
+            Tier t = new Tier(0);
         }
         if(verifyDate(dob)){
             this.dob = new SimpleStringProperty(dob);
