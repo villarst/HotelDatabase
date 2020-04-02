@@ -4,20 +4,18 @@ import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -64,17 +62,6 @@ public class TableViewController implements Initializable {
         User userSelected = tableView.getSelectionModel().getSelectedItem();
         d.findUser(userSelected).setName(editedCell.getNewValue().toString());
         userSelected.setName(editedCell.getNewValue().toString());
-    }
-
-    // This method gets tier info for a selected User.
-    public void getTierInfo(MouseEvent mouseEvent){
-        if (mouseEvent.getClickCount() > 1) {
-            System.out.println("IT worked!");
-//            ObservableList<User> selectedRows;
-//            selectedRows = tableView.getSelectionModel().getSelectedItems();
-//            d.searchUser(u);
-
-        }
     }
 
     public void changeEmailColumn(TableColumn.CellEditEvent editedCell){
@@ -194,11 +181,30 @@ public class TableViewController implements Initializable {
             }
         }
     }
-    public void exitButton(ActionEvent event){
-        System.exit(0);
+
+    public void tierPermissionsPushed(ActionEvent event){
+        ObservableList<User> selectedRows, allPeople;
+        allPeople = tableView.getItems();
+        // This gives us the row that was selected.
+        selectedRows = tableView.getSelectionModel().getSelectedItems();
+
+
+        for (User u : selectedRows) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Tier Info");
+            alert.setHeaderText("Info for Tier: " + u.getTier());
+            alert.setContentText(u.returnPermissions(u.getTier()));
+            alert.showAndWait();
+        }
+
+
+
     }
 
 
+    public void exitButton(ActionEvent event){
+        System.exit(0);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

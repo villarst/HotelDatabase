@@ -98,6 +98,11 @@
                   <Insets left="20.0" />
                </HBox.margin>
             </Button>
+            <Button mnemonicParsing="false" onAction="#tierPermissionsPushed" prefHeight="19.0" prefWidth="125.0" text="Tier Permissions">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1500.0">
