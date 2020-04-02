@@ -94,6 +94,19 @@ public class TableViewController implements Initializable {
         mainView.show();
     }
 
+    // This method pops a message about some info for the "about" menu item.
+    public void alertAbout(ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Application Info");
+        alert.setHeaderText("Hotel Database");
+        alert.setContentText("Created by: Steven Villarreal, Corey Rice,\n\t\t   Jason Kaip, Corey Sutter\n\n" +
+                             "This application serves as a Hotel Database System that can add, delete users." +
+                             " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\"," +
+                             " are editable.");
+
+        alert.showAndWait();
+    }
+
     // This method will create new User and add it to the table and database.
     public void newUserButtonPushed(){
         User u = new User(nameTextField.getText(),
