@@ -103,12 +103,11 @@ public class TableViewController implements Initializable {
                              "This application serves as a Hotel Database System that can add, delete users." +
                              " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\"," +
                              " are editable.");
-
         alert.showAndWait();
     }
 
     // This method will create new User and add it to the table and database.
-    public void newUserButtonPushed(){
+    public void newUserButtonPushed(ActionEvent event){
         User u = new User(nameTextField.getText(),
                           phoneNumTextField.getText(),
                           emailTextField.getText(),
@@ -154,6 +153,7 @@ public class TableViewController implements Initializable {
             passwordTextField.setVisible(true);
             lblAdminLogin.setVisible(true);
             btnLoginAdmin.setText("Login");
+            adminLoggedIn = false;
             return;
         }
     }
@@ -168,14 +168,17 @@ public class TableViewController implements Initializable {
 
         // loop over the selected rows and remove the User Object from the table.
         // also removes the User and frees up the room for the database 'd'
-        if (tableView.getItems().get(0) != null) {
-            for (User u : selectedRows) {
-                allPeople.remove(u);
-                d.searchUser(u);
-                System.out.println("Check");
+        if(adminLoggedIn == true) {
+            if (tableView.getItems().get(0) != null) {
+                for (User u : selectedRows) {
+                    allPeople.remove(u);
+                    d.searchUser(u);
+                    System.out.println("Check");
+                }
             }
-        } else {
-            System.out.println("Sorry list is empty.");
+            else {
+                System.out.println("Sorry list is empty.");
+            }
         }
     }
     public void exitButton(ActionEvent event){
