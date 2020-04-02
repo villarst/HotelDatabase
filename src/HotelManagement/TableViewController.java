@@ -13,9 +13,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.MouseButton;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,6 +64,17 @@ public class TableViewController implements Initializable {
         User userSelected = tableView.getSelectionModel().getSelectedItem();
         d.findUser(userSelected).setName(editedCell.getNewValue().toString());
         userSelected.setName(editedCell.getNewValue().toString());
+    }
+
+    // This method gets tier info for a selected User.
+    public void getTierInfo(MouseEvent mouseEvent){
+        if (mouseEvent.getClickCount() > 1) {
+            System.out.println("IT worked!");
+//            ObservableList<User> selectedRows;
+//            selectedRows = tableView.getSelectionModel().getSelectedItems();
+//            d.searchUser(u);
+
+        }
     }
 
     public void changeEmailColumn(TableColumn.CellEditEvent editedCell){
