@@ -10,14 +10,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -52,6 +49,9 @@ public class TableViewController implements Initializable {
     // These variables let an ADMIN login.
     @FXML private TextField usernameTextField;
     @FXML private TextField passwordTextField;
+    @FXML private Text lblAdminLogin;
+    @FXML private Button btnLoginAdmin;
+    private boolean adminLoggedIn = false;
 
 //    // Combobox for choosing tier level.
 //    @FXML private ComboBox comboBox;
@@ -120,13 +120,28 @@ public class TableViewController implements Initializable {
 
     // this logins the Admin only. may modify to login a user maybe..
     public void loginAdmin(){
-        for(int i = 0; i < d.secondaryDbSize(); i++){
-            if(d.searchSecondary(passwordTextField.getText())){
-                tableView.setEditable(true);
-                usernameTextField.clear();
-                passwordTextField.clear();
-                return;
+        if(adminLoggedIn == false) {
+            for (int i = 0; i < d.secondaryDbSize(); i++) {
+                if (d.searchSecondary(passwordTextField.getText())) {
+                    tableView.setEditable(true);
+                    usernameTextField.clear();
+                    passwordTextField.clear();
+                    usernameTextField.setVisible(false);
+                    passwordTextField.setVisible(false);
+                    lblAdminLogin.setVisible(false);
+                    btnLoginAdmin.setText("Logout");
+                    adminLoggedIn = true;
+                    return;
+                }
             }
+        }
+        else{
+            tableView.setEditable(false);
+            usernameTextField.setVisible(true);
+            passwordTextField.setVisible(true);
+            lblAdminLogin.setVisible(true);
+            btnLoginAdmin.setText("Login");
+            return;
         }
     }
 

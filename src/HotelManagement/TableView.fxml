@@ -84,12 +84,12 @@
             <Font size="17.0" />
          </font>
       </TextField>
-      <Text layoutX="800.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
+      <Text fx:id="lblAdminLogin" layoutX="800.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Button layoutX="806.0" layoutY="691.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="44.0" prefWidth="139.0" text="Login">
+      <Button fx:id="btnLoginAdmin" layoutX="806.0" layoutY="691.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="44.0" prefWidth="139.0" text="Login">
          <font>
             <Font size="20.0" />
          </font>
