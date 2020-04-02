@@ -6,22 +6,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.MainViewController">
    <children>
-      <Button fx:id="hello_btn" layoutX="205.0" layoutY="71.0" mnemonicParsing="false" onAction="#pressButton" text="Hello World">
+      <Button fx:id="tableview_Btn" layoutX="552.0" layoutY="283.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenBtnPushed" prefHeight="42.0" prefWidth="216.0" text="Change to TableView">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="pop_Btn" layoutX="212.0" layoutY="185.0" mnemonicParsing="false" onAction="#createDB" text="Populate Arraylist">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="tableview_Btn" layoutX="500.0" layoutY="186.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeScreenBtnPushed" prefHeight="42.0" prefWidth="216.0" text="Change to TableView">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="exit_Btn" layoutX="233.0" layoutY="281.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="39.0" prefWidth="95.0" text="Exit">
+      <Button fx:id="exit_Btn" layoutX="170.0" layoutY="284.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="39.0" prefWidth="85.0" text="Exit">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

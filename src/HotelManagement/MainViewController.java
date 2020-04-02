@@ -1,11 +1,8 @@
 package HotelManagement;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -13,7 +10,10 @@ import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
 
 
+
 public class MainViewController {
+    @FXML private TextField usernameTextField;
+    @FXML private TextField passwordTextField;
 
     // When this method is called, it will change the scene to a table
     // view.
@@ -22,16 +22,7 @@ public class MainViewController {
         table.show();
     }
 
-    public void pressButton(ActionEvent event){
-        System.out.println("Hello World");
-    }
-
     public void exitButton(ActionEvent event){
         System.exit(0);
     }
-
-    public void createDB(ActionEvent event){
-        Database d = new Database();
-    }
-
 }

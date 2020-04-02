@@ -50,7 +50,7 @@ public class Tier {
                 buffetAccess = true;
                 arcadeAccess = true;
                 break;
-            case 4: // admin access.
+            case 0: // admin access.
                 poolAccess = true;
                 pcAccess = true;
                 hotTubAccess = true;
