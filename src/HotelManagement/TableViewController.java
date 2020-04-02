@@ -146,7 +146,7 @@ public class TableViewController implements Initializable {
     }
 
 
-    public void deleteButtonPushed(){
+    public void deleteButtonPushed() {
         ObservableList<User> selectedRows, allPeople;
         allPeople = tableView.getItems();
 
@@ -155,17 +155,21 @@ public class TableViewController implements Initializable {
 
         // loop over the selected rows and remove the User Object from the table.
         // also removes the User and frees up the room for the database 'd'
-        if(tableView.getItems().get(0) != null) {
+        if (tableView.getItems().get(0) != null) {
             for (User u : selectedRows) {
                 allPeople.remove(u);
                 d.searchUser(u);
                 System.out.println("Check");
             }
-        }
-        else{
+        } else {
             System.out.println("Sorry list is empty.");
         }
     }
+    public void exitButton(ActionEvent event){
+        System.exit(0);
+    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
