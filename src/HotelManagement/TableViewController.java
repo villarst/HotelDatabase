@@ -3,13 +3,20 @@ package HotelManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +31,7 @@ import static HotelManagement.DatabaseGUI.mainView;
 public class TableViewController implements Initializable {
     // Configure the table
     @FXML public TableView<User> tableView;
+    @FXML public ObservableList<User> users;
     @FXML private TableColumn<User, String> nameColumn;
     @FXML private TableColumn<User, String> phoneNumColumn;
     @FXML private TableColumn<User, String> emailColumn;
@@ -45,6 +53,7 @@ public class TableViewController implements Initializable {
     @FXML private TextField passwordTextField;
     @FXML private Text lblAdminLogin;
     @FXML private Button btnLoginAdmin;
+    @FXML private Button saveBtn;
     private boolean adminLoggedIn = false;
 
 //    // Combobox for choosing tier level.
@@ -195,7 +204,52 @@ public class TableViewController implements Initializable {
 
     }
 
+    public void handleSave(ActionEvent event){
+        Stage secondaryStage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save User Table");
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        if(users.isEmpty()){
+            secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
+            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
+            emptyTableAlert.setContentText("You have nothing to save");
+            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
+            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
+            emptyTableAlert.showAndWait();
+            if(emptyTableAlert.getResult() == ButtonType.OK){
+                emptyTableAlert.close();
+            }
+        }
+        else{
+            File file = fileChooser.showSaveDialog(secondaryStage);
+            if(file != null){
+                saveFile(tableView.getItems(), file);
+            }
+        }
+    }
 
+    public void saveFile(ObservableList<User> userObservableList, File file){
+        try{
+            BufferedWriter outWriter = new BufferedWriter((new FileWriter(file)));
+
+            for(User u : userObservableList){
+                outWriter.write((u.toString()));
+                outWriter.newLine();
+            }
+            System.out.println(userObservableList.toString());
+            outWriter.close();
+        }
+        catch (IOException e) {
+            Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
+            ioAlert.setContentText(("Sorry. An error has occurred."));
+            ioAlert.showAndWait();
+            if(ioAlert.getResult() == ButtonType.OK){
+                ioAlert.close();
+            }
+        }
+    }
+
+    // Exits the program via the File --> Close
     public void exitButton(ActionEvent event){
         System.exit(0);
     }
@@ -230,7 +284,7 @@ public class TableViewController implements Initializable {
 
     // This method will return an Observable list of User objects.
     public ObservableList<User> getUsers(){
-        ObservableList<User> users = FXCollections.observableArrayList();
+        users = FXCollections.observableArrayList();
         d.addUser(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
         users.add(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,

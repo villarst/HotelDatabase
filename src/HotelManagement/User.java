@@ -265,6 +265,14 @@ public class User {
         return false;
     }
 
+    // To string to print the User from its memory address.
+    @Override
+    public String toString(){
+        // all the getters were just the variable names so getName() was Name, getPhoneNum() was PhoneNum, ETC
+        return getName() + " | " + getPhoneNum() + " | " + getEmail() + " | " + getUsername() + " | "
+                + getPassword() + " | " + getTier() + " | " + getDob() + " | " + getRoomNum();
+    }
+
     public Tier returnTierObj(){
         return t;
     }
