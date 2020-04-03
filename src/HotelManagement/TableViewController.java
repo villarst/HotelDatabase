@@ -14,12 +14,14 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.swing.*;
+import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.util.Collection;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
@@ -54,12 +56,13 @@ public class TableViewController implements Initializable {
     @FXML private Text lblAdminLogin;
     @FXML private Button btnLoginAdmin;
     @FXML private Button saveBtn;
+    @FXML private Button loadBtn;
     private boolean adminLoggedIn = false;
 
 //    // Combobox for choosing tier level.
 //    @FXML private ComboBox comboBox;
 
-    Database d = new Database();
+    public Database d = new Database();
 
     public void changeNameColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
@@ -131,6 +134,8 @@ public class TableViewController implements Initializable {
             System.out.println("User was not added, check email, phone #, or date of birth.");
         }
     }
+
+
 
 
     // this logins the Admin only. may modify to login a user maybe..
@@ -210,28 +215,28 @@ public class TableViewController implements Initializable {
         fileChooser.setTitle("Save User Table");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         if(users.isEmpty()){
-            secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
-            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
-            emptyTableAlert.setContentText("You have nothing to save");
-            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
-            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
-            emptyTableAlert.showAndWait();
-            if(emptyTableAlert.getResult() == ButtonType.OK){
-                emptyTableAlert.close();
-            }
-        }
-        else{
-            File file = fileChooser.showSaveDialog(secondaryStage);
-            if(file != null){
-                saveFile(tableView.getItems(), file);
-            }
+        secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
+        Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
+        emptyTableAlert.setContentText("You have nothing to save");
+        emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
+        emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
+        emptyTableAlert.showAndWait();
+        if(emptyTableAlert.getResult() == ButtonType.OK){
+            emptyTableAlert.close();
         }
     }
+        else{
+        File file = fileChooser.showSaveDialog(secondaryStage);
+        if(file != null){
+            saveFile(tableView.getItems(), file);
+        }
+    }
+}
 
     public void saveFile(ObservableList<User> userObservableList, File file){
         try{
-            BufferedWriter outWriter = new BufferedWriter((new FileWriter(file)));
-
+//            saveDb();
+            BufferedWriter outWriter = new BufferedWriter((new FileWriter(file + ".txt")));
             for(User u : userObservableList){
                 outWriter.write((u.toString()));
                 outWriter.newLine();
@@ -246,6 +251,40 @@ public class TableViewController implements Initializable {
             if(ioAlert.getResult() == ButtonType.OK){
                 ioAlert.close();
             }
+        }
+    }
+
+//    public void saveDb(){
+//        try {
+//            String filename = "TestFile2.ser";
+//            FileOutputStream fos = new FileOutputStream(filename);
+//            ObjectOutputStream os = new ObjectOutputStream(fos);
+//            os.writeObject(d);
+//            os.close();
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+
+    public void loadFile() {
+        try {
+            String filePath = new File("").getAbsolutePath();
+            System.out.println (filePath);
+            BufferedReader br = new BufferedReader(new FileReader(new File(filePath + "/src/HotelManagement/TestFile.txt")));
+            String line;
+            String[] array;
+
+            users.clear();
+
+            while ((line = br.readLine()) != null){
+                array = line.split(" , ");
+                users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+            }
+
+            br.close();
+
+        }catch (Exception ex){
+            ex.printStackTrace();
         }
     }
 

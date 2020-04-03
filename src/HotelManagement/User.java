@@ -1,6 +1,5 @@
-
 package HotelManagement;
-
+import java.io.Serializable;
 import javafx.beans.property.SimpleStringProperty;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -8,7 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable{
     private SimpleStringProperty Name;
     private SimpleStringProperty PhoneNum;
     private SimpleStringProperty Email;
@@ -98,6 +97,28 @@ public class User {
         if(verifyDate(dob)){
             this.dob = new SimpleStringProperty(dob);
         }
+    }
+
+
+    public User(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
+        this.Name = new SimpleStringProperty(n);
+        if(verifyPhoneNumber(num)){
+            this.PhoneNum = new SimpleStringProperty(num);
+        }
+        if(verifyEmail(email)){
+            this.Email = new SimpleStringProperty(email);
+        }
+        this.username = new SimpleStringProperty(username);
+        this.password = new SimpleStringProperty(pass);
+        this.roomNum = -1;
+
+        if(tier == 4) {
+            Tier t = new Tier(4);
+        }
+        if(verifyDate(dob)){
+            this.dob = new SimpleStringProperty(dob);
+        }
+        this.roomNum = roomNum;
     }
 
 
@@ -269,8 +290,8 @@ public class User {
     @Override
     public String toString(){
         // all the getters were just the variable names so getName() was Name, getPhoneNum() was PhoneNum, ETC
-        return getName() + " | " + getPhoneNum() + " | " + getEmail() + " | " + getUsername() + " | "
-                + getPassword() + " | " + getTier() + " | " + getDob() + " | " + getRoomNum();
+        return getName() + " , " + getPhoneNum() + " , " + getEmail() + " , " + getUsername() + " , "
+                + getPassword() + " , " + getTier() + " , " + getDob() + " , " + getRoomNum();
     }
 
     public Tier returnTierObj(){
