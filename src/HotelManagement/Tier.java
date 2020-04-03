@@ -1,6 +1,8 @@
 package HotelManagement;
 
-public class Tier {
+import java.io.Serializable;
+
+public class Tier implements Serializable{
     private boolean poolAccess; //1
     private boolean gymAccess;
     private boolean pcAccess;

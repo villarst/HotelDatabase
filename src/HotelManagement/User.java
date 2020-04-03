@@ -1,21 +1,21 @@
 package HotelManagement;
-import java.io.Serializable;
 import javafx.beans.property.SimpleStringProperty;
 import org.apache.commons.lang3.RandomStringUtils;
+import java.io.Serializable;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User implements Serializable{
-    private SimpleStringProperty Name;
-    private SimpleStringProperty PhoneNum;
-    private SimpleStringProperty Email;
-    private SimpleStringProperty username;
-    private SimpleStringProperty password;
+    private transient SimpleStringProperty Name;
+    private transient SimpleStringProperty PhoneNum;
+    private transient SimpleStringProperty Email;
+    private transient SimpleStringProperty username;
+    private transient SimpleStringProperty password;
     private int roomNum;
     private int tier;
-    private SimpleStringProperty dob;
+    private transient SimpleStringProperty dob;
 
     public Tier t;
 
@@ -290,8 +290,8 @@ public class User implements Serializable{
     @Override
     public String toString(){
         // all the getters were just the variable names so getName() was Name, getPhoneNum() was PhoneNum, ETC
-        return getName() + " , " + getPhoneNum() + " , " + getEmail() + " , " + getUsername() + " , "
-                + getPassword() + " , " + getTier() + " , " + getDob() + " , " + getRoomNum();
+        return Name + " , " + PhoneNum + " , " + Email + " , " + username + " , "
+                + password + " , " + tier + " , " + dob + " , " + roomNum;
     }
 
     public Tier returnTierObj(){

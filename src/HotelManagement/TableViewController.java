@@ -3,7 +3,6 @@ package HotelManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -14,14 +13,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.*;
 import java.net.URL;
-import java.nio.file.Files;
-import java.util.Collection;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-import java.util.stream.Collectors;
 
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
@@ -56,7 +50,6 @@ public class TableViewController implements Initializable {
     @FXML private Text lblAdminLogin;
     @FXML private Button btnLoginAdmin;
     @FXML private Button saveBtn;
-    @FXML private Button loadBtn;
     private boolean adminLoggedIn = false;
 
 //    // Combobox for choosing tier level.
@@ -254,18 +247,6 @@ public class TableViewController implements Initializable {
         }
     }
 
-//    public void saveDb(){
-//        try {
-//            String filename = "TestFile2.ser";
-//            FileOutputStream fos = new FileOutputStream(filename);
-//            ObjectOutputStream os = new ObjectOutputStream(fos);
-//            os.writeObject(d);
-//            os.close();
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//    }
-
     public void loadFile() {
         try {
             String filePath = new File("").getAbsolutePath();
@@ -287,6 +268,35 @@ public class TableViewController implements Initializable {
             ex.printStackTrace();
         }
     }
+
+    public void saveDb() throws IOException {
+//        try {
+//            FileOutputStream fos = new FileOutputStream("TestFile2.ser");
+//            ObjectOutputStream os = new ObjectOutputStream(fos);
+//            os.writeObject(d);
+////            System.out.println(d.getUser(0).getUsername());
+//            os.close();
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+    }
+
+    public void loadDb() throws IOException {
+//        try{
+//            d.clearDb();
+//            FileInputStream fis = new FileInputStream("TestFile2.ser");
+////            BufferedInputStream bis = new BufferedInputStream(fis);
+//            ObjectInputStream is = new ObjectInputStream(fis);
+//            Object obj = is.readObject();
+//            d = (Database) obj;
+//            //d.getUser(0).setUsername("villarst");
+//            System.out.println(d.getUser(0).getUsername());
+//        }
+//        catch (IOException | ClassNotFoundException ex){
+//            ex.printStackTrace();
+//        }
+    }
+
 
     // Exits the program via the File --> Close
     public void exitButton(ActionEvent event){

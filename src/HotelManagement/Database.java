@@ -3,7 +3,6 @@ package HotelManagement;
 
 import java.util.*;
 import java.io.Serializable;
-
 /*****************************************************************
  This class consists of the database that will be used to store,
  remove, and assign rooms to the users (Guests).
@@ -51,6 +50,20 @@ public class Database implements Serializable{
         if(u.getTier() == 0){
             SecondaryDb.add(u);
         }
+    }
+
+    // This method clears the Database, (MainDb, SecondaryDb, rooms[]
+    public void clearDb(){
+       MainDb.clear();
+       SecondaryDb.clear();
+       for(int i = 0; i < 300; i++){
+           rooms[i] = false;
+       }
+    }
+
+    // This method returns MainDb
+    public ArrayList<User> getMainDb() {
+        return MainDb;
     }
 
     /*****************************************************************
