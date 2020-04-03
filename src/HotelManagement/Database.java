@@ -154,6 +154,10 @@ public class Database{
         return SecondaryDb.size();
     }
 
+    public int mainDbSize(){
+        return MainDb.size();
+    }
+
     /*****************************************************************
      Creates Users and adds them to the database MainDb.
      *****************************************************************/

@@ -24,15 +24,16 @@ Change visibility when switching pages	                                     4/1/
   changes the visibility of both to show the one that is supposed
   to be pressed.  XXXXX
 
-File drop down menu	                                                         4/1/20	    5th
+File drop down menu	  XXXXX                                                  4/1/20	    5th
 
-Save and load button	                                                     4/2/20	    6th
-
+Save and load button     //Doesnt really work i can save the table           4/2/20	    6th
+                           view but not the database and cant load
+                           the tableview or database.
 Testing	                                                                4/9/20 – 4/12/20	LAST
 
 Make tier selection integers not strings for combo box	                     4/2/20	    7th
 
-Tier description when clicked.	                                             4/1/20	    4th
+Tier description when clicked.	 XXXXX                                       4/1/20	    4th
 
 Background music Optional	                                                 4/6/20	    9th
 

@@ -1,21 +1,22 @@
 package HotelManagement;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,6 +31,7 @@ import static HotelManagement.DatabaseGUI.mainView;
 public class TableViewController implements Initializable {
     // Configure the table
     @FXML public TableView<User> tableView;
+    @FXML public ObservableList<User> users;
     @FXML private TableColumn<User, String> nameColumn;
     @FXML private TableColumn<User, String> phoneNumColumn;
     @FXML private TableColumn<User, String> emailColumn;
@@ -51,6 +53,7 @@ public class TableViewController implements Initializable {
     @FXML private TextField passwordTextField;
     @FXML private Text lblAdminLogin;
     @FXML private Button btnLoginAdmin;
+    @FXML private Button saveBtn;
     private boolean adminLoggedIn = false;
 
 //    // Combobox for choosing tier level.
@@ -103,12 +106,11 @@ public class TableViewController implements Initializable {
                              "This application serves as a Hotel Database System that can add, delete users." +
                              " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\"," +
                              " are editable.");
-
         alert.showAndWait();
     }
 
     // This method will create new User and add it to the table and database.
-    public void newUserButtonPushed(){
+    public void newUserButtonPushed(ActionEvent event){
         User u = new User(nameTextField.getText(),
                           phoneNumTextField.getText(),
                           emailTextField.getText(),
@@ -154,6 +156,7 @@ public class TableViewController implements Initializable {
             passwordTextField.setVisible(true);
             lblAdminLogin.setVisible(true);
             btnLoginAdmin.setText("Login");
+            adminLoggedIn = false;
             return;
         }
     }
@@ -168,21 +171,88 @@ public class TableViewController implements Initializable {
 
         // loop over the selected rows and remove the User Object from the table.
         // also removes the User and frees up the room for the database 'd'
-        if (tableView.getItems().get(0) != null) {
-            for (User u : selectedRows) {
-                allPeople.remove(u);
-                d.searchUser(u);
-                System.out.println("Check");
+        if(adminLoggedIn == true) {
+            if (tableView.getItems().get(0) != null) {
+                for (User u : selectedRows) {
+                    allPeople.remove(u);
+                    d.searchUser(u);
+                    System.out.println("Check");
+                }
             }
-        } else {
-            System.out.println("Sorry list is empty.");
+            else {
+                System.out.println("Sorry list is empty.");
+            }
         }
     }
+
+    public void tierPermissionsPushed(ActionEvent event){
+        ObservableList<User> selectedRows, allPeople;
+        allPeople = tableView.getItems();
+        // This gives us the row that was selected.
+        selectedRows = tableView.getSelectionModel().getSelectedItems();
+
+
+        for (User u : selectedRows) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Tier Info");
+            alert.setHeaderText("Info for Tier: " + u.getTier());
+            alert.setContentText(u.returnPermissions(u.getTier()));
+            alert.showAndWait();
+        }
+
+
+
+    }
+
+    public void handleSave(ActionEvent event){
+        Stage secondaryStage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save User Table");
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        if(users.isEmpty()){
+            secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
+            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
+            emptyTableAlert.setContentText("You have nothing to save");
+            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
+            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
+            emptyTableAlert.showAndWait();
+            if(emptyTableAlert.getResult() == ButtonType.OK){
+                emptyTableAlert.close();
+            }
+        }
+        else{
+            File file = fileChooser.showSaveDialog(secondaryStage);
+            if(file != null){
+                saveFile(tableView.getItems(), file);
+            }
+        }
+    }
+
+    public void saveFile(ObservableList<User> userObservableList, File file){
+        try{
+            BufferedWriter outWriter = new BufferedWriter((new FileWriter(file)));
+
+            for(User u : userObservableList){
+                outWriter.write((u.toString()));
+                outWriter.newLine();
+            }
+            System.out.println(userObservableList.toString());
+            outWriter.close();
+        }
+        catch (IOException e) {
+            Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
+            ioAlert.setContentText(("Sorry. An error has occurred."));
+            ioAlert.showAndWait();
+            if(ioAlert.getResult() == ButtonType.OK){
+                ioAlert.close();
+            }
+        }
+    }
+
+    // Exits the program via the File --> Close
     public void exitButton(ActionEvent event){
         System.exit(0);
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -214,7 +284,7 @@ public class TableViewController implements Initializable {
 
     // This method will return an Observable list of User objects.
     public ObservableList<User> getUsers(){
-        ObservableList<User> users = FXCollections.observableArrayList();
+        users = FXCollections.observableArrayList();
         d.addUser(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
         users.add(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
