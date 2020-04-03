@@ -125,5 +125,6 @@
         </menus>
       </MenuBar>
       <Button fx:id="saveBtn" layoutX="307.0" layoutY="624.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="39.0" prefWidth="107.0" text="Save" />
+      <Button fx:id="loadBtn" layoutX="307.0" layoutY="684.0" mnemonicParsing="false" onAction="#loadFile" prefHeight="39.0" prefWidth="107.0" text="Load" />
    </children>
 </AnchorPane>

@@ -1,6 +1,8 @@
 package HotelManagement;
 
+
 import java.util.*;
+import java.io.Serializable;
 
 /*****************************************************************
  This class consists of the database that will be used to store,
@@ -8,7 +10,7 @@ import java.util.*;
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  *****************************************************************/
-public class Database{
+public class Database implements Serializable{
     /** Arraylist that stores the Users */
     private ArrayList <User> MainDb;
     /** Boolean Array that stores values for the rooms. */
