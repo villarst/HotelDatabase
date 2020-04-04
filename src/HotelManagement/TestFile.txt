@@ -1,0 +1,8 @@
+Steven,6168342729,villarst@mail.gvsu.edu,villarst,nbvSmDBOSm,1,03/27/00,0
+Corey R,6165583079,ricecore@mail.gvsu.edu,villarst,ZdCl7o9afG,2,03/27/00,100
+Corey S,6165583079,cutterco@mail.gvsu.edu,villarst,FCFKtUBRH8,2,03/27/00,101
+Jason,6165583079,kaipjaso@mail.gvsu.edu,villarst,Mp9EXYNQWK,3,03/27/00,200
+Bobby V,6165583079,vuerbobb@mail.gvsu.edu,villarst,dACt6WV4k1,1,03/27/00,1
+Mike J,6165583079,johnmike@mail.gvsu.edu,villarst,xF8UBhCxpp,3,03/27/00,201
+ADMIN,9999999999,admin@login.com,ADMIN,Ui4qIQHcKa,0,04/23/29,-1
+asdf,4637382928,sd@gmail.com,asdfsda,y2nVgaLyxx,3,04/30/00,202

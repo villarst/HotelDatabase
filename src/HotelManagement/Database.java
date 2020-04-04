@@ -46,6 +46,11 @@ public class Database implements Serializable{
         }
     }
 
+    public void addUserFromLoad(User u){
+        MainDb.add(u);
+        assignRoom(u);
+    }
+
     public void addAdmin(User u){
         if(u.getTier() == 0){
             SecondaryDb.add(u);
@@ -73,7 +78,7 @@ public class Database implements Serializable{
      *****************************************************************/
     public void assignRoom(User u){
         int room = (u.getTier() - 1) * 100;
-        if(u.getTier() == 4){
+        if(u.getTier() == 0){
             u.setRoomNum(-1);
         }
         else {

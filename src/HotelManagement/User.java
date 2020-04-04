@@ -17,14 +17,14 @@ public class User implements Serializable{
     private int tier;
     private transient SimpleStringProperty dob;
 
-    public Tier t;
+//    public Tier t;
 
     // Used to add a user to the ObservableList<User> users array list for viewing in the table.
     public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
-        t = new Tier(tier);
+//        t = new Tier(tier);
         this.password = new SimpleStringProperty(generatePassWApache());
         if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
@@ -43,7 +43,7 @@ public class User implements Serializable{
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
         this.roomNum = room;
-        Tier t = new Tier(tier);
+        this.tier = tier;
         this.password = new SimpleStringProperty(pass);
         if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
@@ -70,7 +70,7 @@ public class User implements Serializable{
         this.roomNum = -1;
 
         if(tier == 0) {
-            Tier t = new Tier(0);
+            this.tier = 0;
         }
         if(verifyDate(dob)){
             this.dob = new SimpleStringProperty(dob);
@@ -91,8 +91,8 @@ public class User implements Serializable{
         this.password = new SimpleStringProperty(pass);
         this.roomNum = -1;
 
-        if(tier == 4) {
-            Tier t = new Tier(4);
+        if(tier == 0) {
+            this.tier = 0;
         }
         if(verifyDate(dob)){
             this.dob = new SimpleStringProperty(dob);
@@ -100,6 +100,7 @@ public class User implements Serializable{
     }
 
 
+    // Used to load in admin to the Db
     public User(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
         this.Name = new SimpleStringProperty(n);
         if(verifyPhoneNumber(num)){
@@ -112,8 +113,11 @@ public class User implements Serializable{
         this.password = new SimpleStringProperty(pass);
         this.roomNum = -1;
 
-        if(tier == 4) {
-            Tier t = new Tier(4);
+        if(tier == 0) {
+            this.tier = 0;
+        }
+        else{
+            this.tier = tier;
         }
         if(verifyDate(dob)){
             this.dob = new SimpleStringProperty(dob);
@@ -290,13 +294,10 @@ public class User implements Serializable{
     @Override
     public String toString(){
         // all the getters were just the variable names so getName() was Name, getPhoneNum() was PhoneNum, ETC
-        return Name + " , " + PhoneNum + " , " + Email + " , " + username + " , "
-                + password + " , " + tier + " , " + dob + " , " + roomNum;
+        return getName() + "," + getPhoneNum() + "," + getEmail() + "," + getUsername() + ","
+                + getPassword() + "," + getTier() + "," + getDob() + "," + getRoomNum();
     }
-
-    public Tier returnTierObj(){
-        return t;
-    }
+    
 
     public String returnPermissions(int tier){
         String permissions = "";

@@ -278,10 +278,17 @@ public class TableViewController implements Initializable {
             d.clearDb();
             users.clear();
             while ((line = br.readLine()) != null){
-                array = line.split(" , ");
+                array = line.split(",");
                 users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                if(Integer.parseInt(array[5]) == 0){
+                    d.addAdmin(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                }
+                else{
+                    d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                }
 
             }
+            System.out.println("");
 
             br.close();
 
