@@ -1,7 +1,7 @@
-Steven , 6168342729 , villarst@mail.gvsu.edu , villarst , S0RaoXb6bE , 1 , 03/27/00 , 0
-Corey R , 6165583079 , ricecore@mail.gvsu.edu , villarst , hjUYui8TWO , 2 , 03/27/00 , 100
-Corey S , 6165583079 , cutterco@mail.gvsu.edu , villarst , Rhomx9dKrD , 2 , 03/27/00 , 101
-Jason , 6165583079 , kaipjaso@mail.gvsu.edu , villarst , pDb5RrPWYT , 3 , 03/27/00 , 200
-Bobby V , 6165583079 , vuerbobb@mail.gvsu.edu , villarst , 95LWmqXJMw , 1 , 03/27/00 , 1
-Mike J , 6165583079 , johnmike@mail.gvsu.edu , villarst , ArT2jn3qAj , 3 , 03/27/00 , 201
-ADMIN , 9999999999 , admin@login.com , ADMIN , qN9BeZAy1Y , 0 , 04/23/29 , -1
+StringProperty [value: Steven] , StringProperty [value: 6168342729] , StringProperty [value: villarst@mail.gvsu.edu] , StringProperty [value: villarst] , StringProperty [value: p8cYB08G0T] , 1 , StringProperty [value: 03/27/00] , 0
+StringProperty [value: Corey R] , StringProperty [value: 6165583079] , StringProperty [value: ricecore@mail.gvsu.edu] , StringProperty [value: villarst] , StringProperty [value: t1jS9eSELY] , 2 , StringProperty [value: 03/27/00] , 100
+StringProperty [value: Corey S] , StringProperty [value: 6165583079] , StringProperty [value: cutterco@mail.gvsu.edu] , StringProperty [value: villarst] , StringProperty [value: 3aUwAMZGt2] , 2 , StringProperty [value: 03/27/00] , 101
+StringProperty [value: Jason] , StringProperty [value: 6165583079] , StringProperty [value: kaipjaso@mail.gvsu.edu] , StringProperty [value: villarst] , StringProperty [value: Zif4YT04mG] , 3 , StringProperty [value: 03/27/00] , 200
+StringProperty [value: Bobby V] , StringProperty [value: 6165583079] , StringProperty [value: vuerbobb@mail.gvsu.edu] , StringProperty [value: villarst] , StringProperty [value: cY7wxlzoZn] , 1 , StringProperty [value: 03/27/00] , 1
+StringProperty [value: Mike J] , StringProperty [value: 6165583079] , StringProperty [value: johnmike@mail.gvsu.edu] , StringProperty [value: villarst] , StringProperty [value: oBanBRomQ6] , 3 , StringProperty [value: 03/27/00] , 201
+StringProperty [value: ADMIN] , StringProperty [value: 9999999999] , StringProperty [value: admin@login.com] , StringProperty [value: ADMIN] , StringProperty [value: ffD6rDYVLb] , 0 , StringProperty [value: 04/23/29] , -1

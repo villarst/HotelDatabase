@@ -17,6 +17,11 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
 
@@ -256,10 +261,22 @@ public class TableViewController implements Initializable {
             String[] array;
 
             users.clear();
+            d.clearDb();
 
             while ((line = br.readLine()) != null){
                 array = line.split(" , ");
-                users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                if(array[0] != "ADMIN") {
+                    users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+//                    d.addUser(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]), 1));
+//                }
+                }
+//            System.out.println(d.getMainDb().get(0) + "\n"
+//                    + d.getMainDb().get(1) + "\n"
+//                    + d.getMainDb().get(2) + "\n"
+//                    + d.getMainDb().get(3) + "\n"
+//                    + d.getMainDb().get(4) + "\n"
+//                    + d.getMainDb().get(5) + "\n"
+//                    + d.getMainDb().get(6) + "\n");
             }
 
             br.close();
@@ -274,26 +291,70 @@ public class TableViewController implements Initializable {
 //            FileOutputStream fos = new FileOutputStream("TestFile2.ser");
 //            ObjectOutputStream os = new ObjectOutputStream(fos);
 //            os.writeObject(d);
-////            System.out.println(d.getUser(0).getUsername());
 //            os.close();
 //        } catch (IOException ex) {
 //            ex.printStackTrace();
 //        }
+//
+//        // First add user 0
+//
+//        // Second add user 1
+//        //....
+//
+//
+//        JSONObject u1 = new JSONObject();
+//        u1.put("name", d.getUser(0).getName());
+//        u1.put("phone", d.getUser(0).getPhoneNum());
+//        u1.put("email", d.getUser(0).getEmail());
+//        u1.put("username", d.getUser(0).getUsername());
+//        u1.put("pass", d.getUser(0).getPassword());
+//        u1.put("room", 0);
+//        u1.put("tier", 1);
+//        u1.put("dob", d.getUser(0).getDob());
+//
+//        JSONObject u1Object = new JSONObject();
+//        u1Object.put("User", u1);
+//
+//        // Until above is done, add Users to JSONArray.
+//
+//        // Add Database to JSONArray
+//        JSONArray data = new JSONArray();
+//        data.add(u1Object);
+//
+//        //Write JSON file
+//        try(FileWriter file = new FileWriter("database.json")){
+//            file.write(data.toJSONString());
+//            file.flush();
+//        }
+//        catch(IOException e){
+//            e.printStackTrace();
+//        }
     }
 
-    public void loadDb() throws IOException {
-//        try{
-//            d.clearDb();
-//            FileInputStream fis = new FileInputStream("TestFile2.ser");
-////            BufferedInputStream bis = new BufferedInputStream(fis);
-//            ObjectInputStream is = new ObjectInputStream(fis);
-//            Object obj = is.readObject();
-//            d = (Database) obj;
-//            //d.getUser(0).setUsername("villarst");
-//            System.out.println(d.getUser(0).getUsername());
+    public void loadDb() throws IOException, ParseException {
+//        d.clearDb();
+//        ObjectInputStream in = new ObjectInputStream(new FileInputStream("TestFile2.ser"));
+//        int count = 0;
+//        try {
+//            while (true) {
+//                count++;
+//                try {
+//                    Object obj = in.readObject();
+//                    System.out.println("obj #" + count + " is a: " + obj.getClass().getName());
+//                    System.out.println(obj + ".toString(): " + obj);
+//                }
+//                catch (ClassNotFoundException e) {
+//                    e.printStackTrace();
+//                    System.out.println("can't read obj #" + count + ": " + e);
+//                }
+//            }
 //        }
-//        catch (IOException | ClassNotFoundException ex){
-//            ex.printStackTrace();
+//        catch (EOFException e) {
+//            // unfortunately ObjectInputStream doesn't have a good way to detect the end of the stream
+//            // so just ignore this exception - it's expected when there are no more objects
+//        }
+//        finally {
+//            in.close();
 //        }
     }
 

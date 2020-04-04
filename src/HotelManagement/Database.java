@@ -173,50 +173,23 @@ public class Database implements Serializable{
         return MainDb.size();
     }
 
-    /*****************************************************************
-     Creates Users and adds them to the database MainDb.
-     *****************************************************************/
-//    public void populateList(){
-//        User user1 = new User("Bobby", "616-834-2729", "villarst@mail.gvsu.edu", 2,
-//                "villarst", "03/27/2000");
-//        User user2 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
-//                2, "villarst", "03/27/2000");
-//        User user3 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user4 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user5 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user6 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user7 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 1, "villarst", "03/27/2000");
-//        User user8 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user9 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user10 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user11 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 2, "villarst", "03/27/2000");
-//        User user12 = new User("Steven Villarreal", "616-834-2729",
-//                "villarst@mail.gvsu.edu", 3, "villarst", "03/27/2000");
-//
-//
-//        // Adds the just created Users to the database.
-//        addUser(user1);
-//        addUser(user2);
-//        addUser(user3);
-//        addUser(user4);
-//        addUser(user5);
-//        addUser(user6);
-//        addUser(user7);
-//        addUser(user8);
-//        addUser(user9);
-//        addUser(user10);
-//        addUser(user11);
-//        addUser(user12);
-//
-//    }
+    // To string for the Database
+    @Override
+    public String toString(){
+        String result = "";
+        for(int i = 0; i < MainDb.size(); i++){
+            result += MainDb.get(i).getName() + " , " + MainDb.get(i).getPhoneNum() +
+                    " , " + MainDb.get(i).getEmail() + " , " + MainDb.get(i).getUsername() +
+                    " , " + MainDb.get(i).getPassword() + " , " + MainDb.get(i).getTier() +
+                    " , " + MainDb.get(i).getDob() + " , " + MainDb.get(i).getRoomNum() + "\n";
+        }
+        for(int j = 0; j < SecondaryDb.size(); j++){
+            result += MainDb.get(j).getName() + " , " + MainDb.get(j).getPhoneNum() +
+                    " , " + MainDb.get(j).getEmail() + " , " + MainDb.get(j).getUsername() +
+                    " , " + MainDb.get(j).getPassword() + " , " + MainDb.get(j).getTier() +
+                    " , " + MainDb.get(j).getDob() + " , " + MainDb.get(j).getRoomNum() + "\n";
+        }
+        return result;
+    }
 
 }
