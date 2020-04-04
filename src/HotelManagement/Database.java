@@ -48,7 +48,8 @@ public class Database implements Serializable{
 
     public void addUserFromLoad(User u){
         MainDb.add(u);
-        assignRoom(u);
+        u.setRoomNum(u.getRoomNum());
+        rooms[u.getRoomNum()] = true;
     }
 
     public void addAdmin(User u){

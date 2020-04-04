@@ -110,6 +110,8 @@
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#exitButton" text="Close" />
+                  <MenuItem fx:id="saveBtn" mnemonicParsing="false" onAction="#handleSave" text="Save File" />
+                  <MenuItem fx:id="loadBtn" mnemonicParsing="false" onAction="#loadFile" text="Load File" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -124,7 +126,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button fx:id="saveBtn" layoutX="307.0" layoutY="624.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="39.0" prefWidth="107.0" text="Save" />
-      <Button fx:id="loadBtn" layoutX="307.0" layoutY="684.0" mnemonicParsing="false" onAction="#loadFile" prefHeight="39.0" prefWidth="107.0" text="Load" />
+      <Button layoutX="307.0" layoutY="624.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="39.0" prefWidth="107.0" text="Save" />
+      <Button layoutX="307.0" layoutY="684.0" mnemonicParsing="false" onAction="#loadFile" prefHeight="39.0" prefWidth="107.0" text="Load" />
    </children>
 </AnchorPane>

@@ -111,7 +111,6 @@ public class User implements Serializable{
         }
         this.username = new SimpleStringProperty(username);
         this.password = new SimpleStringProperty(pass);
-        this.roomNum = -1;
 
         if(tier == 0) {
             this.tier = 0;

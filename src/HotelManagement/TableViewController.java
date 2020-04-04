@@ -3,7 +3,6 @@ package HotelManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -14,14 +13,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.*;
 import java.net.URL;
-import java.nio.file.Files;
-import java.util.Collection;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-import java.util.stream.Collectors;
 
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
@@ -55,8 +49,13 @@ public class TableViewController implements Initializable {
     @FXML private TextField passwordTextField;
     @FXML private Text lblAdminLogin;
     @FXML private Button btnLoginAdmin;
-    @FXML private Button saveBtn;
-    @FXML private Button loadBtn;
+
+    // User for Menu Bar
+    @FXML private MenuItem saveBtn;
+    @FXML private MenuItem loadBtn;
+
+//    @FXML private Button saveBtn;
+//    @FXML private Button loadBtn;
     private boolean adminLoggedIn = false;
 
 //    // Combobox for choosing tier level.
@@ -214,23 +213,23 @@ public class TableViewController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save User Table");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-        if(users.isEmpty()){
-            secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
-            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
-            emptyTableAlert.setContentText("You have nothing to save");
-            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
-            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
-            emptyTableAlert.showAndWait();
-            if(emptyTableAlert.getResult() == ButtonType.OK){
-                emptyTableAlert.close();
-            }
-        }
-        else{
+//        if(users.isEmpty()){
+//            secondaryStage.initOwner(this.saveBtn.get);
+//            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
+//            emptyTableAlert.setContentText("You have nothing to save");
+//            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
+//            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
+//            emptyTableAlert.showAndWait();
+//            if(emptyTableAlert.getResult() == ButtonType.OK){
+//                emptyTableAlert.close();
+//            }
+//        }
+//        else{
             File file = fileChooser.showSaveDialog(secondaryStage);
             if(file != null){
                 saveFile(tableView.getItems(), file);
             }
-        }
+//        }
     }
 
     public void saveFile(ObservableList<User> userObservableList, File file){
