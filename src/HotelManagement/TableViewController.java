@@ -10,7 +10,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -54,12 +53,10 @@ public class TableViewController implements Initializable {
     @FXML private MenuItem saveBtn;
     @FXML private MenuItem loadBtn;
 
-//    @FXML private Button saveBtn;
-//    @FXML private Button loadBtn;
     private boolean adminLoggedIn = false;
 
-//    // Combobox for choosing tier level.
-//    @FXML private ComboBox comboBox;
+    // Combo box for choosing tier level.
+    @FXML private ComboBox<Integer> comboBox;
 
     public Database d = new Database();
 
@@ -115,8 +112,7 @@ public class TableViewController implements Initializable {
     public void newUserButtonPushed(ActionEvent event){
         User u = new User(nameTextField.getText(),
                 phoneNumTextField.getText(),
-                emailTextField.getText(),
-                3, userNameTextField.getText(),
+                emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),
                 dobTextField.getText());
 
         // Verifies if email, phone #, and date of birth are valid, then adds the user to database then table.
@@ -127,6 +123,7 @@ public class TableViewController implements Initializable {
             emailTextField.clear();
             userNameTextField.clear();
             dobTextField.clear();
+            comboBox.setValue(null);
             tableView.getItems().add(u);
         }
         else{
@@ -203,9 +200,6 @@ public class TableViewController implements Initializable {
             alert.setContentText(u.returnPermissions(u.getTier()));
             alert.showAndWait();
         }
-
-
-
     }
 
     public void handleSave(ActionEvent event){
@@ -254,18 +248,6 @@ public class TableViewController implements Initializable {
         }
     }
 
-//    public void saveDb(){
-//        try {
-//            String filename = "TestFile2.ser";
-//            FileOutputStream fos = new FileOutputStream(filename);
-//            ObjectOutputStream os = new ObjectOutputStream(fos);
-//            os.writeObject(d);
-//            os.close();
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//    }
-
     public void loadFile() {
         try {
             String filePath = new File("").getAbsolutePath();
@@ -285,7 +267,6 @@ public class TableViewController implements Initializable {
                 else{
                     d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
                 }
-
             }
             System.out.println("");
 
@@ -303,9 +284,10 @@ public class TableViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        ObservableList<Integer> tiersComboBox = FXCollections.observableArrayList(1, 2, 3);
-
         // Sets up the Columns in the table
+        assert comboBox != null : "fx:id=\"comboBox\" was not injected: check your FXML file 'TableView.fxml'.";
+        comboBox.getItems().setAll(1,2,3);
+
         nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
         phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));
@@ -315,10 +297,6 @@ public class TableViewController implements Initializable {
         dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<User, String>("dob"));
         roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
 
-//        // Sets up the combo box
-//        comboBox.setValue(1);
-//        comboBox.setItems(tiersComboBox);
-
         // load dummy data
         tableView.setItems(getUsers());
 
@@ -327,6 +305,7 @@ public class TableViewController implements Initializable {
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
     }
 
     // This method will return an Observable list of User objects.
