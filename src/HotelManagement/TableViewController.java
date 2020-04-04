@@ -3,6 +3,7 @@ package HotelManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -13,14 +14,14 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.util.Collection;
 import java.util.ResourceBundle;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
@@ -55,6 +56,7 @@ public class TableViewController implements Initializable {
     @FXML private Text lblAdminLogin;
     @FXML private Button btnLoginAdmin;
     @FXML private Button saveBtn;
+    @FXML private Button loadBtn;
     private boolean adminLoggedIn = false;
 
 //    // Combobox for choosing tier level.
@@ -104,19 +106,19 @@ public class TableViewController implements Initializable {
         alert.setTitle("Application Info");
         alert.setHeaderText("Hotel Database");
         alert.setContentText("Created by: Steven Villarreal, Corey Rice,\n\t\t   Jason Kaip, Corey Sutter\n\n" +
-                             "This application serves as a Hotel Database System that can add, delete users." +
-                             " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\"," +
-                             " are editable.");
+                "This application serves as a Hotel Database System that can add, delete users." +
+                " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\"," +
+                " are editable.");
         alert.showAndWait();
     }
 
     // This method will create new User and add it to the table and database.
     public void newUserButtonPushed(ActionEvent event){
         User u = new User(nameTextField.getText(),
-                          phoneNumTextField.getText(),
-                          emailTextField.getText(),
-                          3, userNameTextField.getText(),
-                          dobTextField.getText());
+                phoneNumTextField.getText(),
+                emailTextField.getText(),
+                3, userNameTextField.getText(),
+                dobTextField.getText());
 
         // Verifies if email, phone #, and date of birth are valid, then adds the user to database then table.
         if(u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(), dobTextField.getText())){
@@ -213,23 +215,23 @@ public class TableViewController implements Initializable {
         fileChooser.setTitle("Save User Table");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         if(users.isEmpty()){
-        secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
-        Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
-        emptyTableAlert.setContentText("You have nothing to save");
-        emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
-        emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
-        emptyTableAlert.showAndWait();
-        if(emptyTableAlert.getResult() == ButtonType.OK){
-            emptyTableAlert.close();
+            secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
+            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
+            emptyTableAlert.setContentText("You have nothing to save");
+            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
+            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
+            emptyTableAlert.showAndWait();
+            if(emptyTableAlert.getResult() == ButtonType.OK){
+                emptyTableAlert.close();
+            }
         }
-    }
         else{
-        File file = fileChooser.showSaveDialog(secondaryStage);
-        if(file != null){
-            saveFile(tableView.getItems(), file);
+            File file = fileChooser.showSaveDialog(secondaryStage);
+            if(file != null){
+                saveFile(tableView.getItems(), file);
+            }
         }
     }
-}
 
     public void saveFile(ObservableList<User> userObservableList, File file){
         try{
@@ -240,6 +242,7 @@ public class TableViewController implements Initializable {
                 outWriter.newLine();
             }
             System.out.println(userObservableList.toString());
+            System.out.println(d.getUserSecondaryDb(0));
             outWriter.close();
         }
         catch (IOException e) {
@@ -252,6 +255,18 @@ public class TableViewController implements Initializable {
         }
     }
 
+//    public void saveDb(){
+//        try {
+//            String filename = "TestFile2.ser";
+//            FileOutputStream fos = new FileOutputStream(filename);
+//            ObjectOutputStream os = new ObjectOutputStream(fos);
+//            os.writeObject(d);
+//            os.close();
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+
     public void loadFile() {
         try {
             String filePath = new File("").getAbsolutePath();
@@ -260,23 +275,12 @@ public class TableViewController implements Initializable {
             String line;
             String[] array;
 
-            users.clear();
             d.clearDb();
-
+            users.clear();
             while ((line = br.readLine()) != null){
                 array = line.split(" , ");
-                if(array[0] != "ADMIN") {
-                    users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
-//                    d.addUser(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]), 1));
-//                }
-                }
-//            System.out.println(d.getMainDb().get(0) + "\n"
-//                    + d.getMainDb().get(1) + "\n"
-//                    + d.getMainDb().get(2) + "\n"
-//                    + d.getMainDb().get(3) + "\n"
-//                    + d.getMainDb().get(4) + "\n"
-//                    + d.getMainDb().get(5) + "\n"
-//                    + d.getMainDb().get(6) + "\n");
+                users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+
             }
 
             br.close();
@@ -285,79 +289,6 @@ public class TableViewController implements Initializable {
             ex.printStackTrace();
         }
     }
-
-    public void saveDb() throws IOException {
-//        try {
-//            FileOutputStream fos = new FileOutputStream("TestFile2.ser");
-//            ObjectOutputStream os = new ObjectOutputStream(fos);
-//            os.writeObject(d);
-//            os.close();
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//
-//        // First add user 0
-//
-//        // Second add user 1
-//        //....
-//
-//
-//        JSONObject u1 = new JSONObject();
-//        u1.put("name", d.getUser(0).getName());
-//        u1.put("phone", d.getUser(0).getPhoneNum());
-//        u1.put("email", d.getUser(0).getEmail());
-//        u1.put("username", d.getUser(0).getUsername());
-//        u1.put("pass", d.getUser(0).getPassword());
-//        u1.put("room", 0);
-//        u1.put("tier", 1);
-//        u1.put("dob", d.getUser(0).getDob());
-//
-//        JSONObject u1Object = new JSONObject();
-//        u1Object.put("User", u1);
-//
-//        // Until above is done, add Users to JSONArray.
-//
-//        // Add Database to JSONArray
-//        JSONArray data = new JSONArray();
-//        data.add(u1Object);
-//
-//        //Write JSON file
-//        try(FileWriter file = new FileWriter("database.json")){
-//            file.write(data.toJSONString());
-//            file.flush();
-//        }
-//        catch(IOException e){
-//            e.printStackTrace();
-//        }
-    }
-
-    public void loadDb() throws IOException, ParseException {
-//        d.clearDb();
-//        ObjectInputStream in = new ObjectInputStream(new FileInputStream("TestFile2.ser"));
-//        int count = 0;
-//        try {
-//            while (true) {
-//                count++;
-//                try {
-//                    Object obj = in.readObject();
-//                    System.out.println("obj #" + count + " is a: " + obj.getClass().getName());
-//                    System.out.println(obj + ".toString(): " + obj);
-//                }
-//                catch (ClassNotFoundException e) {
-//                    e.printStackTrace();
-//                    System.out.println("can't read obj #" + count + ": " + e);
-//                }
-//            }
-//        }
-//        catch (EOFException e) {
-//            // unfortunately ObjectInputStream doesn't have a good way to detect the end of the stream
-//            // so just ignore this exception - it's expected when there are no more objects
-//        }
-//        finally {
-//            in.close();
-//        }
-    }
-
 
     // Exits the program via the File --> Close
     public void exitButton(ActionEvent event){
@@ -431,4 +362,3 @@ public class TableViewController implements Initializable {
         return users;
     }
 }
-
