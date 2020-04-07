@@ -126,7 +126,5 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="307.0" layoutY="624.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="107.0" text="Save" />
-      <Button layoutX="307.0" layoutY="684.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="107.0" text="Load" />
    </children>
 </AnchorPane>

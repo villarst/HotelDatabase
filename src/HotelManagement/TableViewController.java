@@ -54,7 +54,6 @@ public class TableViewController implements Initializable {
     @FXML private MenuItem loadBtn;
 
     private boolean adminLoggedIn = false;
-
     // Combo box for choosing tier level.
     @FXML private ComboBox<Integer> comboBox;
 
@@ -164,25 +163,39 @@ public class TableViewController implements Initializable {
 
 
     public void deleteButtonPushed() {
-        ObservableList<User> selectedRows, allPeople;
+        ObservableList<User> selectedRow, allPeople;
         allPeople = tableView.getItems();
 
         // This gives us the row that was selected.
-        selectedRows = tableView.getSelectionModel().getSelectedItems();
+        selectedRow = tableView.getSelectionModel().getSelectedItems();
 
         // loop over the selected rows and remove the User Object from the table.
         // also removes the User and frees up the room for the database 'd'
-        if(adminLoggedIn == true) {
-            if (tableView.getItems().get(0) != null) {
-                for (User u : selectedRows) {
-                    allPeople.remove(u);
-                    d.searchUser(u);
-                    System.out.println("Check");
+//        selectedRow.forEach(allPeople::remove);
+
+
+        if(adminLoggedIn == true && tableView.getSelectionModel().getSelectedItem().getName() != "ADMIN") {
+            if (allPeople != null) {
+                for (User u : selectedRow) {
+                    if(selectedRow.size() == 1) {
+                        allPeople.remove(u);
+                        d.removeUser(u);
+                        System.out.println("Check");
+                        break;
+                    }
+                    else{
+                        d.searchUser(u);
+                        allPeople.remove(u);
+                        System.out.println("Check");
+                    }
                 }
             }
             else {
                 System.out.println("Sorry list is empty.");
             }
+        }
+        else{
+            System.out.println("The ADMIN can not be deleted, or the ADMIN must be logged in to delete users.");
         }
     }
 
