@@ -17,114 +17,114 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.TableViewController">
-   <children>
-      <Button fx:id="backToMainView_Btn" layoutX="1284.0" layoutY="703.0" mnemonicParsing="false" onAction="#changeScreenBtnPushed" prefHeight="47.0" prefWidth="177.0" text="Go Back">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <VBox layoutX="29.0" layoutY="29.0" prefHeight="450.0" prefWidth="1162.0" spacing="10.0">
-         <children>
-            <Label text="Users In Database">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-            </Label>
-            <TableView fx:id="tableView" prefHeight="334.0" prefWidth="1162.0">
-              <columns>
-                <TableColumn fx:id="nameColumn" onEditCommit="#changeNameColumn" prefWidth="145.0" text="Name" />
-                <TableColumn fx:id="phoneNumColumn" onEditCommit="#changePhoneNumColumn" prefWidth="145.0" text="Phone #" />
-                  <TableColumn fx:id="emailColumn" onEditCommit="#changeEmailColumn" prefWidth="145.0" text="Email" />
-                  <TableColumn fx:id="userNameColumn" prefWidth="145.0" text="Username" />
-                  <TableColumn fx:id="passwordColumn" prefWidth="145.0" text="Password" />
-                  <TableColumn fx:id="tierColumn" prefWidth="145.0" text="Tier" />
-                  <TableColumn fx:id="dateofbirthColumn" prefWidth="145.0" text="Date of Birth" />
-                  <TableColumn fx:id="roomNum" prefWidth="145.0" text="Room #" />
-              </columns>
-            </TableView>
-            <HBox prefHeight="71.0" prefWidth="1162.0" spacing="20.0">
-               <children>
-                  <TextField fx:id="nameTextField" prefHeight="25.0" prefWidth="125.0" promptText="Name">
-                     <HBox.margin>
-                        <Insets left="11.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <TextField fx:id="phoneNumTextField" prefHeight="25.0" prefWidth="125.0" promptText="Phone #" />
-                  <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="125.0" promptText="Email" />
-                  <TextField fx:id="userNameTextField" prefHeight="25.0" prefWidth="125.0" promptText="Username" />
-                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="125.0" text="Password  Generated">
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Tier Level" />
-                  <TextField fx:id="dobTextField" prefHeight="25.0" prefWidth="125.0" promptText="Date Of Birth" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <TextField fx:id="usernameTextField" layoutX="778.0" layoutY="550.0" prefHeight="39.0" prefWidth="195.0" promptText="Username">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="passwordTextField" layoutX="778.0" layoutY="617.0" prefHeight="38.0" prefWidth="195.0" promptText="Password">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </TextField>
-      <Text fx:id="lblAdminLogin" layoutX="800.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Text>
-      <Button fx:id="btnLoginAdmin" layoutX="806.0" layoutY="691.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="44.0" prefWidth="139.0" text="Login">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <HBox layoutX="41.0" layoutY="446.0" prefHeight="33.0" prefWidth="1156.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#newUserButtonPushed" prefHeight="25.0" prefWidth="125.0" text="Add New User">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="25.0" prefWidth="125.0" text="Delete User">
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#tierPermissionsPushed" prefHeight="19.0" prefWidth="125.0" text="Tier Permissions">
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1500.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#exitButton" text="Close" />
-                  <MenuItem fx:id="saveBtn" mnemonicParsing="false" onAction="#handleSave" text="Save File" />
-                  <MenuItem fx:id="loadBtn" mnemonicParsing="false" onAction="#loadFile" text="Load File" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#deleteButtonPushed" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#alertAbout" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </children>
+    <children>
+        <Button fx:id="backToMainView_Btn" layoutX="1284.0" layoutY="703.0" mnemonicParsing="false" onAction="#changeScreenBtnPushed" prefHeight="47.0" prefWidth="177.0" text="Go Back">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <VBox layoutX="29.0" layoutY="29.0" prefHeight="450.0" prefWidth="1162.0" spacing="10.0">
+            <children>
+                <Label text="Users In Database">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TableView fx:id="tableView" prefHeight="334.0" prefWidth="1162.0">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" onEditCommit="#changeNameColumn" prefWidth="145.0" text="Name" />
+                        <TableColumn fx:id="phoneNumColumn" onEditCommit="#changePhoneNumColumn" prefWidth="145.0" text="Phone #" />
+                        <TableColumn fx:id="emailColumn" onEditCommit="#changeEmailColumn" prefWidth="145.0" text="Email" />
+                        <TableColumn fx:id="userNameColumn" prefWidth="145.0" text="Username" />
+                        <TableColumn fx:id="passwordColumn" prefWidth="145.0" text="Password" />
+                        <TableColumn fx:id="tierColumn" prefWidth="145.0" text="Tier" />
+                        <TableColumn fx:id="dateofbirthColumn" prefWidth="145.0" text="Date of Birth" />
+                        <TableColumn fx:id="roomNum" prefWidth="145.0" text="Room #" />
+                    </columns>
+                </TableView>
+                <HBox prefHeight="71.0" prefWidth="1162.0" spacing="20.0">
+                    <children>
+                        <TextField fx:id="nameTextField" prefHeight="25.0" prefWidth="125.0" promptText="Name">
+                            <HBox.margin>
+                                <Insets left="11.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="phoneNumTextField" prefHeight="25.0" prefWidth="125.0" promptText="Phone #" />
+                        <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="125.0" promptText="Email" />
+                        <TextField fx:id="userNameTextField" prefHeight="25.0" prefWidth="125.0" promptText="Username" />
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="125.0" text="Password  Generated">
+                            <font>
+                                <Font name="System Italic" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Tier Level" />
+                        <TextField fx:id="dobTextField" prefHeight="25.0" prefWidth="125.0" promptText="Date Of Birth" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <TextField fx:id="usernameTextField" layoutX="778.0" layoutY="550.0" prefHeight="39.0" prefWidth="195.0" promptText="Username">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="passwordTextField" layoutX="778.0" layoutY="617.0" prefHeight="38.0" prefWidth="195.0" promptText="Password">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </TextField>
+        <Text fx:id="lblAdminLogin" layoutX="800.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Login">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Text>
+        <Button fx:id="btnLoginAdmin" layoutX="806.0" layoutY="691.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="44.0" prefWidth="139.0" text="Login">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <HBox layoutX="41.0" layoutY="446.0" prefHeight="33.0" prefWidth="1156.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#newUserButtonPushed" prefHeight="25.0" prefWidth="125.0" text="Add New User">
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="25.0" prefWidth="125.0" text="Delete User">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#tierPermissionsPushed" prefHeight="19.0" prefWidth="125.0" text="Tier Permissions">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1500.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#exitButton" text="Close" />
+                        <MenuItem fx:id="saveBtn" mnemonicParsing="false" onAction="#handleSave" text="Save File" />
+                        <MenuItem fx:id="loadBtn" mnemonicParsing="false" onAction="#loadFile" text="Load File" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#deleteButtonPushed" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#alertAbout" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
 </AnchorPane>

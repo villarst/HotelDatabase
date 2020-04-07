@@ -167,25 +167,37 @@ public class TableViewController implements Initializable {
 
 
     public void deleteButtonPushed() {
-        ObservableList<User> selectedRows, allPeople;
+        ObservableList<User> selectedRow, allPeople;
         allPeople = tableView.getItems();
 
         // This gives us the row that was selected.
-        selectedRows = tableView.getSelectionModel().getSelectedItems();
+        selectedRow = tableView.getSelectionModel().getSelectedItems();
 
         // loop over the selected rows and remove the User Object from the table.
         // also removes the User and frees up the room for the database 'd'
-        if(adminLoggedIn == true) {
-            if (tableView.getItems().get(0) != null) {
-                for (User u : selectedRows) {
-                    allPeople.remove(u);
-                    d.searchUser(u);
-                    System.out.println("Check");
+
+        if(adminLoggedIn == true && tableView.getSelectionModel().getSelectedItem().getName() != "ADMIN") {
+            if (allPeople != null) {
+                for (User u : selectedRow) {
+                    if(selectedRow.size() == 1) {
+                        allPeople.remove(u);
+                        d.removeUser(u);
+                        System.out.println("Check");
+                        break;
+                    }
+                    else{
+                        d.searchUser(u);
+                        allPeople.remove(u);
+                        System.out.println("Check");
+                    }
                 }
             }
             else {
                 System.out.println("Sorry list is empty.");
             }
+        }
+        else{
+            System.out.println("The ADMIN can not be deleted, or the ADMIN must be logged in to delete users.");
         }
     }
 
@@ -222,10 +234,10 @@ public class TableViewController implements Initializable {
 //            }
 //        }
 //        else{
-            File file = fileChooser.showSaveDialog(secondaryStage);
-            if(file != null){
-                saveFile(tableView.getItems(), file);
-            }
+        File file = fileChooser.showSaveDialog(secondaryStage);
+        if(file != null){
+            saveFile(tableView.getItems(), file);
+        }
 //        }
     }
 
@@ -345,7 +357,7 @@ public class TableViewController implements Initializable {
         users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
                 d.viewRoom(5), "villarst", d.getUser(5).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", 0, "04/23/29"));
+        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", "jscc1234",  0, "04/23/29"));
         users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29"));
         System.out.println("Admin Tier level: " + users.get(6).getTier());
         return users;

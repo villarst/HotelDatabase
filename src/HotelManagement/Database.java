@@ -60,11 +60,11 @@ public class Database implements Serializable{
 
     // This method clears the Database, (MainDb, SecondaryDb, rooms[]
     public void clearDb(){
-       MainDb.clear();
-       SecondaryDb.clear();
-       for(int i = 0; i < 300; i++){
-           rooms[i] = false;
-       }
+        MainDb.clear();
+        SecondaryDb.clear();
+        for(int i = 0; i < 300; i++){
+            rooms[i] = false;
+        }
     }
 
     // This method returns MainDb
