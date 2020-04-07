@@ -52,6 +52,7 @@ public class TableViewController implements Initializable {
     // User for Menu Bar
     @FXML private MenuItem saveBtn;
     @FXML private MenuItem loadBtn;
+    @FXML private Button btnDelete;
 
     private boolean adminLoggedIn = false;
 
@@ -144,6 +145,7 @@ public class TableViewController implements Initializable {
                     passwordTextField.clear();
                     usernameTextField.setVisible(false);
                     passwordTextField.setVisible(false);
+                    btnDelete.setVisible(true);
                     lblAdminLogin.setVisible(false);
                     btnLoginAdmin.setText("Logout");
                     adminLoggedIn = true;
@@ -156,6 +158,7 @@ public class TableViewController implements Initializable {
             usernameTextField.setVisible(true);
             passwordTextField.setVisible(true);
             lblAdminLogin.setVisible(true);
+            btnDelete.setVisible(false);
             btnLoginAdmin.setText("Login");
             adminLoggedIn = false;
             return;
@@ -306,6 +309,7 @@ public class TableViewController implements Initializable {
         emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
+        btnDelete.setVisible(false);
     }
 
     // This method will return an Observable list of User objects.
