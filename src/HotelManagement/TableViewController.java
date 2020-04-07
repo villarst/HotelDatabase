@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
+import static HotelManagement.MainViewController.adminLoggedIn;
 
 /**
  * Need to fix the table so it doesn't reset data every time we change scenes,
@@ -44,20 +45,16 @@ public class TableViewController implements Initializable {
     @FXML private TextField dobTextField;
 
     // These variables let an ADMIN login.
-    @FXML private TextField usernameTextField;
-    @FXML private TextField passwordTextField;
-    @FXML private Text lblAdminLogin;
-    @FXML private Button btnLoginAdmin;
+
 
     // User for Menu Bar
     @FXML private MenuItem saveBtn;
     @FXML private MenuItem loadBtn;
 
-    private boolean adminLoggedIn = false;
     // Combo box for choosing tier level.
     @FXML private ComboBox<Integer> comboBox;
 
-    public Database d = new Database();
+    public static Database d = new Database();
 
     public void changeNameColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
@@ -129,38 +126,6 @@ public class TableViewController implements Initializable {
             System.out.println("User was not added, check email, phone #, or date of birth.");
         }
     }
-
-
-
-
-    // this logins the Admin only. may modify to login a user maybe..
-    public void loginAdmin(){
-        if(adminLoggedIn == false) {
-            for (int i = 0; i < d.secondaryDbSize(); i++) {
-                if (d.searchSecondary(passwordTextField.getText())) {
-                    tableView.setEditable(true);
-                    usernameTextField.clear();
-                    passwordTextField.clear();
-                    usernameTextField.setVisible(false);
-                    passwordTextField.setVisible(false);
-                    lblAdminLogin.setVisible(false);
-                    btnLoginAdmin.setText("Logout");
-                    adminLoggedIn = true;
-                    return;
-                }
-            }
-        }
-        else{
-            tableView.setEditable(false);
-            usernameTextField.setVisible(true);
-            passwordTextField.setVisible(true);
-            lblAdminLogin.setVisible(true);
-            btnLoginAdmin.setText("Login");
-            adminLoggedIn = false;
-            return;
-        }
-    }
-
 
     public void deleteButtonPushed() {
         ObservableList<User> selectedRow, allPeople;
@@ -354,7 +319,7 @@ public class TableViewController implements Initializable {
         users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
                 d.viewRoom(5), "villarst", d.getUser(5).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", 0, "04/23/29"));
+        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", "jscc123", 0, "04/23/29"));
         users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29"));
         System.out.println("Admin Tier level: " + users.get(6).getTier());
         return users;
