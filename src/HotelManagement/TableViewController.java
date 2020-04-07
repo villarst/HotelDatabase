@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -16,8 +17,9 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static HotelManagement.DatabaseGUI.table;
-import static HotelManagement.DatabaseGUI.mainView;
+import static HotelManagement.DatabaseGUI.*;
+import static HotelManagement.adminLoginSceneController.adminLoggedIn;
+
 
 /**
  * Need to fix the table so it doesn't reset data every time we change scenes,
@@ -54,12 +56,11 @@ public class TableViewController implements Initializable {
     @FXML private MenuItem loadBtn;
     @FXML private Button btnDelete;
 
-    private boolean adminLoggedIn = false;
 
     // Combo box for choosing tier level.
     @FXML private ComboBox<Integer> comboBox;
 
-    public Database d = new Database();
+    public static Database d = new Database();
 
     public void changeNameColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
@@ -88,13 +89,6 @@ public class TableViewController implements Initializable {
             tableView.refresh();
             userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum());
         }
-    }
-
-    // When this method is called, it will change the scene to a table view.
-    public void changeScreenBtnPushed(ActionEvent event) throws IOException {
-        tableView.setEditable(false);
-        table.hide();
-        mainView.show();
     }
 
     // This method pops a message about some info for the "about" menu item.
@@ -136,32 +130,11 @@ public class TableViewController implements Initializable {
 
 
     // this logins the Admin only. may modify to login a user maybe..
-    public void loginAdmin(){
-        if(adminLoggedIn == false) {
-            for (int i = 0; i < d.secondaryDbSize(); i++) {
-                if (d.searchSecondary(passwordTextField.getText())) {
-                    tableView.setEditable(true);
-                    usernameTextField.clear();
-                    passwordTextField.clear();
-                    usernameTextField.setVisible(false);
-                    passwordTextField.setVisible(false);
-                    btnDelete.setVisible(true);
-                    lblAdminLogin.setVisible(false);
-                    btnLoginAdmin.setText("Logout");
-                    adminLoggedIn = true;
-                    return;
-                }
-            }
-        }
-        else{
-            tableView.setEditable(false);
-            usernameTextField.setVisible(true);
-            passwordTextField.setVisible(true);
-            lblAdminLogin.setVisible(true);
-            btnDelete.setVisible(false);
-            btnLoginAdmin.setText("Login");
+    public void logoutAdmin(){
+        if(adminLoggedIn){
+            table.setTitle("Admin Login Screen");
+            table.setScene(sceneAdmin);
             adminLoggedIn = false;
-            return;
         }
     }
 
@@ -222,28 +195,14 @@ public class TableViewController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save User Table");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-//        if(users.isEmpty()){
-//            secondaryStage.initOwner(this.saveBtn.get);
-//            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
-//            emptyTableAlert.setContentText("You have nothing to save");
-//            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
-//            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
-//            emptyTableAlert.showAndWait();
-//            if(emptyTableAlert.getResult() == ButtonType.OK){
-//                emptyTableAlert.close();
-//            }
-//        }
-//        else{
         File file = fileChooser.showSaveDialog(secondaryStage);
         if(file != null){
             saveFile(tableView.getItems(), file);
         }
-//        }
     }
 
     public void saveFile(ObservableList<User> userObservableList, File file){
         try{
-//            saveDb();
             BufferedWriter outWriter = new BufferedWriter((new FileWriter(file + ".txt")));
             for(User u : userObservableList){
                 outWriter.write((u.toString()));
@@ -267,7 +226,8 @@ public class TableViewController implements Initializable {
         try {
             String filePath = new File("").getAbsolutePath();
             System.out.println (filePath);
-            BufferedReader br = new BufferedReader(new FileReader(new File(filePath + "/src/HotelManagement/TestFile.txt")));
+            BufferedReader br = new BufferedReader(new FileReader(new File(filePath +
+                                                                  "/src/HotelManagement/TestFile.txt")));
             String line;
             String[] array;
 
@@ -275,12 +235,15 @@ public class TableViewController implements Initializable {
             users.clear();
             while ((line = br.readLine()) != null){
                 array = line.split(",");
-                users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]),
+                        array[6], Integer.parseInt(array[7])));
                 if(Integer.parseInt(array[5]) == 0){
-                    d.addAdmin(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                    d.addAdmin(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]),
+                            array[6], Integer.parseInt(array[7])));
                 }
                 else{
-                    d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                    d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4],
+                            Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
                 }
             }
             System.out.println("");
@@ -301,8 +264,9 @@ public class TableViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Sets up the Columns in the table
         assert comboBox != null : "fx:id=\"comboBox\" was not injected: check your FXML file 'TableView.fxml'.";
+        btnDelete.setVisible(true);
         comboBox.getItems().setAll(1,2,3);
-
+        btnLoginAdmin.setText("Logout");
         nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
         phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));
@@ -320,8 +284,6 @@ public class TableViewController implements Initializable {
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-
-        btnDelete.setVisible(false);
     }
 
     // This method will return an Observable list of User objects.

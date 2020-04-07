@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import java.io.IOException;
 import java.util.*;
 
 /*****************************************************************
@@ -20,19 +21,37 @@ import java.util.*;
 public class DatabaseGUI extends Application {
 
     public static Stage table = new Stage();
-    public static Stage mainView = new Stage();
+
+    public static Parent root1;
+    public static Parent root2;
+
+    public static Scene sceneAdmin;
+    public static Scene sceneTable;
+
+    static {
+        try {
+            root1 = FXMLLoader.load(DatabaseGUI.class.getResource("TableView.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static {
+        try {
+            root2 = FXMLLoader.load(DatabaseGUI.class.getResource("adminLoginScene.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root1 = FXMLLoader.load(getClass().getResource("TableView.fxml"));
-        table.setTitle("Hotel Actual Database v2");
-        table.setScene(new Scene(root1, 1500, 800));
-        table.hide();
-
-        Parent root2 = FXMLLoader.load(getClass().getResource("MainView.fxml"));
-        mainView.setTitle("Hotel Database v1");
-        mainView.setScene(new Scene(root2, 800, 400));
-        mainView.show();
+        sceneAdmin = new Scene(root2, 1000, 600);
+        sceneTable = new Scene(root1, 1210, 800);
+        table.setTitle("Admin Login Screen");
+        table.setScene(sceneAdmin);
+        table.show();
     }
 
 
