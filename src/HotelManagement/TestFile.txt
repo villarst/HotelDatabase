@@ -1,0 +1,4 @@
+Steven,6168342729,villarst@mail.gvsu.edu,villarst,nbvSmDBOSm,1,03/27/00,0
+Mike J,6165583079,johnmike@mail.gvsu.edu,villarst,xF8UBhCxpp,3,03/27/00,201
+ADMIN,9999999999,admin@login.com,ADMIN,Ui4qIQHcKa,0,04/23/29,-1
+asdf,4637382928,sd@gmail.com,asdfsda,y2nVgaLyxx,3,04/30/00,202

@@ -1,6 +1,8 @@
 package HotelManagement;
 
-public class Tier {
+import java.io.Serializable;
+
+public class Tier implements Serializable{
     private boolean poolAccess; //1
     private boolean gymAccess;
     private boolean pcAccess;
@@ -11,6 +13,7 @@ public class Tier {
     private boolean arcadeAccess;
     private boolean roomAccess;
     private boolean adminAccess;
+    private boolean allRoomAccess;
     private int tier;
 
     public Tier(int tierLevel){
@@ -61,6 +64,7 @@ public class Tier {
                 arcadeAccess = true;
                 adminAccess = true;
                 roomAccess = true;
+                allRoomAccess = true;
                 break;
             default:
                 System.out.println("You have chosen no tier level..");
@@ -73,6 +77,14 @@ public class Tier {
 
     public void setPoolAccess(boolean poolAccess) {
         this.poolAccess = poolAccess;
+    }
+
+    public boolean isAllRoomAccess() {
+        return allRoomAccess;
+    }
+
+    public void setAllRoomAccess(boolean allRoomAccess) {
+        this.allRoomAccess = allRoomAccess;
     }
 
     public boolean isGymAccess() {
@@ -147,16 +159,25 @@ public class Tier {
         this.adminAccess = adminAccess;
     }
 
-    public void displayPermissions(){
-        System.out.println("Pool Access: " + isPoolAccess());
-        System.out.println("Gym Access: " + isGymAccess());
-        System.out.println("Pc Room Access: " + isPcAccess());
-        System.out.println("Bar Access: " + isBarAccess());
-        System.out.println("Casino Access: " + isCasinoAccess());
-        System.out.println("Buffet Access: " + isBuffetAccess());
-        System.out.println("Hot Tub Access: " + isHotTubAccess());
-        System.out.println("Arcade Room Access: " + isArcadeAccess());
-        System.out.println("Admin Access: " + isAdminAccess());
-        System.out.println("All Room Access: " + isRoomAccess());
+    public int getTier() {
+        return tier;
+    }
+
+    public void setTier(int tier) {
+        this.tier = tier;
+    }
+
+    public String displayPermissions(){
+        String permisions = ("Pool Access: " + isPoolAccess() + "\n" +
+                "Gym Access: " + isGymAccess() + "\n" +
+                "PC Room Access: " + isPcAccess() + "\n" +
+                "Bar Access: " + isBarAccess() + "\n" +
+                "Casino Access: " + isCasinoAccess() + "\n" +
+                "Buffet Access: " + isBuffetAccess() + "\n" +
+                "Hot Tub Access: " + isHotTubAccess() + "\n" +
+                "Arcade Room Access: " + isArcadeAccess() + "\n" +
+                "Admin Access: " + isAdminAccess() + "\n" +
+                "All Room Access: " + isAllRoomAccess() + "\n" );
+        return permisions;
     }
 }

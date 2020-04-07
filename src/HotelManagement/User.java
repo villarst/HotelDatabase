@@ -1,30 +1,30 @@
-
 package HotelManagement;
-
 import javafx.beans.property.SimpleStringProperty;
 import org.apache.commons.lang3.RandomStringUtils;
+import java.io.Serializable;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class User {
-    private SimpleStringProperty Name;
-    private SimpleStringProperty PhoneNum;
-    private SimpleStringProperty Email;
-    private SimpleStringProperty username;
-    private SimpleStringProperty password;
+public class User implements Serializable{
+    private transient SimpleStringProperty Name;
+    private transient SimpleStringProperty PhoneNum;
+    private transient SimpleStringProperty Email;
+    private transient SimpleStringProperty username;
+    private transient SimpleStringProperty password;
     private int roomNum;
     private int tier;
-    private SimpleStringProperty dob;
+    private transient SimpleStringProperty dob;
 
+//    public Tier t;
 
     // Used to add a user to the ObservableList<User> users array list for viewing in the table.
     public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
-        Tier t = new Tier(tier);
+//        t = new Tier(tier);
         this.password = new SimpleStringProperty(generatePassWApache());
         if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
@@ -43,7 +43,7 @@ public class User {
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
         this.roomNum = room;
-        Tier t = new Tier(tier);
+        this.tier = tier;
         this.password = new SimpleStringProperty(pass);
         if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
@@ -69,8 +69,8 @@ public class User {
         this.password = new SimpleStringProperty(generatePassWApache());
         this.roomNum = -1;
 
-        if(tier == 4) {
-            Tier t = new Tier(4);
+        if(tier == 0) {
+            this.tier = 0;
         }
         if(verifyDate(dob)){
             this.dob = new SimpleStringProperty(dob);
@@ -91,12 +91,37 @@ public class User {
         this.password = new SimpleStringProperty(pass);
         this.roomNum = -1;
 
-        if(tier == 4) {
-            Tier t = new Tier(4);
+        if(tier == 0) {
+            this.tier = 0;
         }
         if(verifyDate(dob)){
             this.dob = new SimpleStringProperty(dob);
         }
+    }
+
+
+    // Used to load in admin to the Db
+    public User(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
+        this.Name = new SimpleStringProperty(n);
+        if(verifyPhoneNumber(num)){
+            this.PhoneNum = new SimpleStringProperty(num);
+        }
+        if(verifyEmail(email)){
+            this.Email = new SimpleStringProperty(email);
+        }
+        this.username = new SimpleStringProperty(username);
+        this.password = new SimpleStringProperty(pass);
+
+        if(tier == 0) {
+            this.tier = 0;
+        }
+        else{
+            this.tier = tier;
+        }
+        if(verifyDate(dob)){
+            this.dob = new SimpleStringProperty(dob);
+        }
+        this.roomNum = roomNum;
     }
 
 
@@ -215,12 +240,12 @@ public class User {
             simpleDateFormatShort.setLenient(false);
             try {
                 Date javaDate = simpleDateFormatLong.parse(date);
-                System.out.println("Verified: " + date);
+//                System.out.println("Verified: " + date);
             }
             catch (ParseException e) {
                 try{
                     Date javaDate = simpleDateFormatShort.parse(date);
-                    System.out.println("Verified: " + date);
+//                    System.out.println("Verified: " + date);
                 }
                 catch (ParseException e1){
                     System.out.println(date + " is not a valid date. DOB not updated.");
@@ -234,7 +259,7 @@ public class User {
     public static boolean verifyPhoneNumber(String newNumber){
         newNumber = newNumber.replaceAll("[\\s\\-()]", "");
         if (newNumber.matches("\\d{10}")) {
-            System.out.println("Verified: " + newNumber);
+//            System.out.println("Verified: " + newNumber);
             return true;
         }
         else{
@@ -246,7 +271,7 @@ public class User {
 
     public static boolean verifyEmail(String email){
         if(email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
-            System.out.println("Verified: " + email);
+//            System.out.println("Verified: " + email);
             return true;
         }
         else {
@@ -262,5 +287,75 @@ public class User {
             return true;
         }
         return false;
+    }
+
+    // To string to print the User from its memory address.
+    @Override
+    public String toString(){
+        // all the getters were just the variable names so getName() was Name, getPhoneNum() was PhoneNum, ETC
+        return getName() + "," + getPhoneNum() + "," + getEmail() + "," + getUsername() + ","
+                + getPassword() + "," + getTier() + "," + getDob() + "," + getRoomNum();
+    }
+    
+
+    public String returnPermissions(int tier){
+        String permissions = "";
+        switch (tier){
+            case 1: // pool, pc, hot tub access
+                permissions =("Pool Access: YES" + "\n" +
+                        "Gym Access: NO" + "\n" +
+                        "PC Room Access: YES" + "\n" +
+                        "Bar Access: NO" + "\n" +
+                        "Casino Access: NO" + "\n" +
+                        "Buffet Access: NO" + "\n" +
+                        "Hot Tub Access: YES" + "\n" +
+                        "Arcade Room Access: NO" + "\n" +
+                        "Admin Access: NO" + "\n" +
+                        "Room Access: YES" + "\n" +
+                        "All Room Access: NO" + "\n" );
+                break;
+            case 2: // pool, pc, hot tub, gym, buffet access
+                permissions =("Pool Access: YES" + "\n" +
+                        "Gym Access: YES" + "\n" +
+                        "PC Room Access: YES" + "\n" +
+                        "Bar Access: NO" + "\n" +
+                        "Casino Access: NO" + "\n" +
+                        "Buffet Access: YES" + "\n" +
+                        "Hot Tub Access: YES" + "\n" +
+                        "Arcade Room Access: NO" + "\n" +
+                        "Admin Access: NO" + "\n" +
+                        "Room Access: YES" + "\n" +
+                        "All Room Access: NO" + "\n" );
+                break;
+            case 3: // pool, pc, hot tub, gym, bar, casino, buffet, arcade access.
+                permissions =("Pool Access: YES" + "\n" +
+                        "Gym Access: YES" + "\n" +
+                        "PC Room Access: YES" + "\n" +
+                        "Bar Access: YES" + "\n" +
+                        "Casino Access: YES" + "\n" +
+                        "Buffet Access: YES" + "\n" +
+                        "Hot Tub Access: YES" + "\n" +
+                        "Arcade Room Access: YES" + "\n" +
+                        "Admin Access: NO" + "\n" +
+                        "Room Access: YES" + "\n" +
+                        "All Room Access: NO" + "\n" );
+                break;
+            case 0: // admin access.
+                permissions =("Pool Access: YES" + "\n" +
+                        "Gym Access: YES" + "\n" +
+                        "PC Room Access: YES" + "\n" +
+                        "Bar Access: YES" + "\n" +
+                        "Casino Access: YES" + "\n" +
+                        "Buffet Access: YES" + "\n" +
+                        "Hot Tub Access: YES" + "\n" +
+                        "Arcade Room Access: YES" + "\n" +
+                        "Admin Access: YES" + "\n" +
+                        "Room Access: YES" + "\n" +
+                        "All Room Access: YES" + "\n" );
+                break;
+            default:
+                System.out.println("No Tier inputted.");
+        }
+        return permissions;
     }
 }
