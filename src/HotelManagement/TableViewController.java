@@ -3,7 +3,6 @@ package HotelManagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -11,16 +10,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 import static HotelManagement.DatabaseGUI.table;
 import static HotelManagement.DatabaseGUI.mainView;
@@ -31,79 +25,65 @@ import static HotelManagement.DatabaseGUI.mainView;
  */
 public class TableViewController implements Initializable {
     // Configure the table
-    @FXML
-    public TableView<User> tableView;
-    @FXML
-    public ObservableList<User> users;
-    @FXML
-    private TableColumn<User, String> nameColumn;
-    @FXML
-    private TableColumn<User, String> phoneNumColumn;
-    @FXML
-    private TableColumn<User, String> emailColumn;
-    @FXML
-    private TableColumn<User, String> userNameColumn;
-    @FXML
-    private TableColumn<User, String> passwordColumn;
-    @FXML
-    private TableColumn<User, Integer> tierColumn;
-    @FXML
-    private TableColumn<User, String> dateofbirthColumn;
-    @FXML
-    private TableColumn<User, Integer> roomNum;
+    @FXML public TableView<User> tableView;
+    @FXML public ObservableList<User> users;
+    @FXML private TableColumn<User, String> nameColumn;
+    @FXML private TableColumn<User, String> phoneNumColumn;
+    @FXML private TableColumn<User, String> emailColumn;
+    @FXML private TableColumn<User, String> userNameColumn;
+    @FXML private TableColumn<User, String> passwordColumn;
+    @FXML private TableColumn<User, Integer> tierColumn;
+    @FXML private TableColumn<User, String> dateofbirthColumn;
+    @FXML private TableColumn<User, Integer> roomNum;
 
     // These variables are used to create new User Objects
-    @FXML
-    private TextField nameTextField;
-    @FXML
-    private TextField phoneNumTextField;
-    @FXML
-    private TextField emailTextField;
-    @FXML
-    private TextField userNameTextField;
-    @FXML
-    private TextField dobTextField;
+    @FXML private TextField nameTextField;
+    @FXML private TextField phoneNumTextField;
+    @FXML private TextField emailTextField;
+    @FXML private TextField userNameTextField;
+    @FXML private TextField dobTextField;
 
     // These variables let an ADMIN login.
-    @FXML
-    private TextField usernameTextField;
-    @FXML
-    private TextField passwordTextField;
-    @FXML
-    private Text lblAdminLogin;
-    @FXML
-    private Button btnLoginAdmin;
-    @FXML
-    private Button saveBtn;
+    @FXML private TextField usernameTextField;
+    @FXML private TextField passwordTextField;
+    @FXML private Text lblAdminLogin;
+    @FXML private Button btnLoginAdmin;
+
+    // User for Menu Bar
+    @FXML private MenuItem saveBtn;
+    @FXML private MenuItem loadBtn;
+
     private boolean adminLoggedIn = false;
 
-//    // Combobox for choosing tier level.
-//    @FXML private ComboBox comboBox;
+    // Combo box for choosing tier level.
+    @FXML private ComboBox<Integer> comboBox;
 
-    Database d = new Database();
+    public Database d = new Database();
 
-    public void changeNameColumn(TableColumn.CellEditEvent editedCell) {
+    public void changeNameColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
         d.findUser(userSelected).setName(editedCell.getNewValue().toString());
         userSelected.setName(editedCell.getNewValue().toString());
     }
 
-    public void changeEmailColumn(TableColumn.CellEditEvent editedCell) {
+    public void changeEmailColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
-        if (d.findUser(userSelected).setEmail(editedCell.getNewValue().toString())) {
+        if(d.findUser(userSelected).setEmail(editedCell.getNewValue().toString())){
             userSelected.setEmail(editedCell.getNewValue().toString());
-        } else {
+        }
+        else{
             // You have to click it or double click it then the email will be the original email in the gui.
             tableView.refresh();
             userSelected.setEmail(d.findUser(userSelected).getEmail());
         }
     }
 
-    public void changePhoneNumColumn(TableColumn.CellEditEvent editedCell) {
+    public void changePhoneNumColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
-        if (d.findUser(userSelected).setPhoneNum(editedCell.getNewValue().toString())) {
+        if(d.findUser(userSelected).setPhoneNum(editedCell.getNewValue().toString())){
             userSelected.setPhoneNum(editedCell.getNewValue().toString());
-        } else {
+        }
+        else{
             tableView.refresh();
             userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum());
         }
@@ -117,7 +97,7 @@ public class TableViewController implements Initializable {
     }
 
     // This method pops a message about some info for the "about" menu item.
-    public void alertAbout(ActionEvent event) {
+    public void alertAbout(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Application Info");
         alert.setHeaderText("Hotel Database");
@@ -129,31 +109,34 @@ public class TableViewController implements Initializable {
     }
 
     // This method will create new User and add it to the table and database.
-    public void newUserButtonPushed(ActionEvent event) {
+    public void newUserButtonPushed(ActionEvent event){
         User u = new User(nameTextField.getText(),
                 phoneNumTextField.getText(),
-                emailTextField.getText(),
-                3, userNameTextField.getText(),
+                emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),
                 dobTextField.getText());
 
         // Verifies if email, phone #, and date of birth are valid, then adds the user to database then table.
-        if (u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(), dobTextField.getText())) {
+        if(u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(), dobTextField.getText())){
             d.addUser(u);
             nameTextField.clear();
             phoneNumTextField.clear();
             emailTextField.clear();
             userNameTextField.clear();
             dobTextField.clear();
+            comboBox.setValue(null);
             tableView.getItems().add(u);
-        } else {
+        }
+        else{
             System.out.println("User was not added, check email, phone #, or date of birth.");
         }
     }
 
 
+
+
     // this logins the Admin only. may modify to login a user maybe..
-    public void loginAdmin() {
-        if (adminLoggedIn == false) {
+    public void loginAdmin(){
+        if(adminLoggedIn == false) {
             for (int i = 0; i < d.secondaryDbSize(); i++) {
                 if (d.searchSecondary(passwordTextField.getText())) {
                     tableView.setEditable(true);
@@ -167,7 +150,8 @@ public class TableViewController implements Initializable {
                     return;
                 }
             }
-        } else {
+        }
+        else{
             tableView.setEditable(false);
             usernameTextField.setVisible(true);
             passwordTextField.setVisible(true);
@@ -188,20 +172,21 @@ public class TableViewController implements Initializable {
 
         // loop over the selected rows and remove the User Object from the table.
         // also removes the User and frees up the room for the database 'd'
-        if (adminLoggedIn == true) {
+        if(adminLoggedIn == true) {
             if (tableView.getItems().get(0) != null) {
                 for (User u : selectedRows) {
                     allPeople.remove(u);
                     d.searchUser(u);
                     System.out.println("Check");
                 }
-            } else {
+            }
+            else {
                 System.out.println("Sorry list is empty.");
             }
         }
     }
 
-    public void tierPermissionsPushed(ActionEvent event) {
+    public void tierPermissionsPushed(ActionEvent event){
         ObservableList<User> selectedRows, allPeople;
         allPeople = tableView.getItems();
         // This gives us the row that was selected.
@@ -215,63 +200,94 @@ public class TableViewController implements Initializable {
             alert.setContentText(u.returnPermissions(u.getTier()));
             alert.showAndWait();
         }
-
-
     }
 
-    public void handleSave(ActionEvent event) {
+    public void handleSave(ActionEvent event){
         Stage secondaryStage = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save User Table");
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-        if (users.isEmpty()) {
-            secondaryStage.initOwner(this.saveBtn.getScene().getWindow());
-            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
-            emptyTableAlert.setContentText("You have nothing to save");
-            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
-            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
-            emptyTableAlert.showAndWait();
-            if (emptyTableAlert.getResult() == ButtonType.OK) {
-                emptyTableAlert.close();
-            }
-        } else {
+//        if(users.isEmpty()){
+//            secondaryStage.initOwner(this.saveBtn.get);
+//            Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
+//            emptyTableAlert.setContentText("You have nothing to save");
+//            emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
+//            emptyTableAlert.initOwner(this.saveBtn.getScene().getWindow());
+//            emptyTableAlert.showAndWait();
+//            if(emptyTableAlert.getResult() == ButtonType.OK){
+//                emptyTableAlert.close();
+//            }
+//        }
+//        else{
             File file = fileChooser.showSaveDialog(secondaryStage);
-            if (file != null) {
+            if(file != null){
                 saveFile(tableView.getItems(), file);
             }
-        }
+//        }
     }
 
-    public void saveFile(ObservableList<User> userObservableList, File file) {
-        try {
+    public void saveFile(ObservableList<User> userObservableList, File file){
+        try{
+//            saveDb();
             BufferedWriter outWriter = new BufferedWriter((new FileWriter(file + ".txt")));
-
-            for (User u : userObservableList) {
+            for(User u : userObservableList){
                 outWriter.write((u.toString()));
                 outWriter.newLine();
             }
             System.out.println(userObservableList.toString());
+            System.out.println(d.getUserSecondaryDb(0));
             outWriter.close();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
             ioAlert.setContentText(("Sorry. An error has occurred."));
             ioAlert.showAndWait();
-            if (ioAlert.getResult() == ButtonType.OK) {
+            if(ioAlert.getResult() == ButtonType.OK){
                 ioAlert.close();
             }
         }
     }
 
+    public void loadFile() {
+        try {
+            String filePath = new File("").getAbsolutePath();
+            System.out.println (filePath);
+            BufferedReader br = new BufferedReader(new FileReader(new File(filePath + "/src/HotelManagement/TestFile.txt")));
+            String line;
+            String[] array;
+
+            d.clearDb();
+            users.clear();
+            while ((line = br.readLine()) != null){
+                array = line.split(",");
+                users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                if(Integer.parseInt(array[5]) == 0){
+                    d.addAdmin(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                }
+                else{
+                    d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
+                }
+            }
+            System.out.println("");
+
+            br.close();
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
     // Exits the program via the File --> Close
-    public void exitButton(ActionEvent event) {
+    public void exitButton(ActionEvent event){
         System.exit(0);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        ObservableList<Integer> tiersComboBox = FXCollections.observableArrayList(1, 2, 3);
-
         // Sets up the Columns in the table
+        assert comboBox != null : "fx:id=\"comboBox\" was not injected: check your FXML file 'TableView.fxml'.";
+        comboBox.getItems().setAll(1,2,3);
+
         nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
         phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));
@@ -281,10 +297,6 @@ public class TableViewController implements Initializable {
         dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<User, String>("dob"));
         roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
 
-//        // Sets up the combo box
-//        comboBox.setValue(1);
-//        comboBox.setItems(tiersComboBox);
-
         // load dummy data
         tableView.setItems(getUsers());
 
@@ -293,10 +305,11 @@ public class TableViewController implements Initializable {
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+
     }
 
     // This method will return an Observable list of User objects.
-    public ObservableList<User> getUsers() {
+    public ObservableList<User> getUsers(){
         users = FXCollections.observableArrayList();
         d.addUser(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
@@ -334,4 +347,3 @@ public class TableViewController implements Initializable {
         return users;
     }
 }
-
