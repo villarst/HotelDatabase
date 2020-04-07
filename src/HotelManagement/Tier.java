@@ -16,7 +16,7 @@ public class Tier implements Serializable{
     private boolean allRoomAccess;
     private int tier;
 
-    public Tier(int tierLevel){
+    public Tier(final int tierLevel){
         tier = tierLevel;
         checkPermissions();
     }

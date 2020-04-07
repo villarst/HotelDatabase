@@ -5,10 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
-import java.util.*;
 
 /*****************************************************************
  DatabaseGUI is the code that runs the Java FX file so the gui can
@@ -46,7 +44,7 @@ public class DatabaseGUI extends Application {
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(final Stage primaryStage) throws Exception{
         sceneAdmin = new Scene(root2, 1000, 600);
         sceneTable = new Scene(root1, 1210, 800);
         table.setTitle("Admin Login Screen");
@@ -55,7 +53,7 @@ public class DatabaseGUI extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         launch(args);
     }
 }

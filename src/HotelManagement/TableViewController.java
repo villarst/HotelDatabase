@@ -5,7 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -17,7 +16,9 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static HotelManagement.DatabaseGUI.*;
+import static HotelManagement.DatabaseGUI.table;
+import static HotelManagement.DatabaseGUI.sceneAdmin;
+
 import static HotelManagement.adminLoginSceneController.adminLoggedIn;
 
 

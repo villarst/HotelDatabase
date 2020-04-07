@@ -4,14 +4,14 @@ package HotelManagement;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static HotelManagement.DatabaseGUI.*;
+import static HotelManagement.DatabaseGUI.table;
+import static HotelManagement.DatabaseGUI.sceneTable;
 import static HotelManagement.TableViewController.d;
 
 
@@ -24,7 +24,7 @@ public class adminLoginSceneController implements Initializable {
 
 
     public void loginAdmin(){
-        if(adminLoggedIn == false) {
+        if(!adminLoggedIn) {
             for (int i = 0; i < d.secondaryDbSize(); i++) {
                 if (d.searchSecondary(passwordTextField.getText())) {
                     usernameTextField.clear();
@@ -41,7 +41,7 @@ public class adminLoginSceneController implements Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(final URL url, final ResourceBundle resourceBundle) {
 
     }
 }
