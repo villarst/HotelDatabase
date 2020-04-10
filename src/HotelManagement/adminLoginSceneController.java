@@ -22,46 +22,45 @@ import javafx.scene.control.TextField;
 
 public class adminLoginSceneController implements Initializable { //NOPMD
 
-    /** Boolean variable to determine if the admin is logged in. */
-    public static boolean adminLoggedIn;
+  /** Boolean variable to determine if the admin is logged in. */
+  public static boolean adminLoggedIn;
 
-    /** FX button for the admin login screen. */
-    @FXML public Button btnLoginAdmin;
+  /** FX button for the admin login screen. */
+  @FXML public Button btnLoginAdmin;
 
-    /** Text fields for entering the password. */
-    @FXML public transient TextField passwordTextField;
+  /** Text fields for entering the password. */
+  @FXML public transient TextField passwordTextField;
 
-    /** Text fields for entering the username. */
-    @FXML public transient TextField usernameTextField;
+  /** Text fields for entering the username. */
+  @FXML public transient TextField usernameTextField;
 
 
-    /*****************************************************************
-     Method used to detrmine if the Admin has logged in.
-     *****************************************************************/
-    public void loginAdmin() {
-        if (!adminLoggedIn) {
-            for (int i = 0; i < d.secondaryDbSize(); i++) {
-                if (d.searchSecondary(passwordTextField.getText())) {
-                    usernameTextField.clear();
-                    passwordTextField.clear();
-                    usernameTextField.setVisible(true);
-                    passwordTextField.setVisible(true);
-                    adminLoggedIn = true;
-                    table.setScene(sceneTable);
-                    return;
-                }
-            }
+  /*****************************************************************
+  Method used to detrmine if the Admin has logged in.
+  *****************************************************************/
+  public void loginAdmin() {
+    if (!adminLoggedIn) {
+      for (int i = 0; i < d.secondaryDbSize(); i++) {
+        if (d.searchSecondary(passwordTextField.getText())) {
+          usernameTextField.clear();
+          passwordTextField.clear();
+          usernameTextField.setVisible(true);
+          passwordTextField.setVisible(true);
+          adminLoggedIn = true;
+          table.setScene(sceneTable);
+          return;
         }
+      }
     }
+  }
 
 
-    /*****************************************************************
-     Method used to detrmine if the Admin has logged in.
-     @param url FXML URL
-     @param resourceBundle FXML resource bundle
-     *****************************************************************/
-    @Override
-    public void initialize(final URL url, final ResourceBundle resourceBundle) { //NOPMD
-
-    }
+  /*****************************************************************
+  Method used to detrmine if the Admin has logged in.
+  @param url FXML URL
+  @param resourceBundle FXML resource bundle
+  *****************************************************************/
+  @Override
+  public void initialize(final URL url, final ResourceBundle resourceBundle) { //NOPMD
+  }
 }
