@@ -47,8 +47,8 @@ public class DatabaseGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        sceneAdmin = new Scene(root2, 1000, 600);
-        sceneTable = new Scene(root1, 1210, 800);
+        sceneAdmin = new Scene(root2, 890, 540);
+        sceneTable = new Scene(root1, 1210, 600);
         table.setTitle("Admin Login Screen");
         table.setScene(sceneAdmin);
         table.show();
