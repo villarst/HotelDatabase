@@ -22,7 +22,6 @@ public class adminLoginSceneController implements Initializable {
     @FXML public TextField passwordTextField;
     @FXML public TextField usernameTextField;
 
-
     public void loginAdmin(){
         if(adminLoggedIn == false) {
             for (int i = 0; i < d.secondaryDbSize(); i++) {
@@ -33,6 +32,7 @@ public class adminLoginSceneController implements Initializable {
                     passwordTextField.setVisible(true);
                     adminLoggedIn = true;
                     table.setScene(sceneTable);
+                    table.setTitle("Database Screen");
                     return;
                 }
             }
@@ -42,6 +42,6 @@ public class adminLoginSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        
     }
 }
