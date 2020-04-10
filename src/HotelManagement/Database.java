@@ -3,19 +3,27 @@ package HotelManagement;
 
 import java.util.*;
 import java.io.Serializable;
+
+
 /*****************************************************************
  This class consists of the database that will be used to store,
  remove, and assign rooms to the users (Guests).
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  *****************************************************************/
+
+
 public class Database implements Serializable{
+
     /** Arraylist that stores the Users */
     private ArrayList <User> MainDb;
+
     /** Boolean Array that stores values for the rooms. */
     boolean rooms [];
 
+    /** Arraylist that stores the admins. */
     private ArrayList <User> SecondaryDb;
+
 
     /*****************************************************************
      Constructor that creates a Database to use to store Users and
@@ -30,6 +38,7 @@ public class Database implements Serializable{
             rooms[i] = false;
         }
     }
+
 
     /*****************************************************************
      Adds the user to the Arraylist.
@@ -71,6 +80,7 @@ public class Database implements Serializable{
     public ArrayList<User> getMainDb() {
         return MainDb;
     }
+
 
     /*****************************************************************
      Assigns the room to the user that was just added to the Arraylist.
@@ -114,6 +124,7 @@ public class Database implements Serializable{
         return found;
     }
 
+
     /*****************************************************************
      Checks if the room is occupied if so returns a boolean of true
      or false.
@@ -130,6 +141,7 @@ public class Database implements Serializable{
         }
         return true;
     }
+
 
     /*****************************************************************
      Removes the User from the Arraylist MainDb.
