@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static HotelManagement.DatabaseGUI.*;
@@ -105,6 +107,16 @@ public class TableViewController implements Initializable {
 
     // This method will create new User and add it to the table and database.
     public void newUserButtonPushed(ActionEvent event){
+        ArrayList<TextField> txtFields = new ArrayList<>();
+        txtFields.add(nameTextField); txtFields.add(phoneNumTextField); txtFields.add(emailTextField); txtFields.add(userNameTextField); txtFields.add(dobTextField);
+        if(isEmpty(comboBox))
+            return;
+        for(TextField x:txtFields){
+            if(isEmpty(x))
+                return;
+        }
+
+
         User u = new User(nameTextField.getText(),
                 phoneNumTextField.getText(),
                 emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),
@@ -126,8 +138,40 @@ public class TableViewController implements Initializable {
         }
     }
 
+    public Boolean isEmpty(TextField txt) {
+        if (txt.getText().equals("")) {
+            System.out.println(txt.getId());
+            switch (txt.getId()) {
+                case "nameTextField":
+                    new Alert(Alert.AlertType.ERROR, "Please enter a name").showAndWait();
+                    break;
+                case "phoneNumTextField":
+                    new Alert(Alert.AlertType.ERROR, "Please enter a phone number").showAndWait();
+                    break;
+                case "emailTextField":
+                    new Alert(Alert.AlertType.ERROR, "Please enter a email").showAndWait();
+                    break;
+                case "userNameColumn":
+                    new Alert(Alert.AlertType.ERROR, "Please enter a username").showAndWait();
+                    break;
+                case "dobTextField":
+                    new Alert(Alert.AlertType.ERROR, "Please enter a date of birth").showAndWait();
+                    break;
+            }
+            return true;
+        }
+        else
+            return false;
+    }
 
-
+    public Boolean isEmpty(ComboBox cmb){
+        if(cmb.getValue() == null){
+            new Alert(Alert.AlertType.ERROR, "Please select a tier from the dropdown list").showAndWait();
+            return true;
+        }
+        else
+            return false;
+    }
 
     // this logins the Admin only. may modify to login a user maybe..
     public void logoutAdmin(){
