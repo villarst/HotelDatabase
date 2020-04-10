@@ -1,30 +1,45 @@
 package HotelManagement;
 
+import static HotelManagement.DatabaseGUI.sceneTable;
+import static HotelManagement.DatabaseGUI.table;
+import static HotelManagement.TableViewController.d; //NOPMD
 
-
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
-import static HotelManagement.DatabaseGUI.table;
-import static HotelManagement.DatabaseGUI.sceneTable;
-import static HotelManagement.TableViewController.d;
+/*****************************************************************
+ A class that is used to control the functionality in the
+ adminLoginScene.fxml
+ @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+ @version 1.0
+ ****************************************************************/
 
 
-public class adminLoginSceneController implements Initializable {
+public class adminLoginSceneController implements Initializable { //NOPMD
 
+    /** Boolean variable to determine if the admin is logged in. */
     public static boolean adminLoggedIn;
+
+    /** FX button for the admin login screen. */
     @FXML public Button btnLoginAdmin;
-    @FXML public TextField passwordTextField;
-    @FXML public TextField usernameTextField;
+
+    /** Text fields for entering the password. */
+    @FXML public transient TextField passwordTextField;
+
+    /** Text fields for entering the username. */
+    @FXML public transient TextField usernameTextField;
 
 
-    public void loginAdmin(){
-        if(!adminLoggedIn) {
+    /*****************************************************************
+     Method used to detrmine if the Admin has logged in.
+     *****************************************************************/
+    public void loginAdmin() {
+        if (!adminLoggedIn) {
             for (int i = 0; i < d.secondaryDbSize(); i++) {
                 if (d.searchSecondary(passwordTextField.getText())) {
                     usernameTextField.clear();
@@ -40,8 +55,13 @@ public class adminLoginSceneController implements Initializable {
     }
 
 
+    /*****************************************************************
+     Method used to detrmine if the Admin has logged in.
+     @param url FXML URL
+     @param resourceBundle FXML resource bundle
+     *****************************************************************/
     @Override
-    public void initialize(final URL url, final ResourceBundle resourceBundle) {
+    public void initialize(final URL url, final ResourceBundle resourceBundle) { //NOPMD
 
     }
 }
