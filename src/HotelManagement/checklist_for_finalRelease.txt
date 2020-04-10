@@ -43,5 +43,5 @@ Fix delete User for TableView so it doesn't go out of bounds.                4/6
 User sign in to view info	                                                 4/3/20	    8th
 
 Bugs:
-    - Exception thrown when tier not selected when adding user.
+    - Can't edit table anymore?
 

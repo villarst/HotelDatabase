@@ -1,5 +1,6 @@
 package HotelManagement;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.Alert;
 import org.apache.commons.lang3.RandomStringUtils;
 import java.io.Serializable;
 
@@ -26,15 +27,17 @@ public class User implements Serializable{
         this.tier = tier;
 //        t = new Tier(tier);
         this.password = new SimpleStringProperty(generatePassWApache());
-        if(verifyPhoneNumber(phoneNum)){
+
+        //Verification here is redundant and causes message to popup twice.
+        //if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
-        }
-        if(verifyEmail(email)){
+        //}
+        //if(verifyEmail(email)){
             this.Email = new SimpleStringProperty(email);
-        }
-        if(verifyDate(dobirth)){
+        //}
+        //if(verifyDate(dobirth)){
             this.dob = new SimpleStringProperty(dobirth);
-        }
+        //}
     }
 
     // Used to add a user to the ObservableList<User> users array list with roomNum.
@@ -249,6 +252,7 @@ public class User implements Serializable{
                 }
                 catch (ParseException e1){
                     System.out.println(date + " is not a valid date. DOB not updated.");
+                    new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
                     return false;
                 }
             }
@@ -265,6 +269,7 @@ public class User implements Serializable{
         else{
             // Need to have the User type in a different or valid phone number.
             System.out.println(newNumber + " is invalid. Phone number not updated.");
+            new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
             return false;
         }
     }
@@ -277,6 +282,7 @@ public class User implements Serializable{
         else {
             // Need to have the User type in a different or valid email.
             System.out.println(email + " is invalid. E-Mail address not updated.");
+            new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
             return false;
         }
     }
