@@ -1,45 +1,35 @@
 package HotelManagement;
 
-import static HotelManagement.DatabaseGUI.sceneTable;
-import static HotelManagement.DatabaseGUI.table;
-import static HotelManagement.TableViewController.d; //NOPMD
+
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+
+import static HotelManagement.DatabaseGUI.*;
+import static HotelManagement.TableViewController.*;
 
 
-/*****************************************************************
-A class that is used to control the functionality in the
-adminLoginScene.fxml
-@author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
-@version 1.0
-****************************************************************/
+public class adminLoginSceneController implements Initializable {
 
-
-public class adminLoginSceneController implements Initializable { //NOPMD
-
-  /** Boolean variable to determine if the admin is logged in. */
   public static boolean adminLoggedIn;
+  @FXML public TextField passwordTextField;
+  @FXML public TextField usernameTextField;
 
-  /** FX button for the admin login screen. */
-  @FXML public Button btnLoginAdmin;
+  public void alertError(ActionEvent event){
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle("Error");
+    alert.setHeaderText("Login Credentials Incorrect");
+    alert.showAndWait();
+  }
 
-  /** Text fields for entering the password. */
-  @FXML public transient TextField passwordTextField;
-
-  /** Text fields for entering the username. */
-  @FXML public transient TextField usernameTextField;
-
-
-  /*****************************************************************
-   Method used to detrmine if the Admin has logged in.
-   *****************************************************************/
-  public void loginAdmin() {
-    if (!adminLoggedIn) {
+  public void loginAdmin(ActionEvent event){
+    if(adminLoggedIn == false) {
       for (int i = 0; i < d.secondaryDbSize(); i++) {
         if (d.searchSecondary(passwordTextField.getText())) {
           usernameTextField.clear();
@@ -48,20 +38,19 @@ public class adminLoginSceneController implements Initializable { //NOPMD
           passwordTextField.setVisible(true);
           adminLoggedIn = true;
           table.setScene(sceneTable);
+          table.setTitle("Database Screen");
           return;
+        }
+        else{
+          alertError(event);
         }
       }
     }
   }
 
 
-  /*****************************************************************
-   Method used to detrmine if the Admin has logged in.
-   @param url FXML URL
-   @param resourceBundle FXML resource bundle
-   *****************************************************************/
   @Override
-  public void initialize(final URL url, final ResourceBundle resourceBundle) { //NOPMD
+  public void initialize(URL url, ResourceBundle resourceBundle) {
 
   }
 }
