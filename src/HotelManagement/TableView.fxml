@@ -27,7 +27,7 @@
                         <Insets top="5.0" />
                     </VBox.margin>
                 </Label>
-                <TableView fx:id="tableView" prefHeight="334.0" prefWidth="1162.0" style="-fx-border-color: #808080; -fx-table-cell-border-color: #808080;">
+                <TableView fx:id="tableView" prefHeight="335.0" prefWidth="1161.0" style="-fx-border-color: #808080; -fx-table-cell-border-color: #808080;">
                     <columns>
                         <TableColumn fx:id="nameColumn" onEditCommit="#changeNameColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Name" />
                         <TableColumn fx:id="phoneNumColumn" onEditCommit="#changePhoneNumColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Phone #" />
@@ -36,7 +36,7 @@
                         <TableColumn fx:id="passwordColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Password" />
                         <TableColumn fx:id="tierColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Tier" />
                         <TableColumn fx:id="dateofbirthColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Date of Birth" />
-                        <TableColumn fx:id="roomNum" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Room #" />
+                        <TableColumn fx:id="roomNum" prefWidth="143.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Room #" />
                     </columns>
                 </TableView>
                 <HBox prefHeight="71.0" prefWidth="1162.0" spacing="20.0">
@@ -84,7 +84,7 @@
                 </Button>
             </children>
         </HBox>
-        <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1209.0">
+        <MenuBar layoutY="-6.0" prefHeight="33.0" prefWidth="1209.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -104,6 +104,9 @@
                     </items>
                 </Menu>
             </menus>
+         <padding>
+            <Insets top="6.0" />
+         </padding>
         </MenuBar>
     </children>
 </AnchorPane>
