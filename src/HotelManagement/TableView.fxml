@@ -54,7 +54,7 @@
                                 <Font name="System Italic" size="12.0" />
                             </font>
                         </Label>
-                        <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Tier Level" style="-fx-background-color: #2F4F4F;" />
+                        <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Tier Level" style="-fx-background-color: #2F4F4F; -fx-text-fill: #FFFFFF;" />
                         <TextField fx:id="dobTextField" prefHeight="25.0" prefWidth="125.0" promptText="Date Of Birth" />
                     </children>
                 </HBox>
