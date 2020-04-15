@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 
@@ -27,7 +28,7 @@ public class adminLoginSceneController implements Initializable { //NOPMD
   public static boolean adminLoggedIn;
 
   /** Text fields for entering the password. */
-  @FXML public TextField passwordTextField; //NOPMD
+  @FXML public PasswordField passwordTextField; //NOPMD
 
   /** Text fields for entering the username. */
   @FXML public TextField usernameTextField; //NOPMD
