@@ -5,11 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -46,14 +44,9 @@ public class TableViewController implements Initializable {
     @FXML private TextField dobTextField;
 
     // These variables let an ADMIN login.
-    @FXML private TextField usernameTextField;
-    @FXML private TextField passwordTextField;
-    @FXML private Text lblAdminLogin;
     @FXML private Button btnLoginAdmin;
 
     // User for Menu Bar
-    @FXML private MenuItem saveBtn;
-    @FXML private MenuItem loadBtn;
     @FXML private Button btnDelete;
 
 
@@ -64,8 +57,15 @@ public class TableViewController implements Initializable {
 
     public void changeNameColumn(TableColumn.CellEditEvent editedCell){
         User userSelected = tableView.getSelectionModel().getSelectedItem();
-        d.findUser(userSelected).setName(editedCell.getNewValue().toString());
-        userSelected.setName(editedCell.getNewValue().toString());
+        if(!editedCell.getNewValue().toString().equals("")) {
+            d.findUser(userSelected).setName(editedCell.getNewValue().toString());
+            userSelected.setName(editedCell.getNewValue().toString());
+        }
+        else{
+            alertErrorName();
+            tableView.refresh();
+            userSelected.setName(d.findUser(userSelected).getName());
+        }
     }
 
     public void changeEmailColumn(TableColumn.CellEditEvent editedCell){
@@ -75,6 +75,7 @@ public class TableViewController implements Initializable {
         }
         else{
             // You have to click it or double click it then the email will be the original email in the gui.
+            alertErrorEmail();
             tableView.refresh();
             userSelected.setEmail(d.findUser(userSelected).getEmail());
         }
@@ -86,13 +87,14 @@ public class TableViewController implements Initializable {
             userSelected.setPhoneNum(editedCell.getNewValue().toString());
         }
         else{
+            alertErrorPhoneNum();
             tableView.refresh();
             userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum());
         }
     }
 
     // This method pops a message about some info for the "about" menu item.
-    public void alertAbout(ActionEvent event){
+    public void alertAbout(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Application Info");
         alert.setHeaderText("Hotel Database");
@@ -103,30 +105,79 @@ public class TableViewController implements Initializable {
         alert.showAndWait();
     }
 
-    // This method will create new User and add it to the table and database.
-    public void newUserButtonPushed(ActionEvent event){
-        User u = new User(nameTextField.getText(),
-                phoneNumTextField.getText(),
-                emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),
-                dobTextField.getText());
-
-        // Verifies if email, phone #, and date of birth are valid, then adds the user to database then table.
-        if(u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(), dobTextField.getText())){
-            d.addUser(u);
-            nameTextField.clear();
-            phoneNumTextField.clear();
-            emailTextField.clear();
-            userNameTextField.clear();
-            dobTextField.clear();
-            comboBox.setValue(null);
-            tableView.getItems().add(u);
-        }
-        else{
-            System.out.println("User was not added, check email, phone #, or date of birth.");
-        }
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertError(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.showAndWait();
     }
 
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertErrorName(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Name is invalid.");
+        alert.showAndWait();
+    }
 
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertErrorPhoneNum(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Phone # is invalid length of characters.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertErrorEmail(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Email is invalid.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertAll(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Please check Phone #, Email, or Date of Birth.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an info message if the ADMIN tries deleting a user that isn't
+    public void alertInfo(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Important");
+        alert.setHeaderText("No User to Delete and or cannot delete ADMIN");
+        alert.showAndWait();
+    }
+
+    // This method will create new User and add it to the table and database.
+    public void newUserButtonPushed(){
+        try {
+            User u = new User(nameTextField.getText(),
+                    phoneNumTextField.getText(),
+                    emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),
+                    dobTextField.getText());
+            // Verifies if email, phone #, and date of birth are valid, then adds the user to database then table.
+            if(u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(), dobTextField.getText())){
+                d.addUser(u);
+                nameTextField.clear();
+                phoneNumTextField.clear();
+                emailTextField.clear();
+                userNameTextField.clear();
+                dobTextField.clear();
+                comboBox.setValue(null);
+                tableView.getItems().add(u);
+            }
+            else{
+                alertAll();
+            }
+        }
+        catch (Exception e){
+            alertError();
+        }
+    }
 
 
     // this logins the Admin only. may modify to login a user maybe..
@@ -144,53 +195,65 @@ public class TableViewController implements Initializable {
         allPeople = tableView.getItems();
 
         // This gives us the row that was selected.
-        selectedRow = tableView.getSelectionModel().getSelectedItems();
-
-        // loop over the selected rows and remove the User Object from the table.
-        // also removes the User and frees up the room for the database 'd'
-
-        if(adminLoggedIn == true && tableView.getSelectionModel().getSelectedItem().getName() != "ADMIN") {
-            if (allPeople != null) {
-                for (User u : selectedRow) {
-                    if(selectedRow.size() == 1) {
-                        allPeople.remove(u);
-                        d.removeUser(u);
-                        System.out.println("Check");
-                        break;
-                    }
-                    else{
-                        d.searchUser(u);
-                        allPeople.remove(u);
-                        System.out.println("Check");
+        try {
+            selectedRow = tableView.getSelectionModel().getSelectedItems();
+            if(selectedRow.size() != 0){
+                if (adminLoggedIn == true && !tableView.getSelectionModel().getSelectedItem().getName().equals("ADMIN")) {
+                    if (allPeople != null) {
+                        for (User u : selectedRow) {
+                            if (selectedRow.size() == 1) {
+                                allPeople.remove(u);
+                                d.removeUser(u);
+                                System.out.println("Check");
+                                break;
+                            }
+                            else {
+                                d.searchUser(u);
+                                allPeople.remove(u);
+                                System.out.println("Check");
+                            }
+                        }
                     }
                 }
+                else{
+                    alertInfo();
+                }
             }
-            else {
-                System.out.println("Sorry list is empty.");
+            else{
+                alertError();
             }
         }
-        else{
-            System.out.println("The ADMIN can not be deleted, or the ADMIN must be logged in to delete users.");
+        catch (Exception e){
+            alertError();
         }
     }
 
-    public void tierPermissionsPushed(ActionEvent event){
+    public void focusOnName(){
+        nameTextField.requestFocus();
+    }
+
+    public void tierPermissionsPushed(){
         ObservableList<User> selectedRows, allPeople;
         allPeople = tableView.getItems();
         // This gives us the row that was selected.
         selectedRows = tableView.getSelectionModel().getSelectedItems();
 
 
-        for (User u : selectedRows) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Tier Info");
-            alert.setHeaderText("Info for Tier: " + u.getTier());
-            alert.setContentText(u.returnPermissions(u.getTier()));
-            alert.showAndWait();
+        if(selectedRows.size() != 0) {
+            for (User u : selectedRows) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Tier Info");
+                alert.setHeaderText("Info for Tier: " + u.getTier());
+                alert.setContentText(u.returnPermissions(u.getTier()));
+                alert.showAndWait();
+            }
+        }
+        else{
+            alertError();
         }
     }
 
-    public void handleSave(ActionEvent event){
+    public void handleSave(){
         Stage secondaryStage = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save User Table");
@@ -227,7 +290,7 @@ public class TableViewController implements Initializable {
             String filePath = new File("").getAbsolutePath();
             System.out.println (filePath);
             BufferedReader br = new BufferedReader(new FileReader(new File(filePath +
-                                                                  "/src/HotelManagement/TestFile.txt")));
+                    "/src/HotelManagement/TestFile.txt")));
             String line;
             String[] array;
 
@@ -280,7 +343,7 @@ public class TableViewController implements Initializable {
         tableView.setItems(getUsers());
 
         // Update the table to allow for the Name, Email, and Phone # to be editable.
-        tableView.setEditable(false);
+        tableView.setEditable(true);
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());
