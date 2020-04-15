@@ -1,373 +1,302 @@
 package HotelManagement;
-
-import java.io.Serializable;
-
-
 /*****************************************************************
- This class sets and returns the permissions of a user based on
- the users tier (0-3).
+ The tier program is to give access to users of the hotel different
+ activities such as the gym, hot tub, bar, ect. The tiers make it
+ easy to recognize what the user is allowed to do such as tier 1
+ being to most restrictive, up to tier 6 which is the admin tier
+ who has access to everything.
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  *****************************************************************/
+public class Tier {
 
+    /** Allows access to the pool */
+    private boolean poolAccess;
 
-public class Tier implements Serializable { //NOPMD
+    /** Allows access to the gym */
+    private boolean gymAccess;
 
-  /** Determines if the user has pool access. */
-  private boolean poolAccess;
+    /** Allows access to the pc */
+    private boolean pcAccess;
 
-  /** Determines if the user has gym access. */
-  private boolean gymAccess;
+    /** Allows access to the buffet */
+    private boolean buffetAccess;
 
-  /** Determines if the user has PC access. */
-  private boolean pcAccess;
+    /** Allows access to the bar */
+    private boolean barAccess;
 
-  /** Determines if the user has buffet access. */
-  private boolean buffetAccess;
+    /** Allows access to the hot tub */
+    private boolean hotTubAccess;
 
-  /** Determines if the user has bar access. */
-  private boolean barAccess;
+    /** Allows access to the casino */
+    private boolean casinoAccess;
 
-  /** Determines if the user has hot tub access. */
-  private boolean hotTubAccess;
+    /** Allows access to the arcade */
+    private boolean arcadeAccess;
 
-  /** Determines if the user has casino access. */
-  private boolean casinoAccess;
+    /** Allows access to room */
+    private boolean roomAccess;
 
-  /** Determines if the user has arcade access. */
-  private boolean arcadeAccess;
+    /** Allows access to the janitor room */
+    private boolean janitorRoomAccess;
 
-  /** Determines if the user has hotel room access. */
-  private boolean roomAccess;
+    /** Gives a tier number */
+    private int tier;
 
-  /** Determines if the user has admin access. */
-  private boolean adminAccess;
-
-  /** Determines if the user has all rooms access. */
-  private boolean allRoomAccess;
-
-  /** Value of the users tier (0-3). */
-  private int tier; //NOPMD
-
-
-  /*****************************************************************
-  Constructor that sets the tier and permissions for a user.
-   @param tierLevel the tier level to set for a user (0-3).
-  *****************************************************************/
-  public Tier(final int tierLevel) {
-    tier = tierLevel;
-    checkPermissions(); //NOPMD
-  }
-
-
-  /*****************************************************************
-  Sets the permissions for the user based on their tier.
-  *****************************************************************/
-  public void checkPermissions() {
-    switch (tier) {
-      case 1: // pool, pc, hot tub access
-        poolAccess = true;
-        pcAccess = true;
-        hotTubAccess = true;
-        gymAccess = false;
-        barAccess = false;
-        casinoAccess = false;
-        buffetAccess = false;
-        arcadeAccess = false;
-        break;
-      case 2: // pool, pc, hot tub, gym, buffet access
-        poolAccess = true;
-        pcAccess = true;
-        hotTubAccess = true;
-        gymAccess = true;
-        barAccess = false;
-        casinoAccess = false;
-        buffetAccess = true;
-        arcadeAccess = false;
-        break;
-      case 3: // pool, pc, hot tub, gym, bar, casino, buffet, arcade access.
-        poolAccess = true;
-        pcAccess = true;
-        hotTubAccess = true;
-        gymAccess = true;
-        barAccess = true;
-        casinoAccess = true;
-        buffetAccess = true;
-        arcadeAccess = true;
-        break;
-      case 0: // admin access.
-        poolAccess = true;
-        pcAccess = true;
-        hotTubAccess = true;
-        gymAccess = true;
-        barAccess = true;
-        casinoAccess = true;
-        buffetAccess = true;
-        arcadeAccess = true;
-        adminAccess = true;
-        roomAccess = true;
-        allRoomAccess = true;
-        break;
-      default:
-        System.out.println("You have chosen no tier level.."); //NOPMD
-        break;
+    /*****************************************************************
+     Constructor that assigns the tier level and checks the permissions
+     @param tierLevel gives the tier level number
+     *****************************************************************/
+    public Tier(int tierLevel){
+        tier = tierLevel;
+        checkPermissions();
     }
-  }
+    /*****************************************************************
+     Constructor that assigns a true or false value if the tier has
+     access to that section of the hotel
+     *****************************************************************/
+    public void checkPermissions(){
+        switch (tier){
+            case 1:
+                poolAccess = true;
+                pcAccess = true;
+                hotTubAccess = false;
+                gymAccess = false;
+                barAccess = false;
+                casinoAccess = false;
+                buffetAccess = false;
+                arcadeAccess = false;
+                break;
+            case 2:
+                poolAccess = true;
+                pcAccess = true;
+                hotTubAccess = true;
+                gymAccess = false;
+                barAccess = false;
+                casinoAccess = false;
+                buffetAccess = false;
+                arcadeAccess = false;
+                break;
+            case 3:
+                poolAccess = true;
+                pcAccess = true;
+                hotTubAccess = true;
+                gymAccess = true;
+                barAccess = false;
+                casinoAccess = false;
+                buffetAccess = false;
+                arcadeAccess = false;
+                break;
+            case 4:
+                poolAccess = true;
+                pcAccess = true;
+                hotTubAccess = true;
+                gymAccess = true;
+                barAccess = true;
+                casinoAccess = true;
+                buffetAccess = false;
+                arcadeAccess = false;
+                break;
+            case 5:
+                poolAccess = true;
+                pcAccess = true;
+                hotTubAccess = true;
+                gymAccess = true;
+                barAccess = true;
+                casinoAccess = true;
+                buffetAccess = true;
+                arcadeAccess = true;
+                break;
+            case 6: // Admin Access
+                poolAccess = true;
+                pcAccess = true;
+                hotTubAccess = true;
+                gymAccess = true;
+                barAccess = true;
+                casinoAccess = true;
+                buffetAccess = true;
+                arcadeAccess = true;
+                roomAccess = true;
+                janitorRoomAccess = true;
+            default:
+                System.out.println("You have chosen no tier level..");
+        }
+    }
 
+    /*****************************************************************
+     tells the hotel if the user has access to the pool
+     @return poolAccess returns if they are allowed to use the pool
+     *****************************************************************/
+    public boolean isPoolAccess() {
+        return poolAccess;
+    }
 
-  /*****************************************************************
-   Checks if the user has pool permissions.
-   @return poolAccess a boolean value that states if the user has
-   pool access.
-   *****************************************************************/
-  public boolean isPoolAccess() {
-    return poolAccess;
-  }
+    /*****************************************************************
+     sets the pool access.
+     @param poolAccess
+     *****************************************************************/
+    public void setPoolAccess(boolean poolAccess) {
+        this.poolAccess = poolAccess;
+    }
 
+    /*****************************************************************
+     tells the hotel if the user has access to the gym
+     @return gymAccess returns if they are allowed to use the gym
+     *****************************************************************/
+    public boolean isGymAccess() {
+        return gymAccess;
+    }
 
-  /*****************************************************************
-  Sets the user to have pool permissions.
-  @param  poolAccess a boolean value that states if the user has
-  pool access.
-  *****************************************************************/
-  public void setPoolAccess(final boolean poolAccess) {
-    this.poolAccess = poolAccess;
-  }
+    /*****************************************************************
+     sets the gym access.
+     @param gymAccess
+     *****************************************************************/
+    public void setGymAccess(boolean gymAccess) {
+        this.gymAccess = gymAccess;
+    }
 
+    /*****************************************************************
+     tells the hotel if the user has access to the pc's
+     @return pcAccess returns if they are allowed to use the pc's
+     *****************************************************************/
+    public boolean isPcAccess() {
+        return pcAccess;
+    }
 
-  /*****************************************************************
-   Checks if the user has all room permissions.
-   @return allRoomAccess a boolean value that states if the user has
-   all room permissions.
-  *****************************************************************/
-  public boolean isAllRoomAccess() {
-    return allRoomAccess;
-  }
+    /*****************************************************************
+     sets the pc access.
+     @param pcAccess
+     *****************************************************************/
+    public void setPcAccess(boolean pcAccess) {
+        this.pcAccess = pcAccess;
+    }
 
+    /*****************************************************************
+     tells the hotel if the user has access to the buffet
+     @return buffetAccess returns if they are allowed to use the buffet
+     *****************************************************************/
+    public boolean isBuffetAccess() {
+        return buffetAccess;
+    }
 
-  /*****************************************************************
-  Sets the user to have all room permissions.
-  @param  allRoomAccess a boolean value that states if the user has
-  all room access.
-  *****************************************************************/
-  public void setAllRoomAccess(final boolean allRoomAccess) {
-    this.allRoomAccess = allRoomAccess;
-  }
+    /*****************************************************************
+     sets the buffet access.
+     @param buffetAccess
+     *****************************************************************/
+    public void setBuffetAccess(boolean buffetAccess) {
+        this.buffetAccess = buffetAccess;
+    }
 
+    /*****************************************************************
+     tells the hotel if the user has access to the bar
+     @return barAccess returns if they are allowed to use the bar
+     *****************************************************************/
+    public boolean isBarAccess() {
+        return barAccess;
+    }
 
-  /*****************************************************************
-   Checks if the user has gym permissions.
-   @return gymAccess a boolean value that states if the user has
-   gym access.
-   *****************************************************************/
-  public boolean isGymAccess() {
-    return gymAccess;
-  }
+    /*****************************************************************
+     sets the bar access.
+     @param barAccess
+     *****************************************************************/
+    public void setBarAccess(boolean barAccess) {
+        this.barAccess = barAccess;
+    }
 
+    /*****************************************************************
+     Constructor that tells the hotel if the user has access to the hot tub
+     @return hotTubAccess returns if they are allowed to use the hot tub
+     *****************************************************************/
+    public boolean isHotTubAccess() {
+        return hotTubAccess;
+    }
 
-  /*****************************************************************
-  Sets the user to have gym permissions.
-  @param  gymAccess a boolean value that states if the user has
-  gym access.
-  *****************************************************************/
-  public void setGymAccess(final boolean gymAccess) {
-    this.gymAccess = gymAccess;
-  }
+    /*****************************************************************
+     Constructor that sets the hot tub access.
+     @param hotTubAccess
+     *****************************************************************/
+    public void setHotTubAccess(boolean hotTubAccess) {
+        this.hotTubAccess = hotTubAccess;
+    }
 
+    /*****************************************************************
+     Constructor that tells the hotel if the user has access to the casino
+     @return casinoAccess returns if they are allowed to use the casino
+     *****************************************************************/
+    public boolean isCasinoAccess() {
+        return casinoAccess;
+    }
 
-  /*****************************************************************
-  Checks if the user has PC permissions.
-  @return pcAccess a boolean value that states if the user has
-  PC access.
-  *****************************************************************/
-  public boolean isPcAccess() {
-    return pcAccess;
-  }
+    /*****************************************************************
+     Constructor that sets the casino access.
+     @param casinoAccess
+     *****************************************************************/
+    public void setCasinoAccess(boolean casinoAccess) {
+        this.casinoAccess = casinoAccess;
+    }
 
+    /*****************************************************************
+     Constructor that tells the hotel if the user has access to the arcade
+     @return arcadeAccess returns if they are allowed to use the arcade
+     *****************************************************************/
+    public boolean isArcadeAccess() {
+        return arcadeAccess;
+    }
 
-  /*****************************************************************
-  Sets the user to have PC permissions.
-  @param  pcAccess a boolean value that states if the user has
-  PC access.
-  *****************************************************************/
-  public void setPcAccess(final boolean pcAccess) {
-    this.pcAccess = pcAccess;
-  }
+    /*****************************************************************
+     Constructor that sets the arcade access.
+     @param arcadeAccess
+     *****************************************************************/
+    public void setArcadeAccess(boolean arcadeAccess) {
+        this.arcadeAccess = arcadeAccess;
+    }
 
+    /*****************************************************************
+     Constructor that tells the hotel if the user has access to their room
+     @return roomAccess returns if they are allowed to use their room
+     *****************************************************************/
+    public boolean isRoomAccess() {
+        return roomAccess;
+    }
 
-  /*****************************************************************
-  Checks if the user has buffet permissions.
-  @return buffetAccess a boolean value that states if the user has
-  buffet access.
-  *****************************************************************/
-  public boolean isBuffetAccess() {
-    return buffetAccess;
-  }
+    /*****************************************************************
+     Constructor that sets the arcade access.
+     @param roomAccess
+     *****************************************************************/
+    public void setRoomAccess(boolean roomAccess) {
+        this.roomAccess = roomAccess;
+    }
 
+    /*****************************************************************
+     Constructor that tells the hotel if the user has access to the janitor room
+     @return janitorRoomAccess returns if they are allowed to use the janitor room
+     *****************************************************************/
+    public boolean isJanitorRoomAccess() {
+        return janitorRoomAccess;
+    }
 
-  /*****************************************************************
-  Sets the user to have buffet permissions.
-  @param  buffetAccess a boolean value that states if the user has
-  buffet access.
-  *****************************************************************/
-  public void setBuffetAccess(final boolean buffetAccess) {
-    this.buffetAccess = buffetAccess;
-  }
+    /*****************************************************************
+     Constructor that sets the Janitor room access.
+     @param janitorRoomAccess
+     *****************************************************************/
+    public void setJanitorRoomAccess(boolean janitorRoomAccess) {
+        this.janitorRoomAccess = janitorRoomAccess;
+    }
 
-
-  /*****************************************************************
-  Checks if the user has bar permissions.
-  @return barAccess a boolean value that states if the user has
-  bar access.
-  *****************************************************************/
-  public boolean isBarAccess() {
-    return barAccess;
-  }
-
-
-  /*****************************************************************
-  Sets the user to have bar permissions.
-  @param  barAccess a boolean value that states if the user has
-  bar access.
-  *****************************************************************/
-  public void setBarAccess(final boolean barAccess) {
-    this.barAccess = barAccess;
-  }
-
-
-  /*****************************************************************
-  Checks if the user has hot tub permissions.
-  @return hotTubAccess a boolean value that states if the user has
-  hot tub access.
-  *****************************************************************/
-  public boolean isHotTubAccess() {
-    return hotTubAccess;
-  }
-
-
-  /*****************************************************************
-  Sets the user to have hot tub permissions.
-  @param  hotTubAccess a boolean value that states if the user has
-  hot tub access.
-  *****************************************************************/
-  public void setHotTubAccess(final boolean hotTubAccess) {
-    this.hotTubAccess = hotTubAccess;
-  }
-
-
-  /*****************************************************************
-  Checks if the user has casino permissions.
-  @return casinoAccess a boolean value that states if the user has
-  casino access.
-  *****************************************************************/
-  public boolean isCasinoAccess() {
-    return casinoAccess;
-  }
-
-
-  /*****************************************************************
-  Sets the user to have casino permissions.
-  @param  casinoAccess a boolean value that states if the user has
-  casino access.
-  *****************************************************************/
-  public void setCasinoAccess(final boolean casinoAccess) {
-    this.casinoAccess = casinoAccess;
-  }
-
-
-  /*****************************************************************
-  Checks if the user has arcade permissions.
-  @return arcadeAccess a boolean value that states if the user has
-  arcade access.
-  *****************************************************************/
-  public boolean isArcadeAccess() {
-    return arcadeAccess;
-  }
-
-
-  /*****************************************************************
-  Sets the user to have arcade permissions.
-  @param  arcadeAccess a boolean value that states if the user has
-  arcade access.
-  *****************************************************************/
-  public void setArcadeAccess(final boolean arcadeAccess) {
-    this.arcadeAccess = arcadeAccess;
-  }
-
-
-  /*****************************************************************
-  Checks if the user has hotel room permissions.
-  @return roomAccess a boolean value that states if the user has
-  hotel room access.
-  *****************************************************************/
-  public boolean isRoomAccess() {
-    return roomAccess;
-  }
-
-
-  /*****************************************************************
-  Sets the user to have hotel room permissions.
-  @param  roomAccess a boolean value that states if the user has
-  room access
-  *****************************************************************/
-  public void setRoomAccess(final boolean roomAccess) {
-    this.roomAccess = roomAccess;
-  }
-
-
-  /*****************************************************************
-  Checks if the user has admin permissions.
-  @return adminAccess a boolean value that states if the user has
-  admin access.
-  *****************************************************************/
-  public boolean isAdminAccess() {
-    return adminAccess;
-  }
-
-
-  /*****************************************************************
-  Sets the user to have admin permissions.
-  @param  adminAccess a boolean value that states if the user has
-  admin access
-  *****************************************************************/
-  public void setAdminAccess(final boolean adminAccess) {
-    this.adminAccess = adminAccess;
-  }
-
-
-  /*****************************************************************
-  Returns the tier of the user.
-  @return getTier the tier of the user.
-*****************************************************************/
-  public int getTier() {
-    return tier;
-  }
-
-
-  /*****************************************************************
-  Sets the users tier.
-  @param  tier an integer value that sets the tier of the user
-  (0-3).
-  *****************************************************************/
-  public void setTier(final int tier) {
-    this.tier = tier;
-  }
-
-
-  /*****************************************************************
-  Returns a string that displays the permissions of the user.
-  @return a string to display the permissions of the user.
-  *****************************************************************/
-  public String displayPermissions() {
-    return "Pool Access: " + isPoolAccess() + "\n"
-            + "Gym Access: " + isGymAccess() + "\n"
-            + "PC Room Access: " + isPcAccess() + "\n"
-            + "Bar Access: " + isBarAccess() + "\n"
-            + "Casino Access: " + isCasinoAccess() + "\n"
-            + "Buffet Access: " + isBuffetAccess() + "\n"
-            + "Hot Tub Access: " + isHotTubAccess() + "\n"
-            + "Arcade Room Access: " + isArcadeAccess() + "\n"
-            + "Admin Access: " + isAdminAccess() + "\n"
-            + "All Room Access: " + isAllRoomAccess() + "\n";
-  }
+    /*****************************************************************
+     Constructor that displays all of the hotel activites and if the
+     user has access to them or not
+     *****************************************************************/
+    public void displayPermissions(){
+        System.out.println("Pool Access: " + isPoolAccess());
+        System.out.println("Gym Access: " + isGymAccess());
+        System.out.println("Pc Room Access: " + isPcAccess());
+        System.out.println("Bar Access: " + isBarAccess());
+        System.out.println("Casino Access: " + isCasinoAccess());
+        System.out.println("Buffet Access: " + isBuffetAccess());
+        System.out.println("Hot Tub Access: " + isHotTubAccess());
+        System.out.println("Arcade Room Access: " + isArcadeAccess());
+        System.out.println("Janitors Room Access: " + isJanitorRoomAccess());
+        System.out.println("All Room Access: " + isRoomAccess());
+    }
 }

@@ -1,137 +1,99 @@
 package HotelManagement;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.Alert;
-import org.apache.commons.lang3.RandomStringUtils;
-import java.io.Serializable;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
-public class User implements Serializable{
-    private transient SimpleStringProperty Name;
-    private transient SimpleStringProperty PhoneNum;
-    private transient SimpleStringProperty Email;
-    private transient SimpleStringProperty username;
-    private transient SimpleStringProperty password;
+/*****************************************************************
+ User creates all of the information that needs to be filled in by
+ the user of the hotel such as their name, phone number, email, ect.
+ This is the information that will be stored on the users hotel card.
+ @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+ @version 1.0
+ *****************************************************************/
+
+
+public class User {
+    /** The users name */
+    private String Name;
+
+    /** The users phone number */
+    private String PhoneNum;
+
+    /** The users email */
+    private String Email;
+
+    /** The users account balance */
+    private int accountBalance;
+
+    /** The username of the user */
+    private String username;
+
+    /** The users password */
+    private String password;
+
+    /** The users room number */
     private int roomNum;
+
+    /** The users tier */
     private int tier;
-    private transient SimpleStringProperty dob;
 
-//    public Tier t;
+    /** The users date of birth */
+    private String dob;
 
-    // Used to add a user to the ObservableList<User> users array list for viewing in the table.
-    public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
-        this.Name = new SimpleStringProperty(name);
-        this.username = new SimpleStringProperty(username);
+
+    /*****************************************************************
+     Constructor that sets all of the users personal information such as
+     the users name as a string and the account balance as an int as an
+     example.
+     @param name users name
+     @param phoneNum users phone number
+     @param email users email
+     @param accountBalance users account balance
+     @param tier users tier
+     @param username users username
+     @param password users password
+     @param dob users date of birth
+     *****************************************************************/
+    public User(String name, String phoneNum, String email,
+                int accountBalance, int tier, String username, String password, String dob) {
+
+        Name = name;
+        PhoneNum = phoneNum;
+        Email = email;
+        this.accountBalance = accountBalance;
+        this.username = username;
+        this.password = password;
         this.tier = tier;
-//        t = new Tier(tier);
-        this.password = new SimpleStringProperty(generatePassWApache());
-
-        //Verification here is redundant and causes message to popup twice.
-        //if(verifyPhoneNumber(phoneNum)){
-            this.PhoneNum = new SimpleStringProperty(phoneNum);
-        //}
-        //if(verifyEmail(email)){
-            this.Email = new SimpleStringProperty(email);
-        //}
-        //if(verifyDate(dobirth)){
-            this.dob = new SimpleStringProperty(dobirth);
-        //}
+        this.dob = dob;
+        Tier t = new Tier(tier);
+        this.password = generatePassWApache();
     }
 
-    // Used to add a user to the ObservableList<User> users array list with roomNum.
-    public User(String name, String phoneNum, String email, int tier, int room, String username, String pass, String dobirth) throws IllegalArgumentException{
-        this.Name = new SimpleStringProperty(name);
-        this.username = new SimpleStringProperty(username);
-        this.tier = tier;
-        this.roomNum = room;
-        this.tier = tier;
-        this.password = new SimpleStringProperty(pass);
-        if(verifyPhoneNumber(phoneNum)){
-            this.PhoneNum = new SimpleStringProperty(phoneNum);
-        }
-        if(verifyEmail(email)){
-            this.Email = new SimpleStringProperty(email);
-        }
-        if(verifyDate(dobirth)){
-            this.dob = new SimpleStringProperty(dobirth);
-        }
+    /*****************************************************************
+     This constructor sets all of the actual values
+     *****************************************************************/
+    public User(){
+        Name = null;
+        PhoneNum = null;
+        Email = null;
+        this.accountBalance = 0;
+        this.username = null;
+        this.password = null;
+        this.roomNum = 0;
+        this.tier = 0;
+        this.dob = null;
+        Tier t = new Tier(0);
     }
-
-    // Used to add admin to the SecondaryDb.
-    public User(String n, String num, String email, String username, int tier, String dob){
-        this.Name = new SimpleStringProperty(n);
-        if(verifyPhoneNumber(num)){
-            this.PhoneNum = new SimpleStringProperty(num);
-        }
-        if(verifyEmail(email)){
-            this.Email = new SimpleStringProperty(email);
-        }
-        this.username = new SimpleStringProperty((username));
-        this.password = new SimpleStringProperty(generatePassWApache());
-        this.roomNum = -1;
-
-        if(tier == 0) {
-            this.tier = 0;
-        }
-        if(verifyDate(dob)){
-            this.dob = new SimpleStringProperty(dob);
-        }
-    }
-
-
-    // Used to add admin to the users <ObservableList>.
-    public User(String n, String num, String email, String username, String pass, int tier, String dob){
-        this.Name = new SimpleStringProperty(n);
-        if(verifyPhoneNumber(num)){
-            this.PhoneNum = new SimpleStringProperty(num);
-        }
-        if(verifyEmail(email)){
-            this.Email = new SimpleStringProperty(email);
-        }
-        this.username = new SimpleStringProperty(username);
-        this.password = new SimpleStringProperty(pass);
-        this.roomNum = -1;
-
-        if(tier == 0) {
-            this.tier = 0;
-        }
-        if(verifyDate(dob)){
-            this.dob = new SimpleStringProperty(dob);
-        }
-    }
-
-
-    // Used to load in admin to the Db
-    public User(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
-        this.Name = new SimpleStringProperty(n);
-        if(verifyPhoneNumber(num)){
-            this.PhoneNum = new SimpleStringProperty(num);
-        }
-        if(verifyEmail(email)){
-            this.Email = new SimpleStringProperty(email);
-        }
-        this.username = new SimpleStringProperty(username);
-        this.password = new SimpleStringProperty(pass);
-
-        if(tier == 0) {
-            this.tier = 0;
-        }
-        else{
-            this.tier = tier;
-        }
-        if(verifyDate(dob)){
-            this.dob = new SimpleStringProperty(dob);
-        }
-        this.roomNum = roomNum;
-    }
-
-
+    /*****************************************************************
+     Constructor that resets all of the users personal information
+     *****************************************************************/
     public String resetAll(){
         Name = null;
         PhoneNum = null;
         Email = null;
+        accountBalance = 0;
         username = null;
         password = null;
         roomNum = 0;
@@ -141,86 +103,170 @@ public class User implements Serializable{
                 "Password: null, Room Number: null, Tier: null, Date of Birth: null";
     }
 
+    /*****************************************************************
+     gets the name of the user
+     @return Name returns the users name
+     *****************************************************************/
     public String getName() {
-        return Name.get();
+        return Name;
     }
 
+    /*****************************************************************
+     sets the users name
+     @param name the users name
+     *****************************************************************/
     public void setName(String name) {
-        Name = new SimpleStringProperty(name);
+        Name = name;
     }
 
+    /*****************************************************************
+     gets the users phone number
+     @return PhoneNum returns the users phone number
+     *****************************************************************/
     public String getPhoneNum() {
-        return PhoneNum.get();
+        return PhoneNum;
     }
 
-    // changed to boolean for tableViewController edit columns
-    public boolean setPhoneNum(String phoneNum){
-        if(verifyPhoneNumber(phoneNum)) {
-            this.PhoneNum = new SimpleStringProperty(phoneNum);
-            return true;
-        }
-        return false;
+    /*****************************************************************
+     sets the users phone number also verifys the
+     phone number and makes sure it is valid
+     @param phoneNum the users phone number
+     *****************************************************************/
+    public void setPhoneNum(String phoneNum){
+        if(verifyPhoneNumber(phoneNum))
+            PhoneNum = phoneNum;
     }
 
+    /*****************************************************************
+     gets the users email
+     @return Email return the users email
+     *****************************************************************/
     public String getEmail() {
-        return Email.get();
+        return Email;
     }
 
-    // changed to boolean for tableViewController edit columns
-    public boolean setEmail(String email){
-        if(verifyEmail(email)) {
-            this.Email = new SimpleStringProperty(email);
-            return true;
-        }
-        return false;
+    /*****************************************************************
+     sets the users email and verifys if it is a
+     valid email
+     @param email the users email
+     *****************************************************************/
+    public void setEmail(String email){
+        if(verifyEmail(email))
+            Email = email;
     }
 
+    /*****************************************************************
+     gets the account balance of the user
+     @return accountBalance return the account balance
+     *****************************************************************/
+    public int getAccountBalance() {
+        return accountBalance;
+    }
+
+    /*****************************************************************
+     Constructor that sets the account balance
+     @param accountBalance the users account balance
+     *****************************************************************/
+    public void setAccountBalance(int accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+
+    /*****************************************************************
+     gets the username of the user
+     @return username return the users username
+     *****************************************************************/
     public String getUsername() {
-        return username.get();
+        return username;
     }
 
+    /*****************************************************************
+     sets the users username
+     @param username the users username
+     *****************************************************************/
     public void setUsername(String username) {
-        this.username = new SimpleStringProperty(username);
+        this.username = username;
     }
 
+    /*****************************************************************
+     gets the users password
+     @return password return the users password
+     *****************************************************************/
     public String getPassword() {
-        return password.get();
+        return password;
     }
 
+    /*****************************************************************
+     sets the users password
+     @param password
+     *****************************************************************/
     public void setPassword(String password) {
-        this.password = new SimpleStringProperty(password);
+        this.password = password;
     }
 
+    /*****************************************************************
+     gets the users room number
+     @return roomNum return the users room number
+     *****************************************************************/
     public int getRoomNum() {
         return roomNum;
     }
 
+    /*****************************************************************
+     sets the users room number
+     @param roomNum the users room number
+     *****************************************************************/
     public void setRoomNum(int roomNum) {
         this.roomNum = roomNum;
     }
 
+    /*****************************************************************
+     gets the users hotel tier
+     @return tier returns the users tier
+     *****************************************************************/
     public int getTier() {
         return tier;
     }
 
+    /*****************************************************************
+     sets the users tier
+     @param tier the users tier
+     *****************************************************************/
     public void setTier(int tier) {
         this.tier = tier;
     }
 
+    /*****************************************************************
+     gets the users date of birth
+     @return dob returns the users date of birth
+     *****************************************************************/
     public String getDob() {
-        return dob.get();
+        return dob;
     }
 
-    public void setDob(String dateOfBirth){
-        if(verifyDate(dateOfBirth))
-            this.dob = new SimpleStringProperty(dateOfBirth);
+    /*****************************************************************
+     sets the users date of birth and checks if the users date of birth
+     is valid
+     @param dob the users date of birth
+     *****************************************************************/
+    public void setDob(String dob){
+        if(verifyDate(dob))
+            this.dob = dob;
     }
 
+    /*****************************************************************
+     This method generates a random password for the user to get into
+     their hotel accounts. This was done by importing an apache random
+     string util
+     @return generateString This returns the random string
+     *****************************************************************/
     public String generatePassWApache() {
         String generatedString = RandomStringUtils.randomAlphanumeric(10);
         return generatedString;
     }
 
+    /*****************************************************************
+     This method prints out all of the basic user info
+     *****************************************************************/
     public void BasicInfo(){
         System.out.println("Name: " + Name);
         System.out.println("Username: " + username);
@@ -229,10 +275,13 @@ public class User implements Serializable{
         System.out.println("Room Number: " + roomNum);
     }
 
+    /*****************************************************************
+     This method verifys the date that is entered by the user. To be
+     a valid date it must follow the format of MM/DD/YYYY. If anything
+     else is entered it will throw an error
+     @param date the date that the user enters for the date of birth
+     *****************************************************************/
     public static boolean verifyDate(String date) {
-        // Needs to check if date is valid as in its the correct date,
-        // and it is greater than or equal to 18, cant be 12 and get a
-        // hotel room. (compares to today's date)
         if (date.trim().equals("")) {
             return true;
         }
@@ -243,16 +292,15 @@ public class User implements Serializable{
             simpleDateFormatShort.setLenient(false);
             try {
                 Date javaDate = simpleDateFormatLong.parse(date);
-//                System.out.println("Verified: " + date);
+                System.out.println("Verified: " + date);
             }
             catch (ParseException e) {
                 try{
                     Date javaDate = simpleDateFormatShort.parse(date);
-//                    System.out.println("Verified: " + date);
+                    System.out.println("Verified: " + date);
                 }
                 catch (ParseException e1){
                     System.out.println(date + " is not a valid date. DOB not updated.");
-                    new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
                     return false;
                 }
             }
@@ -260,108 +308,40 @@ public class User implements Serializable{
         }
     }
 
+    /*****************************************************************
+     This method verifies the users phone number and makes sure it is
+     valid. If it is a valid verified number it will print out that it
+     is verified. If it is not a valid number it will say the number is
+     invalid and the number was not updates
+     @param newNumber the number the user puts in
+     *****************************************************************/
     public static boolean verifyPhoneNumber(String newNumber){
         newNumber = newNumber.replaceAll("[\\s\\-()]", "");
         if (newNumber.matches("\\d{10}")) {
-//            System.out.println("Verified: " + newNumber);
+            System.out.println("Verified: " + newNumber);
             return true;
         }
         else{
-            // Need to have the User type in a different or valid phone number.
             System.out.println(newNumber + " is invalid. Phone number not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
             return false;
         }
     }
 
+    /*****************************************************************
+     This method verifies if the users email is a valid email. This
+     requires some type of letters on one side of the @ then and @ sign
+     followed by other letters after the @. If it is not a valid email
+     then it prints that it is invalid and the email is not updated
+     @param email this is the users email.
+     *****************************************************************/
     public static boolean verifyEmail(String email){
         if(email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
-//            System.out.println("Verified: " + email);
+            System.out.println("Verified: " + email);
             return true;
         }
         else {
-            // Need to have the User type in a different or valid email.
             System.out.println(email + " is invalid. E-Mail address not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
             return false;
         }
-    }
-
-    // Verifies all fields are bad or good.
-    public static boolean verifyAll(String email, String newNumber, String date){
-        if(verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber) == true){
-            return true;
-        }
-        return false;
-    }
-
-    // To string to print the User from its memory address.
-    @Override
-    public String toString(){
-        // all the getters were just the variable names so getName() was Name, getPhoneNum() was PhoneNum, ETC
-        return getName() + "," + getPhoneNum() + "," + getEmail() + "," + getUsername() + ","
-                + getPassword() + "," + getTier() + "," + getDob() + "," + getRoomNum();
-    }
-    
-
-    public String returnPermissions(int tier){
-        String permissions = "";
-        switch (tier){
-            case 1: // pool, pc, hot tub access
-                permissions =("Pool Access: YES" + "\n" +
-                        "Gym Access: NO" + "\n" +
-                        "PC Room Access: YES" + "\n" +
-                        "Bar Access: NO" + "\n" +
-                        "Casino Access: NO" + "\n" +
-                        "Buffet Access: NO" + "\n" +
-                        "Hot Tub Access: YES" + "\n" +
-                        "Arcade Room Access: NO" + "\n" +
-                        "Admin Access: NO" + "\n" +
-                        "Room Access: YES" + "\n" +
-                        "All Room Access: NO" + "\n" );
-                break;
-            case 2: // pool, pc, hot tub, gym, buffet access
-                permissions =("Pool Access: YES" + "\n" +
-                        "Gym Access: YES" + "\n" +
-                        "PC Room Access: YES" + "\n" +
-                        "Bar Access: NO" + "\n" +
-                        "Casino Access: NO" + "\n" +
-                        "Buffet Access: YES" + "\n" +
-                        "Hot Tub Access: YES" + "\n" +
-                        "Arcade Room Access: NO" + "\n" +
-                        "Admin Access: NO" + "\n" +
-                        "Room Access: YES" + "\n" +
-                        "All Room Access: NO" + "\n" );
-                break;
-            case 3: // pool, pc, hot tub, gym, bar, casino, buffet, arcade access.
-                permissions =("Pool Access: YES" + "\n" +
-                        "Gym Access: YES" + "\n" +
-                        "PC Room Access: YES" + "\n" +
-                        "Bar Access: YES" + "\n" +
-                        "Casino Access: YES" + "\n" +
-                        "Buffet Access: YES" + "\n" +
-                        "Hot Tub Access: YES" + "\n" +
-                        "Arcade Room Access: YES" + "\n" +
-                        "Admin Access: NO" + "\n" +
-                        "Room Access: YES" + "\n" +
-                        "All Room Access: NO" + "\n" );
-                break;
-            case 0: // admin access.
-                permissions =("Pool Access: YES" + "\n" +
-                        "Gym Access: YES" + "\n" +
-                        "PC Room Access: YES" + "\n" +
-                        "Bar Access: YES" + "\n" +
-                        "Casino Access: YES" + "\n" +
-                        "Buffet Access: YES" + "\n" +
-                        "Hot Tub Access: YES" + "\n" +
-                        "Arcade Room Access: YES" + "\n" +
-                        "Admin Access: YES" + "\n" +
-                        "Room Access: YES" + "\n" +
-                        "All Room Access: YES" + "\n" );
-                break;
-            default:
-                System.out.println("No Tier inputted.");
-        }
-        return permissions;
     }
 }

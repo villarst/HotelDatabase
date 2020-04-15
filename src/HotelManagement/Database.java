@@ -1,9 +1,6 @@
 package HotelManagement;
 
-
 import java.util.*;
-import java.io.Serializable;
-
 
 /*****************************************************************
  This class consists of the database that will be used to store,
@@ -11,19 +8,11 @@ import java.io.Serializable;
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  *****************************************************************/
-
-
-public class Database implements Serializable{
-
+public class Database{
     /** Arraylist that stores the Users */
     private ArrayList <User> MainDb;
-
     /** Boolean Array that stores values for the rooms. */
     boolean rooms [];
-
-    /** Arraylist that stores the admins. */
-    private ArrayList <User> SecondaryDb;
-
 
     /*****************************************************************
      Constructor that creates a Database to use to store Users and
@@ -32,13 +21,13 @@ public class Database implements Serializable{
     public Database(){
         // initialize the Arraylist to hold the users and initialize the rooms Array.
         MainDb = new ArrayList<User>();
-        SecondaryDb = new ArrayList<User>();
-        rooms = new boolean[300];
-        for(int i = 0; i < 300; i++){
+        rooms = new boolean[500];
+        for(int i = 0; i < 500; i++){
             rooms[i] = false;
         }
+        // populates the MainDb Arraylist with random Guests.
+        populateList();
     }
-
 
     /*****************************************************************
      Adds the user to the Arraylist.
@@ -55,33 +44,6 @@ public class Database implements Serializable{
         }
     }
 
-    public void addUserFromLoad(User u){
-        MainDb.add(u);
-        u.setRoomNum(u.getRoomNum());
-        rooms[u.getRoomNum()] = true;
-    }
-
-    public void addAdmin(User u){
-        if(u.getTier() == 0){
-            SecondaryDb.add(u);
-        }
-    }
-
-    // This method clears the Database, (MainDb, SecondaryDb, rooms[]
-    public void clearDb(){
-        MainDb.clear();
-        SecondaryDb.clear();
-        for(int i = 0; i < 300; i++){
-            rooms[i] = false;
-        }
-    }
-
-    // This method returns MainDb
-    public ArrayList<User> getMainDb() {
-        return MainDb;
-    }
-
-
     /*****************************************************************
      Assigns the room to the user that was just added to the Arraylist.
      @param u the User that is passed into
@@ -89,41 +51,17 @@ public class Database implements Serializable{
      *****************************************************************/
     public void assignRoom(User u){
         int room = (u.getTier() - 1) * 100;
-        if(u.getTier() == 0){
-            u.setRoomNum(-1);
-        }
-        else {
-            if (!checkTierFull(u.getTier() - 1)) {
-                for (int i = 0; i <= 99; i++) { // was 99
-                    if (!rooms[room + i]) {
-                        rooms[room + i] = true;
-                        u.setRoomNum(room + i);
-                        System.out.println(u.getRoomNum());
-                        break;
-                    }
+        if(!checkTierFull(u.getTier() - 1)) {
+            for (int i = 0; i <= 99; i++) { // was 99
+                if (!rooms[room + i]) {
+                    rooms[room + i] = true;
+                    u.setRoomNum(room + i);
+                    System.out.println(u.getRoomNum());
+                    break;
                 }
             }
         }
     }
-
-    public int viewRoom(int i){
-        return MainDb.get(i).getRoomNum();
-    }
-
-    public User getUser(int i){
-        return MainDb.get(i);
-    }
-
-    public User findUser(User u){
-        User found = null;
-        for(int i = 0; i < MainDb.size(); i++){
-            if(u.getRoomNum() == MainDb.get(i).getRoomNum()){
-                found = MainDb.get(i);
-            }
-        }
-        return found;
-    }
-
 
     /*****************************************************************
      Checks if the room is occupied if so returns a boolean of true
@@ -142,7 +80,6 @@ public class Database implements Serializable{
         return true;
     }
 
-
     /*****************************************************************
      Removes the User from the Arraylist MainDb.
      @param u the User that is wanting to be removed.
@@ -154,60 +91,50 @@ public class Database implements Serializable{
         MainDb.remove(u);
     }
 
-    // this is used to delete a user from the delete button in tableView
-    public void searchUser(User u){
-        for(int i = 0; i < MainDb.size(); i++){
-            if(MainDb.get(i).getPassword() == u.getPassword()){
-                rooms[u.getRoomNum()] = false;
-                MainDb.remove(MainDb.get(i));
-            }
-        }
-    }
+    /*****************************************************************
+     Creates Users and adds them to the database MainDb.
+     *****************************************************************/
+    public void populateList(){
+        User user1 = new User("Bobby", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user2 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user3 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user4 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user5 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user6 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user7 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user8 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user9 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user10 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user11 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
+        User user12 = new User("Steven Villarreal", "616-834-2729", "villarst@mail.gvsu.edu",
+                600, 2, "villarst", "edI3n5u0", "03/27/2000");
 
-    // this is used to search for a user in SecondaryDb
-    public boolean searchSecondary(String pass){
-        boolean found = true;
-        for(int i = 0; i < SecondaryDb.size(); i++){
-            if(pass.equals(SecondaryDb.get(i).getPassword())){
-                found = true;
-            }
-            else{
-                found = false;
-            }
-        }
-        return found;
-    }
 
-    public User getUserSecondaryDb(int i){
-        return SecondaryDb.get(i);
-    }
+        // Adds the just created Users to the database.
+        addUser(user1);
+        addUser(user2);
+        addUser(user3);
+        addUser(user4);
+        addUser(user5);
+        addUser(user6);
+        addUser(user7);
+        addUser(user8);
+        addUser(user9);
+        addUser(user10);
+        addUser(user11);
+        addUser(user12);
 
-    // returns size of the SecondaryDb
-    public int secondaryDbSize(){
-        return SecondaryDb.size();
-    }
-
-    public int mainDbSize(){
-        return MainDb.size();
-    }
-
-    // To string for the Database
-    @Override
-    public String toString(){
-        String result = "";
-        for(int i = 0; i < MainDb.size(); i++){
-            result += MainDb.get(i).getName() + " , " + MainDb.get(i).getPhoneNum() +
-                    " , " + MainDb.get(i).getEmail() + " , " + MainDb.get(i).getUsername() +
-                    " , " + MainDb.get(i).getPassword() + " , " + MainDb.get(i).getTier() +
-                    " , " + MainDb.get(i).getDob() + " , " + MainDb.get(i).getRoomNum() + "\n";
-        }
-        for(int j = 0; j < SecondaryDb.size(); j++){
-            result += MainDb.get(j).getName() + " , " + MainDb.get(j).getPhoneNum() +
-                    " , " + MainDb.get(j).getEmail() + " , " + MainDb.get(j).getUsername() +
-                    " , " + MainDb.get(j).getPassword() + " , " + MainDb.get(j).getTier() +
-                    " , " + MainDb.get(j).getDob() + " , " + MainDb.get(j).getRoomNum() + "\n";
-        }
-        return result;
     }
 
 }
