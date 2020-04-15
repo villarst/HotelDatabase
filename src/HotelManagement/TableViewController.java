@@ -62,7 +62,7 @@ public class TableViewController implements Initializable {
             userSelected.setName(editedCell.getNewValue().toString());
         }
         else{
-//            alertErrorName();
+            alertErrorName();
             tableView.refresh();
             userSelected.setName(d.findUser(userSelected).getName());
         }
@@ -75,7 +75,7 @@ public class TableViewController implements Initializable {
         }
         else{
             // You have to click it or double click it then the email will be the original email in the gui.
-//            alertErrorEmail();
+            alertErrorEmail();
             tableView.refresh();
             userSelected.setEmail(d.findUser(userSelected).getEmail());
         }
@@ -87,70 +87,70 @@ public class TableViewController implements Initializable {
             userSelected.setPhoneNum(editedCell.getNewValue().toString());
         }
         else{
-//            alertErrorPhoneNum();
+            alertErrorPhoneNum();
             tableView.refresh();
             userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum());
         }
     }
 
     // This method pops a message about some info for the "about" menu item.
-//    public void alertAbout(){
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle("Application Info");
-//        alert.setHeaderText("Hotel Database");
-//        alert.setContentText("Created by: Steven Villarreal, Corey Rice,\n\t\t   Jason Kaip, Corey Sutter\n\n" +
-//                "This application serves as a Hotel Database System that can add, delete users." +
-//                " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\"," +
-//                " are editable.");
-//        alert.showAndWait();
-//    }
-//
-//     This method pops up an error if the ADMIN types something wrong into adding a user.
-//    public void alertError(){
-//        Alert alert = new Alert(Alert.AlertType.ERROR);
-//        alert.setTitle("Error");
-//        alert.showAndWait();
-//    }
-//
-//     This method pops up an error if the ADMIN types something wrong into adding a user.
-//    public void alertErrorName(){
-//        Alert alert = new Alert(Alert.AlertType.ERROR);
-//        alert.setTitle("Error");
-//        alert.setHeaderText("Name is invalid.");
-//        alert.showAndWait();
-//    }
-//
-//     This method pops up an error if the ADMIN types something wrong into adding a user.
-//    public void alertErrorPhoneNum(){
-//        Alert alert = new Alert(Alert.AlertType.ERROR);
-//        alert.setTitle("Error");
-//        alert.setHeaderText("Phone # is invalid length of characters.");
-//        alert.showAndWait();
-//    }
-//
-//     This method pops up an error if the ADMIN types something wrong into adding a user.
-//    public void alertErrorEmail(){
-//        Alert alert = new Alert(Alert.AlertType.ERROR);
-//        alert.setTitle("Error");
-//        alert.setHeaderText("Email is invalid.");
-//        alert.showAndWait();
-//    }
-//
-//     This method pops up an error if the ADMIN types something wrong into adding a user.
-//    public void alertAll(){
-//        Alert alert = new Alert(Alert.AlertType.ERROR);
-//        alert.setTitle("Error");
-//        alert.setHeaderText("Please check Phone #, Email, or Date of Birth.");
-//        alert.showAndWait();
-//    }
-//
-//     This method pops up an info message if the ADMIN tries deleting a user that isn't
-//    public void alertInfo(){
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle("Important");
-//        alert.setHeaderText("No User to Delete and or cannot delete ADMIN");
-//        alert.showAndWait();
-//    }
+    public void alertAbout(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Application Info");
+        alert.setHeaderText("Hotel Database");
+        alert.setContentText("Created by: Steven Villarreal, Corey Rice,\n\t\t   Jason Kaip, Corey Sutter\n\n" +
+                "This application serves as a Hotel Database System that can add, delete users." +
+                " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\"," +
+                " are editable.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertError(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.showAndWait();
+    }
+
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertErrorName(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Name is invalid.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertErrorPhoneNum(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Phone # is invalid length of characters.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertErrorEmail(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Email is invalid.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertAll(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Please check Phone #, Email, or Date of Birth.");
+        alert.showAndWait();
+    }
+
+    // This method pops up an info message if the ADMIN tries deleting a user that isn't
+    public void alertInfo(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Important");
+        alert.setHeaderText("No User to Delete and or cannot delete ADMIN");
+        alert.showAndWait();
+    }
 
     // This method will create new User and add it to the table and database.
     public void newUserButtonPushed(){
@@ -171,11 +171,11 @@ public class TableViewController implements Initializable {
                 tableView.getItems().add(u);
             }
             else{
-//                alertAll();
+                alertAll();
             }
         }
         catch (Exception e){
-//            alertError();
+            alertError();
         }
     }
 
@@ -216,15 +216,15 @@ public class TableViewController implements Initializable {
                     }
                 }
                 else{
-//                    alertInfo();
+                    alertInfo();
                 }
             }
             else{
-//                alertError();
+                alertError();
             }
         }
         catch (Exception e){
-//            alertError();
+            alertError();
         }
     }
 
@@ -249,7 +249,7 @@ public class TableViewController implements Initializable {
             }
         }
         else{
-//            alertError();
+            alertError();
         }
     }
 
