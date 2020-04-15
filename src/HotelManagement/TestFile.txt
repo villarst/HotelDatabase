@@ -1,0 +1,4 @@
+Steven,6168342729,villarst@mail.gvsu.edu,villarst,iSZJD5Mfle,1,03/27/00,0
+Corey R,6165583079,ricecore@mail.gvsu.edu,villarst,CV07yX07HK,2,03/27/00,100
+ADMIN,9999999999,admin@login.com,ADMIN,jscc1234,0,04/23/29,-1
+asdf,3763338383,sadf@mail.com,asdf,nsMOSe2ZOj,3,03/03/03,200
