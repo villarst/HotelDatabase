@@ -21,12 +21,12 @@ public class adminLoginSceneController implements Initializable {
     @FXML public TextField passwordTextField;
     @FXML public TextField usernameTextField;
 
-    public void alertError(ActionEvent event){
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText("Login Credentials Incorrect");
-        alert.showAndWait();
-    }
+//    public void alertError(ActionEvent event){
+//        Alert alert = new Alert(Alert.AlertType.ERROR);
+//        alert.setTitle("Error");
+//        alert.setHeaderText("Login Credentials Incorrect");
+//        alert.showAndWait();
+//    }
 
     public void loginAdmin(ActionEvent event){
         if(adminLoggedIn == false) {
@@ -42,7 +42,7 @@ public class adminLoginSceneController implements Initializable {
                     return;
                 }
                 else{
-                    alertError(event);
+//                    alertError(event);
                 }
             }
         }
