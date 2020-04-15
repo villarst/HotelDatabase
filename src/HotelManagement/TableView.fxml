@@ -17,7 +17,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1209.0" style="-fx-background-color: #5F9EA0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.TableViewController">
     <children>
-        <VBox layoutX="29.0" layoutY="29.0" prefHeight="450.0" prefWidth="1162.0" spacing="10.0">
+        <VBox layoutX="14.0" layoutY="27.0" prefHeight="450.0" prefWidth="1162.0" spacing="10.0">
             <children>
                 <Label text="Users In Database">
                     <font>
@@ -47,25 +47,25 @@
                             </HBox.margin>
                         </TextField>
                         <TextField fx:id="phoneNumTextField" prefHeight="25.0" prefWidth="125.0" promptText="Phone #" />
-                        <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="125.0" promptText="Email" />
+                        <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="124.0" promptText="Email" />
                         <TextField fx:id="userNameTextField" prefHeight="25.0" prefWidth="125.0" promptText="Username" />
                         <Label alignment="CENTER" prefHeight="25.0" prefWidth="125.0" text="Password  Generated">
                             <font>
                                 <Font name="System Italic" size="12.0" />
                             </font>
                         </Label>
-                        <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Tier Level" style="-fx-background-color: #2F4F4F; -fx-text-fill: #FFFFFF;" />
+                        <ComboBox fx:id="comboBox" prefWidth="129.0" promptText="Tier Level" style="-fx-background-color: #7FFFD4;" />
                         <TextField fx:id="dobTextField" prefHeight="25.0" prefWidth="125.0" promptText="Date Of Birth" />
                     </children>
                 </HBox>
             </children>
         </VBox>
-        <Button fx:id="btnLoginAdmin" layoutX="41.0" layoutY="521.0" mnemonicParsing="false" onAction="#logoutAdmin" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: #2F4F4F;" text="Logout" textFill="WHITE">
+        <Button fx:id="btnLoginAdmin" layoutX="24.0" layoutY="506.0" mnemonicParsing="false" onAction="#logoutAdmin" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: #2F4F4F;" text="Logout" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
-        <HBox layoutX="41.0" layoutY="446.0" prefHeight="33.0" prefWidth="1156.0">
+        <HBox layoutX="24.0" layoutY="446.0" prefHeight="33.0" prefWidth="1173.0">
             <children>
                 <Button mnemonicParsing="false" onAction="#newUserButtonPushed" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #2F4F4F;" text="Add New User" textFill="WHITE">
                     <HBox.margin>
