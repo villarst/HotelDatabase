@@ -290,7 +290,7 @@ public class TableViewController implements Initializable {
             String filePath = new File("").getAbsolutePath();
             System.out.println (filePath);
             BufferedReader br = new BufferedReader(new FileReader(new File(filePath +
-                                                                  "/src/HotelManagement/TestFile.txt")));
+                    "/src/HotelManagement/TestFile.txt")));
             String line;
             String[] array;
 
