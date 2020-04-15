@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1209.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.TableViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1209.0" style="-fx-background-color: #5F9EA0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HotelManagement.TableViewController">
     <children>
-        <VBox layoutX="29.0" layoutY="29.0" prefHeight="450.0" prefWidth="1162.0" spacing="10.0">
+        <VBox layoutX="14.0" layoutY="27.0" prefHeight="450.0" prefWidth="1162.0" spacing="10.0">
             <children>
                 <Label text="Users In Database">
                     <font>
@@ -27,16 +27,16 @@
                         <Insets top="5.0" />
                     </VBox.margin>
                 </Label>
-                <TableView fx:id="tableView" prefHeight="334.0" prefWidth="1162.0">
+                <TableView fx:id="tableView" prefHeight="335.0" prefWidth="1161.0" style="-fx-border-color: #808080; -fx-table-cell-border-color: #808080;">
                     <columns>
-                        <TableColumn fx:id="nameColumn" onEditCommit="#changeNameColumn" prefWidth="145.0" text="Name" />
-                        <TableColumn fx:id="phoneNumColumn" onEditCommit="#changePhoneNumColumn" prefWidth="145.0" text="Phone #" />
-                        <TableColumn fx:id="emailColumn" onEditCommit="#changeEmailColumn" prefWidth="145.0" text="Email" />
-                        <TableColumn fx:id="userNameColumn" prefWidth="145.0" text="Username" />
-                        <TableColumn fx:id="passwordColumn" prefWidth="145.0" text="Password" />
-                        <TableColumn fx:id="tierColumn" prefWidth="145.0" text="Tier" />
-                        <TableColumn fx:id="dateofbirthColumn" prefWidth="145.0" text="Date of Birth" />
-                        <TableColumn fx:id="roomNum" prefWidth="145.0" text="Room #" />
+                        <TableColumn fx:id="nameColumn" onEditCommit="#changeNameColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Name" />
+                        <TableColumn fx:id="phoneNumColumn" onEditCommit="#changePhoneNumColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Phone #" />
+                        <TableColumn fx:id="emailColumn" onEditCommit="#changeEmailColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Email" />
+                        <TableColumn fx:id="userNameColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Username" />
+                        <TableColumn fx:id="passwordColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Password" />
+                        <TableColumn fx:id="tierColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Tier" />
+                        <TableColumn fx:id="dateofbirthColumn" prefWidth="145.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Date of Birth" />
+                        <TableColumn fx:id="roomNum" prefWidth="143.0" style="-fx-background-color: #7FFFD4; -fx-border-color: #808080;" text="Room #" />
                     </columns>
                 </TableView>
                 <HBox prefHeight="71.0" prefWidth="1162.0" spacing="20.0">
@@ -47,44 +47,44 @@
                             </HBox.margin>
                         </TextField>
                         <TextField fx:id="phoneNumTextField" prefHeight="25.0" prefWidth="125.0" promptText="Phone #" />
-                        <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="125.0" promptText="Email" />
+                        <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="124.0" promptText="Email" />
                         <TextField fx:id="userNameTextField" prefHeight="25.0" prefWidth="125.0" promptText="Username" />
                         <Label alignment="CENTER" prefHeight="25.0" prefWidth="125.0" text="Password  Generated">
                             <font>
                                 <Font name="System Italic" size="12.0" />
                             </font>
                         </Label>
-                        <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Tier Level" />
+                        <ComboBox fx:id="comboBox" prefWidth="129.0" promptText="Tier Level" style="-fx-background-color: #7FFFD4;" />
                         <TextField fx:id="dobTextField" prefHeight="25.0" prefWidth="125.0" promptText="Date Of Birth" />
                     </children>
                 </HBox>
             </children>
         </VBox>
-        <Button fx:id="btnLoginAdmin" layoutX="41.0" layoutY="521.0" mnemonicParsing="false" onAction="#logoutAdmin" prefHeight="44.0" prefWidth="139.0" text="Logout">
+        <Button fx:id="btnLoginAdmin" layoutX="24.0" layoutY="506.0" mnemonicParsing="false" onAction="#logoutAdmin" prefHeight="44.0" prefWidth="139.0" style="-fx-background-color: #2F4F4F;" text="Logout" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
-        <HBox layoutX="41.0" layoutY="446.0" prefHeight="33.0" prefWidth="1156.0">
+        <HBox layoutX="24.0" layoutY="446.0" prefHeight="33.0" prefWidth="1173.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#newUserButtonPushed" prefHeight="25.0" prefWidth="125.0" text="Add New User">
+                <Button mnemonicParsing="false" onAction="#newUserButtonPushed" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #2F4F4F;" text="Add New User" textFill="WHITE">
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="25.0" prefWidth="125.0" text="Delete User">
+                <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #2F4F4F;" text="Delete User" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#tierPermissionsPushed" prefHeight="19.0" prefWidth="125.0" text="Tier Permissions">
+                <Button mnemonicParsing="false" onAction="#tierPermissionsPushed" prefHeight="19.0" prefWidth="125.0" style="-fx-background-color: #2F4F4F;" text="Tier Permissions" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>
                 </Button>
             </children>
         </HBox>
-        <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1209.0">
+        <MenuBar layoutY="-6.0" prefHeight="33.0" prefWidth="1209.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -104,6 +104,9 @@
                     </items>
                 </Menu>
             </menus>
+         <padding>
+            <Insets top="6.0" />
+         </padding>
         </MenuBar>
     </children>
 </AnchorPane>
