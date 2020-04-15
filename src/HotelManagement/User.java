@@ -287,15 +287,6 @@ public class User implements Serializable{
         }
     }
 
-    public static boolean verifyName(String n){
-        if(n != ""){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     // Verifies all fields are bad or good.
     public static boolean verifyAll(String email, String newNumber, String date){
         if(verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber) == true){
