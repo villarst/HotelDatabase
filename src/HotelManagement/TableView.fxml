@@ -54,7 +54,7 @@
                                 <Font name="System Italic" size="12.0" />
                             </font>
                         </Label>
-                        <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Tier Level" />
+                        <ComboBox fx:id="comboBox" prefHeight="25.0" prefWidth="125.0" promptText="Tier Level" />
                         <TextField fx:id="dobTextField" prefHeight="25.0" prefWidth="125.0" promptText="Date Of Birth" />
                     </children>
                 </HBox>
@@ -89,8 +89,8 @@
                 <Menu mnemonicParsing="false" text="File">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#exitButton" text="Close" />
-                        <MenuItem fx:id="saveBtn" mnemonicParsing="false" onAction="#handleSave" text="Save File" />
-                        <MenuItem fx:id="loadBtn" mnemonicParsing="false" onAction="#loadFile" text="Load File" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save File" />
+                        <MenuItem mnemonicParsing="false" onAction="#loadFile" text="Load File" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">

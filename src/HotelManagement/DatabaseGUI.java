@@ -5,10 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
-import java.util.*;
 
 /*****************************************************************
  DatabaseGUI is the code that runs the Java FX file so the gui can
@@ -27,6 +25,8 @@ public class DatabaseGUI extends Application {
 
     public static Scene sceneAdmin;
     public static Scene sceneTable;
+
+
 
     static {
         try {
