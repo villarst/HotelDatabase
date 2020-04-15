@@ -136,6 +136,14 @@ public class TableViewController implements Initializable {
         alert.showAndWait();
     }
 
+    // This method pops up an error if the ADMIN types something wrong into adding a user.
+    public void alertAll(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Please check Phone #, Email, or Date of Birth.");
+        alert.showAndWait();
+    }
+
     // This method pops up an info message if the ADMIN tries deleting a user that isn't
     public void alertInfo(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -161,6 +169,9 @@ public class TableViewController implements Initializable {
                 dobTextField.clear();
                 comboBox.setValue(null);
                 tableView.getItems().add(u);
+            }
+            else{
+                alertAll();
             }
         }
         catch (Exception e){
