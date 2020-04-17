@@ -251,9 +251,14 @@ public class User implements Serializable{
 //                    System.out.println("Verified: " + date);
                 }
                 catch (ParseException e1){
-                    System.out.println(date + " is not a valid date. DOB not updated.");
-                    new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
-                    return false;
+                    try {
+                        System.out.println(date + " is not a valid date. DOB not updated.");
+                        new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
+                        return false;
+                    }
+                    catch(ExceptionInInitializerError i){
+                        return false;
+                    }
                 }
             }
             return true;
@@ -268,9 +273,14 @@ public class User implements Serializable{
         }
         else{
             // Need to have the User type in a different or valid phone number.
-            System.out.println(newNumber + " is invalid. Phone number not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
-            return false;
+            try {
+                System.out.println(newNumber + " is invalid. Phone number not updated.");
+                new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
+                return false;
+            }
+            catch(NoClassDefFoundError e){
+                return false;
+            }
         }
     }
 
@@ -281,9 +291,14 @@ public class User implements Serializable{
         }
         else {
             // Need to have the User type in a different or valid email.
-            System.out.println(email + " is invalid. E-Mail address not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
-            return false;
+            try {
+                System.out.println(email + " is invalid. E-Mail address not updated.");
+                new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
+                return false;
+            }
+            catch(NoClassDefFoundError i){
+                return false;
+            }
         }
     }
 
