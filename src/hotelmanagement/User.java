@@ -17,7 +17,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  *****************************************************************/
 
 
-public class User implements Serializable { //NOPMD
+public class User implements Serializable {
 
   /** Name of user. */
   private transient SimpleStringProperty name;
@@ -55,11 +55,11 @@ public class User implements Serializable { //NOPMD
    parameters.
    *****************************************************************/
   public User(final String name, final String phoneNum, final String email, final int tier,
-              final String username, final String dobirth) throws IllegalArgumentException { //NOPMD
+              final String username, final String dobirth) throws IllegalArgumentException {
     this.name = new SimpleStringProperty(name);
     this.username = new SimpleStringProperty(username);
     this.tier = tier;
-    this.password = new SimpleStringProperty(generatePassWApache()); //NOPMD
+    this.password = new SimpleStringProperty(generatePassWApache());
 
     this.phoneNum = new SimpleStringProperty(phoneNum);
     this.email = new SimpleStringProperty(email);
@@ -80,7 +80,7 @@ public class User implements Serializable { //NOPMD
    *****************************************************************/
   public User(final String name, final String phoneNum, final String email, final int tier,
               final int room, final String username, final String pass,
-              final String dobirth) throws IllegalArgumentException { //NOPMD
+              final String dobirth) throws IllegalArgumentException {
     this.name = new SimpleStringProperty(name);
     this.username = new SimpleStringProperty(username);
     this.tier = tier;
@@ -118,7 +118,7 @@ public class User implements Serializable { //NOPMD
       this.email = new SimpleStringProperty(email);
     }
     this.username = new SimpleStringProperty(username);
-    this.password = new SimpleStringProperty(generatePassWApache()); //NOPMD
+    this.password = new SimpleStringProperty(generatePassWApache());
     this.roomNum = -1;
 
     if (tier == 0) {
@@ -199,14 +199,14 @@ public class User implements Serializable { //NOPMD
    @return a verification string.
    *****************************************************************/
   public String resetAll() {
-    name = null; //NOPMD
-    phoneNum = null; //NOPMD
-    email = null; //NOPMD
-    username = null; //NOPMD
-    password = null; //NOPMD
+    name = null;
+    phoneNum = null;
+    email = null;
+    username = null;
+    password = null;
     roomNum = 0;
     tier = 0;
-    dob = null; //NOPMD
+    dob = null;
     return "Name: null, Phone Number: 0, Email: null, Account Balance: 0, Username: null"
             + "Password: null, Room Number: null, Tier: null, Date of Birth: null";
   }
@@ -243,8 +243,8 @@ public class User implements Serializable { //NOPMD
    Sets the phone number of the user.
    @param phoneNum the phone number of the user.
    *****************************************************************/
-  public boolean setPhoneNum(final String phoneNum) { //NOPMD
-    boolean isValid = false; //NOPMD
+  public boolean setPhoneNum(final String phoneNum) {
+    boolean isValid = false;
 
     if (verifyPhoneNumber(phoneNum)) {
       this.phoneNum = new SimpleStringProperty(phoneNum);
@@ -266,8 +266,8 @@ public class User implements Serializable { //NOPMD
    Sets the email of the user.
    @param email the email of the user.
    *****************************************************************/
-  public boolean setEmail(final String email) { //NOPMD
-    boolean isValid = false; //NOPMD
+  public boolean setEmail(final String email) {
+    boolean isValid = false;
 
     if (verifyEmail(email)) {
       this.email = new SimpleStringProperty(email);
@@ -385,24 +385,24 @@ public class User implements Serializable { //NOPMD
     // Needs to check if date is valid as in its the correct date,
     // and it is greater than or equal to 18, cant be 12 and get a
     // hotel room. (compares to today's date)
-    if (date.trim().equals("")) { //NOPMD
-      return true; //NOPMD
+    if (date.trim().equals("")) {
+      return true;
     } else {
-      SimpleDateFormat simpleDateFormatLong = new SimpleDateFormat("MM/dd/yyyy"); //NOPMD
+      SimpleDateFormat simpleDateFormatLong = new SimpleDateFormat("MM/dd/yyyy");
       simpleDateFormatLong.setLenient(false);
-      SimpleDateFormat simpleDateFormatShort = new SimpleDateFormat("MM/dd/yy"); //NOPMD
+      SimpleDateFormat simpleDateFormatShort = new SimpleDateFormat("MM/dd/yy");
       simpleDateFormatShort.setLenient(false);
       try {
-        Date javaDate = simpleDateFormatLong.parse(date); //NOPMD
+        Date javaDate = simpleDateFormatLong.parse(date);
       } catch (ParseException e) {
         try {
-          Date javaDate = simpleDateFormatShort.parse(date); //NOPMD
+          Date javaDate = simpleDateFormatShort.parse(date);
         } catch (ParseException e1) {
           try {
             new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
-            return false; //NOPMD
+            return false;
           } catch (ExceptionInInitializerError i) {
-            return false; //NOPMD
+            return false;
           }
         }
       }
@@ -416,14 +416,14 @@ public class User implements Serializable { //NOPMD
    @param newNumber the date to verify.
    @return a boolean value if the phone number is valid.
    *****************************************************************/
-  public static boolean verifyPhoneNumber(String newNumber) { //NOPMD
-    newNumber = newNumber.replaceAll("[\\s\\-()]", ""); //NOPMD
-    if (newNumber.matches("\\d{10}")) { //NOPMD
-      return true; //NOPMD
+  public static boolean verifyPhoneNumber(String newNumber) {
+    newNumber = newNumber.replaceAll("[\\s\\-()]", "");
+    if (newNumber.matches("\\d{10}")) {
+      return true;
     } else {
       try {
         new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
-        return false; //NOPMD
+        return false;
       } catch (NoClassDefFoundError e) {
         return false;
       }
@@ -438,11 +438,11 @@ public class User implements Serializable { //NOPMD
    *****************************************************************/
   public static boolean verifyEmail(final String email) {
     if (email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
-      return true; //NOPMD
+      return true;
     } else {
       try {
         new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
-        return false; //NOPMD
+        return false;
       } catch (NoClassDefFoundError i) {
         return false;
       }
@@ -457,8 +457,8 @@ public class User implements Serializable { //NOPMD
    @return a boolean value if all fields are valid.
    *****************************************************************/
   public static boolean verifyAll(final String email, final String newNumber, final String date) {
-    if (verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber)) { //NOPMD
-      return true; //NOPMD
+    if (verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber)) {
+      return true;
     }
     return false;
   }
@@ -480,20 +480,20 @@ public class User implements Serializable { //NOPMD
    @return a string of all the permissions for a user.
    *****************************************************************/
   public String returnPermissions(final int tier) {
-    String permissions = null; //NOPMD
+    String permissions = null;
 
     switch (tier) {
       case 1: // pool, pc, hot tub access
-        permissions = "Pool Access: YES\n" //NOPMD
+        permissions = "Pool Access: YES\n"
                 + "Gym Access: NO\n"
-                + "PC Room Access: YES\n" //NOPMD
+                + "PC Room Access: YES\n"
                 + "Bar Access: NO\n"
                 + "Casino Access: NO\n"
                 + "Buffet Access: NO\n"
-                + "Hot Tub Access: YES\n" //NOPMD
+                + "Hot Tub Access: YES\n"
                 + "Arcade Room Access: NO\n"
                 + "Admin Access: NO\n"
-                + "Room Access: YES\n" //NOPMD
+                + "Room Access: YES\n"
                 + "All Room Access: NO\n";
         break;
       case 2: // pool, pc, hot tub, gym, buffet access
