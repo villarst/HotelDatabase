@@ -111,17 +111,23 @@ class DatabaseTest {
         d1.addUser(u2);
         Assert.assertEquals(u2, d1.findUser(u2));
     }
-
+    /*****************************************************************
+     This test adds users to the database and then removes them and
+     checks if they are no longer in there
+     *****************************************************************/
     @Test
     void removeUser() {
         Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 1, "villarst", "03/27/00");
         d1.addUser(u);
-        User u1 = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u1 = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 2, "villarst", "03/27/00");
         d1.addUser(u1);
-        User u2 = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u2 = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 3, "villarst", "03/27/00");
         d1.addUser(u2);
 
@@ -133,17 +139,22 @@ class DatabaseTest {
         Assert.assertEquals(false, d1.getRooms(200));
 
     }
-
+    /*****************************************************************
+     This test adds users searches for the added users
+     *****************************************************************/
     @Test
     void searchUser() {
         Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 1, "villarst", "03/27/00");
         d1.addUser(u);
-        User u1 = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u1 = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 2, "villarst", "03/27/00");
         d1.addUser(u1);
-        User u2 = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u2 = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 3, "villarst", "03/27/00");
         d1.addUser(u2);
 
@@ -154,77 +165,109 @@ class DatabaseTest {
         Assert.assertEquals(false, d1.getRooms(100));
         Assert.assertEquals(false, d1.getRooms(200));
     }
-
+    /*****************************************************************
+     This test checks checks if the user does exist with password
+     *****************************************************************/
     @Test
     void searchSecondary1() {
         Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481", "bobn@att.com", "bobbyboi",
+        User a = new User("Bob Nichols", "7412345481",
+                "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);
         Assert.assertEquals(true, d1.searchSecondary(a.getPassword()));
     }
-
+    /*****************************************************************
+     This test just checks if the user actually exists in secondaryDb
+     *****************************************************************/
     @Test
     void searchSecondary2() {
         Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481", "bobn@att.com", "bobbyboi",
+        User a = new User("Bob Nichols", "7412345481",
+                "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);
-        Assert.assertEquals(false, d1.searchSecondary("not right"));
+        Assert.assertEquals(false, d1.searchSecondary("not right"
+        ));
     }
-
+    /*****************************************************************
+     This test gets the user that was just added to the secondary
+     database
+     *****************************************************************/
     @Test
     void getUserSecondaryDb() {
         Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481", "bobn@att.com", "bobbyboi",
+        User a = new User("Bob Nichols", "7412345481",
+                "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);
         Assert.assertEquals(a, d1.getUserSecondaryDb(0));
     }
-
+    /*****************************************************************
+     This test adds a user then loads the database and checks if that
+     user is in there
+     *****************************************************************/
     @Test
     void addUserFromLoad() {
         Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
-                1, 0, "villarst",  "1234", "03/27/00");
+        User u = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
+                1, 0, "villarst",  "1234",
+                "03/27/00");
         d1.addUserFromLoad(u);
         Assert.assertEquals(u, d1.getUser(0));
     }
-
+    /*****************************************************************
+     This test adds users and checks the size of the database
+     *****************************************************************/
     @Test
     void secondaryDbSize() {
         Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 0, "villarst", "03/27/00");
         d1.addAdmin(u);
-        User u2 = new User("Corey R", "6168342729", "ricecore@mail.gvsu.edu", 0,
+        User u2 = new User("Corey R", "6168342729",
+                "ricecore@mail.gvsu.edu", 0,
                 "villarst", "03/27/00");
         d1.addAdmin(u2);
-        User u3 = new User("Jason", "6168342729", "kaipjaso@mail.gvsu.edu", 0,
+        User u3 = new User("Jason", "6168342729",
+                "kaipjaso@mail.gvsu.edu", 0,
                 "villarst", "03/27/00");
         d1.addAdmin(u3);
 
         Assert.assertEquals(3,d1.secondaryDbSize());
     }
-
+    /*****************************************************************
+     This test checks the toString method for the users credentials
+     to see if they match in the data base
+     *****************************************************************/
     @Test
     void testToString1() {
         Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+        User u = new User("Steven Villarreal", "6168342323",
+                "villarst@mail.com",
                 1, "villarst", "03/27/00");
         d1.addUser(u);
 
-        assertEquals("Steven Villarreal , 6168342323 , villarst@mail.com , villarst , " +
+        assertEquals("Steven Villarreal , 6168342323 , " +
+                "villarst@mail.com , villarst , " +
                         d1.getUser(0).getPassword() + " , 1 , 03/27/00 , " +
                         d1.getUser(0).getRoomNum() + "\n", d1.toString());
     }
+    /*****************************************************************
+     This test checks the toString method for the admins credentials
+     to see if they match in the data base
+     *****************************************************************/
     @Test
     void testToString2() {
         Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481", "bobn@att.com", "bobbyboi",
+        User a = new User("Bob Nichols", "7412345481",
+                "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);
-        assertEquals("Bob Nichols , 7412345481 , bobn@att.com , bobbyboi , " +
+        assertEquals("Bob Nichols , 7412345481 , bobn@att.com ," +
+                " bobbyboi , " +
                 d1.getUserSecondaryDb(0).getPassword() + " , 0 , 12/25/87 , " +
                 d1.getUserSecondaryDb(0).getRoomNum() + "\n", d1.toString());
     }
