@@ -13,13 +13,13 @@ import java.util.ArrayList;
  *****************************************************************/
 
 
-public class Database implements Serializable {
+public class Database implements Serializable { //NOPMD
 
   /** Arraylist that stores the Users. */
   private ArrayList<User> mainDb; //NOPMD
 
   /** Boolean Array that stores values for the rooms. */
-  boolean[] rooms;
+  boolean[] rooms; //NOPMD
 
   /** Arraylist that stores the admins. */
   private ArrayList<User> secondaryDb; //NOPMD
@@ -30,8 +30,8 @@ public class Database implements Serializable {
    assign rooms.
    *****************************************************************/
   public Database() {
-    mainDb = new ArrayList<User>();
-    secondaryDb = new ArrayList<User>();
+    mainDb = new ArrayList<>();
+    secondaryDb = new ArrayList<>();
     rooms = new boolean[300];
     for (int i = 0; i < 300; i++) {
       rooms[i] = false;
@@ -45,7 +45,7 @@ public class Database implements Serializable {
    the method that will be added.
    *****************************************************************/
   public void addUser(User u) { //NOPMD
-    if (!checkTierFull(u.getTier() - 1)) {
+    if (!checkTierFull(u.getTier() - 1)) { //NOPMD
       mainDb.add(u);
       assignRoom(u);
     } else {
@@ -62,7 +62,7 @@ public class Database implements Serializable {
   public void addUserFromLoad(User u) { //NOPMD
     mainDb.add(u);
     u.setRoomNum(u.getRoomNum());
-    rooms[u.getRoomNum()] = true;
+    rooms[u.getRoomNum()] = true; //NOPMD
   }
 
 
@@ -96,7 +96,7 @@ public class Database implements Serializable {
    Returns true or false depending on if the room is occupied.
    @return boolean for if the room is occupied.
    *****************************************************************/
-  public boolean getRooms(int num) {
+  public boolean getRooms(final int num) {
     return rooms[num];
   }
 
@@ -107,7 +107,7 @@ public class Database implements Serializable {
    the method that was just added.
    *****************************************************************/
   public void assignRoom(User u) { //NOPMD
-    int room = (u.getTier() - 1) * 100;
+    final int room = (u.getTier() - 1) * 100; //NOPMD
     if (u.getTier() == 0) {
       u.setRoomNum(-1);
     } else {
@@ -129,7 +129,7 @@ public class Database implements Serializable {
    @return int the room number to be returned.
    *****************************************************************/
   public int viewRoom(int i) { //NOPMD
-    return mainDb.get(i).getRoomNum();
+    return mainDb.get(i).getRoomNum(); //NOPMD
   }
 
   /*****************************************************************
@@ -149,10 +149,10 @@ public class Database implements Serializable {
    @return User the user to be returned from MainDb.
    *****************************************************************/
   public User findUser(User u) { //NOPMD
-    User found = null;
-    for (User user : mainDb) {
+    User found = null; //NOPMD
+    for (final User user : mainDb) {
       if (u.getRoomNum() == user.getRoomNum()) {
-        found = user;
+        found = user; //NOPMD
       }
     }
     return found;
@@ -166,13 +166,15 @@ public class Database implements Serializable {
    @return boolean for if tier is full.
    *****************************************************************/
   public boolean checkTierFull(int t) { //NOPMD
-    int tier = t * 100;
+    final int tier = t * 100;
+    boolean isFull = true; //NOPMD
+
     for (int i = tier; i <= tier + 99; i++) {
       if (!rooms[i]) {
-        return false;
+        isFull = false; //NOPMD
       }
     }
-    return true;
+    return isFull;
   }
 
 
@@ -182,7 +184,7 @@ public class Database implements Serializable {
    *****************************************************************/
   public void removeUser(User u) { //NOPMD
     if (u.getRoomNum() != -1) {
-      rooms[u.getRoomNum()] = false;
+      rooms[u.getRoomNum()] = false; //NOPMD
     }
     mainDb.remove(u);
   }
@@ -194,8 +196,8 @@ public class Database implements Serializable {
    *****************************************************************/
   public void searchUser(User u) { //NOPMD
     for (int i = 0; i < mainDb.size(); i++) { //NOPMD
-      if (mainDb.get(i).getPassword() == u.getPassword()) {
-        rooms[u.getRoomNum()] = false;
+      if (mainDb.get(i).getPassword() == u.getPassword()) { //NOPMD
+        rooms[u.getRoomNum()] = false; //NOPMD
         mainDb.remove(mainDb.get(i));
       }
     }
@@ -208,8 +210,8 @@ public class Database implements Serializable {
    @return returns if the Admin exists in SecondaryDb or not.
    *****************************************************************/
   public boolean searchSecondary(String pass) { //NOPMD
-    boolean found = true;
-    for (User user : secondaryDb) {
+    boolean found = true; //NOPMD
+    for (final User user : secondaryDb) {
       if (!pass.equals(user.getPassword())) {
         found = false;
         break;
@@ -245,16 +247,16 @@ public class Database implements Serializable {
   @Override
   public String toString() {
     String result = "";
-    for (User user : mainDb) {
-      result += user.getName()
-              + " , " + user.getPhoneNum()
+    for (final User user : mainDb) {
+      result += user.getName() //NOPMD
+              + " , " + user.getPhoneNum() //NOPMD
               + " , " + user.getEmail() + " , " + user.getUsername()
               + " , " + user.getPassword() + " , " + user.getTier()
               + " , " + user.getDob() + " , " + user.getRoomNum()
               + "\n";
     }
-    for (User user : secondaryDb) {
-      result += user.getName()
+    for (final User user : secondaryDb) {
+      result += user.getName() //NOPMD
               + " , " + user.getPhoneNum()
               + " , " + user.getEmail() + " , " + user.getUsername()
               + " , " + user.getPassword() + " , " + user.getTier()
