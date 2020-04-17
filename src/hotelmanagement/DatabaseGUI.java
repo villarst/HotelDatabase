@@ -24,7 +24,7 @@ public class DatabaseGUI extends Application { //NOPMD
   /** Root location for the TableView.fxml file. */
   public static Parent root1;
 
-  /** Root location for the adminLoginScene.fxml file. */
+  /** Root location for the AdminLoginScene.fxml file. */
   public static Parent root2;
 
   /** Scene for the admin login. */
@@ -43,7 +43,7 @@ public class DatabaseGUI extends Application { //NOPMD
 
   static {
     try {
-      root2 = FXMLLoader.load(DatabaseGUI.class.getResource("adminLoginScene.fxml"));
+      root2 = FXMLLoader.load(DatabaseGUI.class.getResource("AdminLoginScene.fxml"));
     } catch (IOException e) {
       e.printStackTrace();//NOPMD
     }

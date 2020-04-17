@@ -16,13 +16,13 @@ import javafx.scene.control.TextField;
 
 /*****************************************************************
  A class that is used to control the functionality in the
- adminLoginScene.fxml
+ AdminLoginScene.fxml
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  ****************************************************************/
 
 
-public class adminLoginSceneController implements Initializable { //NOPMD
+public class AdminLoginSceneController implements Initializable { //NOPMD
 
   /** Boolean variable to determine if the admin is logged in. */
   public static boolean adminLoggedIn;

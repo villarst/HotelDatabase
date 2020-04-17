@@ -1,8 +1,8 @@
 package hotelmanagement;
 
+import static hotelmanagement.AdminLoginSceneController.adminLoggedIn;
 import static hotelmanagement.DatabaseGUI.sceneAdmin;
 import static hotelmanagement.DatabaseGUI.table;
-import static hotelmanagement.adminLoginSceneController.adminLoggedIn;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
