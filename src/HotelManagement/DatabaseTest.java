@@ -1,5 +1,6 @@
 package HotelManagement;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -89,9 +90,36 @@ class DatabaseTest {
 
     @Test
     void secondaryDbSize() {
+        Database d1 = new Database();
+        User u = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+                0, "villarst", "03/27/00");
+        d1.addAdmin(u);
+        User u2 = new User("Corey R", "6168342729", "ricecore@mail.gvsu.edu", 0,
+                "villarst", "03/27/00");
+        d1.addAdmin(u2);
+        User u3 = new User("Jason", "6168342729", "kaipjaso@mail.gvsu.edu", 0,
+                "villarst", "03/27/00");
+        d1.addAdmin(u3);
+
+        Assert.assertEquals(3,d1.secondaryDbSize());
     }
 
     @Test
-    void testToString() {
+    void testToString1() {
+        Database d1 = new Database();
+        User u = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+                1, "villarst", "03/27/00");
+        d1.addUser(u);
+
+        assertEquals("Steven Villarreal,6168342323,villarst@mail.com,villarst," + d1.getUser(0).getPassword() + ",1,03/27/00,0", u.toString());
+    }
+    @Test
+    void testToString2() {
+        Database d1 = new Database();
+        User u2 = new User("Steven Villarreal", "6168342323", "villarst@mail.com",
+                0, "villarst", "03/27/00");
+        d1.addAdmin(u2);
+
+        assertEquals("Steven Villarreal,6168342323,villarst@mail.com,villarst," + d1.getUserSecondaryDb(0).getPassword() + ",0,03/27/00,0", u2.toString());
     }
 }

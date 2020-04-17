@@ -251,10 +251,10 @@ public class Database implements Serializable{
                     " , " + MainDb.get(i).getDob() + " , " + MainDb.get(i).getRoomNum() + "\n";
         }
         for(int j = 0; j < SecondaryDb.size(); j++){
-            result += MainDb.get(j).getName() + " , " + MainDb.get(j).getPhoneNum() +
-                    " , " + MainDb.get(j).getEmail() + " , " + MainDb.get(j).getUsername() +
-                    " , " + MainDb.get(j).getPassword() + " , " + MainDb.get(j).getTier() +
-                    " , " + MainDb.get(j).getDob() + " , " + MainDb.get(j).getRoomNum() + "\n";
+            result += SecondaryDb.get(j).getName() + " , " + SecondaryDb.get(j).getPhoneNum() +
+                    " , " + SecondaryDb.get(j).getEmail() + " , " + SecondaryDb.get(j).getUsername() +
+                    " , " + SecondaryDb.get(j).getPassword() + " , " + SecondaryDb.get(j).getTier() +
+                    " , " + SecondaryDb.get(j).getDob() + " , " + SecondaryDb.get(j).getRoomNum() + "\n";
         }
         return result;
     }
