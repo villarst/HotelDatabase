@@ -29,9 +29,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
-
-
-
 /*****************************************************************
  TableViewController sets up the commands and uses needed for the
  TableView.fxml file.
