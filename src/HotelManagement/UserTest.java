@@ -1,5 +1,6 @@
 package HotelManagement;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -7,7 +8,6 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class UserTest {
-
     @Test (expected = NullPointerException.class)
     public void resetAll() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
@@ -22,6 +22,12 @@ public class UserTest {
     }
 
     @Test
+    public void getNameFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getName().equals("Kippy"));
+    }
+
+    @Test
     public void setName() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         user1.setName("Ned");
@@ -29,9 +35,22 @@ public class UserTest {
     }
 
     @Test
+    public void setNameFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setName("Ned");
+        assertFalse(user1.getName().equals("Noryb"));
+    }
+
+    @Test
     public void getPhoneNum() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.getPhoneNum().equals("2487199888"));
+    }
+
+    @Test
+    public void getPhoneNumFalse() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getPhoneNum().equals("5482175907"));
     }
 
     @Test
@@ -42,9 +61,22 @@ public class UserTest {
     }
 
     @Test
+    public void setPhoneNumFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setPhoneNum("5482542767");
+        assertFalse(user1.getPhoneNum().equals("2487199888"));
+    }
+
+    @Test
     public void getEmail() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.getEmail().equals("Noryb@gvsu.edu"));
+    }
+
+    @Test
+    public void getEmailFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getEmail().equals("kaip@kaip.com"));
     }
 
     @Test
@@ -55,9 +87,22 @@ public class UserTest {
     }
 
     @Test
+    public void setEmailFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setEmail("nico@dema.org");
+        assertFalse(user1.getEmail().equals("Noryb@gvsu.edu"));
+    }
+
+    @Test
     public void getUsername() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.getUsername().equals("sftwreEgr"));
+    }
+
+    @Test
+    public void getUsernameFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getUsername().equals("help"));
     }
 
     @Test
@@ -68,9 +113,22 @@ public class UserTest {
     }
 
     @Test
+    public void setUsernameFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setUsername("jasonstatham");
+        assertFalse(user1.getUsername().equals("cosmostropharmutarianism"));
+    }
+
+    @Test
     public void getPassword() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.getPassword().equals("unsecurepassword"));
+    }
+
+    @Test
+    public void getPasswordFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getPassword().equals("securepassword"));
     }
 
     @Test
@@ -81,9 +139,22 @@ public class UserTest {
     }
 
     @Test
+    public void setPasswordFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setPassword("fpe");
+        assertFalse(user1.getPassword().equals("password"));
+    }
+
+    @Test
     public void getRoomNum() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.getRoomNum() == 548);
+    }
+
+    @Test
+    public void getRoomNumFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getRoomNum() == 118);
     }
 
     @Test
@@ -94,9 +165,22 @@ public class UserTest {
     }
 
     @Test
+    public void setRoomNumFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setRoomNum(503);
+        assertFalse(user1.getRoomNum() == 548);
+    }
+
+    @Test
     public void getTier() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.getTier() == 3);
+    }
+
+    @Test
+    public void getTierFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getTier() == 2);
     }
 
     @Test
@@ -107,9 +191,22 @@ public class UserTest {
     }
 
     @Test
+    public void setTierFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setTier(2);
+        assertFalse(user1.getTier() == 3);
+    }
+
+    @Test
     public void getDob() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.getDob() == "10/05/1999");
+    }
+
+    @Test
+    public void getDobFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.getDob() == "10/05/2018");
     }
 
     @Test
@@ -117,6 +214,13 @@ public class UserTest {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         user1.setDob("10/05/2018");
         assertTrue(user1.getDob() == "10/05/2018");
+    }
+
+    @Test
+    public void setDobFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setDob("10/05/2018");
+        assertFalse(user1.getDob() == "10/05/1999");
     }
 
     @Test
@@ -137,9 +241,20 @@ public class UserTest {
     }
 
     @Test
+    public void basicInfo(){
+
+    }
+
+    @Test
     public void verifyDate() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.verifyDate(user1.getDob()));
+    }
+
+    @Test (expected = ExceptionInInitializerError.class)
+    public void verifyDateFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.setDob("10051999");
     }
 
     @Test
@@ -148,10 +263,22 @@ public class UserTest {
         assertTrue(user1.verifyPhoneNumber(user1.getPhoneNum()));
     }
 
+    @Test (expected = NoClassDefFoundError.class)
+    public void verifyPhoneNumberFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.verifyPhoneNumber("two four eight seven one nine nine eight eight eight");
+    }
+
     @Test
     public void verifyEmail() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.verifyEmail(user1.getEmail()));
+    }
+
+    @Test (expected = NoClassDefFoundError.class)
+    public void verifyEmailFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.verifyEmail("10/05/1999");
     }
 
     @Test
@@ -160,11 +287,25 @@ public class UserTest {
         assertTrue(user1.verifyAll(user1.getEmail(), user1.getPhoneNum(), user1.getDob()));
     }
 
+    @Test (expected = NoClassDefFoundError.class)
+    public void verifyAllFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        user1.verifyDate("1");
+        assertFalse(user1.verifyAll(user1.getEmail(), user1.getPhoneNum(), user1.getDob()));
+    }
+
     @Test
     public void testToString() {
         User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
         assertTrue(user1.toString().equals(user1.getName() + "," + user1.getPhoneNum() + "," + user1.getEmail() + "," + user1.getUsername() + ","
                 + user1.getPassword() + "," + user1.getTier() + "," + user1.getDob() + "," + user1.getRoomNum()));
+    }
+
+    @Test
+    public void testToStringFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.toString().equals(user1.getName() + "," + user1.getName() + "," + user1.getName() + "," + user1.getName() + ","
+                + user1.getName() + "," + user1.getName() + "," + user1.getName() + "," + user1.getName()));
     }
 
     @Test
@@ -181,5 +322,21 @@ public class UserTest {
                 "Admin Access: NO" + "\n" +
                 "Room Access: YES" + "\n" +
                 "All Room Access: NO" + "\n" ));
+    }
+
+    @Test
+    public void returnPermissionsFail() {
+        User user1 = new User("Noryb", "2487199888", "Noryb@gvsu.edu", 3, 548, "sftwreEgr", "unsecurepassword", "10/05/1999");
+        assertFalse(user1.returnPermissions(user1.getTier()).equals("Pool Access: YES" + "\n" +
+                "Gym Access: NO" + "\n" +
+                "PC Room Access: NO" + "\n" +
+                "Bar Access: NO" + "\n" +
+                "Casino Access: NO" + "\n" +
+                "Buffet Access: NO" + "\n" +
+                "Hot Tub Access: NO" + "\n" +
+                "Arcade Room Access: NO" + "\n" +
+                "Admin Access: YES" + "\n" +
+                "Room Access: NO" + "\n" +
+                "All Room Access: YES" + "\n" ));
     }
 }
