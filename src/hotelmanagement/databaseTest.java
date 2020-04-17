@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  @author Steven Villarreal, Corey Rice
  @version 1.1
  ****************************************************************/
-class DatabaseTest {
+class databaseTest {
 
     /*****************************************************************
      This tests adding a user to MainDb and whether there rooms are
@@ -22,13 +22,13 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void addUser1() {
-        Database d1 = new Database();
-        User u1 = new User("Steven Villarreal",
+        database d1 = new database();
+        user u1 = new user("Steven Villarreal",
                 "6168342323", "villarst@mail.com", 1,
                 "villarst", "03/27/00");
         d1.addUser(u1);
         assertEquals(0, u1.getRoomNum());
-        User u2 = new User("Steven Villarreal",
+        user u2 = new user("Steven Villarreal",
                 "6168342323", "villarst@mail.com",
                 1, "villarst", "03/27/00");
         d1.addUser(u2);
@@ -44,14 +44,14 @@ class DatabaseTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        Database d1 = new Database();
+        database d1 = new database();
         for (int i = 0; i <= 99; i++) {
-            User u = new User("Steven Villarreal",
+            user u = new user("Steven Villarreal",
                     "6168342323", "villarst@mail.com", 1,
                     "villarst", "03/27/00");
             d1.addUser(u);
         }
-        User u = new User("Steven Villarreal", "6168342323",
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 1, "villarst",
                 "03/27/00");
         d1.addUser(u);
@@ -65,8 +65,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void addAdmin() {
-        Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481",
+        database d1 = new database();
+        user a = new user("Bob Nichols", "7412345481",
                 "bobn@att.com", "bobbyboi", 0,
                 "12/25/87");
         d1.addAdmin(a);
@@ -80,9 +80,9 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void clearDb() {
-        Database d1 = new Database();
+        database d1 = new database();
         for (int i = 0; i <= 99; i++) {
-            User u = new User("Steven Villarreal",
+            user u = new user("Steven Villarreal",
                     "6168342323", "villarst@mail.com", 1,
                     "villarst", "03/27/00");
             d1.addUser(u);
@@ -100,16 +100,16 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void viewRoom() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 1, "villarst",
                 "03/27/00");
         d1.addUser(u);
-        User u1 = new User("Steven Villarreal", "6168342323",
+        user u1 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 2, "villarst",
                 "03/27/00");
         d1.addUser(u1);
-        User u2 = new User("Steven Villarreal", "6168342323",
+        user u2 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 3, "villarst",
                 "03/27/00");
         d1.addUser(u2);
@@ -123,8 +123,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void getUser() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 1, 0,
                 "villarst", "1234", "03/27/00");
         d1.addUser(u);
@@ -136,16 +136,16 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void findUser() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 1, "villarst",
                 "03/27/00");
         d1.addUser(u);
-        User u1 = new User("Steven Villarreal", "6168342323",
+        user u1 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 2, "villarst",
                 "03/27/00");
         d1.addUser(u1);
-        User u2 = new User("Steven Villarreal", "6168342323",
+        user u2 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com", 1, "villarst",
                 "03/27/00");
         d1.addUser(u2);
@@ -158,16 +158,16 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void removeUser() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 1, "villarst", "03/27/00");
         d1.addUser(u);
-        User u1 = new User("Steven Villarreal", "6168342323",
+        user u1 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 2, "villarst", "03/27/00");
         d1.addUser(u1);
-        User u2 = new User("Steven Villarreal", "6168342323",
+        user u2 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 3, "villarst", "03/27/00");
         d1.addUser(u2);
@@ -186,16 +186,16 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void searchUser() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 1, "villarst", "03/27/00");
         d1.addUser(u);
-        User u1 = new User("Steven Villarreal", "6168342323",
+        user u1 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 2, "villarst", "03/27/00");
         d1.addUser(u1);
-        User u2 = new User("Steven Villarreal", "6168342323",
+        user u2 = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 3, "villarst", "03/27/00");
         d1.addUser(u2);
@@ -213,8 +213,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void searchSecondary1() {
-        Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481",
+        database d1 = new database();
+        user a = new user("Bob Nichols", "7412345481",
                 "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);
@@ -226,8 +226,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void searchSecondary2() {
-        Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481",
+        database d1 = new database();
+        user a = new user("Bob Nichols", "7412345481",
                 "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);
@@ -241,8 +241,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void getUserSecondaryDb() {
-        Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481",
+        database d1 = new database();
+        user a = new user("Bob Nichols", "7412345481",
                 "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);
@@ -255,8 +255,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void addUserFromLoad() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 1, 0, "villarst",  "1234",
                 "03/27/00");
@@ -269,16 +269,16 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void secondaryDbSize() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 0, "villarst", "03/27/00");
         d1.addAdmin(u);
-        User u2 = new User("Corey R", "6168342729",
+        user u2 = new user("Corey R", "6168342729",
                 "ricecore@mail.gvsu.edu", 0,
                 "villarst", "03/27/00");
         d1.addAdmin(u2);
-        User u3 = new User("Jason", "6168342729",
+        user u3 = new user("Jason", "6168342729",
                 "kaipjaso@mail.gvsu.edu", 0,
                 "villarst", "03/27/00");
         d1.addAdmin(u3);
@@ -292,8 +292,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void testToString1() {
-        Database d1 = new Database();
-        User u = new User("Steven Villarreal", "6168342323",
+        database d1 = new database();
+        user u = new user("Steven Villarreal", "6168342323",
                 "villarst@mail.com",
                 1, "villarst", "03/27/00");
         d1.addUser(u);
@@ -310,8 +310,8 @@ class DatabaseTest {
      *****************************************************************/
     @Test
     void testToString2() {
-        Database d1 = new Database();
-        User a = new User("Bob Nichols", "7412345481",
+        database d1 = new database();
+        user a = new user("Bob Nichols", "7412345481",
                 "bobn@att.com", "bobbyboi",
                 0, "12/25/87");
         d1.addAdmin(a);

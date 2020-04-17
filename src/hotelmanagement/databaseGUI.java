@@ -15,12 +15,12 @@ import javafx.stage.Stage;
  @version 1.0
  ****************************************************************/
 
-public class DatabaseGUI extends Application { //NOPMD
+public class databaseGUI extends Application { //NOPMD
 
   /** Initializes the stage (window) for the GUI. */
   public static Stage table = new Stage();
 
-  /** Root location for the TableView.fxml file. */
+  /** Root location for the tableView.fxml file. */
   public static Parent root1;
 
   /** Root location for the adminLoginScene.fxml file. */
@@ -34,7 +34,8 @@ public class DatabaseGUI extends Application { //NOPMD
 
   static {
     try {
-      root1 = FXMLLoader.load(DatabaseGUI.class.getResource("TableView.fxml"));
+      root1 = FXMLLoader.load
+              (databaseGUI.class.getResource("tableView.fxml"));
     } catch (IOException e) {
       e.printStackTrace();//NOPMD
     }
@@ -42,7 +43,8 @@ public class DatabaseGUI extends Application { //NOPMD
 
   static {
     try {
-      root2 = FXMLLoader.load(DatabaseGUI.class.getResource("adminLoginScene.fxml"));
+      root2 = FXMLLoader.load
+              (databaseGUI.class.getResource("adminLoginScene.fxml"));
     } catch (IOException e) {
       e.printStackTrace();//NOPMD
     }

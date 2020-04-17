@@ -13,25 +13,25 @@ import java.io.Serializable;
  *****************************************************************/
 
 
-public class Database implements Serializable{
+public class database implements Serializable{
 
     /** Arraylist that stores the Users */
-    private ArrayList <User> MainDb;
+    private ArrayList <user> MainDb;
 
     /** Boolean Array that stores values for the rooms. */
     boolean rooms [];
 
     /** Arraylist that stores the admins. */
-    private ArrayList <User> SecondaryDb;
+    private ArrayList <user> SecondaryDb;
 
 
     /*****************************************************************
      Constructor that creates a Database to use to store Users and
      assign rooms.
      *****************************************************************/
-    public Database(){
-        MainDb = new ArrayList<User>();
-        SecondaryDb = new ArrayList<User>();
+    public database(){
+        MainDb = new ArrayList<user>();
+        SecondaryDb = new ArrayList<user>();
         rooms = new boolean[300];
         for(int i = 0; i < 300; i++){
             rooms[i] = false;
@@ -44,7 +44,7 @@ public class Database implements Serializable{
      @param u the User that is passed into
      the method that will be added.
      *****************************************************************/
-    public void addUser(User u){
+    public void addUser(user u){
         if (!checkTierFull(u.getTier() - 1)) {
             MainDb.add(u);
             assignRoom(u);
@@ -59,7 +59,7 @@ public class Database implements Serializable{
      @param u the User that is passed into
      the method that will be added.
      *****************************************************************/
-    public void addUserFromLoad(User u){
+    public void addUserFromLoad(user u){
         MainDb.add(u);
         u.setRoomNum(u.getRoomNum());
         rooms[u.getRoomNum()] = true;
@@ -70,7 +70,7 @@ public class Database implements Serializable{
      @param u the User that is passed into
      the method that will be added.
      *****************************************************************/
-    public void addAdmin(User u){
+    public void addAdmin(user u){
         if(u.getTier() == 0){
             SecondaryDb.add(u);
             assignRoom(u);
@@ -102,7 +102,7 @@ public class Database implements Serializable{
      @param u the User that is passed into
      the method that was just added.
      *****************************************************************/
-    public void assignRoom(User u){
+    public void assignRoom(user u){
         int room = (u.getTier() - 1) * 100;
         if(u.getTier() == 0){
             u.setRoomNum(-1);
@@ -135,7 +135,7 @@ public class Database implements Serializable{
      @param i the index passed to return MainDb(i).
      @return User the user to be returned from MainDb.
      *****************************************************************/
-    public User getUser(int i){
+    public user getUser(int i){
         return MainDb.get(i);
     }
 
@@ -145,8 +145,8 @@ public class Database implements Serializable{
      @param u the user passed to check if the user exists.
      @return User the user to be returned from MainDb.
      *****************************************************************/
-    public User findUser(User u){
-        User found = null;
+    public user findUser(user u){
+        user found = null;
         for(int i = 0; i < MainDb.size(); i++){
             if(u.getRoomNum() == MainDb.get(i).getRoomNum()){
                 found = MainDb.get(i);
@@ -175,7 +175,7 @@ public class Database implements Serializable{
      Removes the User from the Arraylist MainDb.
      @param u the User that is wanting to be removed.
      *****************************************************************/
-    public void removeUser(User u){
+    public void removeUser(user u){
         if(u.getRoomNum() != -1) {
             rooms[u.getRoomNum()] = false;
         }
@@ -186,7 +186,7 @@ public class Database implements Serializable{
      Removes the User from the Arraylist MainDb by checking password.
      @param u the User that is wanting to be removed.
      *****************************************************************/
-    public void searchUser(User u){
+    public void searchUser(user u){
         for(int i = 0; i < MainDb.size(); i++){
             if(MainDb.get(i).getPassword() == u.getPassword()){
                 rooms[u.getRoomNum()] = false;
@@ -216,7 +216,7 @@ public class Database implements Serializable{
      @param i the index specified.
      @return the user to be returned from SecondaryDb.
      *****************************************************************/
-    public User getUserSecondaryDb(int i){
+    public user getUserSecondaryDb(int i){
         return SecondaryDb.get(i);
     }
 

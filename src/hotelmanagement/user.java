@@ -8,7 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class User implements Serializable{
+public class user implements Serializable{
     private transient SimpleStringProperty Name;
     private transient SimpleStringProperty PhoneNum;
     private transient SimpleStringProperty Email;
@@ -18,24 +18,20 @@ public class User implements Serializable{
     private int tier;
     private transient SimpleStringProperty dob;
 
-//    public Tier t;
-
     // Used to add a user to the ObservableList<User> users array list for viewing in the table.
-    public User(String name, String phoneNum, String email, int tier, String username, String dobirth)
-            throws IllegalArgumentException{
+    public user(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
         this.password = new SimpleStringProperty(generatePassWApache());
+
         this.PhoneNum = new SimpleStringProperty(phoneNum);
         this.Email = new SimpleStringProperty(email);
         this.dob = new SimpleStringProperty(dobirth);
-
     }
 
     // Used to add a user to the ObservableList<User> users array list with roomNum.
-    public User(String name, String phoneNum, String email, int tier, int room, String username,
-                String pass, String dobirth) throws IllegalArgumentException{
+    public user(String name, String phoneNum, String email, int tier, int room, String username, String pass, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
@@ -54,7 +50,7 @@ public class User implements Serializable{
     }
 
     // Used to add admin to the SecondaryDb.
-    public User(String n, String num, String email, String username, int tier, String dob){
+    public user(String n, String num, String email, String username, int tier, String dob){
         this.Name = new SimpleStringProperty(n);
         if(verifyPhoneNumber(num)){
             this.PhoneNum = new SimpleStringProperty(num);
@@ -74,9 +70,8 @@ public class User implements Serializable{
         }
     }
 
-
     // Used to add admin to the users <ObservableList>.
-    public User(String n, String num, String email, String username, String pass, int tier, String dob){
+    public user(String n, String num, String email, String username, String pass, int tier, String dob){
         this.Name = new SimpleStringProperty(n);
         if(verifyPhoneNumber(num)){
             this.PhoneNum = new SimpleStringProperty(num);
@@ -96,9 +91,8 @@ public class User implements Serializable{
         }
     }
 
-
     // Used to load in admin to the Db
-    public User(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
+    public user(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
         this.Name = new SimpleStringProperty(n);
         if(verifyPhoneNumber(num)){
             this.PhoneNum = new SimpleStringProperty(num);
@@ -120,7 +114,6 @@ public class User implements Serializable{
         }
         this.roomNum = roomNum;
     }
-
 
     public String resetAll(){
         Name = null;
@@ -215,13 +208,6 @@ public class User implements Serializable{
         return generatedString;
     }
 
-    public void BasicInfo(){
-        System.out.println("Name: " + Name);
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
-        System.out.println("Tier Level: " + tier);
-        System.out.println("Room Number: " + roomNum);
-    }
 
     public static boolean verifyDate(String date) {
         // Needs to check if date is valid as in its the correct date,
@@ -237,17 +223,20 @@ public class User implements Serializable{
             simpleDateFormatShort.setLenient(false);
             try {
                 Date javaDate = simpleDateFormatLong.parse(date);
-//                System.out.println("Verified: " + date);
             }
             catch (ParseException e) {
                 try{
                     Date javaDate = simpleDateFormatShort.parse(date);
-//                    System.out.println("Verified: " + date);
                 }
                 catch (ParseException e1){
-                    System.out.println(date + " is not a valid date. DOB not updated.");
-                    new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
-                    return false;
+                    try {
+                        System.out.println(date + " is not a valid date. DOB not updated.");
+                        new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
+                        return false;
+                    }
+                    catch(ExceptionInInitializerError i){
+                        return false;
+                    }
                 }
             }
             return true;
@@ -257,27 +246,33 @@ public class User implements Serializable{
     public static boolean verifyPhoneNumber(String newNumber){
         newNumber = newNumber.replaceAll("[\\s\\-()]", "");
         if (newNumber.matches("\\d{10}")) {
-//            System.out.println("Verified: " + newNumber);
             return true;
         }
         else{
-            // Need to have the User type in a different or valid phone number.
-            System.out.println(newNumber + " is invalid. Phone number not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
-            return false;
+            try {
+                System.out.println(newNumber + " is invalid. Phone number not updated.");
+                new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
+                return false;
+            }
+            catch(NoClassDefFoundError e){
+                return false;
+            }
         }
     }
 
     public static boolean verifyEmail(String email){
         if(email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
-//            System.out.println("Verified: " + email);
             return true;
         }
         else {
-            // Need to have the User type in a different or valid email.
-            System.out.println(email + " is invalid. E-Mail address not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
-            return false;
+            try {
+                System.out.println(email + " is invalid. E-Mail address not updated.");
+                new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
+                return false;
+            }
+            catch(NoClassDefFoundError i){
+                return false;
+            }
         }
     }
 
@@ -296,7 +291,7 @@ public class User implements Serializable{
         return getName() + "," + getPhoneNum() + "," + getEmail() + "," + getUsername() + ","
                 + getPassword() + "," + getTier() + "," + getDob() + "," + getRoomNum();
     }
-    
+
 
     public String returnPermissions(int tier){
         String permissions = "";
