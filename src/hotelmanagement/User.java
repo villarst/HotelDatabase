@@ -10,9 +10,8 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 
 /*****************************************************************
- This class consists of creating users and adding them to a
- database. The characteristics of a user can then be modified or
- viewed.
+ Consists of creating users and adding them to a database.
+ The characteristics of a user can then be modified or viewed.
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  *****************************************************************/
@@ -263,7 +262,10 @@ public class User implements Serializable { //NOPMD
     return email.get();
   }
 
-  // changed to boolean for tableViewController edit columns
+  /*****************************************************************
+   Sets the email of the user.
+   @param email the email of the user.
+   *****************************************************************/
   public boolean setEmail(final String email) { //NOPMD
     boolean isValid = false; //NOPMD
 
@@ -346,7 +348,6 @@ public class User implements Serializable { //NOPMD
     this.tier = tier;
   }
 
-
   /*****************************************************************
    Returns the date of birth of the user.
    @return the date of birth of the user.
@@ -366,7 +367,6 @@ public class User implements Serializable { //NOPMD
     }
   }
 
-
   /*****************************************************************
    Generates a random password for the user.
    @return a randomly generated password.
@@ -385,10 +385,8 @@ public class User implements Serializable { //NOPMD
     // Needs to check if date is valid as in its the correct date,
     // and it is greater than or equal to 18, cant be 12 and get a
     // hotel room. (compares to today's date)
-    boolean isValid = false; //NOPMD
-
     if (date.trim().equals("")) { //NOPMD
-      isValid = true;
+      return true; //NOPMD
     } else {
       SimpleDateFormat simpleDateFormatLong = new SimpleDateFormat("MM/dd/yyyy"); //NOPMD
       simpleDateFormatLong.setLenient(false);
@@ -402,13 +400,14 @@ public class User implements Serializable { //NOPMD
         } catch (ParseException e1) {
           try {
             new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
-          } catch (ExceptionInInitializerError i) { //NOPMD
-            isValid = false;
+            return false; //NOPMD
+          } catch (ExceptionInInitializerError i) {
+            return false; //NOPMD
           }
         }
       }
+      return true;
     }
-    return isValid;
   }
 
 
@@ -417,20 +416,18 @@ public class User implements Serializable { //NOPMD
    @param newNumber the date to verify.
    @return a boolean value if the phone number is valid.
    *****************************************************************/
-  public static boolean verifyPhoneNumber(String newNumber) {  //NOPMD
+  public static boolean verifyPhoneNumber(String newNumber) { //NOPMD
     newNumber = newNumber.replaceAll("[\\s\\-()]", ""); //NOPMD
-    boolean isValid = false; //NOPMD
-
     if (newNumber.matches("\\d{10}")) { //NOPMD
-      isValid = true;
+      return true; //NOPMD
     } else {
       try {
         new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
+        return false; //NOPMD
       } catch (NoClassDefFoundError e) {
-        isValid = false;
+        return false;
       }
     }
-    return  isValid;
   }
 
 
@@ -440,20 +437,17 @@ public class User implements Serializable { //NOPMD
    @return a boolean value if the email is valid.
    *****************************************************************/
   public static boolean verifyEmail(final String email) {
-    boolean isValid = false; //NOPMD
-
     if (email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
-      isValid = true;
+      return true; //NOPMD
     } else {
       try {
         new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
+        return false; //NOPMD
       } catch (NoClassDefFoundError i) {
-        isValid = false;
+        return false;
       }
     }
-    return isValid;
   }
-
 
   /*****************************************************************
    Verifies all given fields are correct.
@@ -463,12 +457,10 @@ public class User implements Serializable { //NOPMD
    @return a boolean value if all fields are valid.
    *****************************************************************/
   public static boolean verifyAll(final String email, final String newNumber, final String date) {
-    boolean isValid = false; //NOPMD
-
-    if (verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber)) {
-      isValid = true;
+    if (verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber)) { //NOPMD
+      return true; //NOPMD
     }
-    return isValid;
+    return false;
   }
 
   /*****************************************************************

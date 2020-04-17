@@ -1,0 +1,694 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: userTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">hotelmanagement</a> ]
+</div>
+
+<h1>Coverage Summary for Class: userTest (hotelmanagement)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">userTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (59/ 59)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    99%
+  </span>
+  <span class="absValue">
+    (197/ 199)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package hotelmanagement;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.junit.Test;
+<i>4</i>&nbsp;import java.util.ArrayList;
+<i>5</i>&nbsp;import static org.junit.Assert.*;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/*****************************************************************
+<i>8</i>&nbsp; This class tests the functionality of the User class.
+<i>9</i>&nbsp; @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+<i>10</i>&nbsp; @version 1.0
+<i>11</i>&nbsp; *****************************************************************/
+<i>12</i>&nbsp;
+<b class="fc"><i>13</i>&nbsp;public class userTest {</b>
+<i>14</i>&nbsp;  /*****************************************************************
+<i>15</i>&nbsp;   Tests constructor containing all client info
+<i>16</i>&nbsp;   *****************************************************************/
+<i>17</i>&nbsp;  @Test
+<i>18</i>&nbsp;  public void constructor1(){
+<b class="fc"><i>19</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>20</i>&nbsp;  }</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;  /*****************************************************************
+<i>23</i>&nbsp;   Tests constructor with no password or room number
+<i>24</i>&nbsp;   *****************************************************************/
+<i>25</i>&nbsp;  @Test
+<i>26</i>&nbsp;  public void constructor2(){
+<b class="fc"><i>27</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3,&quot;sftwreEgr&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>28</i>&nbsp;  }</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;  /*****************************************************************
+<i>32</i>&nbsp;   Tests constructor for adding admin to SecondaryDB
+<i>33</i>&nbsp;   *****************************************************************/
+<i>34</i>&nbsp;  @Test
+<i>35</i>&nbsp;  public void constructor3(){
+<b class="fc"><i>36</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, &quot;sftwreEgr&quot;,3, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>37</i>&nbsp;  }</b>
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;  /*****************************************************************
+<i>40</i>&nbsp;   Tests constructor with no room number.
+<i>41</i>&nbsp;   *****************************************************************/
+<i>42</i>&nbsp;  @Test
+<i>43</i>&nbsp;  public void constructor4(){
+<b class="fc"><i>44</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, &quot;unsecurepassword&quot;, &quot;unsecurepassword&quot;, 3, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>45</i>&nbsp;  }</b>
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;  /*****************************************************************
+<i>48</i>&nbsp;   Constructor containing all client info.
+<i>49</i>&nbsp;   *****************************************************************/
+<i>50</i>&nbsp;  @Test
+<i>51</i>&nbsp;  public void constructor5(){
+<b class="fc"><i>52</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, &quot;unsecurepassword&quot;, &quot;unsecurepassword&quot;, 3, &quot;10/05/1999&quot;, 548);</b>
+<b class="fc"><i>53</i>&nbsp;  }</b>
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;  /*****************************************************************
+<i>56</i>&nbsp;   Verifies resetAll sets object info to null
+<i>57</i>&nbsp;   *****************************************************************/
+<i>58</i>&nbsp;  @Test (expected = NullPointerException.class)
+<i>59</i>&nbsp;  public void resetAll() {
+<b class="fc"><i>60</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>61</i>&nbsp;    user1.resetAll();</b>
+<b class="fc"><i>62</i>&nbsp;    user1.getName();</b>
+<b class="nc"><i>63</i>&nbsp;  }</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;  /*****************************************************************
+<i>66</i>&nbsp;   Verifies getName returns name of user
+<i>67</i>&nbsp;   *****************************************************************/
+<i>68</i>&nbsp;  @Test
+<i>69</i>&nbsp;  public void getName() {
+<b class="fc"><i>70</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>71</i>&nbsp;    assertTrue(user1.getName().equals(&quot;Noryb&quot;));</b>
+<b class="fc"><i>72</i>&nbsp;  }</b>
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;  /*****************************************************************
+<i>75</i>&nbsp;   Verifies getName returns name of user.
+<i>76</i>&nbsp;   *****************************************************************/
+<i>77</i>&nbsp;  @Test
+<i>78</i>&nbsp;  public void getNameFail() {
+<b class="fc"><i>79</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>80</i>&nbsp;    assertFalse(user1.getName().equals(&quot;Kippy&quot;));</b>
+<b class="fc"><i>81</i>&nbsp;  }</b>
+<i>82</i>&nbsp;
+<i>83</i>&nbsp;  /*****************************************************************
+<i>84</i>&nbsp;   Verifies setName changes name of user
+<i>85</i>&nbsp;   *****************************************************************/
+<i>86</i>&nbsp;  @Test
+<i>87</i>&nbsp;  public void setName() {
+<b class="fc"><i>88</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>89</i>&nbsp;    user1.setName(&quot;Ned&quot;);</b>
+<b class="fc"><i>90</i>&nbsp;    assertTrue(user1.getName().equals(&quot;Ned&quot;));</b>
+<b class="fc"><i>91</i>&nbsp;  }</b>
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;  /*****************************************************************
+<i>94</i>&nbsp;   Verifies name of user is changed by setName
+<i>95</i>&nbsp;   *****************************************************************/
+<i>96</i>&nbsp;  @Test
+<i>97</i>&nbsp;  public void setNameFail() {
+<b class="fc"><i>98</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>99</i>&nbsp;    user1.setName(&quot;Ned&quot;);</b>
+<b class="fc"><i>100</i>&nbsp;    assertFalse(user1.getName().equals(&quot;Noryb&quot;));</b>
+<b class="fc"><i>101</i>&nbsp;  }</b>
+<i>102</i>&nbsp;
+<i>103</i>&nbsp;  /*****************************************************************
+<i>104</i>&nbsp;   Verifies getPhoneNum returns user phone number
+<i>105</i>&nbsp;   *****************************************************************/
+<i>106</i>&nbsp;  @Test
+<i>107</i>&nbsp;  public void getPhoneNum() {
+<b class="fc"><i>108</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>109</i>&nbsp;    assertTrue(user1.getPhoneNum().equals(&quot;2487199888&quot;));</b>
+<b class="fc"><i>110</i>&nbsp;  }</b>
+<i>111</i>&nbsp;
+<i>112</i>&nbsp;  /*****************************************************************
+<i>113</i>&nbsp;   Verifies getPhoneNum returns user phone number
+<i>114</i>&nbsp;   *****************************************************************/
+<i>115</i>&nbsp;  @Test
+<i>116</i>&nbsp;  public void getPhoneNumFalse() {
+<b class="fc"><i>117</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>118</i>&nbsp;    assertFalse(user1.getPhoneNum().equals(&quot;5482175907&quot;));</b>
+<b class="fc"><i>119</i>&nbsp;  }</b>
+<i>120</i>&nbsp;
+<i>121</i>&nbsp;  /*****************************************************************
+<i>122</i>&nbsp;   Verifies setPhoneNum changes user&#39;s phone number
+<i>123</i>&nbsp;   *****************************************************************/
+<i>124</i>&nbsp;  @Test
+<i>125</i>&nbsp;  public void setPhoneNum() {
+<b class="fc"><i>126</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>127</i>&nbsp;    user1.setPhoneNum(&quot;5482542767&quot;);</b>
+<b class="fc"><i>128</i>&nbsp;    assertTrue(user1.getPhoneNum().equals(&quot;5482542767&quot;));</b>
+<b class="fc"><i>129</i>&nbsp;  }</b>
+<i>130</i>&nbsp;
+<i>131</i>&nbsp;  /*****************************************************************
+<i>132</i>&nbsp;   Verifies phone number is changed by setPhoneNum
+<i>133</i>&nbsp;   *****************************************************************/
+<i>134</i>&nbsp;  @Test
+<i>135</i>&nbsp;  public void setPhoneNumFail() {
+<b class="fc"><i>136</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>137</i>&nbsp;    user1.setPhoneNum(&quot;5482542767&quot;);</b>
+<b class="fc"><i>138</i>&nbsp;    assertFalse(user1.getPhoneNum().equals(&quot;2487199888&quot;));</b>
+<b class="fc"><i>139</i>&nbsp;  }</b>
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;  /*****************************************************************
+<i>142</i>&nbsp;   Verifies validation for phone numbers
+<i>143</i>&nbsp;   *****************************************************************/
+<i>144</i>&nbsp;  @Test
+<i>145</i>&nbsp;  public void setPhoneNumFail2() {
+<b class="fc"><i>146</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>147</i>&nbsp;    assertFalse(user1.setPhoneNum(&quot;email@internet.com&quot;));</b>
+<b class="fc"><i>148</i>&nbsp;  }</b>
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;  /*****************************************************************
+<i>151</i>&nbsp;   Verifies getEmail returns user email
+<i>152</i>&nbsp;   *****************************************************************/
+<i>153</i>&nbsp;  @Test
+<i>154</i>&nbsp;  public void getEmail() {
+<b class="fc"><i>155</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>156</i>&nbsp;    assertTrue(user1.getEmail().equals(&quot;Noryb@gvsu.edu&quot;));</b>
+<b class="fc"><i>157</i>&nbsp;  }</b>
+<i>158</i>&nbsp;
+<i>159</i>&nbsp;  /*****************************************************************
+<i>160</i>&nbsp;   Verifies getEmail returns user email
+<i>161</i>&nbsp;   *****************************************************************/
+<i>162</i>&nbsp;  @Test
+<i>163</i>&nbsp;  public void getEmailFail() {
+<b class="fc"><i>164</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>165</i>&nbsp;    assertFalse(user1.getEmail().equals(&quot;kaip@kaip.com&quot;));</b>
+<b class="fc"><i>166</i>&nbsp;  }</b>
+<i>167</i>&nbsp;
+<i>168</i>&nbsp;  /*****************************************************************
+<i>169</i>&nbsp;   Verifies setEmail changes user&#39;s email
+<i>170</i>&nbsp;   *****************************************************************/
+<i>171</i>&nbsp;  @Test
+<i>172</i>&nbsp;  public void setEmail() {
+<b class="fc"><i>173</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>174</i>&nbsp;    user1.setEmail(&quot;nico@dema.org&quot;);</b>
+<b class="fc"><i>175</i>&nbsp;    assertTrue(user1.getEmail().equals(&quot;nico@dema.org&quot;));</b>
+<b class="fc"><i>176</i>&nbsp;  }</b>
+<i>177</i>&nbsp;
+<i>178</i>&nbsp;  /*****************************************************************
+<i>179</i>&nbsp;   Verifies email is changed by setEmail
+<i>180</i>&nbsp;   *****************************************************************/
+<i>181</i>&nbsp;  @Test
+<i>182</i>&nbsp;  public void setEmailFail() {
+<b class="fc"><i>183</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>184</i>&nbsp;    user1.setEmail(&quot;nico@dema.org&quot;);</b>
+<b class="fc"><i>185</i>&nbsp;    assertFalse(user1.getEmail().equals(&quot;Noryb@gvsu.edu&quot;));</b>
+<b class="fc"><i>186</i>&nbsp;  }</b>
+<i>187</i>&nbsp;
+<i>188</i>&nbsp;  /*****************************************************************
+<i>189</i>&nbsp;   Verifies validation for email
+<i>190</i>&nbsp;   *****************************************************************/
+<i>191</i>&nbsp;  @Test
+<i>192</i>&nbsp;  public void setEmailFail2() {
+<b class="fc"><i>193</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>194</i>&nbsp;    assertFalse(user1.setEmail(&quot;2487199888&quot;));</b>
+<b class="fc"><i>195</i>&nbsp;  }</b>
+<i>196</i>&nbsp;
+<i>197</i>&nbsp;  /*****************************************************************
+<i>198</i>&nbsp;   Verifies getUsername returns user&#39;s username
+<i>199</i>&nbsp;   *****************************************************************/
+<i>200</i>&nbsp;  @Test
+<i>201</i>&nbsp;  public void getUsername() {
+<b class="fc"><i>202</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>203</i>&nbsp;    assertTrue(user1.getUsername().equals(&quot;sftwreEgr&quot;));</b>
+<b class="fc"><i>204</i>&nbsp;  }</b>
+<i>205</i>&nbsp;
+<i>206</i>&nbsp;  /*****************************************************************
+<i>207</i>&nbsp;   Verifies getUsername returns user&#39;s username
+<i>208</i>&nbsp;   *****************************************************************/
+<i>209</i>&nbsp;  @Test
+<i>210</i>&nbsp;  public void getUsernameFail() {
+<b class="fc"><i>211</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>212</i>&nbsp;    assertFalse(user1.getUsername().equals(&quot;help&quot;));</b>
+<b class="fc"><i>213</i>&nbsp;  }</b>
+<i>214</i>&nbsp;
+<i>215</i>&nbsp;  /*****************************************************************
+<i>216</i>&nbsp;   Verifies setUsername changes user&#39;s username
+<i>217</i>&nbsp;   *****************************************************************/
+<i>218</i>&nbsp;  @Test
+<i>219</i>&nbsp;  public void setUsername() {
+<b class="fc"><i>220</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>221</i>&nbsp;    user1.setUsername(&quot;jasonstatham&quot;);</b>
+<b class="fc"><i>222</i>&nbsp;    assertTrue(user1.getUsername().equals(&quot;jasonstatham&quot;));</b>
+<b class="fc"><i>223</i>&nbsp;  }</b>
+<i>224</i>&nbsp;
+<i>225</i>&nbsp;  /*****************************************************************
+<i>226</i>&nbsp;   Verifies username is changed by setUsername
+<i>227</i>&nbsp;   *****************************************************************/
+<i>228</i>&nbsp;  @Test
+<i>229</i>&nbsp;  public void setUsernameFail() {
+<b class="fc"><i>230</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>231</i>&nbsp;    user1.setUsername(&quot;jasonstatham&quot;);</b>
+<b class="fc"><i>232</i>&nbsp;    assertFalse(user1.getUsername().equals(&quot;cosmostropharmutarianism&quot;));</b>
+<b class="fc"><i>233</i>&nbsp;  }</b>
+<i>234</i>&nbsp;
+<i>235</i>&nbsp;  /*****************************************************************
+<i>236</i>&nbsp;   Verifies getpassword returns user password
+<i>237</i>&nbsp;   *****************************************************************/
+<i>238</i>&nbsp;  @Test
+<i>239</i>&nbsp;  public void getPassword() {
+<b class="fc"><i>240</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>241</i>&nbsp;    assertTrue(user1.getPassword().equals(&quot;unsecurepassword&quot;));</b>
+<b class="fc"><i>242</i>&nbsp;  }</b>
+<i>243</i>&nbsp;
+<i>244</i>&nbsp;  /*****************************************************************
+<i>245</i>&nbsp;   Verifies getpassword returns user password
+<i>246</i>&nbsp;   *****************************************************************/
+<i>247</i>&nbsp;  @Test
+<i>248</i>&nbsp;  public void getPasswordFail() {
+<b class="fc"><i>249</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>250</i>&nbsp;    assertFalse(user1.getPassword().equals(&quot;securepassword&quot;));</b>
+<b class="fc"><i>251</i>&nbsp;  }</b>
+<i>252</i>&nbsp;
+<i>253</i>&nbsp;  /*****************************************************************
+<i>254</i>&nbsp;   Verifies setPassword changes user password
+<i>255</i>&nbsp;   *****************************************************************/
+<i>256</i>&nbsp;  @Test
+<i>257</i>&nbsp;  public void setPassword() {
+<b class="fc"><i>258</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>259</i>&nbsp;    user1.setPassword(&quot;fpe&quot;);</b>
+<b class="fc"><i>260</i>&nbsp;    assertTrue(user1.getPassword().equals(&quot;fpe&quot;));</b>
+<b class="fc"><i>261</i>&nbsp;  }</b>
+<i>262</i>&nbsp;
+<i>263</i>&nbsp;  /*****************************************************************
+<i>264</i>&nbsp;   Verifies password is changed by setPassword
+<i>265</i>&nbsp;   *****************************************************************/
+<i>266</i>&nbsp;  @Test
+<i>267</i>&nbsp;  public void setPasswordFail() {
+<b class="fc"><i>268</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>269</i>&nbsp;    user1.setPassword(&quot;fpe&quot;);</b>
+<b class="fc"><i>270</i>&nbsp;    assertFalse(user1.getPassword().equals(&quot;password&quot;));</b>
+<b class="fc"><i>271</i>&nbsp;  }</b>
+<i>272</i>&nbsp;
+<i>273</i>&nbsp;  /*****************************************************************
+<i>274</i>&nbsp;   Verifies getRoomNum returns room num
+<i>275</i>&nbsp;   *****************************************************************/
+<i>276</i>&nbsp;  @Test
+<i>277</i>&nbsp;  public void getRoomNum() {
+<b class="fc"><i>278</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>279</i>&nbsp;    assertTrue(user1.getRoomNum() == 548);</b>
+<b class="fc"><i>280</i>&nbsp;  }</b>
+<i>281</i>&nbsp;
+<i>282</i>&nbsp;  /*****************************************************************
+<i>283</i>&nbsp;   Verifies getRoomNum returns room num
+<i>284</i>&nbsp;   *****************************************************************/
+<i>285</i>&nbsp;  @Test
+<i>286</i>&nbsp;  public void getRoomNumFail() {
+<b class="fc"><i>287</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>288</i>&nbsp;    assertFalse(user1.getRoomNum() == 118);</b>
+<b class="fc"><i>289</i>&nbsp;  }</b>
+<i>290</i>&nbsp;
+<i>291</i>&nbsp;  /*****************************************************************
+<i>292</i>&nbsp;   Verifies setRoomNum changes user&#39;s room number
+<i>293</i>&nbsp;   *****************************************************************/
+<i>294</i>&nbsp;  @Test
+<i>295</i>&nbsp;  public void setRoomNum() {
+<b class="fc"><i>296</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>297</i>&nbsp;    user1.setRoomNum(503);</b>
+<b class="fc"><i>298</i>&nbsp;    assertTrue(user1.getRoomNum() == 503);</b>
+<b class="fc"><i>299</i>&nbsp;  }</b>
+<i>300</i>&nbsp;
+<i>301</i>&nbsp;  /*****************************************************************
+<i>302</i>&nbsp;   Verifies room number is changed by setRoomNum
+<i>303</i>&nbsp;   *****************************************************************/
+<i>304</i>&nbsp;  @Test
+<i>305</i>&nbsp;  public void setRoomNumFail() {
+<b class="fc"><i>306</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>307</i>&nbsp;    user1.setRoomNum(503);</b>
+<b class="fc"><i>308</i>&nbsp;    assertFalse(user1.getRoomNum() == 548);</b>
+<b class="fc"><i>309</i>&nbsp;  }</b>
+<i>310</i>&nbsp;
+<i>311</i>&nbsp;  /*****************************************************************
+<i>312</i>&nbsp;   Verifies getTier returns 3
+<i>313</i>&nbsp;   *****************************************************************/
+<i>314</i>&nbsp;  @Test
+<i>315</i>&nbsp;  public void getTier() {
+<b class="fc"><i>316</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>317</i>&nbsp;    assertTrue(user1.getTier() == 3);</b>
+<b class="fc"><i>318</i>&nbsp;  }</b>
+<i>319</i>&nbsp;
+<i>320</i>&nbsp;  /*****************************************************************
+<i>321</i>&nbsp;   Verifies getTier returns 0
+<i>322</i>&nbsp;   *****************************************************************/
+<i>323</i>&nbsp;  @Test
+<i>324</i>&nbsp;  public void getTier2() {
+<b class="fc"><i>325</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 0, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>326</i>&nbsp;    assertTrue(user1.getTier() == 0);</b>
+<b class="fc"><i>327</i>&nbsp;  }</b>
+<i>328</i>&nbsp;
+<i>329</i>&nbsp;  /*****************************************************************
+<i>330</i>&nbsp;   Verifies getTier returns correct tier
+<i>331</i>&nbsp;   *****************************************************************/
+<i>332</i>&nbsp;  @Test
+<i>333</i>&nbsp;  public void getTierFail() {
+<b class="fc"><i>334</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>335</i>&nbsp;    assertFalse(user1.getTier() == 2);</b>
+<b class="fc"><i>336</i>&nbsp;  }</b>
+<i>337</i>&nbsp;
+<i>338</i>&nbsp;  /*****************************************************************
+<i>339</i>&nbsp;   Verifies setTier changes user&#39;s tier
+<i>340</i>&nbsp;   *****************************************************************/
+<i>341</i>&nbsp;  @Test
+<i>342</i>&nbsp;  public void setTier() {
+<b class="fc"><i>343</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>344</i>&nbsp;    user1.setTier(2);</b>
+<b class="fc"><i>345</i>&nbsp;    assertTrue(user1.getTier() == 2);</b>
+<b class="fc"><i>346</i>&nbsp;  }</b>
+<i>347</i>&nbsp;
+<i>348</i>&nbsp;  /*****************************************************************
+<i>349</i>&nbsp;   Verifies tier is changed by setTier
+<i>350</i>&nbsp;   *****************************************************************/
+<i>351</i>&nbsp;  @Test
+<i>352</i>&nbsp;  public void setTierFail() {
+<b class="fc"><i>353</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>354</i>&nbsp;    user1.setTier(2);</b>
+<b class="fc"><i>355</i>&nbsp;    assertFalse(user1.getTier() == 3);</b>
+<b class="fc"><i>356</i>&nbsp;  }</b>
+<i>357</i>&nbsp;
+<i>358</i>&nbsp;  /*****************************************************************
+<i>359</i>&nbsp;   Verifies getDob returns user&#39;s date of birth
+<i>360</i>&nbsp;   *****************************************************************/
+<i>361</i>&nbsp;  @Test
+<i>362</i>&nbsp;  public void getDob() {
+<b class="fc"><i>363</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>364</i>&nbsp;    assertTrue(user1.getDob() == &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>365</i>&nbsp;  }</b>
+<i>366</i>&nbsp;
+<i>367</i>&nbsp;  /*****************************************************************
+<i>368</i>&nbsp;   Verifies getDob returns user&#39;s date of birth
+<i>369</i>&nbsp;   *****************************************************************/
+<i>370</i>&nbsp;  @Test
+<i>371</i>&nbsp;  public void getDobFail() {
+<b class="fc"><i>372</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>373</i>&nbsp;    assertFalse(user1.getDob() == &quot;10/05/2018&quot;);</b>
+<b class="fc"><i>374</i>&nbsp;  }</b>
+<i>375</i>&nbsp;
+<i>376</i>&nbsp;  /*****************************************************************
+<i>377</i>&nbsp;   Verifies setDob changes user&#39;s date of birth
+<i>378</i>&nbsp;   *****************************************************************/
+<i>379</i>&nbsp;  @Test
+<i>380</i>&nbsp;  public void setDob() {
+<b class="fc"><i>381</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>382</i>&nbsp;    user1.setDob(&quot;10/05/2018&quot;);</b>
+<b class="fc"><i>383</i>&nbsp;    assertTrue(user1.getDob() == &quot;10/05/2018&quot;);</b>
+<b class="fc"><i>384</i>&nbsp;  }</b>
+<i>385</i>&nbsp;
+<i>386</i>&nbsp;  /*****************************************************************
+<i>387</i>&nbsp;   Verifies user&#39;s date of birth is changed by setDob
+<i>388</i>&nbsp;   *****************************************************************/
+<i>389</i>&nbsp;  @Test
+<i>390</i>&nbsp;  public void setDobFail() {
+<b class="fc"><i>391</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>392</i>&nbsp;    user1.setDob(&quot;10/05/2018&quot;);</b>
+<b class="fc"><i>393</i>&nbsp;    assertFalse(user1.getDob() == &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>394</i>&nbsp;  }</b>
+<i>395</i>&nbsp;
+<i>396</i>&nbsp;  /*****************************************************************
+<i>397</i>&nbsp;   Verifies a sample of randomly generated passwords are not the same
+<i>398</i>&nbsp;   *****************************************************************/
+<i>399</i>&nbsp;  @Test
+<i>400</i>&nbsp;  public void generatePassWApache(){
+<b class="fc"><i>401</i>&nbsp;    Boolean result = true;</b>
+<b class="fc"><i>402</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>403</i>&nbsp;    String pass1 = user1.generatePassWApache();</b>
+<b class="fc"><i>404</i>&nbsp;    ArrayList&lt;String&gt; list = new ArrayList();</b>
+<b class="fc"><i>405</i>&nbsp;    for(int i = 0; i &lt; 100; i++){</b>
+<b class="fc"><i>406</i>&nbsp;      String pass2 = user1.generatePassWApache();</b>
+<b class="fc"><i>407</i>&nbsp;      list.add(pass2);</b>
+<i>408</i>&nbsp;    }
+<b class="fc"><i>409</i>&nbsp;    for(String x : list){</b>
+<b class="fc"><i>410</i>&nbsp;      if(x.equals(pass1))</b>
+<b class="nc"><i>411</i>&nbsp;        result = false;</b>
+<b class="fc"><i>412</i>&nbsp;    }</b>
+<b class="fc"><i>413</i>&nbsp;    assertTrue(result);</b>
+<b class="fc"><i>414</i>&nbsp;  }</b>
+<i>415</i>&nbsp;
+<i>416</i>&nbsp;  /*****************************************************************
+<i>417</i>&nbsp;   Verifies date validation
+<i>418</i>&nbsp;   *****************************************************************/
+<i>419</i>&nbsp;  @Test
+<i>420</i>&nbsp;  public void verifyDate() {
+<b class="fc"><i>421</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>422</i>&nbsp;    assertTrue(user1.verifyDate(user1.getDob()));</b>
+<b class="fc"><i>423</i>&nbsp;  }</b>
+<i>424</i>&nbsp;
+<i>425</i>&nbsp;  /*****************************************************************
+<i>426</i>&nbsp;   Verifies date validation with no date in field
+<i>427</i>&nbsp;   *****************************************************************/
+<i>428</i>&nbsp;  @Test
+<i>429</i>&nbsp;  public void verifyDateBlank() {
+<b class="fc"><i>430</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>431</i>&nbsp;    assertTrue(user1.verifyDate(&quot;&quot;));</b>
+<b class="fc"><i>432</i>&nbsp;  }</b>
+<i>433</i>&nbsp;
+<i>434</i>&nbsp;  /*****************************************************************
+<i>435</i>&nbsp;   Verifies date validation for string of numbers
+<i>436</i>&nbsp;   *****************************************************************/
+<i>437</i>&nbsp;  @Test
+<i>438</i>&nbsp;  public void verifyDateFail() {
+<b class="fc"><i>439</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>440</i>&nbsp;    assertFalse(user1.verifyDate(&quot;10051999&quot;));</b>
+<b class="fc"><i>441</i>&nbsp;  }</b>
+<i>442</i>&nbsp;
+<i>443</i>&nbsp;  /*****************************************************************
+<i>444</i>&nbsp;   Verifies phone number validation
+<i>445</i>&nbsp;   *****************************************************************/
+<i>446</i>&nbsp;  @Test
+<i>447</i>&nbsp;  public void verifyPhoneNumber() {
+<b class="fc"><i>448</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>449</i>&nbsp;    assertTrue(user1.verifyPhoneNumber(user1.getPhoneNum()));</b>
+<b class="fc"><i>450</i>&nbsp;  }</b>
+<i>451</i>&nbsp;
+<i>452</i>&nbsp;  /*****************************************************************
+<i>453</i>&nbsp;   Verifies phone number validation doesn&#39;t accept words
+<i>454</i>&nbsp;   *****************************************************************/
+<i>455</i>&nbsp;  @Test
+<i>456</i>&nbsp;  public void verifyPhoneNumberFail() {
+<b class="fc"><i>457</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>458</i>&nbsp;    assertFalse(user1.verifyPhoneNumber(&quot;two four eight seven one nine nine eight eight eight&quot;));</b>
+<b class="fc"><i>459</i>&nbsp;  }</b>
+<i>460</i>&nbsp;
+<i>461</i>&nbsp;  /*****************************************************************
+<i>462</i>&nbsp;   Verifies email validation
+<i>463</i>&nbsp;   *****************************************************************/
+<i>464</i>&nbsp;  @Test
+<i>465</i>&nbsp;  public void verifyEmail() {
+<b class="fc"><i>466</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>467</i>&nbsp;    assertTrue(user1.verifyEmail(user1.getEmail()));</b>
+<b class="fc"><i>468</i>&nbsp;  }</b>
+<i>469</i>&nbsp;
+<i>470</i>&nbsp;  /*****************************************************************
+<i>471</i>&nbsp;   Verifies email validation does not accept other info as an email
+<i>472</i>&nbsp;   *****************************************************************/
+<i>473</i>&nbsp;  @Test
+<i>474</i>&nbsp;  public void verifyEmailFail() {
+<b class="fc"><i>475</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>476</i>&nbsp;    assertFalse(user1.verifyEmail(&quot;10/05/1999&quot;));</b>
+<b class="fc"><i>477</i>&nbsp;  }</b>
+<i>478</i>&nbsp;
+<i>479</i>&nbsp;  /*****************************************************************
+<i>480</i>&nbsp;   Verifies verifyAll validates email, phone number, and date of birth all in one method
+<i>481</i>&nbsp;   *****************************************************************/
+<i>482</i>&nbsp;  @Test
+<i>483</i>&nbsp;  public void verifyAll() {
+<b class="fc"><i>484</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>485</i>&nbsp;    assertTrue(user1.verifyAll(user1.getEmail(), user1.getPhoneNum(), user1.getDob()));</b>
+<b class="fc"><i>486</i>&nbsp;  }</b>
+<i>487</i>&nbsp;
+<i>488</i>&nbsp;  /*****************************************************************
+<i>489</i>&nbsp;   Verifies verifyAll validates correct email, phone number, and date of birth
+<i>490</i>&nbsp;   *****************************************************************/
+<i>491</i>&nbsp;  @Test
+<i>492</i>&nbsp;  public void verifyAllFail() {
+<b class="fc"><i>493</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>494</i>&nbsp;    assertFalse(user1.verifyAll(&quot;jason@kaip&quot;, &quot;2487199888&quot;, &quot;10/05/1999&quot;));</b>
+<b class="fc"><i>495</i>&nbsp;  }</b>
+<i>496</i>&nbsp;
+<i>497</i>&nbsp;  /*****************************************************************
+<i>498</i>&nbsp;   Verifies toString returns the correct info in the correct order
+<i>499</i>&nbsp;   *****************************************************************/
+<i>500</i>&nbsp;  @Test
+<i>501</i>&nbsp;  public void testToString() {
+<b class="fc"><i>502</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>503</i>&nbsp;    assertTrue(user1.toString().equals(user1.getName() + &quot;,&quot; + user1.getPhoneNum() + &quot;,&quot; + user1.getEmail() + &quot;,&quot; + user1.getUsername() + &quot;,&quot;</b>
+<b class="fc"><i>504</i>&nbsp;            + user1.getPassword() + &quot;,&quot; + user1.getTier() + &quot;,&quot; + user1.getDob() + &quot;,&quot; + user1.getRoomNum()));</b>
+<b class="fc"><i>505</i>&nbsp;  }</b>
+<i>506</i>&nbsp;
+<i>507</i>&nbsp;  /*****************************************************************
+<i>508</i>&nbsp;   Verifies toString returns the correct info in the correct order
+<i>509</i>&nbsp;   *****************************************************************/
+<i>510</i>&nbsp;  @Test
+<i>511</i>&nbsp;  public void testToStringFail() {
+<b class="fc"><i>512</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>513</i>&nbsp;    assertFalse(user1.toString().equals(user1.getName() + &quot;,&quot; + user1.getName() + &quot;,&quot; + user1.getName() + &quot;,&quot; + user1.getName() + &quot;,&quot;</b>
+<b class="fc"><i>514</i>&nbsp;            + user1.getName() + &quot;,&quot; + user1.getName() + &quot;,&quot; + user1.getName() + &quot;,&quot; + user1.getName()));</b>
+<b class="fc"><i>515</i>&nbsp;  }</b>
+<i>516</i>&nbsp;
+<i>517</i>&nbsp;  /*****************************************************************
+<i>518</i>&nbsp;   Verifies returnPermissions returns correct permissions for tier 0
+<i>519</i>&nbsp;   *****************************************************************/
+<i>520</i>&nbsp;  @Test
+<i>521</i>&nbsp;  public void returnPermissions0() {
+<b class="fc"><i>522</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 0, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>523</i>&nbsp;    assertTrue(user1.returnPermissions(user1.getTier()).equals(&quot;Pool Access: YES&quot; + &quot;\n&quot; +</b>
+<i>524</i>&nbsp;            &quot;Gym Access: YES&quot; + &quot;\n&quot; +
+<i>525</i>&nbsp;            &quot;PC Room Access: YES&quot; + &quot;\n&quot; +
+<i>526</i>&nbsp;            &quot;Bar Access: YES&quot; + &quot;\n&quot; +
+<i>527</i>&nbsp;            &quot;Casino Access: YES&quot; + &quot;\n&quot; +
+<i>528</i>&nbsp;            &quot;Buffet Access: YES&quot; + &quot;\n&quot; +
+<i>529</i>&nbsp;            &quot;Hot Tub Access: YES&quot; + &quot;\n&quot; +
+<i>530</i>&nbsp;            &quot;Arcade Room Access: YES&quot; + &quot;\n&quot; +
+<i>531</i>&nbsp;            &quot;Admin Access: YES&quot; + &quot;\n&quot; +
+<i>532</i>&nbsp;            &quot;Room Access: YES&quot; + &quot;\n&quot; +
+<i>533</i>&nbsp;            &quot;All Room Access: YES&quot; + &quot;\n&quot; ));
+<b class="fc"><i>534</i>&nbsp;  }</b>
+<i>535</i>&nbsp;
+<i>536</i>&nbsp;  /*****************************************************************
+<i>537</i>&nbsp;   Verifies returnPermissions returns correct permissions for tier 1
+<i>538</i>&nbsp;   *****************************************************************/
+<i>539</i>&nbsp;  @Test
+<i>540</i>&nbsp;  public void returnPermissions1() {
+<b class="fc"><i>541</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 1, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>542</i>&nbsp;    assertTrue(user1.returnPermissions(user1.getTier()).equals(&quot;Pool Access: YES&quot; + &quot;\n&quot; +</b>
+<i>543</i>&nbsp;            &quot;Gym Access: NO&quot; + &quot;\n&quot; +
+<i>544</i>&nbsp;            &quot;PC Room Access: YES&quot; + &quot;\n&quot; +
+<i>545</i>&nbsp;            &quot;Bar Access: NO&quot; + &quot;\n&quot; +
+<i>546</i>&nbsp;            &quot;Casino Access: NO&quot; + &quot;\n&quot; +
+<i>547</i>&nbsp;            &quot;Buffet Access: NO&quot; + &quot;\n&quot; +
+<i>548</i>&nbsp;            &quot;Hot Tub Access: YES&quot; + &quot;\n&quot; +
+<i>549</i>&nbsp;            &quot;Arcade Room Access: NO&quot; + &quot;\n&quot; +
+<i>550</i>&nbsp;            &quot;Admin Access: NO&quot; + &quot;\n&quot; +
+<i>551</i>&nbsp;            &quot;Room Access: YES&quot; + &quot;\n&quot; +
+<i>552</i>&nbsp;            &quot;All Room Access: NO&quot; + &quot;\n&quot; ));
+<b class="fc"><i>553</i>&nbsp;  }</b>
+<i>554</i>&nbsp;
+<i>555</i>&nbsp;  /*****************************************************************
+<i>556</i>&nbsp;   Verifies returnPermissions returns correct permissions for tier 2
+<i>557</i>&nbsp;   *****************************************************************/
+<i>558</i>&nbsp;  @Test
+<i>559</i>&nbsp;  public void returnPermissions2() {
+<b class="fc"><i>560</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 2, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>561</i>&nbsp;    assertTrue(user1.returnPermissions(user1.getTier()).equals(&quot;Pool Access: YES&quot; + &quot;\n&quot; +</b>
+<i>562</i>&nbsp;            &quot;Gym Access: YES&quot; + &quot;\n&quot; +
+<i>563</i>&nbsp;            &quot;PC Room Access: YES&quot; + &quot;\n&quot; +
+<i>564</i>&nbsp;            &quot;Bar Access: NO&quot; + &quot;\n&quot; +
+<i>565</i>&nbsp;            &quot;Casino Access: NO&quot; + &quot;\n&quot; +
+<i>566</i>&nbsp;            &quot;Buffet Access: YES&quot; + &quot;\n&quot; +
+<i>567</i>&nbsp;            &quot;Hot Tub Access: YES&quot; + &quot;\n&quot; +
+<i>568</i>&nbsp;            &quot;Arcade Room Access: NO&quot; + &quot;\n&quot; +
+<i>569</i>&nbsp;            &quot;Admin Access: NO&quot; + &quot;\n&quot; +
+<i>570</i>&nbsp;            &quot;Room Access: YES&quot; + &quot;\n&quot; +
+<i>571</i>&nbsp;            &quot;All Room Access: NO&quot; + &quot;\n&quot; ));
+<b class="fc"><i>572</i>&nbsp;  }</b>
+<i>573</i>&nbsp;
+<i>574</i>&nbsp;  /*****************************************************************
+<i>575</i>&nbsp;   Verifies returnPermissions returns correct permissions for tier 3
+<i>576</i>&nbsp;   *****************************************************************/
+<i>577</i>&nbsp;  @Test
+<i>578</i>&nbsp;  public void returnPermissions3() {
+<b class="fc"><i>579</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>580</i>&nbsp;    assertTrue(user1.returnPermissions(user1.getTier()).equals(&quot;Pool Access: YES&quot; + &quot;\n&quot; +</b>
+<i>581</i>&nbsp;            &quot;Gym Access: YES&quot; + &quot;\n&quot; +
+<i>582</i>&nbsp;            &quot;PC Room Access: YES&quot; + &quot;\n&quot; +
+<i>583</i>&nbsp;            &quot;Bar Access: YES&quot; + &quot;\n&quot; +
+<i>584</i>&nbsp;            &quot;Casino Access: YES&quot; + &quot;\n&quot; +
+<i>585</i>&nbsp;            &quot;Buffet Access: YES&quot; + &quot;\n&quot; +
+<i>586</i>&nbsp;            &quot;Hot Tub Access: YES&quot; + &quot;\n&quot; +
+<i>587</i>&nbsp;            &quot;Arcade Room Access: YES&quot; + &quot;\n&quot; +
+<i>588</i>&nbsp;            &quot;Admin Access: NO&quot; + &quot;\n&quot; +
+<i>589</i>&nbsp;            &quot;Room Access: YES&quot; + &quot;\n&quot; +
+<i>590</i>&nbsp;            &quot;All Room Access: NO&quot; + &quot;\n&quot; ));
+<b class="fc"><i>591</i>&nbsp;  }</b>
+<i>592</i>&nbsp;
+<i>593</i>&nbsp;  /*****************************************************************
+<i>594</i>&nbsp;   Verifies returnPermissions returns correct permissions for tier 3
+<i>595</i>&nbsp;   *****************************************************************/
+<i>596</i>&nbsp;  @Test
+<i>597</i>&nbsp;  public void returnPermissionsFail() {
+<b class="fc"><i>598</i>&nbsp;    User user1 = new User(&quot;Noryb&quot;, &quot;2487199888&quot;, &quot;Noryb@gvsu.edu&quot;, 3, 548, &quot;sftwreEgr&quot;, &quot;unsecurepassword&quot;, &quot;10/05/1999&quot;);</b>
+<b class="fc"><i>599</i>&nbsp;    assertFalse(user1.returnPermissions(user1.getTier()).equals(&quot;Pool Access: YES&quot; + &quot;\n&quot; +</b>
+<i>600</i>&nbsp;            &quot;Gym Access: NO&quot; + &quot;\n&quot; +
+<i>601</i>&nbsp;            &quot;PC Room Access: NO&quot; + &quot;\n&quot; +
+<i>602</i>&nbsp;            &quot;Bar Access: NO&quot; + &quot;\n&quot; +
+<i>603</i>&nbsp;            &quot;Casino Access: NO&quot; + &quot;\n&quot; +
+<i>604</i>&nbsp;            &quot;Buffet Access: NO&quot; + &quot;\n&quot; +
+<i>605</i>&nbsp;            &quot;Hot Tub Access: NO&quot; + &quot;\n&quot; +
+<i>606</i>&nbsp;            &quot;Arcade Room Access: NO&quot; + &quot;\n&quot; +
+<i>607</i>&nbsp;            &quot;Admin Access: YES&quot; + &quot;\n&quot; +
+<i>608</i>&nbsp;            &quot;Room Access: NO&quot; + &quot;\n&quot; +
+<i>609</i>&nbsp;            &quot;All Room Access: YES&quot; + &quot;\n&quot; ));
+<b class="fc"><i>610</i>&nbsp;  }</b>
+<i>611</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-17 16:15</div>
+</div>
+</body>
+</html>
