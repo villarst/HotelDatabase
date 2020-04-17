@@ -49,7 +49,8 @@ public class Database implements Serializable { //NOPMD
       mainDb.add(u);
       assignRoom(u);
     } else {
-      System.out.println("Sorry rooms are full.");//NOPMD
+      System.out.println("The tier is full, please " +
+              "select a different tier.");//NOPMD
     }
   }
 
@@ -98,6 +99,13 @@ public class Database implements Serializable { //NOPMD
     return mainDb;
   }
 
+  /*****************************************************************
+   Returns true or false depending on if the room is occupied.
+   @return boolean for if the room is occupied.
+   *****************************************************************/
+  public boolean getRooms(int num) {
+    return rooms[num];
+  }
 
   /*****************************************************************
    Assigns the room to the user that was just added to the Arraylist.

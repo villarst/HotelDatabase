@@ -1,5 +1,4 @@
 package hotelmanagement;
-package hotelmanagement;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
