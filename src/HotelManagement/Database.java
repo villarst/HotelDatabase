@@ -89,15 +89,6 @@ public class Database implements Serializable{
         }
     }
 
-//    // This method returns MainDb
-//    /*****************************************************************
-//     Returns the MainDb arraylist.
-//     @return MainDb the arrayylist to be returned
-//     *****************************************************************/
-//    public ArrayList<User> getMainDb() {
-//        return MainDb;
-//    }
-
     /*****************************************************************
      Returns true or false depending on if the room is occupied.
      @return boolean for if the room is occupied.
