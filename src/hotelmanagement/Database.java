@@ -15,13 +15,13 @@ import java.util.ArrayList;
 public class Database implements Serializable { //NOPMD
 
   /** Arraylist that stores the Users. */
-  private ArrayList<User> MainDb; //NOPMD
+  private ArrayList<User> mainDb; //NOPMD
 
   /** Boolean Array that stores values for the rooms. */
   boolean[] rooms; //NOPMD
 
   /** Arraylist that stores the admins. */
-  private ArrayList<User> SecondaryDb; //NOPMD
+  private ArrayList<User> secondaryDb; //NOPMD
 
 
   /*****************************************************************
@@ -30,8 +30,8 @@ public class Database implements Serializable { //NOPMD
    *****************************************************************/
   public Database() {
     // initialize the Arraylist to hold the users and initialize the rooms Array.
-    MainDb = new ArrayList<>();
-    SecondaryDb = new ArrayList<>();
+    mainDb = new ArrayList<>();
+    secondaryDb = new ArrayList<>();
     rooms = new boolean[300];
     for (int i = 0; i < 300; i++) {
       rooms[i] = false;
@@ -46,7 +46,7 @@ public class Database implements Serializable { //NOPMD
    *****************************************************************/
   public void addUser(final User u) { //NOPMD
     if (!checkTierFull(u.getTier() - 1)) { //NOPMD
-      MainDb.add(u);
+      mainDb.add(u);
       assignRoom(u);
     } else {
       System.out.println("Sorry rooms are full.");//NOPMD
@@ -60,7 +60,7 @@ public class Database implements Serializable { //NOPMD
    added.
    *****************************************************************/
   public void addUserFromLoad(final User u) { //NOPMD
-    MainDb.add(u);
+    mainDb.add(u);
     u.setRoomNum(u.getRoomNum());
     rooms[u.getRoomNum()] = true; //NOPMD
   }
@@ -73,7 +73,7 @@ public class Database implements Serializable { //NOPMD
    *****************************************************************/
   public void addAdmin(final User u) { //NOPMD
     if (u.getTier() == 0) {
-      SecondaryDb.add(u);
+      secondaryDb.add(u);
     }
   }
 
@@ -82,8 +82,8 @@ public class Database implements Serializable { //NOPMD
    Clears the database and sets all rooms to empty.
    *****************************************************************/
   public void clearDb() {
-    MainDb.clear();
-    SecondaryDb.clear();
+    mainDb.clear();
+    secondaryDb.clear();
     for (int i = 0; i < 300; i++) {
       rooms[i] = false;
     }
@@ -95,7 +95,7 @@ public class Database implements Serializable { //NOPMD
    @return MainDb the database of users.
    *****************************************************************/
   public ArrayList<User> getMainDb() { //NOPMD
-    return MainDb;
+    return mainDb;
   }
 
 
@@ -129,7 +129,7 @@ public class Database implements Serializable { //NOPMD
    @return the room number given from specified index.
    *****************************************************************/
   public int viewRoom(int i) { //NOPMD
-    return MainDb.get(i).getRoomNum(); //NOPMD
+    return mainDb.get(i).getRoomNum(); //NOPMD
   }
 
 
@@ -140,7 +140,7 @@ public class Database implements Serializable { //NOPMD
    index.
    *****************************************************************/
   public User getUser(int i) { //NOPMD
-    return MainDb.get(i);
+    return mainDb.get(i);
   }
 
 
@@ -151,7 +151,7 @@ public class Database implements Serializable { //NOPMD
    *****************************************************************/
   public User findUser(final User u) { //NOPMD
     User found = null; //NOPMD
-    for (final User user : MainDb) {
+    for (final User user : mainDb) {
       if (u.getRoomNum() == user.getRoomNum()) { //NOPMD
         found = user; //NOPMD
       }
@@ -191,7 +191,7 @@ public class Database implements Serializable { //NOPMD
     if (u.getRoomNum() != -1) {
       rooms[u.getRoomNum()] = false; //NOPMD
     }
-    MainDb.remove(u);
+    mainDb.remove(u);
   }
 
 
@@ -200,10 +200,10 @@ public class Database implements Serializable { //NOPMD
    @param u the User that is wanting to be removed.
    *****************************************************************/
   public void searchUser(final User u) { //NOPMD
-    for (int i = 0; i < MainDb.size(); i++) { //NOPMD
-      if (MainDb.get(i).getPassword().equals(u.getPassword())) { //NOPMD
+    for (int i = 0; i < mainDb.size(); i++) { //NOPMD
+      if (mainDb.get(i).getPassword().equals(u.getPassword())) { //NOPMD
         rooms[u.getRoomNum()] = false; //NOPMD
-        MainDb.remove(MainDb.get(i));
+        mainDb.remove(mainDb.get(i));
       }
     }
   }
@@ -217,7 +217,7 @@ public class Database implements Serializable { //NOPMD
    *****************************************************************/
   public boolean searchSecondary(final String pass) {
     boolean found = true; //NOPMD
-    for (final User user : SecondaryDb) {
+    for (final User user : secondaryDb) {
       if (pass.equals(user.getPassword())) { //NOPMD
         found = true; //NOPMD
       } else {
@@ -234,7 +234,7 @@ public class Database implements Serializable { //NOPMD
    @return the user from the secondary database.
    *****************************************************************/
   public User getUserSecondaryDb(int i) { //NOPMD
-    return SecondaryDb.get(i);
+    return secondaryDb.get(i);
   }
 
 
@@ -243,7 +243,7 @@ public class Database implements Serializable { //NOPMD
    @return the size of the secondary database.
    *****************************************************************/
   public int secondaryDbSize() {
-    return SecondaryDb.size();
+    return secondaryDb.size();
   }
 
 
@@ -252,7 +252,7 @@ public class Database implements Serializable { //NOPMD
    @return the size of the main database.
    *****************************************************************/
   public int mainDbSize() {
-    return MainDb.size();
+    return mainDb.size();
   }
 
 
@@ -263,17 +263,17 @@ public class Database implements Serializable { //NOPMD
   @Override
   public String toString() {
     String result = "";
-    for (User user : MainDb) { //NOPMD
+    for (User user : mainDb) { //NOPMD
       result += user.getName() + " , " + user.getPhoneNum() + //NOPMD
               " , " + user.getEmail() + " , " + user.getUsername() + //NOPMD
               " , " + user.getPassword() + " , " + user.getTier() + //NOPMD
               " , " + user.getDob() + " , " + user.getRoomNum() + "\n"; //NOPMD
     }
-    for (int j = 0; j < SecondaryDb.size(); j++) {
-      result += MainDb.get(j).getName() + " , " + MainDb.get(j).getPhoneNum() + //NOPMD
-              " , " + MainDb.get(j).getEmail() + " , " + MainDb.get(j).getUsername() + //NOPMD
-              " , " + MainDb.get(j).getPassword() + " , " + MainDb.get(j).getTier() + //NOPMD
-              " , " + MainDb.get(j).getDob() + " , " + MainDb.get(j).getRoomNum() + "\n"; //NOPMD
+    for (int j = 0; j < secondaryDb.size(); j++) {
+      result += mainDb.get(j).getName() + " , " + mainDb.get(j).getPhoneNum() + //NOPMD
+              " , " + mainDb.get(j).getEmail() + " , " + mainDb.get(j).getUsername() + //NOPMD
+              " , " + mainDb.get(j).getPassword() + " , " + mainDb.get(j).getTier() + //NOPMD
+              " , " + mainDb.get(j).getDob() + " , " + mainDb.get(j).getRoomNum() + "\n"; //NOPMD
     }
     return result;
   }

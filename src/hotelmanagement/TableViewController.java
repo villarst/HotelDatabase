@@ -1,8 +1,8 @@
 package hotelmanagement;
 
+import static hotelmanagement.AdminLoginSceneController.adminLoggedIn;
 import static hotelmanagement.DatabaseGUI.sceneAdmin;
 import static hotelmanagement.DatabaseGUI.table;
-import static hotelmanagement.adminLoginSceneController.adminLoggedIn;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -396,14 +396,14 @@ public class TableViewController implements Initializable { //NOPMD
 
 
   /*****************************************************************
-   Loads a database file from the HotelManagement folder.
+   Loads a database file from the hotelmanagement folder.
    *****************************************************************/
   public void loadFile() {
     try {
       final String filePath = new File("").getAbsolutePath();
       System.out.println(filePath); //NOPMD
       BufferedReader br = new BufferedReader(new FileReader(new File(filePath + //NOPMD
-              "/src/HotelManagement/TestFile.txt")));
+              "/src/hotelmanagement/TestFile.txt")));
       String line;
       String[] array;
 
