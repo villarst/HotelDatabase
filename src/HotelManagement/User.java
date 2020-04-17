@@ -145,6 +145,7 @@ public class User implements Serializable{
         return Name.get();
     }
 
+
     public void setName(String name) {
         Name = new SimpleStringProperty(name);
     }
