@@ -351,8 +351,8 @@ public class User implements Serializable { //NOPMD
    Returns the date of birth of the user.
    @return the date of birth of the user.
    *****************************************************************/
-  public String getDob() {
-    return dob.get();
+  public SimpleStringProperty getDob() {
+    return dob;
   }
 
 
