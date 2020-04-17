@@ -15,29 +15,29 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static hotelmanagement.databaseGUI.*;
-import static hotelmanagement.adminLoginSceneController.adminLoggedIn;
+import static hotelmanagement.DatabaseGUI.*;
+import static hotelmanagement.AdminLoginSceneController.adminLoggedIn;
 
 
 /*****************************************************************
  A class that is used to control the functionality in the
- adminLoginScene.fxml
+ AdminLoginScene.fxml
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  ****************************************************************/
 
-public class tableViewController implements Initializable {
+public class TableViewController implements Initializable {
 
-    @FXML public TableView<user> tableView;
-    @FXML public ObservableList<user> users;
-    @FXML private TableColumn<user, String> nameColumn;
-    @FXML private TableColumn<user, String> phoneNumColumn;
-    @FXML private TableColumn<user, String> emailColumn;
-    @FXML private TableColumn<user, String> userNameColumn;
-    @FXML private TableColumn<user, String> passwordColumn;
-    @FXML private TableColumn<user, Integer> tierColumn;
-    @FXML private TableColumn<user, String> dateofbirthColumn;
-    @FXML private TableColumn<user, Integer> roomNum;
+    @FXML public TableView<User> tableView;
+    @FXML public ObservableList<User> Users;
+    @FXML private TableColumn<User, String> nameColumn;
+    @FXML private TableColumn<User, String> phoneNumColumn;
+    @FXML private TableColumn<User, String> emailColumn;
+    @FXML private TableColumn<User, String> userNameColumn;
+    @FXML private TableColumn<User, String> passwordColumn;
+    @FXML private TableColumn<User, Integer> tierColumn;
+    @FXML private TableColumn<User, String> dateofbirthColumn;
+    @FXML private TableColumn<User, Integer> roomNum;
 
     // These variables are used to create new User Objects
     @FXML private TextField nameTextField;
@@ -56,10 +56,10 @@ public class tableViewController implements Initializable {
     // Combo box for choosing tier level.
     @FXML private ComboBox<Integer> comboBox;
 
-    public static database d = new database();
+    public static Database d = new Database();
 
     public void changeNameColumn(TableColumn.CellEditEvent editedCell){
-        user userSelected = tableView.getSelectionModel().getSelectedItem();
+        User userSelected = tableView.getSelectionModel().getSelectedItem();
         if(!editedCell.getNewValue().toString().equals("")) {
             d.findUser(userSelected).setName(editedCell.getNewValue().toString());
             userSelected.setName(editedCell.getNewValue().toString());
@@ -72,7 +72,7 @@ public class tableViewController implements Initializable {
     }
 
     public void changeEmailColumn(TableColumn.CellEditEvent editedCell){
-        user userSelected = tableView.getSelectionModel().getSelectedItem();
+        User userSelected = tableView.getSelectionModel().getSelectedItem();
         if(d.findUser(userSelected).setEmail(editedCell.getNewValue().toString())){
             userSelected.setEmail(editedCell.getNewValue().toString());
         }
@@ -85,7 +85,7 @@ public class tableViewController implements Initializable {
     }
 
     public void changePhoneNumColumn(TableColumn.CellEditEvent editedCell){
-        user userSelected = tableView.getSelectionModel().getSelectedItem();
+        User userSelected = tableView.getSelectionModel().getSelectedItem();
         if(d.findUser(userSelected).setPhoneNum(editedCell.getNewValue().toString())){
             userSelected.setPhoneNum(editedCell.getNewValue().toString());
         }
@@ -158,7 +158,7 @@ public class tableViewController implements Initializable {
     // This method will create new User and add it to the table and database.
     public void newUserButtonPushed(){
         try {
-            user u = new user(nameTextField.getText(),
+            User u = new User(nameTextField.getText(),
                     phoneNumTextField.getText(),
                     emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),
                     dobTextField.getText());
@@ -194,7 +194,7 @@ public class tableViewController implements Initializable {
 
 
     public void deleteButtonPushed() {
-        ObservableList<user> selectedRow, allPeople;
+        ObservableList<User> selectedRow, allPeople;
         allPeople = tableView.getItems();
 
         // This gives us the row that was selected.
@@ -203,7 +203,7 @@ public class tableViewController implements Initializable {
             if(selectedRow.size() != 0){
                 if (adminLoggedIn == true && !tableView.getSelectionModel().getSelectedItem().getName().equals("ADMIN")) {
                     if (allPeople != null) {
-                        for (user u : selectedRow) {
+                        for (User u : selectedRow) {
                             if (selectedRow.size() == 1) {
                                 allPeople.remove(u);
                                 d.removeUser(u);
@@ -232,13 +232,13 @@ public class tableViewController implements Initializable {
     }
 
     public void tierPermissionsPushed(){
-        ObservableList<user> selectedRows;
+        ObservableList<User> selectedRows;
         // This gives us the row that was selected.
         selectedRows = tableView.getSelectionModel().getSelectedItems();
 
 
         if(selectedRows.size() != 0) {
-            for (user u : selectedRows) {
+            for (User u : selectedRows) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Tier Info");
                 alert.setHeaderText("Info for Tier: " + u.getTier());
@@ -262,10 +262,10 @@ public class tableViewController implements Initializable {
         }
     }
 
-    public void saveFile(ObservableList<user> userObservableList, File file){
+    public void saveFile(ObservableList<User> userObservableList, File file){
         try{
             BufferedWriter outWriter = new BufferedWriter((new FileWriter(file + ".txt")));
-            for(user u : userObservableList){
+            for(User u : userObservableList){
                 outWriter.write((u.toString()));
                 outWriter.newLine();
             }
@@ -293,17 +293,17 @@ public class tableViewController implements Initializable {
             String[] array;
 
             d.clearDb();
-            users.clear();
+            Users.clear();
             while ((line = br.readLine()) != null){
                 array = line.split(",");
-                users.add(new user(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]),
+                Users.add(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]),
                         array[6], Integer.parseInt(array[7])));
                 if(Integer.parseInt(array[5]) == 0){
-                    d.addAdmin(new user(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]),
+                    d.addAdmin(new User(array[0], array[1], array[2], array[3], array[4], Integer.parseInt(array[5]),
                             array[6], Integer.parseInt(array[7])));
                 }
                 else{
-                    d.addUserFromLoad(new user(array[0], array[1], array[2], array[3], array[4],
+                    d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4],
                             Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7])));
                 }
             }
@@ -324,18 +324,18 @@ public class tableViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Sets up the Columns in the table
-        assert comboBox != null : "fx:id=\"comboBox\" was not injected: check your FXML file 'tableView.fxml'.";
+        assert comboBox != null : "fx:id=\"comboBox\" was not injected: check your FXML file 'TableView.fxml'.";
         btnDelete.setVisible(true);
         comboBox.getItems().setAll(1,2,3);
         btnLoginAdmin.setText("Logout");
-        nameColumn.setCellValueFactory(new PropertyValueFactory<user, String>("name"));
-        phoneNumColumn.setCellValueFactory(new PropertyValueFactory<user, String>("PhoneNum"));
-        emailColumn.setCellValueFactory(new PropertyValueFactory<user, String>("Email"));
-        userNameColumn.setCellValueFactory(new PropertyValueFactory<user, String>("username"));
-        passwordColumn.setCellValueFactory(new PropertyValueFactory<user, String>("password"));
-        tierColumn.setCellValueFactory(new PropertyValueFactory<user, Integer>("tier"));
-        dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<user, String>("dob"));
-        roomNum.setCellValueFactory(new PropertyValueFactory<user, Integer>("roomNum"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
+        phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));
+        userNameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("username"));
+        passwordColumn.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
+        tierColumn.setCellValueFactory(new PropertyValueFactory<User, Integer>("tier"));
+        dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<User, String>("dob"));
+        roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
 
         // load dummy data
         tableView.setItems(getUsers());
@@ -348,41 +348,41 @@ public class tableViewController implements Initializable {
     }
 
     // This method will return an Observable list of User objects.
-    public ObservableList<user> getUsers(){
-        users = FXCollections.observableArrayList();
-        d.addUser(new user("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
+    public ObservableList<User> getUsers(){
+        Users = FXCollections.observableArrayList();
+        d.addUser(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
-        users.add(new user("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
+        Users.add(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
                 d.viewRoom(0), "villarst", d.getUser(0).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new user("Corey R", "6168342729", "ricecore@mail.gvsu.edu", 2,
+        d.addUser(new User("Corey R", "6168342729", "ricecore@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
-        users.add(new user("Corey R", "6165583079", "ricecore@mail.gvsu.edu", 2,
+        Users.add(new User("Corey R", "6165583079", "ricecore@mail.gvsu.edu", 2,
                 d.viewRoom(1), "riceco", d.getUser(1).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new user("Corey S", "6168342729", "sutterco@mail.gvsu.edu", 2,
+        d.addUser(new User("Corey S", "6168342729", "sutterco@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
-        users.add(new user("Corey S", "6165583079", "cutterco@mail.gvsu.edu", 2,
+        Users.add(new User("Corey S", "6165583079", "cutterco@mail.gvsu.edu", 2,
                 d.viewRoom(2), "sutterco", d.getUser(2).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new user("Jason", "6168342729", "kaipjaso@mail.gvsu.edu", 3,
+        d.addUser(new User("Jason", "6168342729", "kaipjaso@mail.gvsu.edu", 3,
                 "villarst", "03/27/00"));
-        users.add(new user("Jason", "6165583079", "kaipjaso@mail.gvsu.edu", 3,
+        Users.add(new User("Jason", "6165583079", "kaipjaso@mail.gvsu.edu", 3,
                 d.viewRoom(3), "kaipja", d.getUser(3).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new user("Bobby V", "6168342729", "vuerbobb@mail.gvsu.edu", 1,
+        d.addUser(new User("Bobby V", "6168342729", "vuerbobb@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
-        users.add(new user("Bobby V", "6165583079", "vuerbobb@mail.gvsu.edu", 1,
+        Users.add(new User("Bobby V", "6165583079", "vuerbobb@mail.gvsu.edu", 1,
                 d.viewRoom(4), "VBobby", d.getUser(4).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addUser(new user("Mike J", "6168342729", "johnmike@mail.gvsu.edu", 3,
+        d.addUser(new User("Mike J", "6168342729", "johnmike@mail.gvsu.edu", 3,
                 "villarst", "03/27/00"));
-        users.add(new user("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
+        Users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
                 d.viewRoom(5), "JMike", d.getUser(5).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addAdmin(new user("ADMIN", "9999999999", "admin@login.com", "ADMIN",
+        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN",
                 "jscc1234",  0, "04/23/29"));
-        users.add(new user("ADMIN", "9999999999", "admin@login.com", "ADMIN", d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29"));
-        return users;
+        Users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29"));
+        return Users;
     }
 }

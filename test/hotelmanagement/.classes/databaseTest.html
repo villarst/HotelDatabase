@@ -1,0 +1,407 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: databaseTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">hotelmanagement</a> ]
+</div>
+
+<h1>Coverage Summary for Class: databaseTest (hotelmanagement)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">databaseTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (17/ 17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (131/ 131)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package hotelmanagement;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.junit.Assert;
+<i>4</i>&nbsp;import org.junit.jupiter.api.Test;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.io.ByteArrayOutputStream;
+<i>7</i>&nbsp;import java.io.PrintStream;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import static org.junit.Assert.assertTrue;
+<i>10</i>&nbsp;import static org.junit.jupiter.api.Assertions.assertEquals;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;/*****************************************************************
+<i>13</i>&nbsp; A class that is used to test the Database class.
+<i>14</i>&nbsp; @author Steven Villarreal, Corey Rice
+<i>15</i>&nbsp; @version 1.1
+<i>16</i>&nbsp; ****************************************************************/
+<b class="fc"><i>17</i>&nbsp;class databaseTest {</b>
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    /*****************************************************************
+<i>20</i>&nbsp;     This tests adding a user to MainDb and whether there rooms are
+<i>21</i>&nbsp;     correct.
+<i>22</i>&nbsp;     *****************************************************************/
+<i>23</i>&nbsp;    @Test
+<i>24</i>&nbsp;    void addUser1() {
+<b class="fc"><i>25</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>26</i>&nbsp;        user u1 = new user(&quot;Steven Villarreal&quot;,</b>
+<i>27</i>&nbsp;                &quot;6168342323&quot;, &quot;villarst@mail.com&quot;, 1,
+<i>28</i>&nbsp;                &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>29</i>&nbsp;        d1.addUser(u1);</b>
+<b class="fc"><i>30</i>&nbsp;        assertEquals(0, u1.getRoomNum());</b>
+<b class="fc"><i>31</i>&nbsp;        user u2 = new user(&quot;Steven Villarreal&quot;,</b>
+<i>32</i>&nbsp;                &quot;6168342323&quot;, &quot;villarst@mail.com&quot;,
+<i>33</i>&nbsp;                1, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>34</i>&nbsp;        d1.addUser(u2);</b>
+<b class="fc"><i>35</i>&nbsp;        assertEquals(1, u2.getRoomNum());</b>
+<b class="fc"><i>36</i>&nbsp;    }</b>
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    /*****************************************************************
+<i>39</i>&nbsp;     This tests adding a user to MainDb and returns an error saying
+<i>40</i>&nbsp;     that the tier is full and that the user should select another tier.
+<i>41</i>&nbsp;     *****************************************************************/
+<i>42</i>&nbsp;    @Test
+<i>43</i>&nbsp;    void addUser2() {
+<b class="fc"><i>44</i>&nbsp;        ByteArrayOutputStream outContent = new ByteArrayOutputStream();</b>
+<b class="fc"><i>45</i>&nbsp;        System.setOut(new PrintStream(outContent));</b>
+<i>46</i>&nbsp;
+<b class="fc"><i>47</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>48</i>&nbsp;        for (int i = 0; i &lt;= 99; i++) {</b>
+<b class="fc"><i>49</i>&nbsp;            user u = new user(&quot;Steven Villarreal&quot;,</b>
+<i>50</i>&nbsp;                    &quot;6168342323&quot;, &quot;villarst@mail.com&quot;, 1,
+<i>51</i>&nbsp;                    &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>52</i>&nbsp;            d1.addUser(u);</b>
+<i>53</i>&nbsp;        }
+<b class="fc"><i>54</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>55</i>&nbsp;                &quot;villarst@mail.com&quot;, 1, &quot;villarst&quot;,
+<i>56</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>57</i>&nbsp;        d1.addUser(u);</b>
+<b class="fc"><i>58</i>&nbsp;        String output = new String(outContent.toByteArray());</b>
+<b class="fc"><i>59</i>&nbsp;        assertTrue(output.contains(&quot;The tier is full, please &quot; +</b>
+<i>60</i>&nbsp;                &quot;select a different tier.&quot;));
+<b class="fc"><i>61</i>&nbsp;    }</b>
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    /*****************************************************************
+<i>64</i>&nbsp;     This tests adding an admin to SecondaryDb.
+<i>65</i>&nbsp;     *****************************************************************/
+<i>66</i>&nbsp;    @Test
+<i>67</i>&nbsp;    void addAdmin() {
+<b class="fc"><i>68</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>69</i>&nbsp;        user a = new user(&quot;Bob Nichols&quot;, &quot;7412345481&quot;,</b>
+<i>70</i>&nbsp;                &quot;bobn@att.com&quot;, &quot;bobbyboi&quot;, 0,
+<i>71</i>&nbsp;                &quot;12/25/87&quot;);
+<b class="fc"><i>72</i>&nbsp;        d1.addAdmin(a);</b>
+<b class="fc"><i>73</i>&nbsp;        Assert.assertEquals(-1,</b>
+<b class="fc"><i>74</i>&nbsp;                d1.getUserSecondaryDb(0).getRoomNum());</b>
+<b class="fc"><i>75</i>&nbsp;    }</b>
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;    /*****************************************************************
+<i>78</i>&nbsp;     This test clears MainDb and SecondaryDb and checks if the rooms
+<i>79</i>&nbsp;     are empty.
+<i>80</i>&nbsp;     *****************************************************************/
+<i>81</i>&nbsp;    @Test
+<i>82</i>&nbsp;    void clearDb() {
+<b class="fc"><i>83</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>84</i>&nbsp;        for (int i = 0; i &lt;= 99; i++) {</b>
+<b class="fc"><i>85</i>&nbsp;            user u = new user(&quot;Steven Villarreal&quot;,</b>
+<i>86</i>&nbsp;                    &quot;6168342323&quot;, &quot;villarst@mail.com&quot;, 1,
+<i>87</i>&nbsp;                    &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>88</i>&nbsp;            d1.addUser(u);</b>
+<i>89</i>&nbsp;        }
+<b class="fc"><i>90</i>&nbsp;        d1.clearDb();</b>
+<b class="fc"><i>91</i>&nbsp;        for (int i = 0; i &lt; 300; i++) {</b>
+<b class="fc"><i>92</i>&nbsp;            Assert.assertFalse(d1.getRooms(i));</b>
+<i>93</i>&nbsp;        }
+<i>94</i>&nbsp;
+<b class="fc"><i>95</i>&nbsp;    }</b>
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;    /*****************************************************************
+<i>98</i>&nbsp;     This test adds users to MainDb and checks if the rooms are equal
+<i>99</i>&nbsp;     to what they should be.
+<i>100</i>&nbsp;     *****************************************************************/
+<i>101</i>&nbsp;    @Test
+<i>102</i>&nbsp;    void viewRoom() {
+<b class="fc"><i>103</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>104</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>105</i>&nbsp;                &quot;villarst@mail.com&quot;, 1, &quot;villarst&quot;,
+<i>106</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>107</i>&nbsp;        d1.addUser(u);</b>
+<b class="fc"><i>108</i>&nbsp;        user u1 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>109</i>&nbsp;                &quot;villarst@mail.com&quot;, 2, &quot;villarst&quot;,
+<i>110</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>111</i>&nbsp;        d1.addUser(u1);</b>
+<b class="fc"><i>112</i>&nbsp;        user u2 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>113</i>&nbsp;                &quot;villarst@mail.com&quot;, 3, &quot;villarst&quot;,
+<i>114</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>115</i>&nbsp;        d1.addUser(u2);</b>
+<b class="fc"><i>116</i>&nbsp;        Assert.assertEquals(0, d1.viewRoom(0));</b>
+<b class="fc"><i>117</i>&nbsp;        Assert.assertEquals(100, d1.viewRoom(1));</b>
+<b class="fc"><i>118</i>&nbsp;        Assert.assertEquals(200, d1.viewRoom(2));</b>
+<b class="fc"><i>119</i>&nbsp;    }</b>
+<i>120</i>&nbsp;
+<i>121</i>&nbsp;    /*****************************************************************
+<i>122</i>&nbsp;     This test checks if the user returned is equal to the user added.
+<i>123</i>&nbsp;     *****************************************************************/
+<i>124</i>&nbsp;    @Test
+<i>125</i>&nbsp;    void getUser() {
+<b class="fc"><i>126</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>127</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>128</i>&nbsp;                &quot;villarst@mail.com&quot;, 1, 0,
+<i>129</i>&nbsp;                &quot;villarst&quot;, &quot;1234&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>130</i>&nbsp;        d1.addUser(u);</b>
+<b class="fc"><i>131</i>&nbsp;        Assert.assertEquals(u, d1.getUser(0));</b>
+<b class="fc"><i>132</i>&nbsp;    }</b>
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;    /*****************************************************************
+<i>135</i>&nbsp;     This test checks if the user returned is equal to u2.
+<i>136</i>&nbsp;     *****************************************************************/
+<i>137</i>&nbsp;    @Test
+<i>138</i>&nbsp;    void findUser() {
+<b class="fc"><i>139</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>140</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>141</i>&nbsp;                &quot;villarst@mail.com&quot;, 1, &quot;villarst&quot;,
+<i>142</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>143</i>&nbsp;        d1.addUser(u);</b>
+<b class="fc"><i>144</i>&nbsp;        user u1 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>145</i>&nbsp;                &quot;villarst@mail.com&quot;, 2, &quot;villarst&quot;,
+<i>146</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>147</i>&nbsp;        d1.addUser(u1);</b>
+<b class="fc"><i>148</i>&nbsp;        user u2 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>149</i>&nbsp;                &quot;villarst@mail.com&quot;, 1, &quot;villarst&quot;,
+<i>150</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>151</i>&nbsp;        d1.addUser(u2);</b>
+<b class="fc"><i>152</i>&nbsp;        Assert.assertEquals(u2, d1.findUser(u2));</b>
+<b class="fc"><i>153</i>&nbsp;    }</b>
+<i>154</i>&nbsp;
+<i>155</i>&nbsp;    /*****************************************************************
+<i>156</i>&nbsp;     This test adds users to the database and then removes them and
+<i>157</i>&nbsp;     checks if they are no longer in there
+<i>158</i>&nbsp;     *****************************************************************/
+<i>159</i>&nbsp;    @Test
+<i>160</i>&nbsp;    void removeUser() {
+<b class="fc"><i>161</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>162</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>163</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>164</i>&nbsp;                1, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>165</i>&nbsp;        d1.addUser(u);</b>
+<b class="fc"><i>166</i>&nbsp;        user u1 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>167</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>168</i>&nbsp;                2, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>169</i>&nbsp;        d1.addUser(u1);</b>
+<b class="fc"><i>170</i>&nbsp;        user u2 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>171</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>172</i>&nbsp;                3, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>173</i>&nbsp;        d1.addUser(u2);</b>
+<i>174</i>&nbsp;
+<b class="fc"><i>175</i>&nbsp;        d1.removeUser(u);</b>
+<b class="fc"><i>176</i>&nbsp;        d1.removeUser(u1);</b>
+<b class="fc"><i>177</i>&nbsp;        d1.removeUser(u2);</b>
+<b class="fc"><i>178</i>&nbsp;        Assert.assertEquals(false, d1.getRooms(0));</b>
+<b class="fc"><i>179</i>&nbsp;        Assert.assertEquals(false, d1.getRooms(100));</b>
+<b class="fc"><i>180</i>&nbsp;        Assert.assertEquals(false, d1.getRooms(200));</b>
+<i>181</i>&nbsp;
+<b class="fc"><i>182</i>&nbsp;    }</b>
+<i>183</i>&nbsp;
+<i>184</i>&nbsp;    /*****************************************************************
+<i>185</i>&nbsp;     This test adds users searches for the added users
+<i>186</i>&nbsp;     *****************************************************************/
+<i>187</i>&nbsp;    @Test
+<i>188</i>&nbsp;    void searchUser() {
+<b class="fc"><i>189</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>190</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>191</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>192</i>&nbsp;                1, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>193</i>&nbsp;        d1.addUser(u);</b>
+<b class="fc"><i>194</i>&nbsp;        user u1 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>195</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>196</i>&nbsp;                2, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>197</i>&nbsp;        d1.addUser(u1);</b>
+<b class="fc"><i>198</i>&nbsp;        user u2 = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>199</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>200</i>&nbsp;                3, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>201</i>&nbsp;        d1.addUser(u2);</b>
+<i>202</i>&nbsp;
+<b class="fc"><i>203</i>&nbsp;        d1.searchUser(u);</b>
+<b class="fc"><i>204</i>&nbsp;        d1.searchUser(u1);</b>
+<b class="fc"><i>205</i>&nbsp;        d1.searchUser(u2);</b>
+<b class="fc"><i>206</i>&nbsp;        Assert.assertEquals(false, d1.getRooms(0));</b>
+<b class="fc"><i>207</i>&nbsp;        Assert.assertEquals(false, d1.getRooms(100));</b>
+<b class="fc"><i>208</i>&nbsp;        Assert.assertEquals(false, d1.getRooms(200));</b>
+<b class="fc"><i>209</i>&nbsp;    }</b>
+<i>210</i>&nbsp;
+<i>211</i>&nbsp;    /*****************************************************************
+<i>212</i>&nbsp;     This test checks checks if the user does exist with password
+<i>213</i>&nbsp;     *****************************************************************/
+<i>214</i>&nbsp;    @Test
+<i>215</i>&nbsp;    void searchSecondary1() {
+<b class="fc"><i>216</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>217</i>&nbsp;        user a = new user(&quot;Bob Nichols&quot;, &quot;7412345481&quot;,</b>
+<i>218</i>&nbsp;                &quot;bobn@att.com&quot;, &quot;bobbyboi&quot;,
+<i>219</i>&nbsp;                0, &quot;12/25/87&quot;);
+<b class="fc"><i>220</i>&nbsp;        d1.addAdmin(a);</b>
+<b class="fc"><i>221</i>&nbsp;        Assert.assertEquals(true, d1.searchSecondary(a.getPassword()));</b>
+<b class="fc"><i>222</i>&nbsp;    }</b>
+<i>223</i>&nbsp;
+<i>224</i>&nbsp;    /*****************************************************************
+<i>225</i>&nbsp;     This test just checks if the user actually exists in secondaryDb
+<i>226</i>&nbsp;     *****************************************************************/
+<i>227</i>&nbsp;    @Test
+<i>228</i>&nbsp;    void searchSecondary2() {
+<b class="fc"><i>229</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>230</i>&nbsp;        user a = new user(&quot;Bob Nichols&quot;, &quot;7412345481&quot;,</b>
+<i>231</i>&nbsp;                &quot;bobn@att.com&quot;, &quot;bobbyboi&quot;,
+<i>232</i>&nbsp;                0, &quot;12/25/87&quot;);
+<b class="fc"><i>233</i>&nbsp;        d1.addAdmin(a);</b>
+<b class="fc"><i>234</i>&nbsp;        Assert.assertEquals(false, d1.searchSecondary(&quot;not right&quot;</b>
+<i>235</i>&nbsp;        ));
+<b class="fc"><i>236</i>&nbsp;    }</b>
+<i>237</i>&nbsp;
+<i>238</i>&nbsp;    /*****************************************************************
+<i>239</i>&nbsp;     This test gets the user that was just added to the secondary
+<i>240</i>&nbsp;     database
+<i>241</i>&nbsp;     *****************************************************************/
+<i>242</i>&nbsp;    @Test
+<i>243</i>&nbsp;    void getUserSecondaryDb() {
+<b class="fc"><i>244</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>245</i>&nbsp;        user a = new user(&quot;Bob Nichols&quot;, &quot;7412345481&quot;,</b>
+<i>246</i>&nbsp;                &quot;bobn@att.com&quot;, &quot;bobbyboi&quot;,
+<i>247</i>&nbsp;                0, &quot;12/25/87&quot;);
+<b class="fc"><i>248</i>&nbsp;        d1.addAdmin(a);</b>
+<b class="fc"><i>249</i>&nbsp;        Assert.assertEquals(a, d1.getUserSecondaryDb(0));</b>
+<b class="fc"><i>250</i>&nbsp;    }</b>
+<i>251</i>&nbsp;
+<i>252</i>&nbsp;    /*****************************************************************
+<i>253</i>&nbsp;     This test adds a user then loads the database and checks if that
+<i>254</i>&nbsp;     user is in there
+<i>255</i>&nbsp;     *****************************************************************/
+<i>256</i>&nbsp;    @Test
+<i>257</i>&nbsp;    void addUserFromLoad() {
+<b class="fc"><i>258</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>259</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>260</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>261</i>&nbsp;                1, 0, &quot;villarst&quot;,  &quot;1234&quot;,
+<i>262</i>&nbsp;                &quot;03/27/00&quot;);
+<b class="fc"><i>263</i>&nbsp;        d1.addUserFromLoad(u);</b>
+<b class="fc"><i>264</i>&nbsp;        Assert.assertEquals(u, d1.getUser(0));</b>
+<b class="fc"><i>265</i>&nbsp;    }</b>
+<i>266</i>&nbsp;
+<i>267</i>&nbsp;    /*****************************************************************
+<i>268</i>&nbsp;     This test adds users and checks the size of the database
+<i>269</i>&nbsp;     *****************************************************************/
+<i>270</i>&nbsp;    @Test
+<i>271</i>&nbsp;    void secondaryDbSize() {
+<b class="fc"><i>272</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>273</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>274</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>275</i>&nbsp;                0, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>276</i>&nbsp;        d1.addAdmin(u);</b>
+<b class="fc"><i>277</i>&nbsp;        user u2 = new user(&quot;Corey R&quot;, &quot;6168342729&quot;,</b>
+<i>278</i>&nbsp;                &quot;ricecore@mail.gvsu.edu&quot;, 0,
+<i>279</i>&nbsp;                &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>280</i>&nbsp;        d1.addAdmin(u2);</b>
+<b class="fc"><i>281</i>&nbsp;        user u3 = new user(&quot;Jason&quot;, &quot;6168342729&quot;,</b>
+<i>282</i>&nbsp;                &quot;kaipjaso@mail.gvsu.edu&quot;, 0,
+<i>283</i>&nbsp;                &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>284</i>&nbsp;        d1.addAdmin(u3);</b>
+<i>285</i>&nbsp;
+<b class="fc"><i>286</i>&nbsp;        Assert.assertEquals(3,d1.secondaryDbSize());</b>
+<b class="fc"><i>287</i>&nbsp;    }</b>
+<i>288</i>&nbsp;
+<i>289</i>&nbsp;    /*****************************************************************
+<i>290</i>&nbsp;     This test checks the toString method for the users credentials
+<i>291</i>&nbsp;     to see if they match in the data base
+<i>292</i>&nbsp;     *****************************************************************/
+<i>293</i>&nbsp;    @Test
+<i>294</i>&nbsp;    void testToString1() {
+<b class="fc"><i>295</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>296</i>&nbsp;        user u = new user(&quot;Steven Villarreal&quot;, &quot;6168342323&quot;,</b>
+<i>297</i>&nbsp;                &quot;villarst@mail.com&quot;,
+<i>298</i>&nbsp;                1, &quot;villarst&quot;, &quot;03/27/00&quot;);
+<b class="fc"><i>299</i>&nbsp;        d1.addUser(u);</b>
+<i>300</i>&nbsp;
+<b class="fc"><i>301</i>&nbsp;        assertEquals(&quot;Steven Villarreal , 6168342323 , &quot; +</b>
+<i>302</i>&nbsp;                &quot;villarst@mail.com , villarst , &quot; +
+<b class="fc"><i>303</i>&nbsp;                d1.getUser(0).getPassword() + &quot; , 1 , 03/27/00 , &quot; +</b>
+<b class="fc"><i>304</i>&nbsp;                d1.getUser(0).getRoomNum() + &quot;\n&quot;, d1.toString());</b>
+<b class="fc"><i>305</i>&nbsp;    }</b>
+<i>306</i>&nbsp;
+<i>307</i>&nbsp;    /*****************************************************************
+<i>308</i>&nbsp;     This test checks the toString method for the admins credentials
+<i>309</i>&nbsp;     to see if they match in the data base
+<i>310</i>&nbsp;     *****************************************************************/
+<i>311</i>&nbsp;    @Test
+<i>312</i>&nbsp;    void testToString2() {
+<b class="fc"><i>313</i>&nbsp;        database d1 = new database();</b>
+<b class="fc"><i>314</i>&nbsp;        user a = new user(&quot;Bob Nichols&quot;, &quot;7412345481&quot;,</b>
+<i>315</i>&nbsp;                &quot;bobn@att.com&quot;, &quot;bobbyboi&quot;,
+<i>316</i>&nbsp;                0, &quot;12/25/87&quot;);
+<b class="fc"><i>317</i>&nbsp;        d1.addAdmin(a);</b>
+<b class="fc"><i>318</i>&nbsp;        assertEquals(&quot;Bob Nichols , 7412345481 , bobn@att.com ,&quot; +</b>
+<i>319</i>&nbsp;                &quot; bobbyboi , &quot; +
+<b class="fc"><i>320</i>&nbsp;                d1.getUserSecondaryDb(0).getPassword() + &quot; , 0 , 12/25/87 , &quot;</b>
+<b class="fc"><i>321</i>&nbsp;                + d1.getUserSecondaryDb(0).getRoomNum() +</b>
+<b class="fc"><i>322</i>&nbsp;                &quot;\n&quot;, d1.toString());</b>
+<b class="fc"><i>323</i>&nbsp;    }</b>
+<i>324</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-17 14:20</div>
+</div>
+</body>
+</html>

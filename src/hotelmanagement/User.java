@@ -8,7 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class user implements Serializable{
+public class User implements Serializable{
     private transient SimpleStringProperty Name;
     private transient SimpleStringProperty PhoneNum;
     private transient SimpleStringProperty Email;
@@ -19,7 +19,7 @@ public class user implements Serializable{
     private transient SimpleStringProperty dob;
 
     // Used to add a user to the ObservableList<User> users array list for viewing in the table.
-    public user(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
+    public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
@@ -31,7 +31,7 @@ public class user implements Serializable{
     }
 
     // Used to add a user to the ObservableList<User> users array list with roomNum.
-    public user(String name, String phoneNum, String email, int tier, int room, String username, String pass, String dobirth) throws IllegalArgumentException{
+    public User(String name, String phoneNum, String email, int tier, int room, String username, String pass, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
@@ -50,7 +50,7 @@ public class user implements Serializable{
     }
 
     // Used to add admin to the SecondaryDb.
-    public user(String n, String num, String email, String username, int tier, String dob){
+    public User(String n, String num, String email, String username, int tier, String dob){
         this.Name = new SimpleStringProperty(n);
         if(verifyPhoneNumber(num)){
             this.PhoneNum = new SimpleStringProperty(num);
@@ -71,7 +71,7 @@ public class user implements Serializable{
     }
 
     // Used to add admin to the users <ObservableList>.
-    public user(String n, String num, String email, String username, String pass, int tier, String dob){
+    public User(String n, String num, String email, String username, String pass, int tier, String dob){
         this.Name = new SimpleStringProperty(n);
         if(verifyPhoneNumber(num)){
             this.PhoneNum = new SimpleStringProperty(num);
@@ -92,7 +92,7 @@ public class user implements Serializable{
     }
 
     // Used to load in admin to the Db
-    public user(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
+    public User(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
         this.Name = new SimpleStringProperty(n);
         if(verifyPhoneNumber(num)){
             this.PhoneNum = new SimpleStringProperty(num);

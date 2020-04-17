@@ -1,8 +1,8 @@
 package hotelmanagement;
 
-import static hotelmanagement.databaseGUI.sceneTable;
-import static hotelmanagement.databaseGUI.table;
-import static hotelmanagement.tableViewController.d;
+import static hotelmanagement.DatabaseGUI.sceneTable;
+import static hotelmanagement.DatabaseGUI.table;
+import static hotelmanagement.TableViewController.d;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,12 +16,12 @@ import javafx.scene.control.TextField;
 
 /*****************************************************************
  A class that is used to control the functionality in the
- adminLoginScene.fxml
+ AdminLoginScene.fxml
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  ****************************************************************/
 
-public class adminLoginSceneController implements Initializable {
+public class AdminLoginSceneController implements Initializable {
 
   /** Boolean variable to determine if the admin is logged in. */
   public static boolean adminLoggedIn;

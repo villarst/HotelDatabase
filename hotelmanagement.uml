@@ -3,63 +3,15 @@
   <ID>JAVA</ID>
   <OriginalElement>hotelmanagement</OriginalElement>
   <nodes>
-    <node x="665.175" y="0.0">hotelmanagement.Tier</node>
-    <node x="331.6694444444445" y="901.0">hotelmanagement.adminLoginSceneController</node>
-    <node x="460.175" y="241.0">hotelmanagement.databaseGUI</node>
-    <node x="0.0" y="732.0">hotelmanagement.database</node>
-    <node x="126.54444444444442" y="1296.0">hotelmanagement.tableViewController</node>
-    <node x="39.125" y="0.0">hotelmanagement.user</node>
+    <node x="998.0" y="0.0">hotelmanagement.databaseGUI</node>
+    <node x="347.0" y="0.0">hotelmanagement.user</node>
+    <node x="0.0" y="0.0">hotelmanagement.tableViewController</node>
+    <node x="0.0" y="975.0">hotelmanagement.adminLoginSceneController</node>
+    <node x="730.0" y="0.0">hotelmanagement.database</node>
   </nodes>
   <notes />
-  <edges>
-    <edge source="hotelmanagement.tableViewController" target="hotelmanagement.adminLoginSceneController">
-      <point x="73.5555555555556" y="-496.5" />
-      <point x="365.6" y="1276.0" />
-      <point x="397.1694444444445" y="1276.0" />
-      <point x="-65.5" y="88.0" />
-    </edge>
-    <edge source="hotelmanagement.tableViewController" target="hotelmanagement.databaseGUI">
-      <point x="147.11111111111114" y="-496.5" />
-      <point x="439.15555555555557" y="1276.0" />
-      <point x="604.1694444444445" y="1276.0" />
-      <point x="604.1694444444445" y="712.0" />
-      <point x="580.175" y="712.0" />
-      <point x="40.0" y="100.0" />
-    </edge>
-    <edge source="hotelmanagement.tableViewController" target="hotelmanagement.database">
-      <point x="-110.33333333333326" y="-496.5" />
-      <point x="181.71111111111117" y="1276.0" />
-      <point x="185.25" y="1276.0" />
-      <point x="61.75" y="257.0" />
-    </edge>
-    <edge source="hotelmanagement.adminLoginSceneController" target="hotelmanagement.tableViewController">
-      <point x="65.50000000000001" y="88.0" />
-      <point x="528.1694444444445" y="1266.0" />
-      <point x="402.37777777777774" y="1266.0" />
-      <point x="110.33333333333331" y="-496.5" />
-    </edge>
-    <edge source="hotelmanagement.tableViewController" target="hotelmanagement.user">
-      <point x="36.77777777777777" y="-496.5" />
-      <point x="328.8222222222222" y="1266.0" />
-      <point x="290.5" y="1266.0" />
-      <point x="290.5" y="712.0" />
-      <point x="385.625" y="712.0" />
-      <point x="157.5" y="341.0" />
-    </edge>
-    <edge source="hotelmanagement.adminLoginSceneController" target="hotelmanagement.databaseGUI">
-      <point x="0.0" y="-88.0" />
-      <point x="462.6694444444445" y="712.0" />
-      <point x="500.175" y="712.0" />
-      <point x="-40.0" y="100.0" />
-    </edge>
-    <edge source="hotelmanagement.database" target="hotelmanagement.user">
-      <point x="61.75" y="-257.0" />
-      <point x="185.25" y="712.0" />
-      <point x="133.625" y="712.0" />
-      <point x="-94.5" y="341.0" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic Group" zoom="0.342603550295858" x="365.5" y="1637.538860103627" />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.7514843087362172" x="573.5" y="579.5" />
   <SelectedNodes>
     <node>hotelmanagement.adminLoginSceneController</node>
   </SelectedNodes>
