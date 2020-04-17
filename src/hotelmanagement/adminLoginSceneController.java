@@ -1,8 +1,8 @@
-package HotelManagement;
+package hotelmanagement;
 
-import static HotelManagement.DatabaseGUI.sceneTable;
-import static HotelManagement.DatabaseGUI.table;
-import static HotelManagement.TableViewController.d;
+import static hotelmanagement.DatabaseGUI.sceneTable;
+import static hotelmanagement.DatabaseGUI.table;
+import static hotelmanagement.TableViewController.d;
 
 import java.net.URL;
 import java.util.ResourceBundle;

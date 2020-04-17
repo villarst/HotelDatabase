@@ -1,4 +1,4 @@
-package HotelManagement;
+package hotelmanagement;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -114,7 +114,7 @@ public class Database implements Serializable { //NOPMD
           if (!rooms[room + i]) {
             rooms[room + i] = true;
             u.setRoomNum(room + i);
-            System.out.println(u.getRoomNum());
+            System.out.println(u.getRoomNum()); //NOPMD
             break;
           }
         }

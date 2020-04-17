@@ -1,4 +1,4 @@
-package HotelManagement;
+package hotelmanagement;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -14,6 +14,7 @@ import javafx.stage.Stage;
  @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
  @version 1.0
  ****************************************************************/
+
 
 public class DatabaseGUI extends Application { //NOPMD
 
