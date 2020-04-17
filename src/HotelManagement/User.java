@@ -25,19 +25,11 @@ public class User implements Serializable{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
-//        t = new Tier(tier);
         this.password = new SimpleStringProperty(generatePassWApache());
 
-        //Verification here is redundant and causes message to popup twice.
-        //if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
-        //}
-        //if(verifyEmail(email)){
             this.Email = new SimpleStringProperty(email);
-        //}
-        //if(verifyDate(dobirth)){
             this.dob = new SimpleStringProperty(dobirth);
-        //}
     }
 
     // Used to add a user to the ObservableList<User> users array list with roomNum.
@@ -244,17 +236,20 @@ public class User implements Serializable{
             simpleDateFormatShort.setLenient(false);
             try {
                 Date javaDate = simpleDateFormatLong.parse(date);
-//                System.out.println("Verified: " + date);
             }
             catch (ParseException e) {
                 try{
                     Date javaDate = simpleDateFormatShort.parse(date);
-//                    System.out.println("Verified: " + date);
                 }
                 catch (ParseException e1){
-                    System.out.println(date + " is not a valid date. DOB not updated.");
-                    new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
-                    return false;
+                    try {
+                        System.out.println(date + " is not a valid date. DOB not updated.");
+                        new Alert(Alert.AlertType.ERROR, "Please enter a valid date of birth").showAndWait();
+                        return false;
+                    }
+                    catch(ExceptionInInitializerError i){
+                        return false;
+                    }
                 }
             }
             return true;
@@ -264,33 +259,39 @@ public class User implements Serializable{
     public static boolean verifyPhoneNumber(String newNumber){
         newNumber = newNumber.replaceAll("[\\s\\-()]", "");
         if (newNumber.matches("\\d{10}")) {
-//            System.out.println("Verified: " + newNumber);
             return true;
         }
         else{
-            // Need to have the User type in a different or valid phone number.
-            System.out.println(newNumber + " is invalid. Phone number not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
-            return false;
+            try {
+                System.out.println(newNumber + " is invalid. Phone number not updated.");
+                new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
+                return false;
+            }
+            catch(NoClassDefFoundError j){
+                return false;
+            }
         }
     }
 
     public static boolean verifyEmail(String email){
         if(email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
-//            System.out.println("Verified: " + email);
             return true;
         }
         else {
-            // Need to have the User type in a different or valid email.
-            System.out.println(email + " is invalid. E-Mail address not updated.");
-            new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
-            return false;
+            try {
+                System.out.println(email + " is invalid. E-Mail address not updated.");
+                new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
+                return false;
+            }
+            catch(NoClassDefFoundError j){
+                return false;
+            }
         }
     }
 
     // Verifies all fields are bad or good.
     public static boolean verifyAll(String email, String newNumber, String date){
-        if(verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber) == true){
+        if (verifyDate(date) && verifyEmail(email) && verifyPhoneNumber(newNumber)) {
             return true;
         }
         return false;
@@ -299,7 +300,6 @@ public class User implements Serializable{
     // To string to print the User from its memory address.
     @Override
     public String toString(){
-        // all the getters were just the variable names so getName() was Name, getPhoneNum() was PhoneNum, ETC
         return getName() + "," + getPhoneNum() + "," + getEmail() + "," + getUsername() + ","
                 + getPassword() + "," + getTier() + "," + getDob() + "," + getRoomNum();
     }
@@ -361,7 +361,9 @@ public class User implements Serializable{
                         "All Room Access: YES" + "\n" );
                 break;
             default:
+                permissions = ("No Tier inputted.");
                 System.out.println("No Tier inputted.");
+                break;
         }
         return permissions;
     }
