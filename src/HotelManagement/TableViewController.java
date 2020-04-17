@@ -231,13 +231,8 @@ public class TableViewController implements Initializable {
         }
     }
 
-    public void focusOnName(){
-        nameTextField.requestFocus();
-    }
-
     public void tierPermissionsPushed(){
-        ObservableList<User> selectedRows, allPeople;
-        allPeople = tableView.getItems();
+        ObservableList<User> selectedRows;
         // This gives us the row that was selected.
         selectedRows = tableView.getSelectionModel().getSelectedItems();
 

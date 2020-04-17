@@ -30,7 +30,6 @@ public class Database implements Serializable{
      assign rooms.
      *****************************************************************/
     public Database(){
-        // initialize the Arraylist to hold the users and initialize the rooms Array.
         MainDb = new ArrayList<User>();
         SecondaryDb = new ArrayList<User>();
         rooms = new boolean[300];
@@ -46,12 +45,18 @@ public class Database implements Serializable{
      the method that will be added.
      *****************************************************************/
     public void addUser(User u){
-        if(!checkTierFull(u.getTier() - 1)){
-            MainDb.add(u);
-            assignRoom(u);
+        try {
+            if (!checkTierFull(u.getTier() - 1)) {
+                MainDb.add(u);
+                assignRoom(u);
+            }
+            else{
+                throw new IllegalArgumentException();
+            }
         }
-        else{
-            System.out.println("Sorry rooms are full.");
+        catch(IllegalArgumentException e){
+            System.out.println("The tier level: " + u.getTier() + " is full, please" +
+                " pick a different tier.");
         }
     }
 
