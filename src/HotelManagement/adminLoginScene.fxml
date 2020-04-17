@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -42,10 +43,13 @@
       </AnchorPane>
       <AnchorPane layoutX="34.0" layoutY="49.0" prefHeight="67.0" prefWidth="413.0" style="-fx-background-color: #7FFFD4;">
          <children>
-            <Label layoutX="3.0" layoutY="2.0" prefHeight="63.0" prefWidth="413.0" text="Hotel Database System V3" textFill="#393636">
+            <Label prefHeight="69.0" prefWidth="419.0" style="-fx-border-color: #808080;" text="Hotel Database System V3" textFill="#393636" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font name="Perpetua Titling MT Bold" size="26.0" />
                </font>
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
             </Label>
          </children>
       </AnchorPane>

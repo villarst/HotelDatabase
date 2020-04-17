@@ -19,12 +19,15 @@ import static HotelManagement.DatabaseGUI.*;
 import static HotelManagement.adminLoginSceneController.adminLoggedIn;
 
 
-/**
- * Need to fix the table so it doesn't reset data every time we change scenes,
- * Also need to somehow get database involved so the table can display the room numbers.
- */
+/*****************************************************************
+ A class that is used to control the functionality in the
+ adminLoginScene.fxml
+ @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+ @version 1.0
+ ****************************************************************/
+
 public class TableViewController implements Initializable {
-    // Configure the table
+
     @FXML public TableView<User> tableView;
     @FXML public ObservableList<User> users;
     @FXML private TableColumn<User, String> nameColumn;
@@ -228,13 +231,8 @@ public class TableViewController implements Initializable {
         }
     }
 
-    public void focusOnName(){
-        nameTextField.requestFocus();
-    }
-
     public void tierPermissionsPushed(){
-        ObservableList<User> selectedRows, allPeople;
-        allPeople = tableView.getItems();
+        ObservableList<User> selectedRows;
         // This gives us the row that was selected.
         selectedRows = tableView.getSelectionModel().getSelectedItems();
 
@@ -360,27 +358,27 @@ public class TableViewController implements Initializable {
         d.addUser(new User("Corey R", "6168342729", "ricecore@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
         users.add(new User("Corey R", "6165583079", "ricecore@mail.gvsu.edu", 2,
-                d.viewRoom(1), "villarst", d.getUser(1).getPassword(), "03/27/00"));
+                d.viewRoom(1), "riceco", d.getUser(1).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
         d.addUser(new User("Corey S", "6168342729", "sutterco@mail.gvsu.edu", 2,
                 "villarst", "03/27/00"));
         users.add(new User("Corey S", "6165583079", "cutterco@mail.gvsu.edu", 2,
-                d.viewRoom(2), "villarst", d.getUser(2).getPassword(), "03/27/00"));
+                d.viewRoom(2), "sutterco", d.getUser(2).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
         d.addUser(new User("Jason", "6168342729", "kaipjaso@mail.gvsu.edu", 3,
                 "villarst", "03/27/00"));
         users.add(new User("Jason", "6165583079", "kaipjaso@mail.gvsu.edu", 3,
-                d.viewRoom(3), "villarst", d.getUser(3).getPassword(), "03/27/00"));
+                d.viewRoom(3), "kaipja", d.getUser(3).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
         d.addUser(new User("Bobby V", "6168342729", "vuerbobb@mail.gvsu.edu", 1,
                 "villarst", "03/27/00"));
         users.add(new User("Bobby V", "6165583079", "vuerbobb@mail.gvsu.edu", 1,
-                d.viewRoom(4), "villarst", d.getUser(4).getPassword(), "03/27/00"));
+                d.viewRoom(4), "VBobby", d.getUser(4).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
         d.addUser(new User("Mike J", "6168342729", "johnmike@mail.gvsu.edu", 3,
                 "villarst", "03/27/00"));
         users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
-                d.viewRoom(5), "villarst", d.getUser(5).getPassword(), "03/27/00"));
+                d.viewRoom(5), "JMike", d.getUser(5).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
         d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", "jscc1234",  0, "04/23/29"));
         users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29"));
