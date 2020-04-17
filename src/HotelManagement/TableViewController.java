@@ -19,12 +19,15 @@ import static HotelManagement.DatabaseGUI.*;
 import static HotelManagement.adminLoginSceneController.adminLoggedIn;
 
 
-/**
- * Need to fix the table so it doesn't reset data every time we change scenes,
- * Also need to somehow get database involved so the table can display the room numbers.
- */
+/*****************************************************************
+ A class that is used to control the functionality in the
+ adminLoginScene.fxml
+ @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+ @version 1.0
+ ****************************************************************/
+
 public class TableViewController implements Initializable {
-    // Configure the table
+
     @FXML public TableView<User> tableView;
     @FXML public ObservableList<User> users;
     @FXML private TableColumn<User, String> nameColumn;

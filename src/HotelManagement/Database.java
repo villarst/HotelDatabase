@@ -55,12 +55,22 @@ public class Database implements Serializable{
         }
     }
 
+    /*****************************************************************
+     Adds the user to the Arraylist of users via the load menu option.
+     @param u the User that is passed into
+     the method that will be added.
+     *****************************************************************/
     public void addUserFromLoad(User u){
         MainDb.add(u);
         u.setRoomNum(u.getRoomNum());
         rooms[u.getRoomNum()] = true;
     }
 
+    /*****************************************************************
+     Adds the Admin to the Arraylist of admins.
+     @param u the User that is passed into
+     the method that will be added.
+     *****************************************************************/
     public void addAdmin(User u){
         if(u.getTier() == 0){
             SecondaryDb.add(u);
@@ -68,6 +78,9 @@ public class Database implements Serializable{
     }
 
     // This method clears the Database, (MainDb, SecondaryDb, rooms[]
+    /*****************************************************************
+     Clears the Database consisting of MainDb, SecondaryDb and rooms[]
+     *****************************************************************/
     public void clearDb(){
         MainDb.clear();
         SecondaryDb.clear();
@@ -77,6 +90,10 @@ public class Database implements Serializable{
     }
 
     // This method returns MainDb
+    /*****************************************************************
+     Returns the MainDb arraylist.
+     @return MainDb the arrayylist to be returned
+     *****************************************************************/
     public ArrayList<User> getMainDb() {
         return MainDb;
     }
@@ -106,14 +123,30 @@ public class Database implements Serializable{
         }
     }
 
+    /*****************************************************************
+     Returns the room number at i from MainDb.
+     @param i the index passed to return MainDb(i)'s room number.
+     @return int the room number to be returned.
+     *****************************************************************/
     public int viewRoom(int i){
         return MainDb.get(i).getRoomNum();
     }
 
+    /*****************************************************************
+     Returns the user at index i in MainDb.
+     @param i the index passed to return MainDb(i).
+     @return User the user to be returned from MainDb.
+     *****************************************************************/
     public User getUser(int i){
         return MainDb.get(i);
     }
 
+    /*****************************************************************
+     Returns the user at i from MainDb (used to change the user
+     credentials when added already).
+     @param u the user passed to check if the user exists.
+     @return User the user to be returned from MainDb.
+     *****************************************************************/
     public User findUser(User u){
         User found = null;
         for(int i = 0; i < MainDb.size(); i++){
@@ -124,24 +157,21 @@ public class Database implements Serializable{
         return found;
     }
 
-
     /*****************************************************************
      Checks if the room is occupied if so returns a boolean of true
      or false.
      @param t the tier that of the User that was passed into the
      the method.
+     @return boolean for if tier is full.
      *****************************************************************/
     public boolean checkTierFull(int t){
         int tier = t * 100;
-        for(int i = tier; i <= tier + 99; i++){  // was 99
-            // This checks if any room is empty. If yes then returns false.
-            // Otherwise returns true.
+        for(int i = tier; i <= tier + 99; i++){
             if(!rooms[i])
                 return false;
         }
         return true;
     }
-
 
     /*****************************************************************
      Removes the User from the Arraylist MainDb.
@@ -154,7 +184,10 @@ public class Database implements Serializable{
         MainDb.remove(u);
     }
 
-    // this is used to delete a user from the delete button in tableView
+    /*****************************************************************
+     Removes the User from the Arraylist MainDb by checking password.
+     @param u the User that is wanting to be removed.
+     *****************************************************************/
     public void searchUser(User u){
         for(int i = 0; i < MainDb.size(); i++){
             if(MainDb.get(i).getPassword() == u.getPassword()){
@@ -164,7 +197,11 @@ public class Database implements Serializable{
         }
     }
 
-    // this is used to search for a user in SecondaryDb
+    /*****************************************************************
+     Checks if the password passed is present in SecondaryDb.
+     @param pass the password that is used to check for if Admin exists.
+     @return returns if the Admin exists in SecondaryDb or not.
+     *****************************************************************/
     public boolean searchSecondary(String pass){
         boolean found = true;
         for(int i = 0; i < SecondaryDb.size(); i++){
@@ -178,20 +215,28 @@ public class Database implements Serializable{
         return found;
     }
 
+    /*****************************************************************
+     Removes the User from the Arraylist SecondaryDb.
+     @param i the index specified.
+     @return the user to be returned from SecondaryDb.
+     *****************************************************************/
     public User getUserSecondaryDb(int i){
         return SecondaryDb.get(i);
     }
 
-    // returns size of the SecondaryDb
+    /*****************************************************************
+     Returns the size of the SecondaryDb.
+     @return the size of SecondaryDb
+     *****************************************************************/
     public int secondaryDbSize(){
         return SecondaryDb.size();
     }
 
-    public int mainDbSize(){
-        return MainDb.size();
-    }
-
     // To string for the Database
+    /*****************************************************************
+     Returns a string that has each field seperated by a ",".
+     @return the string of each User or Admin
+     *****************************************************************/
     @Override
     public String toString(){
         String result = "";
