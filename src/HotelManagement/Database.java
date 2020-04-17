@@ -45,17 +45,12 @@ public class Database implements Serializable{
      the method that will be added.
      *****************************************************************/
     public void addUser(User u){
-        try {
-            if (!checkTierFull(u.getTier() - 1)) {
-                MainDb.add(u);
-                assignRoom(u);
-            }
-            else{
-                throw new IllegalArgumentException();
-            }
+        if (!checkTierFull(u.getTier() - 1)) {
+            MainDb.add(u);
+            assignRoom(u);
         }
-        catch(IllegalArgumentException e){
-            throw new IllegalArgumentException();
+        else{
+            System.out.println("The tier is full, please select a different tier.");
         }
     }
 
@@ -78,6 +73,7 @@ public class Database implements Serializable{
     public void addAdmin(User u){
         if(u.getTier() == 0){
             SecondaryDb.add(u);
+            assignRoom(u);
         }
     }
 
@@ -93,15 +89,22 @@ public class Database implements Serializable{
         }
     }
 
-    // This method returns MainDb
-    /*****************************************************************
-     Returns the MainDb arraylist.
-     @return MainDb the arrayylist to be returned
-     *****************************************************************/
-    public ArrayList<User> getMainDb() {
-        return MainDb;
-    }
+//    // This method returns MainDb
+//    /*****************************************************************
+//     Returns the MainDb arraylist.
+//     @return MainDb the arrayylist to be returned
+//     *****************************************************************/
+//    public ArrayList<User> getMainDb() {
+//        return MainDb;
+//    }
 
+    /*****************************************************************
+     Returns true or false depending on if the room is occupied.
+     @return boolean for if the room is occupied.
+     *****************************************************************/
+    public boolean getRooms(int num) {
+        return rooms[num];
+    }
 
     /*****************************************************************
      Assigns the room to the user that was just added to the Arraylist.
@@ -209,11 +212,9 @@ public class Database implements Serializable{
     public boolean searchSecondary(String pass){
         boolean found = true;
         for(int i = 0; i < SecondaryDb.size(); i++){
-            if(pass.equals(SecondaryDb.get(i).getPassword())){
-                found = true;
-            }
-            else{
+            if(!pass.equals(SecondaryDb.get(i).getPassword())) {
                 found = false;
+                break;
             }
         }
         return found;
@@ -258,5 +259,4 @@ public class Database implements Serializable{
         }
         return result;
     }
-
 }

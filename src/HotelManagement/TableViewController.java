@@ -380,9 +380,9 @@ public class TableViewController implements Initializable {
         users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
                 d.viewRoom(5), "JMike", d.getUser(5).getPassword(), "03/27/00"));
 ////--------------------------------------------------------------------------------------------------------------------
-        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", "jscc1234",  0, "04/23/29"));
+        d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN",
+                "jscc1234",  0, "04/23/29"));
         users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN", d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29"));
-        System.out.println("Admin Tier level: " + users.get(6).getTier());
         return users;
     }
 }
