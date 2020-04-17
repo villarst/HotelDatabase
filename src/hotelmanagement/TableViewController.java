@@ -304,12 +304,10 @@ public class TableViewController implements Initializable { //NOPMD
               if (selectedRow.size() == 1) { //NOPMD
                 allPeople.remove(u);
                 d.removeUser(u);
-                System.out.println("Check"); //NOPMD
                 break; //NOPMD
               } else {
                 d.searchUser(u);
                 allPeople.remove(u);
-                System.out.println("Check"); //NOPMD
               }
             }
           }
@@ -379,8 +377,7 @@ public class TableViewController implements Initializable { //NOPMD
         outWriter.write(u.toString());
         outWriter.newLine();
       }
-      System.out.println(userObservableList.toString()); //NOPMD
-      System.out.println(d.getUserSecondaryDb(0)); //NOPMD
+
       outWriter.close();
     } catch (IOException e) {
       final Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
@@ -401,7 +398,6 @@ public class TableViewController implements Initializable { //NOPMD
   public void loadFile() {
     try {
       final String filePath = new File("").getAbsolutePath();
-      System.out.println(filePath); //NOPMD
       BufferedReader br = new BufferedReader(new FileReader(new File(filePath + //NOPMD
               "/src/hotelmanagement/TestFile.txt")));
       String line;
@@ -421,7 +417,6 @@ public class TableViewController implements Initializable { //NOPMD
                   Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]))); //NOPMD
         }
       }
-      System.out.println(); //NOPMD
 
       br.close();
 
@@ -511,7 +506,6 @@ public class TableViewController implements Initializable { //NOPMD
             "jscc1234",  0, "04/23/29"));
     users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN",
             d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29")); //NOPMD
-    System.out.println("Admin Tier level: " + users.get(6).getTier()); //NOPMD
 
     return users;
   }
