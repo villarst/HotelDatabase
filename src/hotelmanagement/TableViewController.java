@@ -1,4 +1,4 @@
-package HotelManagement;
+package hotelmanagement;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,8 +15,8 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static HotelManagement.DatabaseGUI.*;
-import static HotelManagement.adminLoginSceneController.adminLoggedIn;
+import static hotelmanagement.DatabaseGUI.*;
+import static hotelmanagement.adminLoginSceneController.adminLoggedIn;
 
 
 /*****************************************************************
@@ -288,7 +288,7 @@ public class TableViewController implements Initializable {
             String filePath = new File("").getAbsolutePath();
             System.out.println (filePath);
             BufferedReader br = new BufferedReader(new FileReader(new File(filePath +
-                    "/src/HotelManagement/TestFile.txt")));
+                    "/src/hotelmanagement/TestFile.txt")));
             String line;
             String[] array;
 

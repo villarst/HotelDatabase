@@ -1,4 +1,4 @@
-package HotelManagement;
+package hotelmanagement;
 
 import java.io.IOException;
 import javafx.application.Application;

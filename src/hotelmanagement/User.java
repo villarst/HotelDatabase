@@ -1,4 +1,4 @@
-package HotelManagement;
+package hotelmanagement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Alert;
 import org.apache.commons.lang3.RandomStringUtils;
