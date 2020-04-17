@@ -2,7 +2,7 @@ package HotelManagement;
 
 import static HotelManagement.DatabaseGUI.sceneTable;
 import static HotelManagement.DatabaseGUI.table;
-import static HotelManagement.TableViewController.d; //NOPMD
+import static HotelManagement.TableViewController.d;
 
 import java.net.URL;
 import java.util.ResourceBundle;
