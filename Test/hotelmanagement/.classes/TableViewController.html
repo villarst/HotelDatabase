@@ -1,0 +1,601 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TableViewController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">hotelmanagement</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TableViewController (hotelmanagement)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TableViewController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 21)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 185)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package hotelmanagement;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import static hotelmanagement.AdminLoginSceneController.adminLoggedIn;
+<i>4</i>&nbsp;import static hotelmanagement.DatabaseGUI.sceneAdmin;
+<i>5</i>&nbsp;import static hotelmanagement.DatabaseGUI.table;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.io.BufferedReader;
+<i>8</i>&nbsp;import java.io.BufferedWriter;
+<i>9</i>&nbsp;import java.io.File;
+<i>10</i>&nbsp;import java.io.FileReader;
+<i>11</i>&nbsp;import java.io.FileWriter;
+<i>12</i>&nbsp;import java.io.IOException;
+<i>13</i>&nbsp;import java.net.URL;
+<i>14</i>&nbsp;import java.util.ResourceBundle;
+<i>15</i>&nbsp;import javafx.collections.FXCollections;
+<i>16</i>&nbsp;import javafx.collections.ObservableList;
+<i>17</i>&nbsp;import javafx.fxml.FXML;
+<i>18</i>&nbsp;import javafx.fxml.Initializable;
+<i>19</i>&nbsp;import javafx.scene.control.Alert;
+<i>20</i>&nbsp;import javafx.scene.control.Button;
+<i>21</i>&nbsp;import javafx.scene.control.ButtonType;
+<i>22</i>&nbsp;import javafx.scene.control.ComboBox;
+<i>23</i>&nbsp;import javafx.scene.control.TableColumn;
+<i>24</i>&nbsp;import javafx.scene.control.TableView;
+<i>25</i>&nbsp;import javafx.scene.control.TextField;
+<i>26</i>&nbsp;import javafx.scene.control.cell.PropertyValueFactory;
+<i>27</i>&nbsp;import javafx.scene.control.cell.TextFieldTableCell;
+<i>28</i>&nbsp;import javafx.stage.FileChooser;
+<i>29</i>&nbsp;import javafx.stage.Stage;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;/*****************************************************************
+<i>33</i>&nbsp; TableViewController sets up the commands and uses needed for the
+<i>34</i>&nbsp; TableView.fxml file.
+<i>35</i>&nbsp; @author Steven Villarreal, Corey Rice, Corey Sutter, Jason Kaip
+<i>36</i>&nbsp; @version 1.0
+<i>37</i>&nbsp; ****************************************************************/
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;
+<b class="nc"><i>40</i>&nbsp;public class TableViewController implements Initializable { //NOPMD</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;  /** Table View FX object. */
+<i>43</i>&nbsp;  @FXML public TableView&lt;User&gt; tableView; //NOPMD
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;  /** List FX object. */
+<i>46</i>&nbsp;  @FXML public ObservableList&lt;User&gt; users; //NOPMD
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;  /** Table column FX object for name. */
+<i>49</i>&nbsp;  @FXML private TableColumn&lt;User, String&gt; nameColumn; //NOPMD
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;  /** Table column FX object for phone number. */
+<i>52</i>&nbsp;  @FXML private TableColumn&lt;User, String&gt; phoneNumColumn; //NOPMD
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;  /** Table column FX object for email. */
+<i>55</i>&nbsp;  @FXML private TableColumn&lt;User, String&gt; emailColumn; //NOPMD
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;  /** Table column FX object for username. */
+<i>58</i>&nbsp;  @FXML private TableColumn&lt;User, String&gt; userNameColumn; //NOPMD
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;  /** Table column FX object for password. */
+<i>61</i>&nbsp;  @FXML private TableColumn&lt;User, String&gt; passwordColumn; //NOPMD
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;  /** Table column FX object for tier. */
+<i>64</i>&nbsp;  @FXML private TableColumn&lt;User, Integer&gt; tierColumn; //NOPMD
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;  /** Table column FX object for DOB. */
+<i>67</i>&nbsp;  @FXML private TableColumn&lt;User, String&gt; dateofbirthColumn; //NOPMD
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;  /** Table column FX object for room number. */
+<i>70</i>&nbsp;  @FXML private TableColumn&lt;User, Integer&gt; roomNum; //NOPMD
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;  /** Text field FX object for entering name. */
+<i>73</i>&nbsp;  @FXML private TextField nameTextField; //NOPMD
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;  /** Text field FX object for entering phone number. */
+<i>76</i>&nbsp;  @FXML private TextField phoneNumTextField; //NOPMD
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;  /** Text field FX object for entering email. */
+<i>79</i>&nbsp;  @FXML private TextField emailTextField; //NOPMD
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;  /** Text field FX object for entering username. */
+<i>82</i>&nbsp;  @FXML private TextField userNameTextField; //NOPMD
+<i>83</i>&nbsp;
+<i>84</i>&nbsp;  /** Text field FX object for entering DOB. */
+<i>85</i>&nbsp;  @FXML private TextField dobTextField; //NOPMD
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;  /** Button FX object for admin login. */
+<i>88</i>&nbsp;  @FXML private Button btnLoginAdmin; //NOPMD
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;  /** Button FX object for deleting users. */
+<i>91</i>&nbsp;  @FXML private Button btnDelete; //NOPMD
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;  /** Combo box FX object for selecting tier. */
+<i>94</i>&nbsp;  @FXML private ComboBox&lt;Integer&gt; comboBox; //NOPMD
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;  /** Database of users. */
+<b class="nc"><i>97</i>&nbsp;  public static Database d = new Database();//NOPMD</b>
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;  /*****************************************************************
+<i>101</i>&nbsp;   Changes the name of a table cell when selected.
+<i>102</i>&nbsp;   @param editedCell the cell to be changed
+<i>103</i>&nbsp;    *****************************************************************/
+<i>104</i>&nbsp;  public void changeNameColumn(final TableColumn.CellEditEvent editedCell) {
+<b class="nc"><i>105</i>&nbsp;    final User userSelected = tableView.getSelectionModel().getSelectedItem(); //NOPMD</b>
+<i>106</i>&nbsp;
+<b class="nc"><i>107</i>&nbsp;    if (!editedCell.getNewValue().toString().equals(&quot;&quot;)) { //NOPMD</b>
+<b class="nc"><i>108</i>&nbsp;      d.findUser(userSelected).setName(editedCell.getNewValue().toString()); //NOPMD</b>
+<b class="nc"><i>109</i>&nbsp;      userSelected.setName(editedCell.getNewValue().toString()); //NOPMD</b>
+<i>110</i>&nbsp;    } else {
+<b class="nc"><i>111</i>&nbsp;      alertErrorName();</b>
+<b class="nc"><i>112</i>&nbsp;      tableView.refresh();</b>
+<b class="nc"><i>113</i>&nbsp;      userSelected.setName(d.findUser(userSelected).getName()); //NOPMD</b>
+<i>114</i>&nbsp;    }
+<i>115</i>&nbsp;  }
+<i>116</i>&nbsp;
+<i>117</i>&nbsp;
+<i>118</i>&nbsp;  /*****************************************************************
+<i>119</i>&nbsp;   Changes the email of a table cell when selected.
+<i>120</i>&nbsp;   @param editedCell the cell to be changed
+<i>121</i>&nbsp;   *****************************************************************/
+<i>122</i>&nbsp;  public void changeEmailColumn(final TableColumn.CellEditEvent editedCell) {
+<b class="nc"><i>123</i>&nbsp;    final User userSelected = tableView.getSelectionModel().getSelectedItem(); //NOPMD</b>
+<i>124</i>&nbsp;
+<b class="nc"><i>125</i>&nbsp;    if (d.findUser(userSelected).setEmail(editedCell.getNewValue().toString())) { //NOPMD</b>
+<b class="nc"><i>126</i>&nbsp;      userSelected.setEmail(editedCell.getNewValue().toString()); //NOPMD</b>
+<i>127</i>&nbsp;    } else {
+<b class="nc"><i>128</i>&nbsp;      alertErrorEmail();</b>
+<b class="nc"><i>129</i>&nbsp;      tableView.refresh();</b>
+<b class="nc"><i>130</i>&nbsp;      userSelected.setEmail(d.findUser(userSelected).getEmail()); //NOPMD</b>
+<i>131</i>&nbsp;    }
+<i>132</i>&nbsp;  }
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;
+<i>135</i>&nbsp;  /*****************************************************************
+<i>136</i>&nbsp;   Changes the phone number of a table cell when selected.
+<i>137</i>&nbsp;   @param editedCell the cell to be changed
+<i>138</i>&nbsp;   *****************************************************************/
+<i>139</i>&nbsp;  public void changePhoneNumColumn(final TableColumn.CellEditEvent editedCell) {
+<b class="nc"><i>140</i>&nbsp;    final User userSelected = tableView.getSelectionModel().getSelectedItem(); //NOPMD</b>
+<i>141</i>&nbsp;
+<b class="nc"><i>142</i>&nbsp;    if (d.findUser(userSelected).setPhoneNum(editedCell.getNewValue().toString())) { //NOPMD</b>
+<b class="nc"><i>143</i>&nbsp;      userSelected.setPhoneNum(editedCell.getNewValue().toString()); //NOPMD</b>
+<i>144</i>&nbsp;    } else {
+<b class="nc"><i>145</i>&nbsp;      alertErrorPhoneNum();</b>
+<b class="nc"><i>146</i>&nbsp;      tableView.refresh();</b>
+<b class="nc"><i>147</i>&nbsp;      userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum()); //NOPMD</b>
+<i>148</i>&nbsp;    }
+<i>149</i>&nbsp;  }
+<i>150</i>&nbsp;
+<i>151</i>&nbsp;
+<i>152</i>&nbsp;  /*****************************************************************
+<i>153</i>&nbsp;   Displays info about the program when the menu item is selected.
+<i>154</i>&nbsp;   *****************************************************************/
+<i>155</i>&nbsp;  public void alertAbout() {
+<b class="nc"><i>156</i>&nbsp;    final Alert alert = new Alert(Alert.AlertType.INFORMATION);</b>
+<i>157</i>&nbsp;
+<b class="nc"><i>158</i>&nbsp;    alert.setTitle(&quot;Application Info&quot;);</b>
+<b class="nc"><i>159</i>&nbsp;    alert.setHeaderText(&quot;Hotel Database&quot;);</b>
+<b class="nc"><i>160</i>&nbsp;    alert.setContentText(&quot;Created by: Steven Villarreal, Corey Rice,\n\t\t +&quot;</b>
+<i>161</i>&nbsp;            + &quot;   Jason Kaip, Corey Sutter\n\n&quot;
+<i>162</i>&nbsp;            + &quot;This application serves as a Hotel Database System that can add, delete users.&quot;
+<i>163</i>&nbsp;            + &quot; Admin can login and edit fields of User(s). Only \&quot;Name\&quot;, \&quot;Phone #\&quot;, \&quot;Email\&quot;,&quot;
+<i>164</i>&nbsp;            + &quot; are editable.&quot;);
+<b class="nc"><i>165</i>&nbsp;    alert.showAndWait();</b>
+<i>166</i>&nbsp;  }
+<i>167</i>&nbsp;
+<i>168</i>&nbsp;
+<i>169</i>&nbsp;  /*****************************************************************
+<i>170</i>&nbsp;   Displays an error if the ADMIN types something wrong into adding
+<i>171</i>&nbsp;   a user.
+<i>172</i>&nbsp;   *****************************************************************/
+<i>173</i>&nbsp;  public void alertError() {
+<b class="nc"><i>174</i>&nbsp;    final Alert alert = new Alert(Alert.AlertType.ERROR);</b>
+<i>175</i>&nbsp;
+<b class="nc"><i>176</i>&nbsp;    alert.setTitle(&quot;Error&quot;); //NOPMD</b>
+<b class="nc"><i>177</i>&nbsp;    alert.showAndWait();</b>
+<i>178</i>&nbsp;  }
+<i>179</i>&nbsp;
+<i>180</i>&nbsp;
+<i>181</i>&nbsp;  /*****************************************************************
+<i>182</i>&nbsp;   Displays an error if the ADMIN types something wrong into adding
+<i>183</i>&nbsp;   a name for a user.
+<i>184</i>&nbsp;   *****************************************************************/
+<i>185</i>&nbsp;  public void alertErrorName() {
+<b class="nc"><i>186</i>&nbsp;    final Alert alert = new Alert(Alert.AlertType.ERROR);</b>
+<i>187</i>&nbsp;
+<b class="nc"><i>188</i>&nbsp;    alert.setTitle(&quot;Error&quot;);</b>
+<b class="nc"><i>189</i>&nbsp;    alert.setHeaderText(&quot;Name is invalid.&quot;);</b>
+<b class="nc"><i>190</i>&nbsp;    alert.showAndWait();</b>
+<i>191</i>&nbsp;  }
+<i>192</i>&nbsp;
+<i>193</i>&nbsp;
+<i>194</i>&nbsp;  /*****************************************************************
+<i>195</i>&nbsp;   Displays an error if the ADMIN types something wrong
+<i>196</i>&nbsp;   into adding a phone number for a user.
+<i>197</i>&nbsp;   *****************************************************************/
+<i>198</i>&nbsp;  public void alertErrorPhoneNum() {
+<b class="nc"><i>199</i>&nbsp;    final Alert alert = new Alert(Alert.AlertType.ERROR);</b>
+<i>200</i>&nbsp;
+<b class="nc"><i>201</i>&nbsp;    alert.setTitle(&quot;Error&quot;);</b>
+<b class="nc"><i>202</i>&nbsp;    alert.setHeaderText(&quot;Phone # is invalid length of characters.&quot;);</b>
+<b class="nc"><i>203</i>&nbsp;    alert.showAndWait();</b>
+<i>204</i>&nbsp;  }
+<i>205</i>&nbsp;
+<i>206</i>&nbsp;
+<i>207</i>&nbsp;  /*****************************************************************
+<i>208</i>&nbsp;   Displays an error if the ADMIN types something wrong
+<i>209</i>&nbsp;   into adding an email for a user.
+<i>210</i>&nbsp;   *****************************************************************/
+<i>211</i>&nbsp;  public void alertErrorEmail() {
+<b class="nc"><i>212</i>&nbsp;    final Alert alert = new Alert(Alert.AlertType.ERROR);</b>
+<i>213</i>&nbsp;
+<b class="nc"><i>214</i>&nbsp;    alert.setTitle(&quot;Error&quot;);</b>
+<b class="nc"><i>215</i>&nbsp;    alert.setHeaderText(&quot;Email is invalid.&quot;);</b>
+<b class="nc"><i>216</i>&nbsp;    alert.showAndWait();</b>
+<i>217</i>&nbsp;  }
+<i>218</i>&nbsp;
+<i>219</i>&nbsp;
+<i>220</i>&nbsp;  /*****************************************************************
+<i>221</i>&nbsp;   Displays an error if the ADMIN types something wrong
+<i>222</i>&nbsp;   into adding a phone number, email, or DOB for a user.
+<i>223</i>&nbsp;   *****************************************************************/
+<i>224</i>&nbsp;  public void alertAll() {
+<b class="nc"><i>225</i>&nbsp;    final Alert alert = new Alert(Alert.AlertType.ERROR);</b>
+<i>226</i>&nbsp;
+<b class="nc"><i>227</i>&nbsp;    alert.setTitle(&quot;Error&quot;);</b>
+<b class="nc"><i>228</i>&nbsp;    alert.setHeaderText(&quot;Please check Phone #, Email, or Date of Birth.&quot;);</b>
+<b class="nc"><i>229</i>&nbsp;    alert.showAndWait();</b>
+<i>230</i>&nbsp;  }
+<i>231</i>&nbsp;
+<i>232</i>&nbsp;
+<i>233</i>&nbsp;  /*****************************************************************
+<i>234</i>&nbsp;   Displays an error if an attempt to delete the ADMIN is made.
+<i>235</i>&nbsp;   *****************************************************************/
+<i>236</i>&nbsp;  public void alertInfo() {
+<b class="nc"><i>237</i>&nbsp;    final Alert alert = new Alert(Alert.AlertType.INFORMATION);</b>
+<i>238</i>&nbsp;
+<b class="nc"><i>239</i>&nbsp;    alert.setTitle(&quot;Important&quot;);</b>
+<b class="nc"><i>240</i>&nbsp;    alert.setHeaderText(&quot;No User to Delete and or cannot delete ADMIN&quot;);</b>
+<b class="nc"><i>241</i>&nbsp;    alert.showAndWait();</b>
+<i>242</i>&nbsp;  }
+<i>243</i>&nbsp;
+<i>244</i>&nbsp;
+<i>245</i>&nbsp;  /*****************************************************************
+<i>246</i>&nbsp;   Creates a new User and adds it to the table and database.
+<i>247</i>&nbsp;   *****************************************************************/
+<i>248</i>&nbsp;  public void newUserButtonPushed() {
+<i>249</i>&nbsp;    try {
+<b class="nc"><i>250</i>&nbsp;      User u = new User(nameTextField.getText(), //NOPMD</b>
+<b class="nc"><i>251</i>&nbsp;              phoneNumTextField.getText(),</b>
+<b class="nc"><i>252</i>&nbsp;              emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),</b>
+<b class="nc"><i>253</i>&nbsp;              dobTextField.getText());</b>
+<i>254</i>&nbsp;      // Verifies if email, phone #, and date of birth are valid
+<i>255</i>&nbsp;      // Then adds the user to database then table.
+<b class="nc"><i>256</i>&nbsp;      if (u.verifyAll(emailTextField.getText(), phoneNumTextField.getText(),</b>
+<b class="nc"><i>257</i>&nbsp;              dobTextField.getText())) {</b>
+<b class="nc"><i>258</i>&nbsp;        d.addUser(u);</b>
+<b class="nc"><i>259</i>&nbsp;        nameTextField.clear();</b>
+<b class="nc"><i>260</i>&nbsp;        phoneNumTextField.clear();</b>
+<b class="nc"><i>261</i>&nbsp;        emailTextField.clear();</b>
+<b class="nc"><i>262</i>&nbsp;        userNameTextField.clear();</b>
+<b class="nc"><i>263</i>&nbsp;        dobTextField.clear();</b>
+<b class="nc"><i>264</i>&nbsp;        comboBox.setValue(null);</b>
+<b class="nc"><i>265</i>&nbsp;        tableView.getItems().add(u); //NOPMD</b>
+<i>266</i>&nbsp;      } else {
+<b class="nc"><i>267</i>&nbsp;        alertAll();</b>
+<i>268</i>&nbsp;      }
+<b class="nc"><i>269</i>&nbsp;    } catch (Exception e) { //NOPMD</b>
+<b class="nc"><i>270</i>&nbsp;      alertError();</b>
+<b class="nc"><i>271</i>&nbsp;    }</b>
+<i>272</i>&nbsp;  }
+<i>273</i>&nbsp;
+<i>274</i>&nbsp;
+<i>275</i>&nbsp;  /*****************************************************************
+<i>276</i>&nbsp;   Logs the ADMIN out when the button is pressed.
+<i>277</i>&nbsp;   *****************************************************************/
+<i>278</i>&nbsp;  public void logoutAdmin() {
+<b class="nc"><i>279</i>&nbsp;    if (adminLoggedIn) {</b>
+<b class="nc"><i>280</i>&nbsp;      table.setTitle(&quot;Admin Login Screen&quot;);</b>
+<b class="nc"><i>281</i>&nbsp;      table.setScene(sceneAdmin);</b>
+<b class="nc"><i>282</i>&nbsp;      adminLoggedIn = false;</b>
+<i>283</i>&nbsp;    }
+<i>284</i>&nbsp;  }
+<i>285</i>&nbsp;
+<i>286</i>&nbsp;
+<i>287</i>&nbsp;  /*****************************************************************
+<i>288</i>&nbsp;   Deletes a selected user from the database.
+<i>289</i>&nbsp;   *****************************************************************/
+<i>290</i>&nbsp;  public void deleteButtonPushed() {
+<i>291</i>&nbsp;    ObservableList&lt;User&gt; selectedRow;
+<i>292</i>&nbsp;    ObservableList&lt;User&gt; allPeople;
+<i>293</i>&nbsp;
+<b class="nc"><i>294</i>&nbsp;    allPeople = tableView.getItems(); //NOPMD</b>
+<i>295</i>&nbsp;
+<i>296</i>&nbsp;    // This gives us the row that was selected.
+<i>297</i>&nbsp;    try {
+<b class="nc"><i>298</i>&nbsp;      selectedRow = tableView.getSelectionModel().getSelectedItems(); //NOPMD</b>
+<b class="nc"><i>299</i>&nbsp;      if (selectedRow.size() != 0) { //NOPMD</b>
+<b class="nc"><i>300</i>&nbsp;        if (adminLoggedIn &amp;&amp; !tableView.getSelectionModel() //NOPMD</b>
+<b class="nc"><i>301</i>&nbsp;                .getSelectedItem().getName().equals(&quot;ADMIN&quot;)) { //NOPMD</b>
+<b class="nc"><i>302</i>&nbsp;          if (allPeople != null) {</b>
+<b class="nc"><i>303</i>&nbsp;            for (final User u : selectedRow) {</b>
+<b class="nc"><i>304</i>&nbsp;              if (selectedRow.size() == 1) { //NOPMD</b>
+<b class="nc"><i>305</i>&nbsp;                allPeople.remove(u);</b>
+<b class="nc"><i>306</i>&nbsp;                d.removeUser(u);</b>
+<b class="nc"><i>307</i>&nbsp;                System.out.println(&quot;Check&quot;); //NOPMD</b>
+<b class="nc"><i>308</i>&nbsp;                break; //NOPMD</b>
+<i>309</i>&nbsp;              } else {
+<b class="nc"><i>310</i>&nbsp;                d.searchUser(u);</b>
+<b class="nc"><i>311</i>&nbsp;                allPeople.remove(u);</b>
+<b class="nc"><i>312</i>&nbsp;                System.out.println(&quot;Check&quot;); //NOPMD</b>
+<i>313</i>&nbsp;              }
+<b class="nc"><i>314</i>&nbsp;            }</b>
+<i>315</i>&nbsp;          }
+<i>316</i>&nbsp;        } else {
+<b class="nc"><i>317</i>&nbsp;          alertInfo();</b>
+<i>318</i>&nbsp;        }
+<i>319</i>&nbsp;      } else {
+<b class="nc"><i>320</i>&nbsp;        alertError();</b>
+<i>321</i>&nbsp;      }
+<b class="nc"><i>322</i>&nbsp;    } catch (Exception e) { //NOPMD</b>
+<b class="nc"><i>323</i>&nbsp;      alertError();</b>
+<b class="nc"><i>324</i>&nbsp;    }</b>
+<i>325</i>&nbsp;  }
+<i>326</i>&nbsp;
+<i>327</i>&nbsp;
+<i>328</i>&nbsp;  /*****************************************************************
+<i>329</i>&nbsp;   Displays the tier permissions for a selected user.
+<i>330</i>&nbsp;   *****************************************************************/
+<i>331</i>&nbsp;  public void tierPermissionsPushed() {
+<i>332</i>&nbsp;    ObservableList&lt;User&gt; selectedRows;
+<i>333</i>&nbsp;
+<i>334</i>&nbsp;    // This gives us the row that was selected.
+<b class="nc"><i>335</i>&nbsp;    selectedRows = tableView.getSelectionModel().getSelectedItems(); //NOPMD</b>
+<i>336</i>&nbsp;
+<i>337</i>&nbsp;
+<b class="nc"><i>338</i>&nbsp;    if (selectedRows.size() != 0) { //NOPMD</b>
+<b class="nc"><i>339</i>&nbsp;      for (final User u : selectedRows) {</b>
+<b class="nc"><i>340</i>&nbsp;        final Alert alert = new Alert(Alert.AlertType.INFORMATION); //NOPMD</b>
+<b class="nc"><i>341</i>&nbsp;        alert.setTitle(&quot;Tier Info&quot;);</b>
+<b class="nc"><i>342</i>&nbsp;        alert.setHeaderText(&quot;Info for Tier: &quot; + u.getTier());</b>
+<b class="nc"><i>343</i>&nbsp;        alert.setContentText(u.returnPermissions(u.getTier()));</b>
+<b class="nc"><i>344</i>&nbsp;        alert.showAndWait();</b>
+<b class="nc"><i>345</i>&nbsp;      }</b>
+<i>346</i>&nbsp;    } else {
+<b class="nc"><i>347</i>&nbsp;      alertError();</b>
+<i>348</i>&nbsp;    }
+<i>349</i>&nbsp;  }
+<i>350</i>&nbsp;
+<i>351</i>&nbsp;
+<i>352</i>&nbsp;  /*****************************************************************
+<i>353</i>&nbsp;   Displays a prompt for saving a file.
+<i>354</i>&nbsp;   *****************************************************************/
+<i>355</i>&nbsp;  public void handleSave() {
+<b class="nc"><i>356</i>&nbsp;    final Stage secondaryStage = new Stage();</b>
+<b class="nc"><i>357</i>&nbsp;    final FileChooser fileChooser = new FileChooser();</b>
+<i>358</i>&nbsp;
+<b class="nc"><i>359</i>&nbsp;    fileChooser.setTitle(&quot;Save User Table&quot;);</b>
+<b class="nc"><i>360</i>&nbsp;    fileChooser.setInitialDirectory(new File(System.getProperty(&quot;user.home&quot;)));</b>
+<i>361</i>&nbsp;
+<b class="nc"><i>362</i>&nbsp;    final File file = fileChooser.showSaveDialog(secondaryStage);</b>
+<i>363</i>&nbsp;
+<b class="nc"><i>364</i>&nbsp;    if (file != null) {</b>
+<b class="nc"><i>365</i>&nbsp;      saveFile(tableView.getItems(), file);</b>
+<i>366</i>&nbsp;    }
+<i>367</i>&nbsp;  }
+<i>368</i>&nbsp;
+<i>369</i>&nbsp;  /*****************************************************************
+<i>370</i>&nbsp;   Saves the database to file.
+<i>371</i>&nbsp;   @param userObservableList the database list to be saved.
+<i>372</i>&nbsp;   @param file the file to save to.
+<i>373</i>&nbsp;   *****************************************************************/
+<i>374</i>&nbsp;  public void saveFile(ObservableList&lt;User&gt; userObservableList, File file) { //NOPMD
+<i>375</i>&nbsp;    try {
+<b class="nc"><i>376</i>&nbsp;      final BufferedWriter outWriter = new BufferedWriter(new FileWriter(file + &quot;.txt&quot;));//NOPMD</b>
+<i>377</i>&nbsp;
+<b class="nc"><i>378</i>&nbsp;      for (final User u : userObservableList) {</b>
+<b class="nc"><i>379</i>&nbsp;        outWriter.write(u.toString());</b>
+<b class="nc"><i>380</i>&nbsp;        outWriter.newLine();</b>
+<b class="nc"><i>381</i>&nbsp;      }</b>
+<b class="nc"><i>382</i>&nbsp;      System.out.println(userObservableList.toString()); //NOPMD</b>
+<b class="nc"><i>383</i>&nbsp;      System.out.println(d.getUserSecondaryDb(0)); //NOPMD</b>
+<b class="nc"><i>384</i>&nbsp;      outWriter.close();</b>
+<b class="nc"><i>385</i>&nbsp;    } catch (IOException e) {</b>
+<b class="nc"><i>386</i>&nbsp;      final Alert ioAlert = new Alert(Alert.AlertType.ERROR, &quot;OOPS!&quot;, ButtonType.OK);</b>
+<i>387</i>&nbsp;
+<b class="nc"><i>388</i>&nbsp;      ioAlert.setContentText(&quot;Sorry. An error has occurred.&quot;);</b>
+<b class="nc"><i>389</i>&nbsp;      ioAlert.showAndWait();</b>
+<i>390</i>&nbsp;
+<b class="nc"><i>391</i>&nbsp;      if (ioAlert.getResult() == ButtonType.OK) {</b>
+<b class="nc"><i>392</i>&nbsp;        ioAlert.close();</b>
+<i>393</i>&nbsp;      }
+<b class="nc"><i>394</i>&nbsp;    }</b>
+<i>395</i>&nbsp;  }
+<i>396</i>&nbsp;
+<i>397</i>&nbsp;
+<i>398</i>&nbsp;  /*****************************************************************
+<i>399</i>&nbsp;   Loads a database file from the hotelmanagement folder.
+<i>400</i>&nbsp;   *****************************************************************/
+<i>401</i>&nbsp;  public void loadFile() {
+<i>402</i>&nbsp;    try {
+<b class="nc"><i>403</i>&nbsp;      final String filePath = new File(&quot;&quot;).getAbsolutePath();</b>
+<b class="nc"><i>404</i>&nbsp;      System.out.println(filePath); //NOPMD</b>
+<b class="nc"><i>405</i>&nbsp;      BufferedReader br = new BufferedReader(new FileReader(new File(filePath + //NOPMD</b>
+<i>406</i>&nbsp;              &quot;/src/hotelmanagement/TestFile.txt&quot;)));
+<i>407</i>&nbsp;      String line;
+<i>408</i>&nbsp;      String[] array;
+<i>409</i>&nbsp;
+<b class="nc"><i>410</i>&nbsp;      d.clearDb();</b>
+<b class="nc"><i>411</i>&nbsp;      users.clear();</b>
+<b class="nc"><i>412</i>&nbsp;      while ((line = br.readLine()) != null) { //NOPMD</b>
+<b class="nc"><i>413</i>&nbsp;        array = line.split(&quot;,&quot;); //NOPMD</b>
+<b class="nc"><i>414</i>&nbsp;        users.add(new User(array[0], array[1], array[2], array[3], array[4], //NOPMD</b>
+<b class="nc"><i>415</i>&nbsp;                Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]))); //NOPMD</b>
+<b class="nc"><i>416</i>&nbsp;        if (Integer.parseInt(array[5]) == 0) { //NOPMD</b>
+<b class="nc"><i>417</i>&nbsp;          d.addAdmin(new User(array[0], array[1], array[2], array[3], array[4], //NOPMD</b>
+<b class="nc"><i>418</i>&nbsp;                  Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]))); //NOPMD</b>
+<i>419</i>&nbsp;        } else {
+<b class="nc"><i>420</i>&nbsp;          d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4], //NOPMD</b>
+<b class="nc"><i>421</i>&nbsp;                  Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]))); //NOPMD</b>
+<i>422</i>&nbsp;        }
+<i>423</i>&nbsp;      }
+<b class="nc"><i>424</i>&nbsp;      System.out.println(); //NOPMD</b>
+<i>425</i>&nbsp;
+<b class="nc"><i>426</i>&nbsp;      br.close();</b>
+<i>427</i>&nbsp;
+<b class="nc"><i>428</i>&nbsp;    } catch (Exception ex) { //NOPMD</b>
+<b class="nc"><i>429</i>&nbsp;      ex.printStackTrace(); //NOPMD</b>
+<b class="nc"><i>430</i>&nbsp;    }</b>
+<i>431</i>&nbsp;  }
+<i>432</i>&nbsp;
+<i>433</i>&nbsp;
+<i>434</i>&nbsp;  /*****************************************************************
+<i>435</i>&nbsp;   Exits the program when the exit menu item is selected.
+<i>436</i>&nbsp;   *****************************************************************/
+<i>437</i>&nbsp;  public void exitButton() {
+<b class="nc"><i>438</i>&nbsp;    System.exit(0); //NOPMD</b>
+<i>439</i>&nbsp;  }
+<i>440</i>&nbsp;
+<i>441</i>&nbsp;
+<i>442</i>&nbsp;  /*****************************************************************
+<i>443</i>&nbsp;   Initializes the table to be displayed.
+<i>444</i>&nbsp;   @param url FX url.
+<i>445</i>&nbsp;   @param resourceBundle FX resource bundle.
+<i>446</i>&nbsp;   *****************************************************************/
+<i>447</i>&nbsp;  @Override
+<i>448</i>&nbsp;  public void initialize(final URL url, final ResourceBundle resourceBundle) {
+<i>449</i>&nbsp;    // Sets up the Columns in the table
+<b class="nc"><i>450</i>&nbsp;    assert comboBox != null : &quot;fx:id=\&quot;comboBox\&quot; was not injected:&quot;</b>
+<i>451</i>&nbsp;            + &quot; check your FXML file &#39;TableView.fxml&#39;.&quot;;
+<b class="nc"><i>452</i>&nbsp;    btnDelete.setVisible(true);</b>
+<b class="nc"><i>453</i>&nbsp;    comboBox.getItems().setAll(1,2,3); //NOPMD</b>
+<b class="nc"><i>454</i>&nbsp;    btnLoginAdmin.setText(&quot;Logout&quot;);</b>
+<b class="nc"><i>455</i>&nbsp;    nameColumn.setCellValueFactory(new PropertyValueFactory&lt;User, String&gt;(&quot;name&quot;));</b>
+<b class="nc"><i>456</i>&nbsp;    phoneNumColumn.setCellValueFactory(new PropertyValueFactory&lt;User, String&gt;(&quot;PhoneNum&quot;));</b>
+<b class="nc"><i>457</i>&nbsp;    emailColumn.setCellValueFactory(new PropertyValueFactory&lt;User, String&gt;(&quot;Email&quot;));</b>
+<b class="nc"><i>458</i>&nbsp;    userNameColumn.setCellValueFactory(new PropertyValueFactory&lt;User, String&gt;(&quot;username&quot;));</b>
+<b class="nc"><i>459</i>&nbsp;    passwordColumn.setCellValueFactory(new PropertyValueFactory&lt;User, String&gt;(&quot;password&quot;));</b>
+<b class="nc"><i>460</i>&nbsp;    tierColumn.setCellValueFactory(new PropertyValueFactory&lt;User, Integer&gt;(&quot;tier&quot;));</b>
+<b class="nc"><i>461</i>&nbsp;    dateofbirthColumn.setCellValueFactory(new PropertyValueFactory&lt;User, String&gt;(&quot;dob&quot;));</b>
+<b class="nc"><i>462</i>&nbsp;    roomNum.setCellValueFactory(new PropertyValueFactory&lt;User, Integer&gt;(&quot;roomNum&quot;));</b>
+<i>463</i>&nbsp;
+<i>464</i>&nbsp;    // load dummy data
+<b class="nc"><i>465</i>&nbsp;    tableView.setItems(getUsers());</b>
+<i>466</i>&nbsp;
+<i>467</i>&nbsp;    // Update the table to allow for the Name, Email, and Phone # to be editable.
+<b class="nc"><i>468</i>&nbsp;    tableView.setEditable(true);</b>
+<b class="nc"><i>469</i>&nbsp;    nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());</b>
+<b class="nc"><i>470</i>&nbsp;    emailColumn.setCellFactory(TextFieldTableCell.forTableColumn());</b>
+<b class="nc"><i>471</i>&nbsp;    phoneNumColumn.setCellFactory(TextFieldTableCell.forTableColumn());</b>
+<i>472</i>&nbsp;  }
+<i>473</i>&nbsp;
+<i>474</i>&nbsp;
+<i>475</i>&nbsp;  /*****************************************************************
+<i>476</i>&nbsp;   Creates a list of users for the database.
+<i>477</i>&nbsp;   *****************************************************************/
+<i>478</i>&nbsp;  public ObservableList&lt;User&gt; getUsers() {
+<b class="nc"><i>479</i>&nbsp;    users = FXCollections.observableArrayList();</b>
+<b class="nc"><i>480</i>&nbsp;    d.addUser(new User(&quot;Steven&quot;, &quot;6168342729&quot;, &quot;villarst@mail.gvsu.edu&quot;, 1, //NOPMD</b>
+<i>481</i>&nbsp;            &quot;villarst&quot;, &quot;03/27/00&quot;)); //NOPMD
+<b class="nc"><i>482</i>&nbsp;    users.add(new User(&quot;Steven&quot;, &quot;6168342729&quot;, &quot;villarst@mail.gvsu.edu&quot;, 1,</b>
+<b class="nc"><i>483</i>&nbsp;            d.viewRoom(0), &quot;villarst&quot;, d.getUser(0).getPassword(), &quot;03/27/00&quot;)); //NOPMD</b>
+<i>484</i>&nbsp;    ////-------------------------------------------------------------------
+<b class="nc"><i>485</i>&nbsp;    d.addUser(new User(&quot;Corey R&quot;, &quot;6168342729&quot;, &quot;ricecore@mail.gvsu.edu&quot;, 2,</b>
+<i>486</i>&nbsp;            &quot;riceco&quot;, &quot;03/27/00&quot;));
+<b class="nc"><i>487</i>&nbsp;    users.add(new User(&quot;Corey R&quot;, &quot;6165583079&quot;, &quot;ricecore@mail.gvsu.edu&quot;, 2, //NOPMD</b>
+<b class="nc"><i>488</i>&nbsp;            d.viewRoom(1), &quot;riceco&quot;, d.getUser(1).getPassword(), &quot;03/27/00&quot;)); //NOPMD</b>
+<i>489</i>&nbsp;    ////-------------------------------------------------------------------
+<b class="nc"><i>490</i>&nbsp;    d.addUser(new User(&quot;Corey S&quot;, &quot;6168342729&quot;, &quot;sutterco@mail.gvsu.edu&quot;, 2,</b>
+<i>491</i>&nbsp;            &quot;sutterco&quot;, &quot;03/27/00&quot;));
+<b class="nc"><i>492</i>&nbsp;    users.add(new User(&quot;Corey S&quot;, &quot;6165583079&quot;, &quot;cutterco@mail.gvsu.edu&quot;, 2,</b>
+<b class="nc"><i>493</i>&nbsp;            d.viewRoom(2), &quot;sutterco&quot;, d.getUser(2).getPassword(), &quot;03/27/00&quot;)); //NOPMD</b>
+<i>494</i>&nbsp;    ////-------------------------------------------------------------------
+<b class="nc"><i>495</i>&nbsp;    d.addUser(new User(&quot;Jason&quot;, &quot;6168342729&quot;, &quot;kaipjaso@mail.gvsu.edu&quot;, 3,</b>
+<i>496</i>&nbsp;            &quot;kaipja&quot;, &quot;03/27/00&quot;));
+<b class="nc"><i>497</i>&nbsp;    users.add(new User(&quot;Jason&quot;, &quot;6165583079&quot;, &quot;kaipjaso@mail.gvsu.edu&quot;, 3,</b>
+<b class="nc"><i>498</i>&nbsp;            d.viewRoom(3), &quot;kaipja&quot;, d.getUser(3).getPassword(), &quot;03/27/00&quot;)); //NOPMD</b>
+<i>499</i>&nbsp;    ////-------------------------------------------------------------------
+<b class="nc"><i>500</i>&nbsp;    d.addUser(new User(&quot;Bobby V&quot;, &quot;6168342729&quot;, &quot;vuerbobb@mail.gvsu.edu&quot;, 1,</b>
+<i>501</i>&nbsp;            &quot;VBobby&quot;, &quot;03/27/00&quot;));
+<b class="nc"><i>502</i>&nbsp;    users.add(new User(&quot;Bobby V&quot;, &quot;6165583079&quot;, &quot;vuerbobb@mail.gvsu.edu&quot;, 1,</b>
+<b class="nc"><i>503</i>&nbsp;            d.viewRoom(4), &quot;VBobby&quot;, d.getUser(4).getPassword(), &quot;03/27/00&quot;)); //NOPMD</b>
+<i>504</i>&nbsp;    ////-------------------------------------------------------------------
+<b class="nc"><i>505</i>&nbsp;    d.addUser(new User(&quot;Mike J&quot;, &quot;6168342729&quot;, &quot;johnmike@mail.gvsu.edu&quot;, 3,</b>
+<i>506</i>&nbsp;            &quot;JMike&quot;, &quot;03/27/00&quot;));
+<b class="nc"><i>507</i>&nbsp;    users.add(new User(&quot;Mike J&quot;, &quot;6165583079&quot;, &quot;johnmike@mail.gvsu.edu&quot;, 3,</b>
+<b class="nc"><i>508</i>&nbsp;            d.viewRoom(5), &quot;JMike&quot;, d.getUser(5).getPassword(), &quot;03/27/00&quot;)); //NOPMD</b>
+<i>509</i>&nbsp;    ////-------------------------------------------------------------------
+<b class="nc"><i>510</i>&nbsp;    d.addAdmin(new User(&quot;ADMIN&quot;, &quot;9999999999&quot;, &quot;admin@login.com&quot;, &quot;ADMIN&quot;,</b>
+<i>511</i>&nbsp;            &quot;jscc1234&quot;,  0, &quot;04/23/29&quot;));
+<b class="nc"><i>512</i>&nbsp;    users.add(new User(&quot;ADMIN&quot;, &quot;9999999999&quot;, &quot;admin@login.com&quot;, &quot;ADMIN&quot;,</b>
+<b class="nc"><i>513</i>&nbsp;            d.getUserSecondaryDb(0).getPassword(), 0, &quot;04/23/29&quot;)); //NOPMD</b>
+<b class="nc"><i>514</i>&nbsp;    System.out.println(&quot;Admin Tier level: &quot; + users.get(6).getTier()); //NOPMD</b>
+<i>515</i>&nbsp;
+<b class="nc"><i>516</i>&nbsp;    return users;</b>
+<i>517</i>&nbsp;  }
+<i>518</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-04-17 16:15</div>
+</div>
+</body>
+</html>
