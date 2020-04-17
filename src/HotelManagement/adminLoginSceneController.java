@@ -2,7 +2,7 @@ package HotelManagement;
 
 import static HotelManagement.DatabaseGUI.sceneTable;
 import static HotelManagement.DatabaseGUI.table;
-import static HotelManagement.TableViewController.d; //NOPMD
+import static HotelManagement.TableViewController.d;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,7 +28,7 @@ public class adminLoginSceneController implements Initializable { //NOPMD
   public static boolean adminLoggedIn;
 
   /** Text fields for entering the password. */
-  @FXML public PasswordField passwordTextField; //NOPMD
+  @FXML public PasswordField passwordTextField;//NOPMD
 
   /** Text fields for entering the username. */
   @FXML public TextField usernameTextField; //NOPMD
