@@ -18,26 +18,16 @@ public class User implements Serializable{
     private int tier;
     private transient SimpleStringProperty dob;
 
-//    public Tier t;
-
     // Used to add a user to the ObservableList<User> users array list for viewing in the table.
     public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
-//        t = new Tier(tier);
         this.password = new SimpleStringProperty(generatePassWApache());
 
-        //Verification here is redundant and causes message to popup twice.
-        //if(verifyPhoneNumber(phoneNum)){
             this.PhoneNum = new SimpleStringProperty(phoneNum);
-        //}
-        //if(verifyEmail(email)){
             this.Email = new SimpleStringProperty(email);
-        //}
-        //if(verifyDate(dobirth)){
             this.dob = new SimpleStringProperty(dobirth);
-        //}
     }
 
     // Used to add a user to the ObservableList<User> users array list with roomNum.
@@ -80,7 +70,6 @@ public class User implements Serializable{
         }
     }
 
-
     // Used to add admin to the users <ObservableList>.
     public User(String n, String num, String email, String username, String pass, int tier, String dob){
         this.Name = new SimpleStringProperty(n);
@@ -101,7 +90,6 @@ public class User implements Serializable{
             this.dob = new SimpleStringProperty(dob);
         }
     }
-
 
     // Used to load in admin to the Db
     public User(String n, String num, String email, String username, String pass, int tier, String dob, int roomNum){
@@ -126,7 +114,6 @@ public class User implements Serializable{
         }
         this.roomNum = roomNum;
     }
-
 
     public String resetAll(){
         Name = null;
@@ -243,12 +230,10 @@ public class User implements Serializable{
             simpleDateFormatShort.setLenient(false);
             try {
                 Date javaDate = simpleDateFormatLong.parse(date);
-//                System.out.println("Verified: " + date);
             }
             catch (ParseException e) {
                 try{
                     Date javaDate = simpleDateFormatShort.parse(date);
-//                    System.out.println("Verified: " + date);
                 }
                 catch (ParseException e1){
                     try {
@@ -268,11 +253,9 @@ public class User implements Serializable{
     public static boolean verifyPhoneNumber(String newNumber){
         newNumber = newNumber.replaceAll("[\\s\\-()]", "");
         if (newNumber.matches("\\d{10}")) {
-//            System.out.println("Verified: " + newNumber);
             return true;
         }
         else{
-            // Need to have the User type in a different or valid phone number.
             try {
                 System.out.println(newNumber + " is invalid. Phone number not updated.");
                 new Alert(Alert.AlertType.ERROR, "Please enter a valid phone number").showAndWait();
@@ -286,11 +269,9 @@ public class User implements Serializable{
 
     public static boolean verifyEmail(String email){
         if(email.matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$")) {
-//            System.out.println("Verified: " + email);
             return true;
         }
         else {
-            // Need to have the User type in a different or valid email.
             try {
                 System.out.println(email + " is invalid. E-Mail address not updated.");
                 new Alert(Alert.AlertType.ERROR, "Please enter a valid email").showAndWait();
