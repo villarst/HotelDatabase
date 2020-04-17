@@ -55,8 +55,7 @@ public class Database implements Serializable{
             }
         }
         catch(IllegalArgumentException e){
-            System.out.println("The tier level: " + u.getTier() + " is full, please" +
-                " pick a different tier.");
+            throw new IllegalArgumentException();
         }
     }
 
