@@ -21,27 +21,21 @@ public class User implements Serializable{
 //    public Tier t;
 
     // Used to add a user to the ObservableList<User> users array list for viewing in the table.
-    public User(String name, String phoneNum, String email, int tier, String username, String dobirth) throws IllegalArgumentException{
+    public User(String name, String phoneNum, String email, int tier, String username, String dobirth)
+            throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
-//        t = new Tier(tier);
         this.password = new SimpleStringProperty(generatePassWApache());
+        this.PhoneNum = new SimpleStringProperty(phoneNum);
+        this.Email = new SimpleStringProperty(email);
+        this.dob = new SimpleStringProperty(dobirth);
 
-        //Verification here is redundant and causes message to popup twice.
-        //if(verifyPhoneNumber(phoneNum)){
-            this.PhoneNum = new SimpleStringProperty(phoneNum);
-        //}
-        //if(verifyEmail(email)){
-            this.Email = new SimpleStringProperty(email);
-        //}
-        //if(verifyDate(dobirth)){
-            this.dob = new SimpleStringProperty(dobirth);
-        //}
     }
 
     // Used to add a user to the ObservableList<User> users array list with roomNum.
-    public User(String name, String phoneNum, String email, int tier, int room, String username, String pass, String dobirth) throws IllegalArgumentException{
+    public User(String name, String phoneNum, String email, int tier, int room, String username,
+                String pass, String dobirth) throws IllegalArgumentException{
         this.Name = new SimpleStringProperty(name);
         this.username = new SimpleStringProperty(username);
         this.tier = tier;
