@@ -22,16 +22,16 @@ import javafx.scene.control.TextField;
  ****************************************************************/
 
 
-public class AdminLoginSceneController implements Initializable { //NOPMD
+public class AdminLoginSceneController implements Initializable {
 
   /** Boolean variable to determine if the admin is logged in. */
   public static boolean adminLoggedIn;
 
   /** Text fields for entering the password. */
-  @FXML public PasswordField passwordTextField;//NOPMD
+  @FXML public PasswordField passwordTextField;
 
   /** Text fields for entering the username. */
-  @FXML public TextField usernameTextField; //NOPMD
+  @FXML public TextField usernameTextField;
 
 
   /*****************************************************************
@@ -75,7 +75,7 @@ public class AdminLoginSceneController implements Initializable { //NOPMD
    *****************************************************************/
   @Override
   public void initialize(
-          final URL url, final ResourceBundle resourceBundle) { //NOPMD
+          final URL url, final ResourceBundle resourceBundle) {
 
   }
 }

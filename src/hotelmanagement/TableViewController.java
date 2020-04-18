@@ -37,64 +37,64 @@ import javafx.stage.Stage;
  ****************************************************************/
 
 
-public class TableViewController implements Initializable { //NOPMD
+public class TableViewController implements Initializable { 
 
   /** Table View FX object. */
-  @FXML public TableView<User> tableView; //NOPMD
+  @FXML public TableView<User> tableView; 
 
   /** List FX object. */
-  @FXML public ObservableList<User> users; //NOPMD
+  @FXML public ObservableList<User> users; 
 
   /** Table column FX object for name. */
-  @FXML private TableColumn<User, String> nameColumn; //NOPMD
+  @FXML private TableColumn<User, String> nameColumn; 
 
   /** Table column FX object for phone number. */
-  @FXML private TableColumn<User, String> phoneNumColumn; //NOPMD
+  @FXML private TableColumn<User, String> phoneNumColumn; 
 
   /** Table column FX object for email. */
-  @FXML private TableColumn<User, String> emailColumn; //NOPMD
+  @FXML private TableColumn<User, String> emailColumn; 
 
   /** Table column FX object for username. */
-  @FXML private TableColumn<User, String> userNameColumn; //NOPMD
+  @FXML private TableColumn<User, String> userNameColumn; 
 
   /** Table column FX object for password. */
-  @FXML private TableColumn<User, String> passwordColumn; //NOPMD
+  @FXML private TableColumn<User, String> passwordColumn; 
 
   /** Table column FX object for tier. */
-  @FXML private TableColumn<User, Integer> tierColumn; //NOPMD
+  @FXML private TableColumn<User, Integer> tierColumn; 
 
   /** Table column FX object for DOB. */
-  @FXML private TableColumn<User, String> dateofbirthColumn; //NOPMD
+  @FXML private TableColumn<User, String> dateofbirthColumn; 
 
   /** Table column FX object for room number. */
-  @FXML private TableColumn<User, Integer> roomNum; //NOPMD
+  @FXML private TableColumn<User, Integer> roomNum; 
 
   /** Text field FX object for entering name. */
-  @FXML private TextField nameTextField; //NOPMD
+  @FXML private TextField nameTextField; 
 
   /** Text field FX object for entering phone number. */
-  @FXML private TextField phoneNumTextField; //NOPMD
+  @FXML private TextField phoneNumTextField; 
 
   /** Text field FX object for entering email. */
-  @FXML private TextField emailTextField; //NOPMD
+  @FXML private TextField emailTextField; 
 
   /** Text field FX object for entering username. */
-  @FXML private TextField userNameTextField; //NOPMD
+  @FXML private TextField userNameTextField; 
 
   /** Text field FX object for entering DOB. */
-  @FXML private TextField dobTextField; //NOPMD
+  @FXML private TextField dobTextField; 
 
   /** Button FX object for admin login. */
-  @FXML private Button btnLoginAdmin; //NOPMD
+  @FXML private Button btnLoginAdmin; 
 
   /** Button FX object for deleting users. */
-  @FXML private Button btnDelete; //NOPMD
+  @FXML private Button btnDelete; 
 
   /** Combo box FX object for selecting tier. */
-  @FXML private ComboBox<Integer> comboBox; //NOPMD
+  @FXML private ComboBox<Integer> comboBox; 
 
   /** Database of users. */
-  public static Database d = new Database();//NOPMD
+  public static Database d = new Database();
 
 
   /*****************************************************************
@@ -102,15 +102,15 @@ public class TableViewController implements Initializable { //NOPMD
    @param editedCell the cell to be changed
     *****************************************************************/
   public void changeNameColumn(final TableColumn.CellEditEvent editedCell) {
-    final User userSelected = tableView.getSelectionModel().getSelectedItem(); //NOPMD
+    final User userSelected = tableView.getSelectionModel().getSelectedItem(); 
 
-    if (!editedCell.getNewValue().toString().equals("")) { //NOPMD
-      d.findUser(userSelected).setName(editedCell.getNewValue().toString()); //NOPMD
-      userSelected.setName(editedCell.getNewValue().toString()); //NOPMD
+    if (!editedCell.getNewValue().toString().equals("")) { 
+      d.findUser(userSelected).setName(editedCell.getNewValue().toString()); 
+      userSelected.setName(editedCell.getNewValue().toString()); 
     } else {
       alertErrorName();
       tableView.refresh();
-      userSelected.setName(d.findUser(userSelected).getName()); //NOPMD
+      userSelected.setName(d.findUser(userSelected).getName()); 
     }
   }
 
@@ -120,14 +120,14 @@ public class TableViewController implements Initializable { //NOPMD
    @param editedCell the cell to be changed
    *****************************************************************/
   public void changeEmailColumn(final TableColumn.CellEditEvent editedCell) {
-    final User userSelected = tableView.getSelectionModel().getSelectedItem(); //NOPMD
+    final User userSelected = tableView.getSelectionModel().getSelectedItem(); 
 
-    if (d.findUser(userSelected).setEmail(editedCell.getNewValue().toString())) { //NOPMD
-      userSelected.setEmail(editedCell.getNewValue().toString()); //NOPMD
+    if (d.findUser(userSelected).setEmail(editedCell.getNewValue().toString())) { 
+      userSelected.setEmail(editedCell.getNewValue().toString()); 
     } else {
       alertErrorEmail();
       tableView.refresh();
-      userSelected.setEmail(d.findUser(userSelected).getEmail()); //NOPMD
+      userSelected.setEmail(d.findUser(userSelected).getEmail()); 
     }
   }
 
@@ -137,14 +137,14 @@ public class TableViewController implements Initializable { //NOPMD
    @param editedCell the cell to be changed
    *****************************************************************/
   public void changePhoneNumColumn(final TableColumn.CellEditEvent editedCell) {
-    final User userSelected = tableView.getSelectionModel().getSelectedItem(); //NOPMD
+    final User userSelected = tableView.getSelectionModel().getSelectedItem(); 
 
-    if (d.findUser(userSelected).setPhoneNum(editedCell.getNewValue().toString())) { //NOPMD
-      userSelected.setPhoneNum(editedCell.getNewValue().toString()); //NOPMD
+    if (d.findUser(userSelected).setPhoneNum(editedCell.getNewValue().toString())) { 
+      userSelected.setPhoneNum(editedCell.getNewValue().toString()); 
     } else {
       alertErrorPhoneNum();
       tableView.refresh();
-      userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum()); //NOPMD
+      userSelected.setPhoneNum(d.findUser(userSelected).getPhoneNum()); 
     }
   }
 
@@ -159,10 +159,10 @@ public class TableViewController implements Initializable { //NOPMD
     alert.setHeaderText("Hotel Database");
     alert.setContentText("Created by: Steven Villarreal, Corey Rice,\n\t\t +"
             + "   Jason Kaip, Corey Sutter\n\n"
-            + "This application serves as a Hotel Database " +
-            "System that can add, delete users."
-            + " Admin can login and edit fields of User(s). " +
-            "Only \"Name\", \"Phone #\", \"Email\","
+            + "This application serves as a Hotel Database "
+            + "System that can add, delete users."
+            + " Admin can login and edit fields of User(s). "
+            + "Only \"Name\", \"Phone #\", \"Email\","
             + " are editable.");
     alert.showAndWait();
   }
@@ -175,7 +175,7 @@ public class TableViewController implements Initializable { //NOPMD
   public void alertError() {
     final Alert alert = new Alert(Alert.AlertType.ERROR);
 
-    alert.setTitle("Error"); //NOPMD
+    alert.setTitle("Error"); 
     alert.showAndWait();
   }
 
@@ -249,7 +249,7 @@ public class TableViewController implements Initializable { //NOPMD
    *****************************************************************/
   public void newUserButtonPushed() {
     try {
-      User u = new User(nameTextField.getText(), //NOPMD
+      User u = new User(nameTextField.getText(), 
               phoneNumTextField.getText(),
               emailTextField.getText(),
               comboBox.getValue(),
@@ -266,11 +266,11 @@ public class TableViewController implements Initializable { //NOPMD
         userNameTextField.clear();
         dobTextField.clear();
         comboBox.setValue(null);
-        tableView.getItems().add(u); //NOPMD
+        tableView.getItems().add(u); 
       } else {
         alertAll();
       }
-    } catch (Exception e) { //NOPMD
+    } catch (Exception e) { 
       alertError();
     }
   }
@@ -295,25 +295,25 @@ public class TableViewController implements Initializable { //NOPMD
     ObservableList<User> selectedRow;
     ObservableList<User> allPeople;
 
-    allPeople = tableView.getItems(); //NOPMD
+    allPeople = tableView.getItems(); 
 
     // This gives us the row that was selected.
     try {
-      selectedRow = tableView.getSelectionModel().getSelectedItems(); //NOPMD
-      if (selectedRow.size() != 0) { //NOPMD
-        if (adminLoggedIn && !tableView.getSelectionModel() //NOPMD
-                .getSelectedItem().getName().equals("ADMIN")) { //NOPMD
+      selectedRow = tableView.getSelectionModel().getSelectedItems(); 
+      if (selectedRow.size() != 0) { 
+        if (adminLoggedIn && !tableView.getSelectionModel() 
+                .getSelectedItem().getName().equals("ADMIN")) { 
           if (allPeople != null) {
             for (final User u : selectedRow) {
-              if (selectedRow.size() == 1) { //NOPMD
+              if (selectedRow.size() == 1) { 
                 allPeople.remove(u);
                 d.removeUser(u);
-                System.out.println("Check"); //NOPMD
-                break; //NOPMD
+                System.out.println("Check"); 
+                break; 
               } else {
                 d.searchUser(u);
                 allPeople.remove(u);
-                System.out.println("Check"); //NOPMD
+                System.out.println("Check"); 
               }
             }
           }
@@ -323,7 +323,7 @@ public class TableViewController implements Initializable { //NOPMD
       } else {
         alertError();
       }
-    } catch (Exception e) { //NOPMD
+    } catch (Exception e) { 
       alertError();
     }
   }
@@ -336,12 +336,12 @@ public class TableViewController implements Initializable { //NOPMD
     ObservableList<User> selectedRows;
 
     // This gives us the row that was selected.
-    selectedRows = tableView.getSelectionModel().getSelectedItems(); //NOPMD
+    selectedRows = tableView.getSelectionModel().getSelectedItems(); 
 
 
-    if (selectedRows.size() != 0) { //NOPMD
+    if (selectedRows.size() != 0) { 
       for (final User u : selectedRows) {
-        final Alert alert = new Alert(Alert.AlertType.INFORMATION); //NOPMD
+        final Alert alert = new Alert(Alert.AlertType.INFORMATION); 
         alert.setTitle("Tier Info");
         alert.setHeaderText("Info for Tier: " + u.getTier());
         alert.setContentText(u.returnPermissions(u.getTier()));
@@ -375,17 +375,17 @@ public class TableViewController implements Initializable { //NOPMD
    @param userObservableList the database list to be saved.
    @param file the file to save to.
    *****************************************************************/
-  public void saveFile(ObservableList<User> userObservableList, File file) { //NOPMD
+  public void saveFile(ObservableList<User> userObservableList, File file) { 
     try {
       final BufferedWriter outWriter =
-              new BufferedWriter(new FileWriter(file + ".txt"));//NOPMD
+              new BufferedWriter(new FileWriter(file + ".txt"));
 
       for (final User u : userObservableList) {
         outWriter.write(u.toString());
         outWriter.newLine();
       }
-      System.out.println(userObservableList.toString()); //NOPMD
-      System.out.println(d.getUserSecondaryDb(0)); //NOPMD
+      System.out.println(userObservableList.toString()); 
+      System.out.println(d.getUserSecondaryDb(0)); 
       outWriter.close();
     } catch (IOException e) {
       final Alert ioAlert = new
@@ -407,38 +407,37 @@ public class TableViewController implements Initializable { //NOPMD
   public void loadFile() {
     try {
       final String filePath = new File("").getAbsolutePath();
-      System.out.println(filePath); //NOPMD
-      BufferedReader br = new BufferedReader
-              (new FileReader(new File(filePath + //NOPMD
-              "/src/hotelmanagement/TestFile.txt")));
+      System.out.println(filePath); 
+      BufferedReader br =
+              new BufferedReader(new FileReader(new File(filePath
+                      + "/src/hotelmanagement/TestFile.txt")));
       String line;
       String[] array;
 
       d.clearDb();
       users.clear();
-      while ((line = br.readLine()) != null) { //NOPMD
-        array = line.split(","); //NOPMD
-        users.add(new User(array[0], array[1], array[2], array[3], array[4], //NOPMD
+      while ((line = br.readLine()) != null) { 
+        array = line.split(","); 
+        users.add(new User(array[0], array[1], array[2], array[3], array[4], 
                 Integer.parseInt(array[5]), array[6],
-                Integer.parseInt(array[7]))); //NOPMD
-        if (Integer.parseInt(array[5]) == 0) { //NOPMD
+                Integer.parseInt(array[7]))); 
+        if (Integer.parseInt(array[5]) == 0) { 
           d.addAdmin(new User(array[0], array[1], array[2],
-                  array[3], array[4], //NOPMD
+                  array[3], array[4], 
                   Integer.parseInt(array[5]), array[6],
-                  Integer.parseInt(array[7]))); //NOPMD
+                  Integer.parseInt(array[7]))); 
         } else {
           d.addUserFromLoad(new User(array[0], array[1],
-                  array[2], array[3], array[4], //NOPMD
+                  array[2], array[3], array[4], 
                   Integer.parseInt(array[5]), array[6],
-                  Integer.parseInt(array[7]))); //NOPMD
+                  Integer.parseInt(array[7]))); 
         }
       }
-      System.out.println(); //NOPMD
 
       br.close();
 
-    } catch (Exception ex) { //NOPMD
-      ex.printStackTrace(); //NOPMD
+    } catch (Exception ex) { 
+      ex.printStackTrace(); 
     }
   }
 
@@ -447,7 +446,7 @@ public class TableViewController implements Initializable { //NOPMD
    Exits the program when the exit menu item is selected.
    *****************************************************************/
   public void exitButton() {
-    System.exit(0); //NOPMD
+    System.exit(0); 
   }
 
 
@@ -462,24 +461,16 @@ public class TableViewController implements Initializable { //NOPMD
     assert comboBox != null : "fx:id=\"comboBox\" was not injected:"
             + " check your FXML file 'TableView.fxml'.";
     btnDelete.setVisible(true);
-    comboBox.getItems().setAll(1,2,3); //NOPMD
+    comboBox.getItems().setAll(1,2,3); 
     btnLoginAdmin.setText("Logout");
-    nameColumn.setCellValueFactory
-            (new PropertyValueFactory<User, String>("name"));
-    phoneNumColumn.setCellValueFactory
-            (new PropertyValueFactory<User, String>("PhoneNum"));
-    emailColumn.setCellValueFactory
-            (new PropertyValueFactory<User, String>("Email"));
-    userNameColumn.setCellValueFactory
-            (new PropertyValueFactory<User, String>("username"));
-    passwordColumn.setCellValueFactory
-            (new PropertyValueFactory<User, String>("password"));
-    tierColumn.setCellValueFactory
-            (new PropertyValueFactory<User, Integer>("tier"));
-    dateofbirthColumn.setCellValueFactory
-            (new PropertyValueFactory<User, String>("dob"));
-    roomNum.setCellValueFactory
-            (new PropertyValueFactory<User, Integer>("roomNum"));
+    nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
+    phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
+    emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));
+    userNameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("username"));
+    passwordColumn.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
+    tierColumn.setCellValueFactory(new PropertyValueFactory<User, Integer>("tier"));
+    dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<User, String>("dob"));
+    roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
 
     // load dummy data
     tableView.setItems(getUsers());
@@ -498,53 +489,52 @@ public class TableViewController implements Initializable { //NOPMD
   public ObservableList<User> getUsers() {
     users = FXCollections.observableArrayList();
     d.addUser(new User("Steven", "6168342729",
-            "villarst@mail.gvsu.edu", 1, //NOPMD
-            "villarst", "03/27/00")); //NOPMD
+            "villarst@mail.gvsu.edu", 1, 
+            "villarst", "03/27/00")); 
     users.add(new User("Steven", "6168342729",
             "villarst@mail.gvsu.edu", 1,
             d.viewRoom(0), "villarst",
-            d.getUser(0).getPassword(), "03/27/00")); //NOPMD
+            d.getUser(0).getPassword(), "03/27/00")); 
     d.addUser(new User("Corey R", "6168342729",
             "ricecore@mail.gvsu.edu", 2,
             "riceco", "03/27/00"));
     users.add(new User("Corey R", "6165583079",
-            "ricecore@mail.gvsu.edu", 2, //NOPMD
+            "ricecore@mail.gvsu.edu", 2, 
             d.viewRoom(1), "riceco",
-            d.getUser(1).getPassword(), "03/27/00")); //NOPMD
+            d.getUser(1).getPassword(), "03/27/00")); 
     d.addUser(new User("Corey S", "6168342729",
             "sutterco@mail.gvsu.edu", 2,
             "sutterco", "03/27/00"));
     users.add(new User("Corey S", "6165583079",
             "cutterco@mail.gvsu.edu", 2,
             d.viewRoom(2), "sutterco",
-            d.getUser(2).getPassword(), "03/27/00")); //NOPMD
+            d.getUser(2).getPassword(), "03/27/00")); 
     d.addUser(new User("Jason", "6168342729",
             "kaipjaso@mail.gvsu.edu", 3,
             "kaipja", "03/27/00"));
     users.add(new User("Jason", "6165583079",
             "kaipjaso@mail.gvsu.edu", 3,
             d.viewRoom(3), "kaipja",
-            d.getUser(3).getPassword(), "03/27/00")); //NOPMD
+            d.getUser(3).getPassword(), "03/27/00")); 
     d.addUser(new User("Bobby V", "6168342729",
             "vuerbobb@mail.gvsu.edu", 1,
             "VBobby", "03/27/00"));
     users.add(new User("Bobby V", "6165583079",
             "vuerbobb@mail.gvsu.edu", 1,
             d.viewRoom(4), "VBobby",
-            d.getUser(4).getPassword(), "03/27/00")); //NOPMD
+            d.getUser(4).getPassword(), "03/27/00")); 
     d.addUser(new User("Mike J", "6168342729",
             "johnmike@mail.gvsu.edu", 3,
             "JMike", "03/27/00"));
     users.add(new User("Mike J", "6165583079",
             "johnmike@mail.gvsu.edu", 3,
             d.viewRoom(5), "JMike",
-            d.getUser(5).getPassword(), "03/27/00")); //NOPMD
+            d.getUser(5).getPassword(), "03/27/00")); 
     d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com",
             "ADMIN", "jscc1234",  0, "04/23/29"));
     users.add(new User("ADMIN", "9999999999", "admin@login.com",
             "ADMIN", d.getUserSecondaryDb(0).getPassword(),
-            0, "04/23/29")); //NOPMD
-    System.out.println("Admin Tier level: " + users.get(6).getTier()); //NOPMD
+            0, "04/23/29"));
 
     return users;
   }
