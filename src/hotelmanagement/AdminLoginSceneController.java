@@ -47,6 +47,7 @@ public class AdminLoginSceneController implements Initializable { //NOPMD
   /*****************************************************************
   Method used to detrmine if the Admin has logged in.
   *****************************************************************/
+  @SuppressWarnings("checkstyle:JavadocMethod")
   public void loginAdmin(final ActionEvent event) {
     if (!adminLoggedIn) {
       for (int i = 0; i < d.secondaryDbSize(); i++) {
