@@ -35,8 +35,7 @@ public class DatabaseGUI extends Application {
 
   static {
     try {
-      root1 = FXMLLoader.load(DatabaseGUI.class.getResource
-              ("TableView.fxml"));
+      root1 = FXMLLoader.load(DatabaseGUI.class.getResource("TableView.fxml"));
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -44,8 +43,7 @@ public class DatabaseGUI extends Application {
 
   static {
     try {
-      root2 = FXMLLoader.load(DatabaseGUI.class.getResource
-              ("AdminLoginScene.fxml"));
+      root2 = FXMLLoader.load(DatabaseGUI.class.getResource("AdminLoginScene.fxml"));
     } catch (IOException e) {
       e.printStackTrace();
     }

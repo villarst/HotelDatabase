@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-
 /*****************************************************************
  This class consists of the database that will be used to store,
  remove, and assign rooms to the users (Guests).
@@ -14,27 +13,27 @@ import java.util.ArrayList;
  *****************************************************************/
 
 
-public class Database implements Serializable{
+public class Database implements Serializable { //NOPMD
 
-  /** Arraylist that stores the Users */
-  private ArrayList <User> MainDb;
+  /** Arraylist that stores the Users. */
+  private ArrayList<User> mainDb; //NOPMD
 
   /** Boolean Array that stores values for the rooms. */
-  boolean rooms [];
+  boolean[] rooms; //NOPMD
 
   /** Arraylist that stores the admins. */
-  private ArrayList <User> SecondaryDb;
+  private ArrayList<User> secondaryDb; //NOPMD
 
 
   /*****************************************************************
    Constructor that creates a Database to use to store Users and
    assign rooms.
    *****************************************************************/
-  public Database(){
-    MainDb = new ArrayList<User>();
-    SecondaryDb = new ArrayList<User>();
+  public Database() {
+    mainDb = new ArrayList<>();
+    secondaryDb = new ArrayList<>();
     rooms = new boolean[300];
-    for(int i = 0; i < 300; i++){
+    for (int i = 0; i < 300; i++) {
       rooms[i] = false;
     }
   }
@@ -45,69 +44,73 @@ public class Database implements Serializable{
    @param u the User that is passed into
    the method that will be added.
    *****************************************************************/
-  public void addUser(User u){
-    if (!checkTierFull(u.getTier() - 1)) {
-      MainDb.add(u);
+  public void addUser(User u) { //NOPMD
+    if (!checkTierFull(u.getTier() - 1)) { //NOPMD
+      mainDb.add(u);
       assignRoom(u);
-    }
-    else{
-      System.out.println("The tier is full, please select a different tier.");
+    } else {
+      System.out.println("The tier is full, please select a different tier."); //NOPMD
     }
   }
+
 
   /*****************************************************************
    Adds the user to the Arraylist of users via the load menu option.
    @param u the User that is passed into
    the method that will be added.
    *****************************************************************/
-  public void addUserFromLoad(User u){
-    MainDb.add(u);
+  public void addUserFromLoad(User u) { //NOPMD
+    mainDb.add(u);
     u.setRoomNum(u.getRoomNum());
-    rooms[u.getRoomNum()] = true;
+    rooms[u.getRoomNum()] = true; //NOPMD
   }
+
 
   /*****************************************************************
    Adds the Admin to the Arraylist of admins.
    @param u the User that is passed into
    the method that will be added.
    *****************************************************************/
-  public void addAdmin(User u){
-    if(u.getTier() == 0){
-      SecondaryDb.add(u);
+  public void addAdmin(User u) { //NOPMD
+    if (u.getTier() == 0) {
+      secondaryDb.add(u);
       assignRoom(u);
     }
   }
 
+
   /*****************************************************************
-   Clears the Database consisting of MainDb, SecondaryDb and rooms[]
+   Clears the Database consisting of MainDb, SecondaryDb and
+   rooms[].
    *****************************************************************/
-  public void clearDb(){
-    MainDb.clear();
-    SecondaryDb.clear();
-    for(int i = 0; i < 300; i++){
+  public void clearDb() {
+    mainDb.clear();
+    secondaryDb.clear();
+    for (int i = 0; i < 300; i++) {
       rooms[i] = false;
     }
   }
+
 
   /*****************************************************************
    Returns true or false depending on if the room is occupied.
    @return boolean for if the room is occupied.
    *****************************************************************/
-  public boolean getRooms(int num) {
+  public boolean getRooms(final int num) {
     return rooms[num];
   }
+
 
   /*****************************************************************
    Assigns the room to the user that was just added to the Arraylist.
    @param u the User that is passed into
    the method that was just added.
    *****************************************************************/
-  public void assignRoom(User u){
-    int room = (u.getTier() - 1) * 100;
-    if(u.getTier() == 0){
+  public void assignRoom(User u) { //NOPMD
+    final int room = (u.getTier() - 1) * 100; //NOPMD
+    if (u.getTier() == 0) {
       u.setRoomNum(-1);
-    }
-    else {
+    } else {
       if (!checkTierFull(u.getTier() - 1)) {
         for (int i = 0; i <= 99; i++) { // was 99
           if (!rooms[room + i]) {
@@ -125,8 +128,8 @@ public class Database implements Serializable{
    @param i the index passed to return MainDb(i)'s room number.
    @return int the room number to be returned.
    *****************************************************************/
-  public int viewRoom(int i){
-    return MainDb.get(i).getRoomNum();
+  public int viewRoom(int i) { //NOPMD
+    return mainDb.get(i).getRoomNum(); //NOPMD
   }
 
   /*****************************************************************
@@ -134,9 +137,10 @@ public class Database implements Serializable{
    @param i the index passed to return MainDb(i).
    @return User the user to be returned from MainDb.
    *****************************************************************/
-  public User getUser(int i){
-    return MainDb.get(i);
+  public User getUser(int i) { //NOPMD
+    return mainDb.get(i);
   }
+
 
   /*****************************************************************
    Returns the user at i from MainDb (used to change the user
@@ -144,65 +148,71 @@ public class Database implements Serializable{
    @param u the user passed to check if the user exists.
    @return User the user to be returned from MainDb.
    *****************************************************************/
-  public User findUser(User u){
-    User found = null;
-    for(int i = 0; i < MainDb.size(); i++){
-      if(u.getRoomNum() == MainDb.get(i).getRoomNum()){
-        found = MainDb.get(i);
+  public User findUser(User u) { //NOPMD
+    User found = null; //NOPMD
+    for (final User user : mainDb) {
+      if (u.getRoomNum() == user.getRoomNum()) {
+        found = user; //NOPMD
       }
     }
     return found;
   }
 
+
   /*****************************************************************
    Checks if the room is occupied if so returns a boolean of true
    or false.
-   @param t the tier that of the User that was passed into the
-   the method.
+   @param t the tier that of the User
    @return boolean for if tier is full.
    *****************************************************************/
-  public boolean checkTierFull(int t){
-    int tier = t * 100;
-    for(int i = tier; i <= tier + 99; i++){
-      if(!rooms[i])
-        return false;
+  public boolean checkTierFull(int t) { //NOPMD
+    final int tier = t * 100;
+    boolean isFull = true; //NOPMD
+
+    for (int i = tier; i <= tier + 99; i++) {
+      if (!rooms[i]) {
+        isFull = false; //NOPMD
+      }
     }
-    return true;
+    return isFull;
   }
+
 
   /*****************************************************************
    Removes the User from the Arraylist MainDb.
    @param u the User that is wanting to be removed.
    *****************************************************************/
-  public void removeUser(User u){
-    if(u.getRoomNum() != -1) {
-      rooms[u.getRoomNum()] = false;
+  public void removeUser(User u) { //NOPMD
+    if (u.getRoomNum() != -1) {
+      rooms[u.getRoomNum()] = false; //NOPMD
     }
-    MainDb.remove(u);
+    mainDb.remove(u);
   }
+
 
   /*****************************************************************
    Removes the User from the Arraylist MainDb by checking password.
    @param u the User that is wanting to be removed.
    *****************************************************************/
-  public void searchUser(User u){
-    for(int i = 0; i < MainDb.size(); i++){
-      if(MainDb.get(i).getPassword() == u.getPassword()){
-        rooms[u.getRoomNum()] = false;
-        MainDb.remove(MainDb.get(i));
+  public void searchUser(User u) { //NOPMD
+    for (int i = 0; i < mainDb.size(); i++) { //NOPMD
+      if (mainDb.get(i).getPassword() == u.getPassword()) { //NOPMD
+        rooms[u.getRoomNum()] = false; //NOPMD
+        mainDb.remove(mainDb.get(i));
       }
     }
   }
+
 
   /*****************************************************************
    Checks if the password passed is present in SecondaryDb.
    @param pass the password that is used to check for if Admin exists.
    @return returns if the Admin exists in SecondaryDb or not.
    *****************************************************************/
-  public boolean searchSecondary(String pass){
-    boolean found = true;
-    for(int i = 0; i < SecondaryDb.size(); i++){
-      if(!pass.equals(SecondaryDb.get(i).getPassword())) {
+  public boolean searchSecondary(String pass) { //NOPMD
+    boolean found = true; //NOPMD
+    for (final User user : secondaryDb) {
+      if (!pass.equals(user.getPassword())) {
         found = false;
         break;
       }
@@ -210,49 +220,48 @@ public class Database implements Serializable{
     return found;
   }
 
+
   /*****************************************************************
    Removes the User from the Arraylist SecondaryDb.
    @param i the index specified.
    @return the user to be returned from SecondaryDb.
    *****************************************************************/
-  public User getUserSecondaryDb(int i){
-    return SecondaryDb.get(i);
+  public User getUserSecondaryDb(int i) { //NOPMD
+    return secondaryDb.get(i);
   }
+
 
   /*****************************************************************
    Returns the size of the SecondaryDb.
    @return the size of SecondaryDb
    *****************************************************************/
-  public int secondaryDbSize(){
-    return SecondaryDb.size();
+  public int secondaryDbSize() {
+    return secondaryDb.size();
   }
+
 
   /*****************************************************************
    Returns a string that has each field seperated by a ",".
    @return the string of each User or Admin
    *****************************************************************/
   @Override
-  public String toString(){
+  public String toString() {
     String result = "";
-    for(int i = 0; i < MainDb.size(); i++){
-      result += MainDb.get(i).getName() +
-              " , " + MainDb.get(i).getPhoneNum() +
-              " , " + MainDb.get(i).getEmail() +
-              " , " + MainDb.get(i).getUsername() +
-              " , " + MainDb.get(i).getPassword() +
-              " , " + MainDb.get(i).getTier() +
-              " , " + MainDb.get(i).getDob() +
-              " , " + MainDb.get(i).getRoomNum() + "\n";
+    for (final User user : mainDb) {
+      result += user.getName() //NOPMD
+              + " , " + user.getPhoneNum() //NOPMD
+              + " , " + user.getEmail() + " , " + user.getUsername()
+              + " , " + user.getPassword() + " , " + user.getTier()
+              + " , " + user.getDob() + " , " + user.getRoomNum()
+              + "\n";
     }
-    for(int j = 0; j < SecondaryDb.size(); j++){
-      result += SecondaryDb.get(j).getName() +
-              " , " + SecondaryDb.get(j).getPhoneNum() +
-              " , " + SecondaryDb.get(j).getEmail() +
-              " , " + SecondaryDb.get(j).getUsername() +
-              " , " + SecondaryDb.get(j).getPassword() +
-              " , " + SecondaryDb.get(j).getTier() +
-              " , " + SecondaryDb.get(j).getDob() +
-              " , " + SecondaryDb.get(j).getRoomNum() + "\n";
+    for (final User user : secondaryDb) {
+      result += user.getName() //NOPMD
+              + " , " + user.getPhoneNum()
+              + " , " + user.getEmail() + " , " + user.getUsername()
+              + " , " + user.getPassword() + " , " + user.getTier()
+              + " , " + user.getDob() + " , " + user.getRoomNum()
+              + "\n";
     }
     return result;
   }
