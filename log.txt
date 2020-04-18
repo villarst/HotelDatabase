@@ -1,0 +1,2218 @@
+commit 71f0e41240cb85fee8040175579b1246323fedb6
+Merge: 2b7b435 4b2d37f
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 23:06:16 2020 -0400
+
+    Merge develop into master
+
+commit 4b2d37f1f73f3a968892062d114ee5cbbf35c748
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 22:58:59 2020 -0400
+
+    Adjusted checkstyle
+
+commit 2c0642e0ec3c9818c7f97e24351d2f09dfd55fa1
+Merge: df6d0a7 d7472b1
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 22:55:54 2020 -0400
+
+    Adjusted Checkstyle
+
+commit df6d0a7e4bc4bb638022c1401aacbf2b7058b580
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 22:54:31 2020 -0400
+
+    Adjusted checkstyle
+
+commit d7472b13761facc35321bf3953673691c0e0d66b
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 22:51:39 2020 -0400
+
+    fixed the indentation
+
+commit 44e6593451f64af09ffef154b5ca9474832e74d8
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 22:45:54 2020 -0400
+
+    fixed the indentation
+
+commit f302a667253aa8e244b29bdfae86721c5b016755
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 22:29:00 2020 -0400
+
+    fixed the indentation
+
+commit 342f78b25adc7262ce287f9b7012787debac356c
+Merge: b2c1ac1 1956cf5
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 22:16:35 2020 -0400
+
+    Merge remote-tracking branch 'origin/develop' into develop
+    
+    # Conflicts:
+    #       src/hotelmanagement/AdminLoginSceneController.java
+    #       src/hotelmanagement/Database.java
+    #       src/hotelmanagement/TableViewController.java
+
+commit b2c1ac11e2d8fc7acd8e84e5f662bf7c7f4a878a
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 22:16:13 2020 -0400
+
+    fixed the indentation
+
+commit 1956cf587439919df64bff71fb83dc341f5d39d0
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 17:55:02 2020 -0400
+
+    Generated PMD reports
+
+commit 206b15e9ae2bf88d05544b2092cec45dc4ffa022
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 17:31:31 2020 -0400
+
+    Renamed Directory
+
+commit 6e9bee480d93f92528496a7ef9f917466500d89e
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 17:30:31 2020 -0400
+
+    Removed system.out lines
+
+commit f0278779b91b81d91c16e60c640051edd1f6e955
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 17:26:58 2020 -0400
+
+    Renamed class
+
+commit 70374b8716d11ca4f510978547ea436eeed72a75
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 17:24:00 2020 -0400
+
+    Added UML
+
+commit 3cd6db19ada44791cd8d77df7cc2d5dd19d34b79
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 17:22:54 2020 -0400
+
+    Removed UML
+
+commit dcacae60eb09a94546c3961aba015a3ad2f9eb93
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 17:21:13 2020 -0400
+
+    PMD, Checkstyle, and Javadoc for User class
+
+commit 7a87233dd99f169443c13d39f37cc200febf31f8
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 16:55:01 2020 -0400
+
+    Updated PMD and Checkstyle for Database class
+
+commit 0c867734142fd597c27c48a69c0a0aefcb9b62ec
+Merge: a47af2d 7bd91a2
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 16:47:20 2020 -0400
+
+    PMD and Checkstyle for Database class
+
+commit a47af2d1bfe1a0fa47f1fe1756e9353f432b7e84
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 16:18:03 2020 -0400
+
+    UML diagram
+
+commit 7bd91a26787b3e78fa441da4c8d1a7ecef1b9a5d
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 16:16:31 2020 -0400
+
+    added stuff testing
+
+commit 78b0f27af8759af1c73a9f7ba0007371bf039cac
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 16:11:11 2020 -0400
+
+    added stuff testing
+
+commit 711a556b4c9c9da4215f80ea4e75648f4aa99ea5
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 16:10:00 2020 -0400
+
+    added stuff testing
+
+commit 3358c17fe5c5a536c894b7f293fb2d8bdd514a7f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 16:02:05 2020 -0400
+
+    added stuff testing
+
+commit 377c660dc3a50f7d7570af46b1468b5ba2a65c77
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 15:51:39 2020 -0400
+
+    added stuff testing
+
+commit 1296293ab187ab4b4df78257bd2a410fe88cab34
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 15:48:32 2020 -0400
+
+    added stuff testing
+
+commit 180764fcba170a1b35f7d060b8ddf0703b2abec1
+Merge: 40c7f2f 88fd760
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 15:38:00 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into develop
+
+commit 40c7f2ff367084c4c576f81968101af8173e9dba
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 15:37:27 2020 -0400
+
+    Checkstyle, PMD, and JavaDoc for User Class
+
+commit 88fd7605014b8acffdac1ac00217c35c8e0ddd32
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 13:45:37 2020 -0400
+
+    changed to lower case hotelmenagement
+
+commit 6a0e41b7e0d63ccd66c9af8eb8142f97404f2d3b
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 17 13:39:21 2020 -0400
+
+    added bug test.txt
+
+commit 208a69bd6cc868e7102511fcc2008f628e78133f
+Merge: bf9c85f d041437
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Fri Apr 17 12:47:00 2020 -0400
+
+    Merge pull request #26 from JKippy/newJason
+    
+    Updated test cases.
+
+commit d041437af8f8f02404c9682b1c4d80fcc5fbd7ea
+Author: jkippy <kaipjason@gmail.com>
+Date:   Fri Apr 17 12:45:20 2020 -0400
+
+    Updated test cases.
+
+commit bf9c85fdac1cf2d9011e0c3a0643270b68ba2f02
+Merge: 766be02 e40e4f1
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Fri Apr 17 12:06:25 2020 -0400
+
+    Merge pull request #25 from JKippy/newJason
+    
+    New jason
+
+commit e40e4f13a022af0cef51357b16a06363e1cc6708
+Author: jkippy <kaipjason@gmail.com>
+Date:   Fri Apr 17 12:04:31 2020 -0400
+
+    Cleaned up User.
+
+commit 479770b0ccd5286817f734e0a50db8260dc02361
+Author: jkippy <kaipjason@gmail.com>
+Date:   Fri Apr 17 12:01:20 2020 -0400
+
+    Added comments describing each test case.
+
+commit 766be026a18959247edae46e4892875f640d8803
+Merge: b8a96d1 a78824b
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Fri Apr 17 01:57:55 2020 -0400
+
+    Merge pull request #24 from JKippy/newJason
+    
+    Added User testing.
+
+commit a78824b8f57ecd2bcbbcc06be483d1cd57f5527b
+Author: jkippy <kaipjason@gmail.com>
+Date:   Fri Apr 17 01:43:15 2020 -0400
+
+    Added User testing.
+
+commit b8a96d1122e86eb591ca8f737d8db2632e4aae62
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 00:51:24 2020 -0400
+
+    Spacing
+
+commit 79cad2607fe3e39a17d6bfa14faf29306f1a7f24
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 17 00:44:59 2020 -0400
+
+    Checkstyle, PMD, and JavaDoc for TableViewController class, removed SmartCard
+
+commit d9346ef25bb5aed123263d3fde66c680b917ee63
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Thu Apr 16 22:07:47 2020 -0400
+
+    Removed Tier class
+
+commit a47d5b99d9f56453defde0847c614110f50e11c2
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Thu Apr 16 21:06:47 2020 -0400
+
+    Modified usernames
+
+commit 169ffe2ef92b476069a1f893f6ca43e76bba5711
+Merge: c799d97 888aed5
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Wed Apr 15 00:34:34 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into develop
+
+commit c799d972406f502f754f9c35f7b7126db9e7e0d4
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Wed Apr 15 00:33:40 2020 -0400
+
+    PMD, Checkstyle, and JavaDoc for Database class
+
+commit 888aed59f8d50f6c02bb08ba4c296fb1f0f552fa
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Apr 14 22:36:48 2020 -0400
+
+    made the textfields line up
+
+commit 71fabe8d7f9b645f24424e92cd955068a83fbaf3
+Merge: 4fbf7ae 57b51fb
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Apr 14 22:25:16 2020 -0400
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+commit 4fbf7aeca600120d737ca935ef9834314d4c787d
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Apr 14 22:25:01 2020 -0400
+
+    tried fixing selected cell color
+
+commit 57b51fbd5b3826e0a42aff654c35fe7c306397b1
+Merge: 2a6db51 dede440
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Tue Apr 14 22:21:26 2020 -0400
+
+    Merge pull request #23 from JKippy/jason
+    
+    Changes password textbox on admin login to passwordField
+
+commit 2b7b435d2b9f3fc338df4f49b35961b311c8d81e
+Merge: f7bb9b5 11ac8f7
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Tue Apr 14 22:20:23 2020 -0400
+
+    Merge pull request #22 from JKippy/revert-21-jason
+    
+    Revert "Jason"
+
+commit 11ac8f78fd1057b62bbe3d0d014da881a5daa690
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Tue Apr 14 22:20:05 2020 -0400
+
+    Revert "Jason"
+
+commit f7bb9b59ef5d2f2250efe1603ba5c1b6a0a8579f
+Merge: a200d52 dede440
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Tue Apr 14 22:19:36 2020 -0400
+
+    Merge pull request #21 from JKippy/jason
+    
+    Jason
+
+commit dede44045555eb27f0128ca2426cd2bade52ddc0
+Author: jkippy <kaipjason@gmail.com>
+Date:   Tue Apr 14 21:51:06 2020 -0400
+
+    Changes password textbox on admin login to passwordField
+
+commit 2a6db517e4fc4c82aa54ef3881be5805e327c72e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Apr 14 21:41:47 2020 -0400
+
+    fixed the gui slide bar
+
+commit 68e188ea541a565d269ca7fed1b1953956ea1490
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Tue Apr 14 21:18:52 2020 -0400
+
+    Change all of the colors on the table view
+
+commit c0c0a3fd0d80291d95c4c990886239882310cd8a
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Tue Apr 14 21:11:01 2020 -0400
+
+    Fixing admin and the tier error
+
+commit bf78062bb7c19dc730db3a5aae4ee3fe6c9a6eb5
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Apr 14 21:34:05 2020 -0400
+
+    Adjusted PMD and Checkstyle for adminLoginSceneController
+
+commit c0895ff7e04de7f10993a9e6d51e035542f90e1a
+Merge: 18e9a54 ec696cf
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Apr 14 21:16:11 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into develop
+
+commit 18e9a54dc315deeb6e01fd9771aacb937ba733e7
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Apr 14 21:15:32 2020 -0400
+
+    Added UML Diagram
+
+commit ec696cfbaeb2cf93794a2d150323fc7a8da665a6
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Apr 14 21:07:15 2020 -0400
+
+    added error dialog boxes
+
+commit 7d6e3159d58cb3350f824b6dbb231232aef8e64e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Apr 14 21:06:17 2020 -0400
+
+    added error dialog boxes
+
+commit 7d864a9eb234e148e05d12848ba1e6ccdfd68a21
+Merge: 9064caf 305c63b
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Fri Apr 10 00:38:52 2020 -0400
+
+    Merge pull request #19 from JKippy/jason
+    
+    Messages now pop up when email, phone, or date is entered incorrectly.
+
+commit 305c63b6fe3ca5d27753bffdb01957d9a7a7717b
+Author: jkippy <kaipjason@gmail.com>
+Date:   Fri Apr 10 00:37:05 2020 -0400
+
+    Messages now pop up when email, phone, or date is entered incorrectly.
+    Also if a field is empty or not valid then the user will not get added to the table.
+    - Had to remove verification from one of the constructors, I'm 80% sure it's okay like that.
+
+commit 9064caff6c17afba40d613ae1bb5ba5d8b4870e8
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Apr 10 00:10:21 2020 -0400
+
+    Fixed PMD and Checkstyle warnings for DatabaseGUI, adminLoginSceneController, and Tier classes
+
+commit 3e382104f827eef756fb2a4798e28f34b77560af
+Merge: 2f6a900 ffc36af
+Author: villarst <60193695+villarst@users.noreply.github.com>
+Date:   Thu Apr 9 20:30:20 2020 -0400
+
+    Merge pull request #18 from JKippy/steve2
+    
+    got login screen looking nice.
+
+commit ffc36af035d95d0ea3f85ec39cbd6044750895fd
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Apr 9 20:25:50 2020 -0400
+
+    got login screen looking nice.
+
+commit 2f6a900c276af4a5c12d8d5d4bda20db903f9f72
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Apr 6 23:14:19 2020 -0400
+
+    got login screen to work finally.
+
+commit 51648ffe6b7bdf4347db3689d287516dfaf42518
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Apr 6 22:03:08 2020 -0400
+
+    got stuff back
+
+commit 9122b16fa8e4ff8e77f8cbb68000bc753fed186f
+Merge: 6acdd1e 8645e33
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Apr 6 21:37:47 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into steve2
+    
+     Conflicts:
+    	src/HotelManagement/TableViewController.java
+
+commit 6acdd1ea38879150bf22e7341cfd494b051bd5f0
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Apr 6 21:37:08 2020 -0400
+
+    working on login admin
+
+commit 8645e33354f77ecd5799a15f0feb40af0379cdf1
+Merge: 34fb25f 258859d
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Mon Apr 6 21:24:25 2020 -0400
+
+    Merge pull request #15 from JKippy/jason
+    
+    Jason
+
+commit 258859dcb7be95a7fd12004c0753117006ad5baa
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Apr 6 21:22:58 2020 -0400
+
+    delete button now only shows if logged into admin.
+
+commit 878398448b2433dcdf309e15ffc1495c3b878b1e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Apr 6 20:53:28 2020 -0400
+
+    Fixed the Delete button
+
+commit 504f12713c6015ee1549c88cf53a80a5e5149481
+Merge: 6b0176b 34fb25f
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Apr 6 20:24:52 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into jason
+    
+     Conflicts:
+    	src/HotelManagement/TableView.fxml
+    	src/HotelManagement/TableViewController.java
+
+commit 34fb25f0553951b8d850c1343fa4ba3c986890ca
+Merge: 2ac55af f3bef4d
+Author: villarst <60193695+villarst@users.noreply.github.com>
+Date:   Mon Apr 6 20:14:15 2020 -0400
+
+    Merge pull request #14 from JKippy/steve2
+    
+    Steve2
+
+commit f3bef4d65faffa4b3aa2d5863c4388af4384cc88
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Apr 4 19:47:13 2020 -0400
+
+    Combo box works now.
+
+commit 46a083aa0bf6dfd03957ac29380065ce1e1b8638
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Apr 4 16:08:20 2020 -0400
+
+    FINALLY GOT SAVE AND LOAD TO WORK!!
+
+commit 272f77131813738785b83f0ce195bd1b8b1a4f05
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 3 22:31:45 2020 -0400
+
+    FINALLY GOT SAVE AND LOAD TO WORK!!
+
+commit d1290a78f12e0db0eb71477a687ea4594fa870a8
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 3 21:54:59 2020 -0400
+
+    NOT WORKING
+
+commit ab598a19b288c2035e12c23142176399f878002e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 3 21:46:31 2020 -0400
+
+    NOT WORKING
+
+commit 139d9417df6d6b96c2c09d0e9558699fc0be1682
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 3 20:25:59 2020 -0400
+
+    NOT WORKING
+
+commit 5a0fdcbebe1d9b18ebcca5f3dbdd2e764726853e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 3 17:42:22 2020 -0400
+
+    tried adding a save and load button for database (doesn't work).
+
+commit 2ac55af8d02ccc5b85ae21fc8872ada968b965e0
+Merge: 28681d8 9f4435c
+Author: villarst <60193695+villarst@users.noreply.github.com>
+Date:   Fri Apr 3 00:27:29 2020 -0400
+
+    Merge pull request #13 from JKippy/steve2
+    
+    tried adding a save button
+
+commit 9f4435c284082139f8460eb8c77292a1c054f271
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Apr 3 00:26:38 2020 -0400
+
+    tried adding a save button
+
+commit 6b0176be9e6f089f5186182618de5a9fff1068bd
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Apr 2 23:43:05 2020 -0400
+
+    Reformatted code.
+
+commit 28681d870a11fadf4fd6bc28489dbc5e70de2419
+Merge: 06c0361 682869d
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Thu Apr 2 22:10:31 2020 -0400
+
+    Merge pull request #12 from JKippy/steve2
+    
+    Steve2
+
+commit 682869dc81618d31d22f1971e84d516dff1fa7da
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Apr 2 22:04:25 2020 -0400
+
+    tried adding a save button
+
+commit 389f6bf9f7071118bbf61f8f09e69178eb798ef6
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Apr 2 20:13:39 2020 -0400
+
+    updated checklist_for_finalRelease.txt
+
+commit 6c34979c14ffc30f85cd1eab5b41badd8f5d6c9d
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Apr 2 00:22:59 2020 -0400
+
+    you can now select a user and check tier permissions and a pop up window will appear with all permissions.
+
+commit 10e1de96c6d92b3a36fc4fa50e5a14fe945f4795
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Apr 1 22:25:54 2020 -0400
+
+    tried adding a double click event (not working)
+
+commit 6585a20546e55051ed5296225cced3a7368d1bc5
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Apr 1 22:11:52 2020 -0400
+
+    The Edit ---> Delete button deletes a user when highlighted.
+
+commit 06c036166ea0cf13b3ee0d4b92cb269c2bd89875
+Merge: a51903f 80cef87
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Wed Apr 1 21:56:13 2020 -0400
+
+    Merge pull request #11 from JKippy/steve2
+    
+    the menu bar half way works
+
+commit a51903fefe852bd8a7120e6428101326f1ae648d
+Merge: 5fa9c3e 3c68ee7
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Wed Apr 1 21:54:45 2020 -0400
+
+    Merge pull request #10 from JKippy/corey
+    
+    Corey
+
+commit 3c68ee7be9fded244ee848ee03193610f85878c9
+Merge: a881ba9 ecf0050
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Wed Apr 1 21:53:05 2020 -0400
+
+    Merge remote-tracking branch 'origin/corey' into corey
+
+commit a881ba928e09684db0d80ee9b1ccce890c50845f
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Wed Apr 1 21:52:42 2020 -0400
+
+    Fixing admin and the tier error
+
+commit 80cef876a8b0860330cd0bc3886b01704437066c
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Apr 1 21:49:45 2020 -0400
+
+    the menu bar half way works
+
+commit ce5db2f052801ac2daef42facc75040dc1e53b9c
+Merge: 26cba37 5fa9c3e
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Wed Apr 1 21:15:35 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into corey
+    
+     Conflicts:
+    	.gitignore
+
+commit 5fa9c3e4486b0caf7519c1f6d38dc69bb8f831a2
+Merge: 432ab1c 3ba6a8e
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Wed Apr 1 20:57:53 2020 -0400
+
+    Merge pull request #9 from JKippy/steve2
+    
+    Steve2
+
+commit 432ab1c49d82e25576cb5f4b9b3129da98a7b32e
+Merge: b7afeb6 94fa83c
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Wed Apr 1 20:42:12 2020 -0400
+
+    Merge pull request #8 from JKippy/jason
+    
+    Jason
+
+commit 94fa83ca44654dfde3e7290176b19a01b347affb
+Author: jkippy <kaipjason@gmail.com>
+Date:   Wed Apr 1 20:40:24 2020 -0400
+
+    Added feature to admin login to make text boxes disappear and button label change when logged in.
+
+commit f4f79d97f8de3031bcce2116b9a76ff029d3d2ba
+Merge: 86125ec b7afeb6
+Author: jkippy <kaipjason@gmail.com>
+Date:   Wed Apr 1 20:19:05 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into jason
+    
+     Conflicts:
+    	.gitignore
+
+commit 3ba6a8ec510a5300a969b40e2ed7c5e9d80ae9cd
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Apr 1 20:02:38 2020 -0400
+
+    added a menu bar (easy)
+
+commit 47c4e263ce5200100e23c286324bb3f7553db313
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Apr 1 18:10:19 2020 -0400
+
+    day 1 complete
+
+commit 8f1e7e9e4bc2e42a65cb2bb0d12212aaff1c1845
+Merge: 93c4aa3 2557887
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Apr 1 18:09:37 2020 -0400
+
+    Merge remote-tracking branch 'origin/steve2' into steve2
+    
+    # Conflicts:
+    #       .gitignore
+
+commit 93c4aa3cf9d5714fb13745b517719a77782692a3
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Apr 1 18:09:00 2020 -0400
+
+    day 1 complete
+
+commit b7afeb6a16a8de4d50725a8cc5323341b6914bdf
+Merge: de40c6f 2557887
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Mar 31 01:31:52 2020 -0400
+
+    Merge branch 'steve2' into develop
+
+commit ecf00509a0a36cd38a53afa951cfcaee77ad34b9
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Mar 31 01:30:28 2020 -0400
+
+    modified .gitignore
+
+commit 25578878685dcbfe43c52072d8c51d33872dc1c3
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Mar 31 01:28:24 2020 -0400
+
+    modified .gitignore
+
+commit 41ad3cd304f921acb586cdda89674002109d421f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 30 23:42:24 2020 -0400
+
+    day 1 complete
+
+commit 86125ec53220aaaf6edcd30c2b1146cf14c0a3ea
+Merge: a783efe c0ba655
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Mar 30 21:47:32 2020 -0400
+
+    Merge branch 'steve2' of https://github.com/JKippy/CIS350-HotelManagement into jason
+    
+     Conflicts:
+    	.gitignore
+
+commit 26cba37c3eb2394008955afc814fc99f87b28ade
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Mon Mar 30 21:26:56 2020 -0400
+
+    Fixing admin and the tier error
+
+commit c0ba655ccf11ebb7156fee4d5e1053fbbbab5650
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 30 21:26:17 2020 -0400
+
+    fixed tier level for admin
+
+commit 6827be9793c4daa80cde39336a49bb10ec6efb6d
+Merge: f4ed894 dfd4335
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Mon Mar 30 21:15:07 2020 -0400
+
+    Merge branch 'steve2' of https://github.com/JKippy/CIS350-HotelManagement into corey
+
+commit dfd433536029b689e2f6366dd1c80b5bcb7b0657
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 30 21:13:47 2020 -0400
+
+    added a ADMIN LOGIN
+
+commit f4ed894503f35e0e4c0a69a3a5c1d12bd17eaf22
+Merge: ee8df1a b83cb84
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Mon Mar 30 20:48:30 2020 -0400
+
+    Merge branch 'steve2' of https://github.com/JKippy/CIS350-HotelManagement into corey
+    
+     Conflicts:
+    	.gitignore
+    	src/HotelManagement/MainViewController.java
+
+commit ee8df1a76ea8f7c3cd02ab8edb74eeb2e7c1dcd5
+Merge: 29aa49e de40c6f
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Mon Mar 30 20:42:29 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into corey
+    
+     Conflicts:
+    	src/HotelManagement/DatabaseGUI.java
+
+commit 29aa49ed57382b9903f9c64e9222a1a2a5cf2748
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Mon Mar 30 20:37:25 2020 -0400
+
+    Trying to get the project to actually run on my branch again
+
+commit a783efe85e4b1678c580bca5ca920adb19dd3cff
+Merge: 6006ead de40c6f
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Mar 30 20:36:46 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into jason
+
+commit b83cb847c34991d0642c78cbbfe2a28dab6cbd79
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 30 20:36:09 2020 -0400
+
+    we can change scenes without having to reload the pages every time.
+
+commit de40c6f83b24df97d165ad49c90a177bd84d00db
+Merge: 46e4579 44fac9a
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 30 20:21:47 2020 -0400
+
+    Merge branch 'develop' into sutter
+
+commit b1f5fe066aa30d66b53f6b37fff443d1b3e00992
+Merge: 556aa1f 44fac9a
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Mon Mar 30 19:54:43 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into corey
+    
+     Conflicts:
+    	src/HotelManagement/Controller.java
+    	src/HotelManagement/Database.java
+    	src/HotelManagement/DatabaseGUI.java
+    	src/HotelManagement/Tier.java
+    	src/HotelManagement/User.java
+
+commit 6006ead3cd9f550b4413859333d4c2874d0ee09f
+Merge: 27604e8 44fac9a
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Mar 30 19:53:52 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into jason
+
+commit 44fac9a2baeff123657f555778f437a5acb99426
+Merge: f41b77a 53a51a7
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 30 19:46:59 2020 -0400
+
+    Fixed the changes so it should be good.
+
+commit 27604e83067be822a9172420c686d44438b2e30c
+Merge: 3f059ed f41b77a
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Mar 30 19:44:56 2020 -0400
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into jason
+    
+     Conflicts:
+    	.gitignore
+
+commit 53a51a7c869a28bdfc9b2e39e393cdd0d1861028
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 30 19:27:28 2020 -0400
+
+    I tried adding a message to delete if theres nothing there (DOES NOT WORK).
+
+commit 48560bbff1b18cdab1a9c672bae953f4dc5d75f9
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 30 14:40:53 2020 -0400
+
+    I added a delete person button to TableViewController
+
+commit 556aa1fbab7dddf4e8befbec335c1c56f9d552d8
+Author: villarst <60193695+villarst@users.noreply.github.com>
+Date:   Sat Mar 28 16:15:01 2020 -0400
+
+    Delete commons_lang3_3.xml
+
+commit a9b8c47a9fda73d7f2610249f27b8ec2994bf463
+Author: villarst <60193695+villarst@users.noreply.github.com>
+Date:   Sat Mar 28 16:14:51 2020 -0400
+
+    Delete CIS 350 Project.iml
+
+commit 1cef5e1f6a1b61689810f06a2b757bdcb3dc6944
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Sat Mar 28 15:24:56 2020 -0400
+
+    Trying to get the project to actually run on my branch again
+
+commit 3960322db719460ffebb40a88238ec0277d34c5c
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Mar 28 14:57:34 2020 -0400
+
+    Tried to add combo box to tier levels in TableViewController
+
+commit 71517dca862ebcce21ccc1c8e7b0f7d622a36ec9
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Mar 25 23:52:31 2020 -0400
+
+    Able to edit certain cells phone #, name, email. You have to double click the cell if it was typed in wrong to show it correct for some reason (BUG).
+
+commit 153f246f07727949cdbe30db546ce7cb5f16520f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Mar 24 21:23:42 2020 -0400
+
+    added more filler data to JTable.
+
+commit 851e972e6b9a6fec74a4468c34d95ca9e7c3c497
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Mar 24 21:18:37 2020 -0400
+
+    the table now displays roomNum and the MainDb gets occupied and saves those changes.
+
+commit e6eb558dce67e329e31c6a7406788eb6769dac25
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 23 22:50:50 2020 -0400
+
+    added a table with filer data.
+
+commit 0de85d534eae5ed48321670f760a6ac7c0e287c9
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 23 22:12:57 2020 -0400
+
+    added a table with filer data.
+
+commit 7e9ccb9cb8d76c70df50c7f8d30b09985f781ca8
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 23 22:11:48 2020 -0400
+
+    added a table with filer data.
+
+commit 5a66cf2979520a13f6e67a2b80e2841b7edc1f04
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 23 20:46:02 2020 -0400
+
+    added a table with filer data.
+
+commit 3f059edd492ad14953c6154cc2d1f94c1edfb1ed
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 23 14:23:18 2020 -0400
+
+    Modified .gitignore
+
+commit d4f408bd610da0433ac90cec25279a066c1ffb96
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 23 14:20:00 2020 -0400
+
+    Removed unnecessar folders and files from repo
+
+commit 413ebb7ad24891183872ca3f30224015451d0945
+Merge: 1f8a050 6a7be71
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 23 14:12:01 2020 -0400
+
+    Initial commit to fix configuration
+
+commit 1f8a050ff7b0deb3cbd581abd6f0e630e34b6009
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 23 14:11:28 2020 -0400
+
+    Initial commit to fix configuration
+
+commit a200d5225baf7a1b796b4506817fc3a07bbe49ba
+Merge: 0e5e671 f41b77a
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 23:22:11 2020 -0400
+
+    Merged develop into Master and modified .gitignore
+
+commit 0e5e671338d19ce730f6c27ce8981c683a0abf31
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 23:06:12 2020 -0400
+
+    Modified .gitignore
+
+commit 966e50bdfecf2c0b83b4f71f77c1fa39f837ae29
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 23:03:56 2020 -0400
+
+    Removed out and .idea folders and .iml files from repo
+
+commit 073d322842f30806dc373c79dfa1adb568072e28
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 22:47:29 2020 -0400
+
+    Modified .gitignore
+
+commit b48c61915a7951343cc566b97ab4dbfea4f7d898
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 22:45:07 2020 -0400
+
+    Removed out and .idea folders and .iml files from repo
+
+commit 1355f0c281523069f7cedff9baf7c318ac297974
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 21:06:22 2020 -0400
+
+    Modified .gitignore
+
+commit c397b2ce8c4dc879cbe18d31ed5165e3df4df9f3
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 21:05:07 2020 -0400
+
+    Removed out and .idea folders from repo
+
+commit da97e060d4d60c55305627aa08706a9513d8cc15
+Merge: 3664ca5 990b37f
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 21:03:00 2020 -0400
+
+    commit
+
+commit 3664ca5aa6768b419dc936077570ee7f722ce9f5
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 21:00:15 2020 -0400
+
+    Modified .gitignore
+
+commit f6bdf8f8d7730c5bb2e0d9a9eb6178b789086f05
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 20:56:07 2020 -0400
+
+    Removed out folder and .iml file from repo
+
+commit 46e4579c9d466be326a15c9f1ec50d61b7a884be
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 20:46:37 2020 -0400
+
+    Minor change to .gitignore
+
+commit f41b77a99f17d2f081bbce4982430d80c1aa7f76
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 20:44:40 2020 -0400
+
+    Minor change to .gitignore
+
+commit 53f36f239c196453df6906941318b8f61a56dc89
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 20:41:33 2020 -0400
+
+    Removed out folder and .iml file from repo
+
+commit 8045221b4939af7151f39f20cd3def9d19cd1415
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Sat Mar 21 20:35:43 2020 -0400
+
+    Removed .idea from repo
+
+commit 6a7be71930723933db7c25a8e3359096b11f9837
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Mar 19 20:05:59 2020 -0400
+
+    Bro git is kinda bad ngl.
+
+commit eeae44225a1460fb98b54266b99abfce98d20dac
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Mar 19 19:54:29 2020 -0400
+
+    Fixed gitignore for branch.
+
+commit b213d7aceb36313f71ea9ce94c0ea8d81cf53a43
+Merge: 8518613 001e9a1
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Mar 19 19:33:37 2020 -0400
+
+    Merge remote-tracking branch 'origin/jason' into jason
+    
+    # Conflicts:
+    #       .gitignore
+
+commit 7445f1ca23c169f8f5a8783be64e5c925fb6fdbb
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Wed Mar 18 15:11:13 2020 -0400
+
+    Added new outline
+
+commit 952546f2694ac3b16e605dd7bcba3b621b680be3
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Mar 18 14:48:25 2020 -0400
+
+    got rid of something
+
+commit cf68c1da45c5a1b53d3696c0c8af2e707d7b4d41
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Mar 18 14:38:16 2020 -0400
+
+    this is the mainview for the program.
+
+commit a68332635973b63dc762c12963f668645ccc8333
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Mar 18 14:36:06 2020 -0400
+
+    have to commit this every time for some reason.
+
+commit 990b37f1f9c724d7d5ab5ed2758741ed23825aa4
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Mar 18 14:31:10 2020 -0400
+
+    have to commit this every time for some reason.
+
+commit d73edd4490c8ed8cc261606fe15fae667ea19551
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Mar 17 11:53:17 2020 -0400
+
+    tying to fix an ongoing issue
+
+commit 3a3dc7fac541a340048213ff8e7d1374b0eac9a0
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Mar 17 11:43:07 2020 -0400
+
+    tying to fix an ongoing issue
+
+commit 449a64acbfdc3f3d16ee08d9dba19b795014570d
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 16 22:59:12 2020 -0400
+
+    Removed .idea from repository
+
+commit 49e69ac9a6745443ba2abd0a18dda0603d979305
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 16 22:41:27 2020 -0400
+
+    Modified .gitignore
+
+commit 1efd3cded39eb2885aa6e39eabd802329fa71353
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 16 22:33:40 2020 -0400
+
+    Modified .gitignore
+
+commit 6197f406738d03f2722ddaee67e5120ebd22c752
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 16 22:26:32 2020 -0400
+
+    Modified .gitignore
+
+commit 4b72ff4dda0937d2b381cddf6ce028ca66aa62d7
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 16 22:24:18 2020 -0400
+
+    Modified .gitignore
+
+commit 8eb011b8e53fbb30bf9590392f5a7e68d891780e
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 16 22:22:22 2020 -0400
+
+    Modified .gitignore
+
+commit a975bb03fae83c305c8400c86e58e68bb0406ac0
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 16 21:16:54 2020 -0400
+
+    Modified .gitignore
+
+commit fc28d363241c4d68173b494e0a34d2aa490bb189
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 21:29:05 2020 -0400
+
+    this might fix our issue with the CIS350-HotelManagement.iml wanting to be changed when every we switch branches.
+
+commit 7e7e48ed8e5f99610bd4a0ca0e53479310dd5830
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 21:26:43 2020 -0400
+
+    this might fix our issue with the CIS350-HotelManagement.iml wanting to be changed when every we switch branches.
+
+commit c9c1ce0acc78ebaeed99ab0d575d3b30a95eb6ee
+Merge: 4aab636 3fa02e4
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 21:25:04 2020 -0400
+
+    Merge remote-tracking branch 'origin/steve2' into steve2
+
+commit 4aab6365a742c70724e1cc1e11f2603ef314fbbf
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 21:24:44 2020 -0400
+
+    I pray this works.
+
+commit 3fa02e4723657d140808d2d668e98bdd673a1c39
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 21:22:34 2020 -0400
+
+    this might fix our issue with the CIS350-HotelManagement.iml wanting to be changed when every we switch branches.
+
+commit 9e7e575e89ddf0ce3723b459bb3765c099855508
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 21:17:38 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit c3c3d25bfdd8010d5cbebb441d321377e17e0a86
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 21:16:22 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit 39e3c630dc7de0cf92d41baa27483f0f9b8cb5bd
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 15:44:53 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit 993f576d0d499b715facb96867f51f728b4cee2b
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 15:44:27 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit 2d5e030c6dccd2ddb05ec7ecc736ccaecdcab476
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 15:36:03 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit a69a2bc8acc311f03cf7b5fdf69fe17720bdf944
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 15:34:19 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit 8c02aa5fa78a082fa41c3f294e968020a48ddac1
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 15:25:59 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit c86c0d99b7bc047882561fc6f9e7b0ee97a9ca42
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 15:20:48 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit 08836a17936331f99ef59d8568c399d436671e96
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 14:09:19 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit 50f954f0121a484a0778aa7333c394ed34ffe868
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:55:33 2020 -0400
+
+    this might fix our issue with .gitignore
+
+commit f290f6095b8b32d31f36fd23969b52921279a272
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:45:29 2020 -0400
+
+    this might fix our issue
+
+commit b9128c7c6c3df7f9d4ca33671ad34cf4f43c7f32
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:33:33 2020 -0400
+
+    trying to fix the stupid issue of adding unwanted files!
+
+commit f0006cf19078e1846b399d6da5d5d983785a3868
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:30:26 2020 -0400
+
+    trying to fix the stupid issue of adding unwanted files!
+
+commit eb715d0a102ed65b6aef410d21db72e445be4d40
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:28:49 2020 -0400
+
+    trying to fix the stupid issue of adding unwanted files!
+
+commit 7a568750c8c99833ea59fb40f81910f1a954ad99
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:23:04 2020 -0400
+
+    trying to fix the stupid issue of adding unwanted files!
+
+commit 7c521651b89708723458bff3744bf6db091355a4
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:20:30 2020 -0400
+
+    trying to fix the stupid issue of adding unwanted files!
+
+commit 483cb7690f47e5b99853472521050f2e5d7619e3
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 13:08:52 2020 -0400
+
+    i cant fix this issue!!!!
+
+commit 77249a4a95b336b027366299cd3d8c54c6bf2bcd
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 17:01:18 2020 -0400
+
+    i cant fix this issue!!!!
+
+commit 910ab3c702cf48ab8f531ebc0c4dbe4f4085a56f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 16:57:59 2020 -0400
+
+    i cant fix this issue!!!!
+
+commit 7a3d0881824c0b6710a374f6c6a54b11ad3f4156
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 16:54:54 2020 -0400
+
+    i cant fix this issue!!!!
+
+commit 0927231c06656c88f40921e65278e61dcbae1ede
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 15 16:46:24 2020 -0400
+
+    i cant fix this issue!!!!
+
+commit 3d084b5737df656930b2392677b2980b612c527a
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Mar 14 15:21:56 2020 -0400
+
+    tried ignoring the commons_lang3_3.xml file
+
+commit 0241d82eee72741a973417e6ca1de255ce91a0a5
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Mar 14 15:18:56 2020 -0400
+
+    tried ignoring the workspace.xml file
+
+commit 6d7569cf9747394ed42a246a3f7b0b657f56be30
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Mar 14 15:17:53 2020 -0400
+
+    tried ignoring the workspace.xml file
+
+commit db307188526b2720a9c4a9393fdf04015d9c02fb
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Mar 14 15:13:09 2020 -0400
+
+    fixing things that are stupid
+
+commit c216dd54a6d45806b9d5f2879f5ff02595251f57
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Mar 14 15:07:47 2020 -0400
+
+    fixing things that are stupid
+
+commit f52c1972ab55c9177a58ecf3dbd0b3df6d6ca4d1
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 20:46:09 2020 -0400
+
+    changed the .gitignore file
+
+commit 954157b986b42fdeb6be9e57c1645bfdf03e636f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 20:43:24 2020 -0400
+
+    changed the .gitignore file
+
+commit 3cb1863f19931dc85c9ba70d85039f9742b42a50
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 20:41:43 2020 -0400
+
+    changed the .gitignore file
+
+commit 184482cb60c02631df7b8626aa432023c834af00
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 20:40:01 2020 -0400
+
+    changed the .gitignore file
+
+commit faee3b8838386addc6d379e6e82fe68bf5b55414
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 20:34:09 2020 -0400
+
+    changed the .gitignore file
+
+commit 4489c3fea1a14839783ea0d2b716579e018faa68
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 20:32:13 2020 -0400
+
+    changed the .gitignore file
+
+commit 34dcb44ec595a9271aae5d652cb48a6eefca13f8
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 20:25:35 2020 -0400
+
+    added this file to .gitignore
+
+commit 001e9a11f3910f52ee9256611818927a366cf2f5
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 16:11:42 2020 -0400
+
+    tried fixing some files.
+
+commit d1a426ebab2782e4be376b181a66ef2fd5128eeb
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 15:59:24 2020 -0400
+
+    not fixed yet
+
+commit 190c6a05865a36aedf6617930cf9c1ce5da1143d
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 14:16:37 2020 -0400
+
+    Added all correct files for version one.
+
+commit a2384cb2a81c1f695da42bbd56a0278f4f1bbf60
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 14:05:03 2020 -0400
+
+    fixed a file wanting to be committed
+
+commit b408cbd4ca40c01b9e8f754d451b3e13d50578d3
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 14:02:21 2020 -0400
+
+    hope lol
+
+commit 1ab5dea8285f2c08c2ff443607ac91c7231b3ec0
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 13:59:50 2020 -0400
+
+    hope lol
+
+commit abb42650066b1963ab6d4fd796857b6955fddb1f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 13:53:57 2020 -0400
+
+    trying to fix configurations.
+
+commit 04120f5f7b80a23ee71c0142a0c1a71edf99101b
+Merge: 770de60 db5daa8
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 13:39:07 2020 -0400
+
+    Merge remote-tracking branch 'origin/steve2' into steve2
+    
+    # Conflicts:
+    #       .idea/CIS350-HotelManagement.iml
+    #       .idea/workspace.xml
+
+commit db5daa85077d8f067ebfd89e416a810391c25b21
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 17:36:56 2020 -0400
+
+    trying to fix configurations.
+
+commit 770de601a044740a225513cd30b0a0ed8db8bbc0
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 13:38:39 2020 -0400
+
+    trying to fix configurations.
+
+commit 03a6c1cb1be03505aabf6d93f2eef7e052bd9ff6
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 13:37:54 2020 -0400
+
+    trying to fix configurations.
+
+commit 19507ca3cd8d48376d70560eb576531434079e70
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 13:34:31 2020 -0400
+
+    Added all correct files for version one.
+
+commit b8ecc8e40666a4eec33804df19dd8565c4236937
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 13:33:08 2020 -0400
+
+    Added all correct files for version one.
+
+commit e77c0f9ad2ea01085daf29aa35a943b1c6be4e64
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:31:03 2020 -0400
+
+    fixed the .gitignore file
+
+commit fa860428eadb2202832689b46df540bdc87b5442
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:30:06 2020 -0400
+
+    fixed the .gitignore file
+
+commit 2093ea61be3b042610ff9905707d4b7c2f4b4384
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:29:14 2020 -0400
+
+    fixed the .gitignore file
+
+commit 5e9797d4c28d2f5b5ded46bed6858cf147c73214
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:27:57 2020 -0400
+
+    fixed your .gitignore file.
+
+commit 4b2a2e298691d8e8284796fa72407f7b89968f1e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:26:41 2020 -0400
+
+    Added all correct files for version one.
+
+commit 54e354764af6b7c134b7ab8b0e86ba8e69965992
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:25:09 2020 -0400
+
+    trying to fix configurations.
+
+commit 79926c39bb9752d39861d6907f2b2f87acb43734
+Merge: 79090ca d71f175
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:22:36 2020 -0400
+
+    Merge remote-tracking branch 'origin/steve2' into steve2
+
+commit 79090ca359838420d5d4d7f12c43db0114a85cfd
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Mar 13 12:22:14 2020 -0400
+
+    trying to fix configurations.
+
+commit ec62765c857e0bdf13523f4e8e6cdc31ddae5a41
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 17:27:21 2020 -0400
+
+    Added all correct files for version one.
+
+commit d71f1750ddc8223cb6392ffc64129bb19c1e4388
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 17:25:38 2020 -0400
+
+    fixed my issue?
+
+commit ebbd6c7e0b531536aa5a4322640da6cdcfb93c4c
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 17:12:16 2020 -0400
+
+    Added all correct files for version one.
+
+commit 9708c458cb34b9a2235d0db308b2223196b5e421
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 17:08:56 2020 -0400
+
+    stupid file messes things up
+
+commit 210a922435123f0cdf1976365f63c6b7dca3fc3b
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:58:50 2020 -0400
+
+    Added all correct files for version one.
+
+commit b88036b99503ebf9b6821bcfa124bf6730eda635
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:55:56 2020 -0400
+
+    added .ignore files
+
+commit 8c6eb113b8d5bbf9f739dff46a810fe6fa64e8e3
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:53:07 2020 -0400
+
+    Added all correct files for version one.
+
+commit 3c732f00b4ca53770dccc615cc74bb7c89ddcd1c
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:50:02 2020 -0400
+
+    workspace.xml file needed to be added?
+
+commit d9e6645b13c5708a4c5190ab6c779ecb4a9585ab
+Merge: 770a45a 36f9a5d
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:47:01 2020 -0400
+
+    Merge remote-tracking branch 'origin/steve2' into steve2
+
+commit 36f9a5d92aaab0918a6518a174c7172d17b56742
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:45:27 2020 -0400
+
+    workspace.xml file needed to be added?
+
+commit 770a45a24b5da825b1c40d92c556fa812dd57465
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:36:59 2020 -0400
+
+    fixed basic stuff
+
+commit 3304bec851488e14c609069ba4ad4916f47bff82
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:34:23 2020 -0400
+
+    workspace.xml file needed to be added?
+
+commit 24eaca526a6123c3569a12c7eeaefa3ed1d11514
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 9 16:23:36 2020 -0400
+
+    workspace.xml file needed to be added?
+
+commit 75e561b7643c29855f2833206ba7290342423c8f
+Merge: 788755f 0027b31
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 9 11:49:37 2020 -0400
+
+    Merge branch 'sutter' into develop
+
+commit 788755f3d54b258b0bd0bc61378d1594753e3939
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 9 11:47:52 2020 -0400
+
+    Modified .gitignore
+
+commit 0027b310ee47e7e2ca2a79af28c01597c73f7bce
+Merge: 3306a04 ec08e7a
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Mar 9 11:45:27 2020 -0400
+
+    Merge branch 'develop' into sutter
+
+commit 16391b6dae6102e08d2f3643558ee73996a78a8e
+Merge: c7aaa34 ec08e7a
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Mon Mar 9 10:00:35 2020 -0400
+
+    Merge pull request #7 from JKippy/develop
+    
+    Release 1
+
+commit cdc0b267d733028c84b6c5ecc303114d7a444293
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 8 23:18:25 2020 -0400
+
+    fixed basic stuff
+
+commit ec08e7ada5e6f38be573651a94954588e3d8499c
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Sun Mar 8 23:02:07 2020 -0400
+
+    Added all correct files for version one.
+
+commit 76b0d38cad546ad68d44133a5f9c92d5bfe5a080
+Merge: f027ec4 36a2b16
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Sun Mar 8 22:59:26 2020 -0400
+
+    Merge remote-tracking branch 'origin/develop' into develop
+    
+    # Conflicts:
+    #       src/HotelManagement/Database.java
+    #       src/HotelManagement/User.java
+
+commit 36a2b164c0183966cf5bc3cf90577acac9456c07
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 8 23:32:30 2020 -0400
+
+    basic update
+
+commit f027ec4d8329d8e7141ebdd58614f4c7987f6a28
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Sun Mar 8 22:58:11 2020 -0400
+
+    Added all correct files for version one.
+
+commit a5bf771a1c170161527b68ed407d2fd31e01af91
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Sun Mar 8 22:50:48 2020 -0400
+
+    commiting workspace.xml file
+
+commit 8206442a0194331817914fce8b8ba1cb38a0b1d8
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Sun Mar 8 22:30:48 2020 -0400
+
+    changed .gitignore file
+
+commit ce21a9a4bb30ed31ac4f407b458990f7fd53e7d9
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 8 22:29:19 2020 -0400
+
+    fixed basic stuff
+
+commit 6cc9fbb02a3ae0b32e8ff74eac3dbfa8460b6db5
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Sun Mar 8 22:27:56 2020 -0400
+
+    Added all of the comments to every .java file.
+
+commit 561409fce0f38256a9189b6192016661f0978d04
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 8 21:48:31 2020 -0400
+
+    fixed basic stuff
+
+commit 8e8aff29cad4b863b08214c073d3ba2ebe76717a
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Mar 7 19:56:46 2020 -0500
+
+    basic update
+
+commit f663a49d37352c6a84188475de9e8afb5a81bee7
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 2 21:03:56 2020 -0500
+
+    I added a second window for the table.
+
+commit f17334d4291bb8d001431a756b84985f6bdecb4f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 2 19:47:55 2020 -0500
+
+    I put comments in for what we need to do.
+
+commit 85186136a9a9b3b1a655424483c52f7e19c59801
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Mar 2 19:39:42 2020 -0500
+
+    Added Jasons solutions for phone check and email check
+
+commit 0925f2cc8719b960c8a0cb95d9eff4530e693194
+Merge: c434fbd e9e92a8
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 1 17:23:18 2020 -0500
+
+    Merge remote-tracking branch 'origin/steve2' into develop
+    
+    # Conflicts:
+    #       .gitignore
+    #       out/production/CIS 350 Project/HotelManagement/Checklist_for_1st_Release.txt
+    #       out/production/CIS 350 Project/HotelManagement/Database.class
+    #       out/production/CIS 350 Project/HotelManagement/User.class
+    #       out/production/CIS350-HotelManagement/HotelManagement/Checklist_for_1st_Release.txt
+    #       out/production/CIS350-HotelManagement/HotelManagement/Database.class
+    #       out/production/CIS350-HotelManagement/HotelManagement/User.class
+    #       src/HotelManagement/Checklist_for_1st_Release.txt
+    #       src/HotelManagement/Database.java
+
+commit e9e92a8167b279d186ee316061ab36c7997ce318
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 1 17:10:29 2020 -0500
+
+    Added Jasons solutions for phone check and email check
+
+commit 3854b263017282aace5bfaaebb24670cc1dc8f55
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Mar 1 17:08:17 2020 -0500
+
+    Added Jasons solutions for phone check and email check
+
+commit 2957b2bb34963f5a8d219cef2ba4984292b8d54d
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Feb 28 20:24:48 2020 -0500
+
+    Fixed minor issues
+
+commit 96845112246474c3fde31b110247fb3980a88437
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Feb 28 20:21:51 2020 -0500
+
+    Fixed minor issues
+
+commit c7aaa34ef305cb6b0b33576b21537f306947b000
+Merge: aa1dd44 c434fbd
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Fri Feb 28 10:12:37 2020 -0500
+
+    Merge pull request #6 from JKippy/develop
+    
+    Develop
+
+commit c434fbdab86fc60908c4f2eec97dca9e4fc769ab
+Merge: 3bcf84c 5c7e587
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Fri Feb 28 10:06:03 2020 -0500
+
+    Merge pull request #5 from JKippy/jason
+    
+    Minor changes.
+
+commit 5c7e5871f43efcca59319fda4b559250867a64c2
+Author: jkippy <kaipjason@gmail.com>
+Date:   Fri Feb 28 10:01:05 2020 -0500
+
+    Date verification works with two digits for year now.
+
+commit 63741faeecd3b327f096829d89cae05f266e2d6b
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 22:23:19 2020 -0500
+
+    I fixed the part where it was adding people to the database when rooms where full.
+
+commit c8f329f6b55c10557dd207369204cd6e08896480
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 21:07:48 2020 -0500
+
+    Fixed minor remove User issues
+
+commit 59891da9afea1983af60516f7287a306d3e07a85
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Feb 27 20:52:15 2020 -0500
+
+    Small improvement.
+
+commit 3bcf84c08a955e3ae83103a49c34aac1cb6c0f32
+Merge: 3d33b62 be25c28
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Thu Feb 27 20:40:30 2020 -0500
+
+    Merge pull request #3 from JKippy/jason
+    
+    life is pain.
+
+commit 3d33b62bb308c28c901f5bd0e8378666bb7fba4d
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Thu Feb 27 20:38:49 2020 -0500
+
+    Update Checklist_for_1st_Release.txt
+    
+    Completed phone, DOB, and email.
+
+commit b2c2c4ab1e6cb0120d541652749d185160d3c361
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 20:37:47 2020 -0500
+
+    Made some changes to the addUser and remove and assignRoom methods.
+
+commit 70e59d0dd46e32661eeaee665714c323b341030c
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 23:37:27 2020 -0500
+
+    This contains the random password generator and the 1st release Checklist_for_1st_Release.txt
+
+commit be25c28fd0982d140d445115dfe4d62a60c9e2bd
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Feb 27 20:34:59 2020 -0500
+
+    Added individual methods for verifications. General functionality improvements.
+
+commit b6d49ed3d4f3d2dd9b781852c7aa44b8c740aa74
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Feb 27 19:40:52 2020 -0500
+
+    Added DOB checking and handling.
+
+commit 3306a04efe6a578f7f012f41a7471f4e37eb2ff6
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Thu Feb 27 19:17:44 2020 -0500
+
+    Modified .gitignore
+
+commit 28a618897ebd45f5529d28818a2ba815199cf87c
+Merge: 4881db3 6a065e8
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 19:14:37 2020 -0500
+
+    Merge remote-tracking branch 'origin/develop' into develop
+
+commit 8f957c4c1605dcd162db9ce8015ef7e546468557
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Feb 27 19:14:06 2020 -0500
+
+    Added email address checking. Not Tested.
+
+commit 4881db3ef243d639e0c8138ec0df96116ee04c23
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 19:14:04 2020 -0500
+
+    Made some changes I guess
+
+commit c45144000accf61fc4139d019e30c75317b0b890
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 23:40:22 2020 -0500
+
+    This contains the random password generator and the 1st release Checklist_for_1st_Release.txt
+
+commit 5fa3eda8f5d0cd590a1878acc0647d372935be07
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 27 23:37:27 2020 -0500
+
+    This contains the random password generator and the 1st release Checklist_for_1st_Release.txt
+
+commit 1b429e2ec8dbc7d2488aaef1eb9cb69e170e0bf6
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Feb 24 11:58:33 2020 -0500
+
+    Changed the assignRoom method to work correctly
+
+commit e802cb9511741afce19181348b9f3e48e0e6e1bb
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Feb 24 11:36:44 2020 -0500
+
+    I changed the textfile up
+
+commit 79f38dde76f321459d6f313b9f89c496e1d3872a
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Feb 23 22:29:23 2020 -0500
+
+    I added the pick your room methods based on tier
+
+commit af082f4029e5cff389dbaa27b2832a44c32caf58
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Feb 22 11:28:11 2020 -0500
+
+    This contains the random password generator and the 1st release Checklist_for_1st_Release.txt
+
+commit 69aca6c36ca47514a134b44c16338a4114660148
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Feb 27 19:02:15 2020 -0500
+
+    Added phone number checking and adjusting.
+
+commit 6a065e8d3ae4fd1f411f4637440b1a97f61b1456
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Thu Feb 27 18:51:26 2020 -0500
+
+    Modified .gitignore
+
+commit 7361284cccaed990cdaf29c96227c5401b88f2b2
+Merge: 68ebdb4 c451440
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Thu Feb 27 18:46:39 2020 -0500
+
+    Merge remote-tracking branch 'origin/develop' into corey
+
+commit 6135a3611cb9d90ab673e6a267418c57b7dae287
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Feb 25 22:23:27 2020 -0500
+
+    Modified .gitignore
+
+commit c5ca7c3067b8cb236abdd8962b5bc2a70cf91999
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Tue Feb 25 21:56:17 2020 -0500
+
+    Created LED and RFID libraries
+
+commit 3a0dee5db66948630da7293c50395dc107f1d299
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Feb 24 11:58:33 2020 -0500
+
+    Changed the assignRoom method to work correctly
+
+commit dd8d3ef421d8f2fc8abdc7cbe9e7fbbfef247600
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Feb 24 11:36:44 2020 -0500
+
+    I changed the textfile up
+
+commit 3182852c31717f05a83e6a93198665d34ee18aa7
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sun Feb 23 22:29:23 2020 -0500
+
+    I added the pick your room methods based on tier
+
+commit 6695460e0f0e42ed68031b75e9784cf03b6590c2
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Sat Feb 22 11:28:11 2020 -0500
+
+    This contains the random password generator and the 1st release Checklist_for_1st_Release.txt
+
+commit 198041df8697586fb580aed76ff3994264db400c
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Feb 21 20:39:17 2020 -0500
+
+    2nd commit
+
+commit 84640521e0c09ea281028594fe747b3093974bae
+Merge: 84902f4 7340e7e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Feb 21 20:29:46 2020 -0500
+
+    Merge remote-tracking branch 'origin/steve2' into develop
+    
+    # Conflicts:
+    #       src/HotelManagement/Database.java
+    #       src/HotelManagement/DatabaseGUI.java
+    #       src/HotelManagement/User.java
+    #       src/HotelManagement/sample.fxml
+
+commit 7340e7edc10cb86c3c61ca926a914231cbc34c3f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Fri Feb 21 20:27:50 2020 -0500
+
+    Changed the displayPermissions()
+
+commit 947fe4a20e387d40fec22f63f7561d64489fd44b
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Feb 21 15:50:21 2020 -0500
+
+    Added .iml file
+
+commit 9a101b2c77d889ceacc604fbb50fd471e4ee759e
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Feb 21 15:45:28 2020 -0500
+
+    modified .gitignore
+
+commit 418fb6cfbea06b0a880a875c67c23497a95c1bfd
+Merge: b562eb5 198041d
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Fri Feb 21 15:43:54 2020 -0500
+
+    Merge branch 'develop' into sutter
+
+commit 68ebdb454db97a747d64d0569c1de715e5c3ee49
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Thu Feb 20 17:46:54 2020 -0500
+
+    Got correct files
+
+commit b3c08d9203fcd33adeb8c08f099e7675c70c4b71
+Merge: bea5a7a 84902f4
+Author: Corey Rice <corey.rice@kaleidico.com>
+Date:   Thu Feb 20 17:46:07 2020 -0500
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into corey
+
+commit 84902f46fcdb5f8d98d40ef3107064ae3f423c93
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 20 16:52:27 2020 -0500
+
+    Basic GUI Functionality
+
+commit bea5a7a31ff880231bd47f20294c2a9f4efcf85e
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 20 16:52:27 2020 -0500
+
+    Basic GUI Functionality
+
+commit 975c444a7cfe77965db183a4f18754bdede1587c
+Merge: 323e5ed 224585c
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Thu Feb 20 15:55:08 2020 -0500
+
+    Merge pull request #2 from JKippy/jason
+    
+    Jason
+
+commit 224585c479ef629af0d5674b418d2371adb48d30
+Author: jkippy <kaipjason@gmail.com>
+Date:   Thu Feb 20 15:53:56 2020 -0500
+
+    Begun actual database GUI. The one in progress is going to be the customer lookup.
+
+commit 0c6a2c335e2787f6bbe45d728f5bfb9968c99d81
+Merge: 1425d22 323e5ed
+Author: jkippy <kaipjason@gmail.com>
+Date:   Wed Feb 19 17:40:41 2020 -0500
+
+    Merge branch 'develop' of https://github.com/JKippy/CIS350-HotelManagement into jason
+    
+     Conflicts:
+    	src/HotelManagement/DatabaseGUI.fxml
+    	src/HotelManagement/DatabaseGUI.java
+
+commit 1425d2271020b3b5a24ee9c649b2e446b47c143d
+Author: jkippy <kaipjason@gmail.com>
+Date:   Wed Feb 19 17:40:14 2020 -0500
+
+    Commit
+
+commit 323e5eda8296f06f1e91c66a076be92888df856a
+Merge: e0aa741 9428524
+Author: jasonkaip <kaipjason@gmail.com>
+Date:   Wed Feb 19 17:36:19 2020 -0500
+
+    Merge pull request #1 from JKippy/steve2
+    
+    Steve2
+
+commit 942852465754a4eb2aab3257d57ef30830515361
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Wed Feb 19 17:34:02 2020 -0500
+
+    I am commiting the files needed for GUI
+
+commit 225c5e5577e0efdbff2e07bf0142b220aa367ca3
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Feb 17 20:57:05 2020 -0500
+
+    Including Steve's.
+
+commit b562eb50a5e1cd7f7299242e6693ac61a803f363
+Merge: da8e678 cf6c966
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Feb 17 20:54:45 2020 -0500
+
+    Merge branch 'steve2' into sutter
+
+commit b55df5e7734eb087b5a0dd6dd99068a9e1d45eb2
+Merge: a7f95a5 cf6c966
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Feb 17 20:54:07 2020 -0500
+
+    Merge branch 'steve2' of https://github.com/JKippy/CIS350-HotelManagement into jason
+    
+     Conflicts:
+    	src/HotelManagement/DatabaseGUI.java
+
+commit a7f95a5401a1dc47d58a034fd20d38a43166a839
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Feb 17 20:53:36 2020 -0500
+
+    more javafx stuff.
+
+commit cf6c9660046a7fb5e828822f7590e2d8b109a394
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Feb 17 20:50:42 2020 -0500
+
+    I added the .fxml file
+
+commit de2730987842cd902106e55374992359809eec84
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Feb 17 20:35:20 2020 -0500
+
+    Made intital javafx changes.
+
+commit da8e67869b2727a2bdcaa983ed20b49eef1aa5e9
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Feb 17 20:33:10 2020 -0500
+
+    Removed classes
+
+commit ae05c7148ef12b26db5fe3b0782b55f9e01983d0
+Merge: 253ebae e0aa741
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Feb 17 19:49:41 2020 -0500
+
+    Merge branch 'develop' into sutter
+
+commit e0aa741dd2caf4373e42e24f941c16f7dfb7f19c
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Feb 17 19:46:51 2020 -0500
+
+    Merged to develop
+
+commit 0b168cea8deb22172ba883e2edb76c12fd06ddd9
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Mon Feb 17 19:44:22 2020 -0500
+
+    Stuff i had done before my computer decided to blow up and be dumb.
+
+commit ed464723bf42a3b404e16759f5dd86feffb5d610
+Merge: 781364f 8c217eb
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Feb 18 00:38:20 2020 -0500
+
+    Merge branch 'develop' into steve2
+    
+    # Conflicts:
+    #       src/HotelManagement/Main.java
+
+commit 781364f0cfa553649f8bd37f77311e15e995ed5f
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Tue Feb 18 00:32:51 2020 -0500
+
+    New Steve Branch
+
+commit 2448c99d333f230331bdf21d36dda718bb3bcdd5
+Author: jkippy <kaipjason@gmail.com>
+Date:   Mon Feb 17 19:29:37 2020 -0500
+
+    Made Jason Branch and test line.
+
+commit 253ebaed144a041e82937016c0e17af171e453c3
+Author: Corey Sutter <59507869+sutterco@users.noreply.github.com>
+Date:   Mon Feb 17 14:49:45 2020 -0500
+
+    Delete Main.class
+
+commit e64dc75d207afb17a352d9d736095c0150b233a7
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Feb 17 14:46:33 2020 -0500
+
+    Hopefully fixed .gitignore file
+
+commit bd612ca01abba6fb1f7726a9863b0a6d7d1f2679
+Author: Corey Sutter <59507869+sutterco@users.noreply.github.com>
+Date:   Mon Feb 17 14:39:57 2020 -0500
+
+    Delete HotelManagement.iml
+
+commit 0c3594edeb5df0663ec165b1fb86f793f4c9a592
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Feb 17 14:36:28 2020 -0500
+
+    Added files to .gitignore
+
+commit dc0416f7b082828ab768a4fcd08e7db148593d93
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Mon Feb 17 11:42:05 2020 -0500
+
+    Fixed issue with src folder
+
+commit 8c217eb7bae36d8d421666e49ad0d7f645d80564
+Merge: 39df5f5 9027cc7
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Thu Feb 13 21:02:20 2020 -0500
+
+    Merge branch 'steven' into develop
+
+commit 9027cc7c6e35a7a49416b3888cdb12e39b840a4a
+Author: Steven Villarreal <villarst@mail.gvsu.edu>
+Date:   Thu Feb 13 20:50:29 2020 -0500
+
+    I added the first set of classes.
+
+commit 39df5f581deeb2a573bb1ebd53760c60d3d6e410
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Thu Feb 13 19:33:49 2020 -0500
+
+    Test commit
+
+commit b05d5446b0ba07621a0a0971b928a7fabcf40cb5
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Wed Feb 5 21:45:32 2020 -0500
+
+    Testing git commits
+
+commit 72823d51e2a1b07aba747553f118fb51a8683eea
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Wed Feb 5 21:38:59 2020 -0500
+
+    Testing git commits
+
+commit e96a3bbb79a069f7c9ec6f6e803b6aa20f308295
+Author: Corey Sutter <sutterco@mail.gvsu.edu>
+Date:   Wed Feb 5 18:40:54 2020 -0500
+
+    Test commit
+
+commit aa1dd44a9d9f394da10d354dfe8f61d896455219
+Author: jkippy <kaipjason@gmail.com>
+Date:   Wed Feb 5 17:54:06 2020 -0500
+
+    Add .gitignore file ignoring all IDE setting files.
+
+commit 962fd7b5abc9bf40c8d15c04dcb39602bd8ae714
+Author: jkippy <kaipjason@gmail.com>
+Date:   Wed Feb 5 17:51:39 2020 -0500
+
+    Initial Commit: Basic main file.
