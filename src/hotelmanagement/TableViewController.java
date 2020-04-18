@@ -544,7 +544,6 @@ public class TableViewController implements Initializable { //NOPMD
     users.add(new User("ADMIN", "9999999999", "admin@login.com",
             "ADMIN", d.getUserSecondaryDb(0).getPassword(),
             0, "04/23/29")); //NOPMD
-    System.out.println("Admin Tier level: " + users.get(6).getTier()); //NOPMD
 
     return users;
   }

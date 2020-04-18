@@ -112,7 +112,6 @@ public class Database implements Serializable{
           if (!rooms[room + i]) {
             rooms[room + i] = true;
             u.setRoomNum(room + i);
-            System.out.println(u.getRoomNum());
             break;
           }
         }
