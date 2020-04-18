@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*****************************************************************
  A class that is used to test the Database class.
- @author Steven Villarreal, Corey Rice
+ @author Steven Villarreal, Corey Rice, Jason Kaip, Corey Sutter.
  @version 1.1
  ****************************************************************/
 class DatabaseTest {
