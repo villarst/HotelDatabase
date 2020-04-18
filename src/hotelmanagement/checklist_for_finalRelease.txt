@@ -1,0 +1,13 @@
+NEED TO COMPLETE BY APR. 17!
+
+Verification:
+• Unit and System / Integration Tests
+• Code coverage reports (via EclEmma) from:
+• Unit testing, and
+• System / Integration testing
+• Requirements Traceability
+
+• 5 minute (max) video required.
+
+that's from the thing he posted
+

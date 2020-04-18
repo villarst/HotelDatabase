@@ -1,0 +1,20 @@
+XXXXX = DONE
+
+Adds User to MainDb with wrong room num (doesn't match tier) XXXXX
+
+Combo box throws Exception. XXXXX
+
+GUI deletes multiple users. XXXXX
+
+GUI deletes an ADMIN. XXXXX
+
+GUI doesn't delete persons prior room occupancy so a new User will be given a
+room that is not correct when it should be the prior persons deleted room. XXXXX
+
+Scenes are being created every time the database switches scenes (need to have
+both scenes load up but show only adminLoginScene first). XXXXX
+
+Save file menu option doesn't save correctly, need to save each user. XXXXX
+
+Load file menu option doesn't load anybody, need to add each user to MainDb
+manually. XXXXX

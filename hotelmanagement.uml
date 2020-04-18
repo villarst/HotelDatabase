@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>hotelmanagement</OriginalElement>
+  <nodes>
+    <node x="413.55386904761906" y="2490.0">hotelmanagement.DatabaseTest</node>
+    <node x="283.74136904761906" y="1194.0">hotelmanagement.Database</node>
+    <node x="223.66930272108843" y="0.0">hotelmanagement.User</node>
+    <node x="62.553869047619116" y="2213.0">hotelmanagement.TableViewController</node>
+    <node x="0.0" y="1350.5">hotelmanagement.DatabaseGUI</node>
+    <node x="579.0713860544217" y="739.0">hotelmanagement.userTest</node>
+    <node x="14.303869047619116" y="3233.0">hotelmanagement.AdminLoginSceneController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="hotelmanagement.DatabaseTest" target="hotelmanagement.Database">
+      <point x="-26.75" y="-208.0" />
+      <point x="493.80386904761906" y="2193.0" />
+      <point x="499.86636904761906" y="2193.0" />
+      <point x="92.625" y="257.0" />
+    </edge>
+    <edge source="hotelmanagement.TableViewController" target="hotelmanagement.Database">
+      <point x="94.57142857142856" y="-485.0" />
+      <point x="322.62529761904767" y="2193.0" />
+      <point x="314.61636904761906" y="2193.0" />
+      <point x="-92.625" y="257.0" />
+    </edge>
+    <edge source="hotelmanagement.DatabaseTest" target="hotelmanagement.User">
+      <point x="26.75" y="-208.0" />
+      <point x="547.3038690476191" y="2193.0" />
+      <point x="557.5713860544217" y="2193.0" />
+      <point x="557.5713860544217" y="709.0" />
+      <point x="469.3693027210885" y="709.0" />
+      <point x="56.700000000000045" y="329.5" />
+    </edge>
+    <edge source="hotelmanagement.userTest" target="hotelmanagement.User">
+      <point x="-57.0" y="-712.0" />
+      <point x="636.0713860544217" y="689.0" />
+      <point x="544.9693027210885" y="689.0" />
+      <point x="132.30000000000007" y="329.5" />
+    </edge>
+    <edge source="hotelmanagement.TableViewController" target="hotelmanagement.User">
+      <point x="-94.57142857142867" y="-485.0" />
+      <point x="133.48244047619045" y="2183.0" />
+      <point x="194.30386904761906" y="2183.0" />
+      <point x="194.30386904761906" y="679.0" />
+      <point x="242.56930272108843" y="679.0" />
+      <point x="-170.1" y="329.5" />
+    </edge>
+    <edge source="hotelmanagement.Database" target="hotelmanagement.User">
+      <point x="-61.75" y="-257.0" />
+      <point x="345.49136904761906" y="719.0" />
+      <point x="393.7693027210885" y="719.0" />
+      <point x="-18.899999999999977" y="329.5" />
+    </edge>
+    <edge source="hotelmanagement.AdminLoginSceneController" target="hotelmanagement.TableViewController">
+      <point x="0.0" y="-88.5" />
+      <point x="-82.75" y="485.0" />
+    </edge>
+    <edge source="hotelmanagement.AdminLoginSceneController" target="hotelmanagement.DatabaseGUI">
+      <point x="-87.33333333333326" y="-88.5" />
+      <point x="57.97053571428586" y="3208.0" />
+      <point x="40.0" y="3208.0" />
+      <point x="-40.0" y="100.5" />
+    </edge>
+    <edge source="hotelmanagement.TableViewController" target="hotelmanagement.DatabaseGUI">
+      <point x="-141.85714285714295" y="-485.0" />
+      <point x="86.19672619047617" y="2193.0" />
+      <point x="120.0" y="2193.0" />
+      <point x="40.0" y="100.5" />
+    </edge>
+    <edge source="hotelmanagement.TableViewController" target="hotelmanagement.AdminLoginSceneController">
+      <point x="82.75" y="485.0" />
+      <point x="310.8038690476191" y="3208.0" />
+      <point x="232.6372023809525" y="3208.0" />
+      <point x="87.33333333333337" y="-88.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4690962099125364" x="403.99999999999955" y="1705.0" />
+  <SelectedNodes>
+    <node>hotelmanagement.DatabaseTest</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
