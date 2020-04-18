@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  @version 1.0
  *****************************************************************/
 
-public class userTest {
+public class UserTest {
   /*****************************************************************
    Tests constructor containing all client info
    *****************************************************************/

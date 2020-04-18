@@ -16,7 +16,7 @@ import javafx.stage.Stage;
  ****************************************************************/
 
 
-public class DatabaseGUI extends Application { //NOPMD
+public class DatabaseGUI extends Application {
 
   /** Initializes the stage (window) for the GUI. */
   public static Stage table = new Stage();
@@ -38,7 +38,7 @@ public class DatabaseGUI extends Application { //NOPMD
       root1 = FXMLLoader.load(DatabaseGUI.class.getResource
               ("TableView.fxml"));
     } catch (IOException e) {
-      e.printStackTrace();//NOPMD
+      e.printStackTrace();
     }
   }
 
@@ -47,7 +47,7 @@ public class DatabaseGUI extends Application { //NOPMD
       root2 = FXMLLoader.load(DatabaseGUI.class.getResource
               ("AdminLoginScene.fxml"));
     } catch (IOException e) {
-      e.printStackTrace();//NOPMD
+      e.printStackTrace();
     }
   }
 
