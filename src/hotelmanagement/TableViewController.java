@@ -159,8 +159,10 @@ public class TableViewController implements Initializable { //NOPMD
     alert.setHeaderText("Hotel Database");
     alert.setContentText("Created by: Steven Villarreal, Corey Rice,\n\t\t +"
             + "   Jason Kaip, Corey Sutter\n\n"
-            + "This application serves as a Hotel Database System that can add, delete users."
-            + " Admin can login and edit fields of User(s). Only \"Name\", \"Phone #\", \"Email\","
+            + "This application serves as a Hotel Database " +
+            "System that can add, delete users."
+            + " Admin can login and edit fields of User(s). " +
+            "Only \"Name\", \"Phone #\", \"Email\","
             + " are editable.");
     alert.showAndWait();
   }
@@ -249,7 +251,9 @@ public class TableViewController implements Initializable { //NOPMD
     try {
       User u = new User(nameTextField.getText(), //NOPMD
               phoneNumTextField.getText(),
-              emailTextField.getText(), comboBox.getValue(), userNameTextField.getText(),
+              emailTextField.getText(),
+              comboBox.getValue(),
+              userNameTextField.getText(),
               dobTextField.getText());
       // Verifies if email, phone #, and date of birth are valid
       // Then adds the user to database then table.
@@ -373,7 +377,8 @@ public class TableViewController implements Initializable { //NOPMD
    *****************************************************************/
   public void saveFile(ObservableList<User> userObservableList, File file) { //NOPMD
     try {
-      final BufferedWriter outWriter = new BufferedWriter(new FileWriter(file + ".txt"));//NOPMD
+      final BufferedWriter outWriter =
+              new BufferedWriter(new FileWriter(file + ".txt"));//NOPMD
 
       for (final User u : userObservableList) {
         outWriter.write(u.toString());
@@ -383,7 +388,8 @@ public class TableViewController implements Initializable { //NOPMD
       System.out.println(d.getUserSecondaryDb(0)); //NOPMD
       outWriter.close();
     } catch (IOException e) {
-      final Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
+      final Alert ioAlert = new
+              Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
 
       ioAlert.setContentText("Sorry. An error has occurred.");
       ioAlert.showAndWait();
@@ -402,7 +408,8 @@ public class TableViewController implements Initializable { //NOPMD
     try {
       final String filePath = new File("").getAbsolutePath();
       System.out.println(filePath); //NOPMD
-      BufferedReader br = new BufferedReader(new FileReader(new File(filePath + //NOPMD
+      BufferedReader br = new BufferedReader
+              (new FileReader(new File(filePath + //NOPMD
               "/src/hotelmanagement/TestFile.txt")));
       String line;
       String[] array;
@@ -412,13 +419,18 @@ public class TableViewController implements Initializable { //NOPMD
       while ((line = br.readLine()) != null) { //NOPMD
         array = line.split(","); //NOPMD
         users.add(new User(array[0], array[1], array[2], array[3], array[4], //NOPMD
-                Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]))); //NOPMD
+                Integer.parseInt(array[5]), array[6],
+                Integer.parseInt(array[7]))); //NOPMD
         if (Integer.parseInt(array[5]) == 0) { //NOPMD
-          d.addAdmin(new User(array[0], array[1], array[2], array[3], array[4], //NOPMD
-                  Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]))); //NOPMD
+          d.addAdmin(new User(array[0], array[1], array[2],
+                  array[3], array[4], //NOPMD
+                  Integer.parseInt(array[5]), array[6],
+                  Integer.parseInt(array[7]))); //NOPMD
         } else {
-          d.addUserFromLoad(new User(array[0], array[1], array[2], array[3], array[4], //NOPMD
-                  Integer.parseInt(array[5]), array[6], Integer.parseInt(array[7]))); //NOPMD
+          d.addUserFromLoad(new User(array[0], array[1],
+                  array[2], array[3], array[4], //NOPMD
+                  Integer.parseInt(array[5]), array[6],
+                  Integer.parseInt(array[7]))); //NOPMD
         }
       }
       System.out.println(); //NOPMD
@@ -452,14 +464,22 @@ public class TableViewController implements Initializable { //NOPMD
     btnDelete.setVisible(true);
     comboBox.getItems().setAll(1,2,3); //NOPMD
     btnLoginAdmin.setText("Logout");
-    nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
-    phoneNumColumn.setCellValueFactory(new PropertyValueFactory<User, String>("PhoneNum"));
-    emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("Email"));
-    userNameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("username"));
-    passwordColumn.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
-    tierColumn.setCellValueFactory(new PropertyValueFactory<User, Integer>("tier"));
-    dateofbirthColumn.setCellValueFactory(new PropertyValueFactory<User, String>("dob"));
-    roomNum.setCellValueFactory(new PropertyValueFactory<User, Integer>("roomNum"));
+    nameColumn.setCellValueFactory
+            (new PropertyValueFactory<User, String>("name"));
+    phoneNumColumn.setCellValueFactory
+            (new PropertyValueFactory<User, String>("PhoneNum"));
+    emailColumn.setCellValueFactory
+            (new PropertyValueFactory<User, String>("Email"));
+    userNameColumn.setCellValueFactory
+            (new PropertyValueFactory<User, String>("username"));
+    passwordColumn.setCellValueFactory
+            (new PropertyValueFactory<User, String>("password"));
+    tierColumn.setCellValueFactory
+            (new PropertyValueFactory<User, Integer>("tier"));
+    dateofbirthColumn.setCellValueFactory
+            (new PropertyValueFactory<User, String>("dob"));
+    roomNum.setCellValueFactory
+            (new PropertyValueFactory<User, Integer>("roomNum"));
 
     // load dummy data
     tableView.setItems(getUsers());
@@ -477,40 +497,53 @@ public class TableViewController implements Initializable { //NOPMD
    *****************************************************************/
   public ObservableList<User> getUsers() {
     users = FXCollections.observableArrayList();
-    d.addUser(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1, //NOPMD
+    d.addUser(new User("Steven", "6168342729",
+            "villarst@mail.gvsu.edu", 1, //NOPMD
             "villarst", "03/27/00")); //NOPMD
-    users.add(new User("Steven", "6168342729", "villarst@mail.gvsu.edu", 1,
-            d.viewRoom(0), "villarst", d.getUser(0).getPassword(), "03/27/00")); //NOPMD
-    ////-------------------------------------------------------------------
-    d.addUser(new User("Corey R", "6168342729", "ricecore@mail.gvsu.edu", 2,
+    users.add(new User("Steven", "6168342729",
+            "villarst@mail.gvsu.edu", 1,
+            d.viewRoom(0), "villarst",
+            d.getUser(0).getPassword(), "03/27/00")); //NOPMD
+    d.addUser(new User("Corey R", "6168342729",
+            "ricecore@mail.gvsu.edu", 2,
             "riceco", "03/27/00"));
-    users.add(new User("Corey R", "6165583079", "ricecore@mail.gvsu.edu", 2, //NOPMD
-            d.viewRoom(1), "riceco", d.getUser(1).getPassword(), "03/27/00")); //NOPMD
-    ////-------------------------------------------------------------------
-    d.addUser(new User("Corey S", "6168342729", "sutterco@mail.gvsu.edu", 2,
+    users.add(new User("Corey R", "6165583079",
+            "ricecore@mail.gvsu.edu", 2, //NOPMD
+            d.viewRoom(1), "riceco",
+            d.getUser(1).getPassword(), "03/27/00")); //NOPMD
+    d.addUser(new User("Corey S", "6168342729",
+            "sutterco@mail.gvsu.edu", 2,
             "sutterco", "03/27/00"));
-    users.add(new User("Corey S", "6165583079", "cutterco@mail.gvsu.edu", 2,
-            d.viewRoom(2), "sutterco", d.getUser(2).getPassword(), "03/27/00")); //NOPMD
-    ////-------------------------------------------------------------------
-    d.addUser(new User("Jason", "6168342729", "kaipjaso@mail.gvsu.edu", 3,
+    users.add(new User("Corey S", "6165583079",
+            "cutterco@mail.gvsu.edu", 2,
+            d.viewRoom(2), "sutterco",
+            d.getUser(2).getPassword(), "03/27/00")); //NOPMD
+    d.addUser(new User("Jason", "6168342729",
+            "kaipjaso@mail.gvsu.edu", 3,
             "kaipja", "03/27/00"));
-    users.add(new User("Jason", "6165583079", "kaipjaso@mail.gvsu.edu", 3,
-            d.viewRoom(3), "kaipja", d.getUser(3).getPassword(), "03/27/00")); //NOPMD
-    ////-------------------------------------------------------------------
-    d.addUser(new User("Bobby V", "6168342729", "vuerbobb@mail.gvsu.edu", 1,
+    users.add(new User("Jason", "6165583079",
+            "kaipjaso@mail.gvsu.edu", 3,
+            d.viewRoom(3), "kaipja",
+            d.getUser(3).getPassword(), "03/27/00")); //NOPMD
+    d.addUser(new User("Bobby V", "6168342729",
+            "vuerbobb@mail.gvsu.edu", 1,
             "VBobby", "03/27/00"));
-    users.add(new User("Bobby V", "6165583079", "vuerbobb@mail.gvsu.edu", 1,
-            d.viewRoom(4), "VBobby", d.getUser(4).getPassword(), "03/27/00")); //NOPMD
-    ////-------------------------------------------------------------------
-    d.addUser(new User("Mike J", "6168342729", "johnmike@mail.gvsu.edu", 3,
+    users.add(new User("Bobby V", "6165583079",
+            "vuerbobb@mail.gvsu.edu", 1,
+            d.viewRoom(4), "VBobby",
+            d.getUser(4).getPassword(), "03/27/00")); //NOPMD
+    d.addUser(new User("Mike J", "6168342729",
+            "johnmike@mail.gvsu.edu", 3,
             "JMike", "03/27/00"));
-    users.add(new User("Mike J", "6165583079", "johnmike@mail.gvsu.edu", 3,
-            d.viewRoom(5), "JMike", d.getUser(5).getPassword(), "03/27/00")); //NOPMD
-    ////-------------------------------------------------------------------
-    d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN",
-            "jscc1234",  0, "04/23/29"));
-    users.add(new User("ADMIN", "9999999999", "admin@login.com", "ADMIN",
-            d.getUserSecondaryDb(0).getPassword(), 0, "04/23/29")); //NOPMD
+    users.add(new User("Mike J", "6165583079",
+            "johnmike@mail.gvsu.edu", 3,
+            d.viewRoom(5), "JMike",
+            d.getUser(5).getPassword(), "03/27/00")); //NOPMD
+    d.addAdmin(new User("ADMIN", "9999999999", "admin@login.com",
+            "ADMIN", "jscc1234",  0, "04/23/29"));
+    users.add(new User("ADMIN", "9999999999", "admin@login.com",
+            "ADMIN", d.getUserSecondaryDb(0).getPassword(),
+            0, "04/23/29")); //NOPMD
     System.out.println("Admin Tier level: " + users.get(6).getTier()); //NOPMD
 
     return users;

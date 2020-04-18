@@ -35,7 +35,8 @@ public class DatabaseGUI extends Application { //NOPMD
 
   static {
     try {
-      root1 = FXMLLoader.load(DatabaseGUI.class.getResource("TableView.fxml"));
+      root1 = FXMLLoader.load(DatabaseGUI.class.getResource
+              ("TableView.fxml"));
     } catch (IOException e) {
       e.printStackTrace();//NOPMD
     }
@@ -43,7 +44,8 @@ public class DatabaseGUI extends Application { //NOPMD
 
   static {
     try {
-      root2 = FXMLLoader.load(DatabaseGUI.class.getResource("AdminLoginScene.fxml"));
+      root2 = FXMLLoader.load(DatabaseGUI.class.getResource
+              ("AdminLoginScene.fxml"));
     } catch (IOException e) {
       e.printStackTrace();//NOPMD
     }

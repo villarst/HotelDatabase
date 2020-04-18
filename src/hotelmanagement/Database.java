@@ -77,7 +77,6 @@ public class Database implements Serializable{
     }
   }
 
-  // This method clears the Database, (MainDb, SecondaryDb, rooms[]
   /*****************************************************************
    Clears the Database consisting of MainDb, SecondaryDb and rooms[]
    *****************************************************************/
@@ -236,16 +235,24 @@ public class Database implements Serializable{
   public String toString(){
     String result = "";
     for(int i = 0; i < MainDb.size(); i++){
-      result += MainDb.get(i).getName() + " , " + MainDb.get(i).getPhoneNum() +
-              " , " + MainDb.get(i).getEmail() + " , " + MainDb.get(i).getUsername() +
-              " , " + MainDb.get(i).getPassword() + " , " + MainDb.get(i).getTier() +
-              " , " + MainDb.get(i).getDob() + " , " + MainDb.get(i).getRoomNum() + "\n";
+      result += MainDb.get(i).getName() +
+              " , " + MainDb.get(i).getPhoneNum() +
+              " , " + MainDb.get(i).getEmail() +
+              " , " + MainDb.get(i).getUsername() +
+              " , " + MainDb.get(i).getPassword() +
+              " , " + MainDb.get(i).getTier() +
+              " , " + MainDb.get(i).getDob() +
+              " , " + MainDb.get(i).getRoomNum() + "\n";
     }
     for(int j = 0; j < SecondaryDb.size(); j++){
-      result += SecondaryDb.get(j).getName() + " , " + SecondaryDb.get(j).getPhoneNum() +
-              " , " + SecondaryDb.get(j).getEmail() + " , " + SecondaryDb.get(j).getUsername() +
-              " , " + SecondaryDb.get(j).getPassword() + " , " + SecondaryDb.get(j).getTier() +
-              " , " + SecondaryDb.get(j).getDob() + " , " + SecondaryDb.get(j).getRoomNum() + "\n";
+      result += SecondaryDb.get(j).getName() +
+              " , " + SecondaryDb.get(j).getPhoneNum() +
+              " , " + SecondaryDb.get(j).getEmail() +
+              " , " + SecondaryDb.get(j).getUsername() +
+              " , " + SecondaryDb.get(j).getPassword() +
+              " , " + SecondaryDb.get(j).getTier() +
+              " , " + SecondaryDb.get(j).getDob() +
+              " , " + SecondaryDb.get(j).getRoomNum() + "\n";
     }
     return result;
   }

@@ -73,7 +73,8 @@ public class AdminLoginSceneController implements Initializable { //NOPMD
    @param resourceBundle FXML resource bundle
    *****************************************************************/
   @Override
-  public void initialize(final URL url, final ResourceBundle resourceBundle) { //NOPMD
+  public void initialize(
+          final URL url, final ResourceBundle resourceBundle) { //NOPMD
 
   }
 }
